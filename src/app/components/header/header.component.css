@@ -1,0 +1,21 @@
+.blue{
+    background-color: #A39594;
+    height: 51px;
+}
+ul,li,a{
+    list-style: none;
+    display: inline;
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+    display: inline-block;
+   
+}
+.ist{
+    margin-right: 10px;
+}
+.icons{
+    float: right;
+    color: white;
+    margin-right: 10px;
+}
