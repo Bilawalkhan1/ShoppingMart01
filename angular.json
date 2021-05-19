@@ -30,13 +30,9 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
-              "./node_modules/font-awesome/css/font-awesome.css"
-=======
               "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.css"
->>>>>>> 12bcd2d5acaa556cc40f2f2c5c92816b7ce1ee44
             ],
             "scripts": []
           },
