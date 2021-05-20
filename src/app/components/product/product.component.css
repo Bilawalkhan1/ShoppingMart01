@@ -1,0 +1,20 @@
+.imgstyle1{
+    float: right;
+    margin-bottom: 35px;
+}
+.description{
+    max-height: 7vw;
+    min-height: 7vw;
+    max-width: 20vw;
+    min-width: 20vw;
+}
+.btn1{
+    border-radius: 5px;
+    background-color: rgb(163 149 148);
+    margin: 5px;
+    width: 83px;
+    font-size: small;
+    border: none;
+    padding: 5px 8px;
+    color: white;
+  }
