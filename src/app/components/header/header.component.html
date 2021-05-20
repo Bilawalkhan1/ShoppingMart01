@@ -1,16 +1,65 @@
 <div class="container-fluid">
     <div class="row blue">
         <div class="col-md-3 col-lg-3 ">
-            <h3 class="mt-2"><a href="#"> Shopping Mart</a></h3>
+            <h4 class="mt-3"><a href="#"> Shopping Mart</a></h4>
         </div>
         <div class="col-md-7 col-lg-7 ">
             <menu>
                 <ul>
-                    <li class="hover"><a [routerLink]="[ '/all']"><span>All products</span></a></li>
+                    <button class="btn mr-2">All products</button>
+                    <li>
+                        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
+                                (focus)="myDrop.open()">Vehicles</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem>Brand New</button>
+                                <button ngbDropdownItem>Old</button>
+                                <button ngbDropdownItem>Bikes</button>
+                                <button ngbDropdownItem>Cars</button>
+                                <button ngbDropdownItem>Buses</button>
+                                <button ngbDropdownItem>Truks</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-inline-block" ngbDropdown #myDrop1="ngbDropdown">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
+                                (focus)="myDrop1.open()">Electronics</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem>Mobiles</button>
+                                <button ngbDropdownItem>Tablets</button>
+                                <button ngbDropdownItem>laptops</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
+                                (focus)="myDrop2.open()">Furniture</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem>Brand New</button>
+                                <button ngbDropdownItem>Old</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="d-inline-block" ngbDropdown #myDrop3="ngbDropdown">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
+                                (focus)="myDrop3.open()">Jewlery</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem>Gold</button>
+                                <button ngbDropdownItem>Silver</button>
+                                <button ngbDropdownItem>Diamonds</button>
+                                <button ngbDropdownItem>Others</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- <li class="hover"><a [routerLink]="[ '/all']"><span>All products</span></a></li>
                     <li class="hover"><a [routerLink]="[ '/vehicles']"><span>Vehicles</span></a></li>
                     <li class="hover"><a [routerLink]="[ '/mobiles']"><span>Mobiles</span></a></li>
                     <li class="hover"><a [routerLink]="[ '/furniture']"><span>Furniture</span></a></li>
-                    <li class="hover"><a [routerLink]="[ '/jewelery']"><span>Jewelery</span></a></li>
+                    <li class="hover"><a [routerLink]="[ '/jewelery']"><span>Jewelery</span></a></li> -->
                 </ul>
             </menu>
         </div>
@@ -21,5 +70,6 @@
             </div>
 
         </div>
+
     </div>
 </div>

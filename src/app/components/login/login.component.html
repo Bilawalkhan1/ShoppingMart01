@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="card" style="width: 100%; height: auto; margin: 50px;">
+      <!-- <h4 class="card-title">Login Form</h4> -->
+      <h5></h5>
+      <div class="row">
+        <div class="col">
+          <h5>Registered Customers</h5>
+          <p>If you have an account, sign in with your email address.</p>
+          <div class="row">
+            <label for="">
+              Email <input type="text" class="form-control" formControlName="firstName" name="" id="">
+            </label>
+          </div>
+          <div class="row">
+            <label for="">
+              Password <input type="text" class="form-control" formControlName="firstName" name="" id="">
+            </label>
+          </div>
+          <div>
+            <div>
+              <button class="btn btn-primary ms-2 mt-2" type="submit">Sign In </button>
+            </div>
+
+            <div class="password">
+              <span class="m-4"> <a href=""> Forgot Your Password?</a> </span>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col">
+          <h5>New Customer</h5>
+          <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
+          <div class="d-grid gap-2 col-6 mx-auto ms-0">
+            <a [routerLink]="['/signup']">
+              <button class="btn btn-primary"> CREATE AN ACCOUNT</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
