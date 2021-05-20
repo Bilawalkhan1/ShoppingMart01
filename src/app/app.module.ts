@@ -10,6 +10,7 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -21,7 +22,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     FooterComponent,
     LoginComponent,
     HomeComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
