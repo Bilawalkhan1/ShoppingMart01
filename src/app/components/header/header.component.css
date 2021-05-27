@@ -1,6 +1,6 @@
 .blue{
-    background-color: #A39594;
-    height: 51px;
+    background-color: #328CC1;
+    height: 60px;
 }
 ul,li,a{
     list-style: none;
@@ -24,6 +24,6 @@ ul,li,a{
     border: none;
 }
 button:hover {
-    color:blue; 
+    color:black;
     border: none;
 }

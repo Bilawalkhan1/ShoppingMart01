@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ProductDetailsService } from 'src/app/product-details.service';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,11 @@ import { ProductDetailsService } from 'src/app/product-details.service';
 })
 export class HomeComponent implements OnInit {
   searchText: any
-  constructor( private productDetails : ProductDetailsService ) { }
+  constructor( private productDetails : ProductDetailsService, private cartService : CartService ) { }
+
+  addToCart(product : any) {
+    this.cartService.addToCart(product);
+  }
 
   ngOnInit(): void {
   }

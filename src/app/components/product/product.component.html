@@ -1,12 +1,29 @@
-<div class="container-fluid mt-5">
+<div class="container">
   <div class="row" *ngFor="let blog of product">
+    <div class="col-mid col-lg-6">
+      <div class="image-box">
+      <a [routerLink]="['/product', blog.Name]">
+        <img src="{{blog.blogImg}}" alt="" width="500" height="400">
+      </a>
+    </div>
+    </div>
+    <div class="col-mid col-lg-6">
+      <span>{{blog.Name}}</span>
+      <span>{{blog.Price}}</span>
+      <p>{{blog.desp}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- 
+
+<div class="container-fluid mt-5">
+  <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
       <div class="blog grid-blog">
         <div class="blog-image">
 
-          <a [routerLink]="['/product', blog.Name]">
-            <img src="{{blog.blogImg}}" class="img-fluid imgstyle1" alt="">
-          </a>
+         
         </div>
       </div>
     </div>
@@ -14,14 +31,14 @@
       <div class="blog-content">
        
             <div class="post-author">
-              <span><b>Name </b>{{blog.Name}}</span>
+             
             </div>
         
         <h3 class="blog-title">
-          <a href=""><b>Price</b>{{blog.Price}}</a>
+         
         </h3>
 
-        <p class="mb-0 description">{{blog.desp}}</p>
+       
       </div>
 
       <div>
@@ -39,7 +56,4 @@
     </div>
 
   </div>
-</div>
-
-
-
+</div> -->

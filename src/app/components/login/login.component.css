@@ -8,8 +8,9 @@
     margin-top: -25px;
     float: right;
 }
-.btn{
-    background-color: #000000;
+.btn-style{
+    background-color: #0B3C5D; 
+    /*022140  */
 }
 .astyle{
     text-decoration: none;
