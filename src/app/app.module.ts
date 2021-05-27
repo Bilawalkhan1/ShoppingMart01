@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './components/cart/cart.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 
@@ -23,7 +24,8 @@ import { CartComponent } from './components/cart/cart.component';
     LoginComponent,
     HomeComponent,
     SignupFormComponent,
-    CartComponent
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

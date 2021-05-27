@@ -10,7 +10,7 @@
     margin-bottom: 20px;
   }
   .grid-blog{
-    background-color: lavender
+    background-color: #d5d5ea
   }
   .blog-content {
     position: relative;
@@ -119,11 +119,11 @@
     color: white;
   }
 .imgstyle{
-    max-height: 20vw;
-    min-height: 20vw;
-    max-width:30vw;
-    min-width: 30vw;
-    padding: 18px;
+  max-height: 23vw;
+  min-height: 23vw;
+  max-width: 30vw;
+  min-width: 30vw;
+  padding: 37px;
 }
 .imgstyle1{
     max-height: 15vw;

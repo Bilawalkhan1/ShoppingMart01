@@ -1,10 +1,22 @@
 .col{
-    padding: 30px;
+    padding: 20px;
 }
 .row{
-    padding: 10px;
+    padding: 5px;
 }
 .password{
     margin-top: -25px;
     float: right;
+}
+.btn{
+    background-color: #000000;
+}
+.astyle{
+    text-decoration: none;
+    color: black;
+}
+.astyle:hover{
+    background-color: black;
+    color: white;
+    padding: 5px;
 }

@@ -1,0 +1,42 @@
+<div class="container-fluid mt-5">
+  <div class="row" *ngFor="let blog of product">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="blog grid-blog">
+        <div class="blog-image">
+
+          <a [routerLink]="['/product', blog.Name]">
+            <img src="{{blog.blogImg}}" class="img-fluid imgstyle1" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="blog-content">
+
+        <div class="post-author">
+          <span><b>Name: </b>{{blog.Name}}</span>
+        </div>
+
+        <div class="blog-title">
+          <span><b>Price: </b>{{blog.Price}}</span>
+        </div>
+
+        <p class="mb-0 description">{{blog.desp}}</p>
+      </div>
+
+      <div>
+        <div class="row mt-4">
+          <div class="col-auto">
+            <button class="btn1">Add to Cart</button>
+
+          </div>
+          <div class="col">
+            <button class="btn1">Buy</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

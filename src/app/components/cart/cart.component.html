@@ -1,1 +1,30 @@
-<p>cart works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="getcartdetails" class="col-md-12 col-lg-12">
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                </tr>
+                <tr *ngFor="let getcartdetail of getcartdetails">
+                    <td><img class="img1" src="{{getcartdetail.blogImg}}"></td>
+                    <td>{{getcartdetail.Name}}</td>
+                    <td>{{getcartdetail.Price}}</td>
+                    <td>{{getcartdetail.proId}}</td>
+                    <td>{{getcartdetail.desp}}</td>
+                    <td><button (click)="removesingleitem()">Remove item</button></td>
+                </tr>
+
+            </table>
+
+        </div>
+        <div>
+            <button class="btn" type="button" (click)="removeitem()"><i class=" icon fa fa-trash">Remove all</i></button>
+
+        </div>
+        
+    </div>
+</div>

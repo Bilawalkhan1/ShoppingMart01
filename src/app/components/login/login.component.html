@@ -9,34 +9,45 @@
           <p>If you have an account, sign in with your email address.</p>
           <div class="row">
             <label for="">
-              Email <input type="text" class="form-control" formControlName="firstName" name="" id="">
+              Email <input type="text" class="form-control" formControlName="" placeholder="example@xyz.com" name="" id="">
             </label>
           </div>
           <div class="row">
             <label for="">
-              Password <input type="text" class="form-control" formControlName="firstName" name="" id="">
+              Password <input type="text" class="form-control" formControlName="" placeholder="*******" name="" id="">
             </label>
           </div>
-          <div>
-            <div>
-              <button class="btn btn-primary ms-2 mt-2" type="submit">Sign In </button>
-            </div>
 
-            <div class="password">
-              <span class="m-4"> <a href=""> Forgot Your Password?</a> </span>
+          <div class="row">
+            <div class="col-auto d-grid gap-2 col-6 ms-1 mt-1">
+              <button class="btn btn-primary " type="submit">SIGN IN </button>
+            </div>
+            <div class="col-auto ms-4 mt-3">
+              <a class="astyle" href=""> Forgot Your Password?</a> 
             </div>
           </div>
 
+          <div class="row-auto">
+            <h6 class="d-flex justify-content-center">Or</h6>
+            <div class="d-grid gap-2 col-9 mx-auto">
+              <button class="btn btn-primary " type="submit"><i class="fa fa-google me-4"></i>SIGN IN WITH GOOGLE </button>
+            </div>
+            <div class="d-grid gap-2 col-9 mx-auto mt-2">
+              <button class="btn btn-primary " type="submit">  <i class="fa fa-facebook me-3"></i>SIGN IN WITH FACEBOOK </button>
+            </div>
+          </div>
 
         </div>
+
         <div class="col">
-          <h5>New Customer</h5>
-          <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
-          <div class="d-grid gap-2 col-6 mx-auto ms-0">
-            <a [routerLink]="['/signup']">
-              <button class="btn btn-primary"> CREATE AN ACCOUNT</button>
-            </a>
+          <div class="row">
+            <h5>New Customer</h5>
+            <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
+            <div class="d-grid gap-2 col-6 mx-auto ms-0">
+                <button (click)="signup()" class="btn btn-primary"> CREATE AN ACCOUNT</button>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
