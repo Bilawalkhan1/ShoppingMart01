@@ -30,6 +30,9 @@
                             <div class="post-author">
                                 <span><b>Name </b>{{blog.Name}}</span>
                             </div>
+                            <div class="post-author">
+                                <span><b>Product Id </b>{{blog.Id}}</span>
+                            </div>
                         </li>
                     </ul>
                     <h3 class="blog-title">
@@ -40,8 +43,8 @@
                 </div>
 
                 <div>
-                    <button class="btn1" (click)="addToCart(blog)">Add to Cart</button>
-                    <button class="btn1">Buy</button>
+                    <button class="btn1" (click)="addtocart(blog)">Add to Cart</button>
+                    <button (click)="onLoadActive()" class="btn1">Buy</button>
                 </div>
             </div>
 

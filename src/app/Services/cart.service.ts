@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { product } from '../product';
-import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +9,10 @@ export class CartService {
   constructor() { }
 
   items: product[] = [];
-  
+
   addToCart(product: product) {
     this.items.push(product);
-    localStorage.setItem('Cart', JSON.stringify(this.items ));
-   
+    localStorage.setItem('Cart', JSON.stringify(this.items ))
   }
 
   getItems() {
@@ -25,5 +23,4 @@ export class CartService {
     this.items = [];
     return this.items;
   }
-
 }

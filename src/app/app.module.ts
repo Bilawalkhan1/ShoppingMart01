@@ -10,9 +10,12 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,6 +26,7 @@ import { ProductComponent } from './components/product/product.component';
     LoginComponent,
     HomeComponent,
     SignupFormComponent,
+    CartComponent,
     ProductComponent
   ],
   imports: [
@@ -30,9 +34,9 @@ import { ProductComponent } from './components/product/product.component';
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    SlickCarouselModule  
-
-  
+    SlickCarouselModule,  
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

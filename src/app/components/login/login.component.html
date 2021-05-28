@@ -43,9 +43,7 @@
             <h5>New Customer</h5>
             <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
             <div class="d-grid gap-2 col-6 mx-auto ms-0">
-              <a [routerLink]="['/signup']">
-                <button class="btn btn-primary btn-style"> CREATE AN ACCOUNT</button>
-              </a>
+                <button (click)="signup()" class="btn btn-primary"> CREATE AN ACCOUNT</button>
             </div>
           </div>
           

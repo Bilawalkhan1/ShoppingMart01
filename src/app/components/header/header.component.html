@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <div class="row blue">
+<div class="container-fluid blue">
+    <div class="row ">
         <div class="col-md-3 col-lg-3 ">
             <h4 class="mt-3"><a href="#"> Shopping Mart</a></h4>
         </div>
@@ -8,11 +8,10 @@
                 <ul>
                     <button class="btn mr-2">All products</button>
                     <li>
-                        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
-                                (focus)="myDrop.open()">Vehicles</button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button ngbDropdownItem>Brand New</button>
+                        <div class="d-inline-block dropdown" ngbDropdown #myDrop="ngbDropdown">
+                            <button class="btn mr-2 dropbtn" id="dropdownManual" ngbDropdownAnchor>Vehicles</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button class="btn1" ngbDropdownItem>Brand New</button>
                                 <button ngbDropdownItem>Old</button>
                                 <button ngbDropdownItem>Bikes</button>
                                 <button ngbDropdownItem>Cars</button>
@@ -23,9 +22,8 @@
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop1="ngbDropdown">
-                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
-                                (focus)="myDrop1.open()">Electronics</button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                            <button class="btn mr-2 dropdown" id="dropdownManual" ngbDropdownAnchor>Electronics</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
                                 <button ngbDropdownItem>Mobiles</button>
                                 <button ngbDropdownItem>Tablets</button>
                                 <button ngbDropdownItem>laptops</button>
@@ -34,9 +32,8 @@
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
-                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
-                                (focus)="myDrop2.open()">Furniture</button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Furniture</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
                                 <button ngbDropdownItem>Brand New</button>
                                 <button ngbDropdownItem>Old</button>
                             </div>
@@ -44,9 +41,8 @@
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop3="ngbDropdown">
-                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor
-                                (focus)="myDrop3.open()">Jewlery</button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Jewlery</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
                                 <button ngbDropdownItem>Gold</button>
                                 <button ngbDropdownItem>Silver</button>
                                 <button ngbDropdownItem>Diamonds</button>
@@ -55,19 +51,22 @@
                         </div>
                     </li>
 
-                    <!-- <li class="hover"><a [routerLink]="[ '/all']"><span>All products</span></a></li>
-                    <li class="hover"><a [routerLink]="[ '/vehicles']"><span>Vehicles</span></a></li>
-                    <li class="hover"><a [routerLink]="[ '/mobiles']"><span>Mobiles</span></a></li>
-                    <li class="hover"><a [routerLink]="[ '/furniture']"><span>Furniture</span></a></li>
-                    <li class="hover"><a [routerLink]="[ '/jewelery']"><span>Jewelery</span></a></li> -->
                 </ul>
             </menu>
         </div>
         <div class="col-md-2 col-lg-2">
             <div class="icons mt-3 ">
-                <a [routerLink]="[ '/cart']"><i class="fa fa-shopping-cart fa-lg ist" aria-hidden='true'></i></a>
                 <a [routerLink]="[ '/login']"><i class="fa fa-user-circle fa-lg"></i></a>
+
             </div>
+            <div class="icons mt-3 ">
+                <a [routerLink]="[ '/cart']"><i class="fa fa-shopping-cart fa-lg ist" aria-hidden='true'></i></a>
+                <div class="cartvalue">
+                    {{cartitem}}
+                </div>
+            </div>
+
+
 
         </div>
 
