@@ -11,8 +11,6 @@ export class ProductDetailsService {
 
   sendProduct(product: object) {
     this.subject.next(product);
-
-    //{text : product}
   }
 
   getProduct(): Observable<any> {

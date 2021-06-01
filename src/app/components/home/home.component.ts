@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDetailsService } from 'src/app/product-details.service';
+import { ProductDetailsService } from 'src/app/Services/product-details.service';
 import { CartService } from 'src/app/Services/cart.service';
-import { AuthService } from 'src/app/service/auth.service';
-import { product } from 'src/app/product';
-import { ProductService } from 'src/app/product.service';
+import { AuthService } from 'src/app/Services/auth.service';
+import { product } from 'src/app/Classes/product';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -116,13 +116,13 @@ export class HomeComponent implements OnInit {
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
     } else {
-      if (cartdatanull) {
+     // if (cartdatanull) {
       this.itemcart = JSON.parse(cartdatanull);
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
-      } else {
-        localStorage.setItem('localcart', JSON.stringify(this.itemcart));
-      }
+     // } else {
+       // localStorage.setItem('localcart', JSON.stringify(this.itemcart));
+     // }
     }
 
     this.cartNumberfun();

@@ -12,10 +12,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
+import { UserControlComponent } from './components/user-control/user-control.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './Classes/data.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './_interceptor/auth-interceptor.service';
 
 
 @NgModule({
@@ -27,10 +29,11 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SignupFormComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    UserControlComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
@@ -38,7 +41,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientInMemoryWebApiModule.forRoot(DataService),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

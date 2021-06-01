@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductDetailsService } from 'src/app/product-details.service';
-import { product } from './../../product';
+import { ProductDetailsService } from 'src/app/Services/product-details.service';
+import { product } from '../../Classes/product';
 
 @Component({
   selector: 'app-product',
@@ -17,7 +17,6 @@ export class ProductComponent implements OnInit {
     this.subscription = this.productDetails.getProduct().subscribe(prod=>{
       if(prod){
         this.product.push(prod);
-        console.log(this.product)
       } else{
         this.product=[];
       }
