@@ -1,0 +1,9 @@
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dacpac
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dll
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.pdb
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.dll
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\Model.xml
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\refactor.xml
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\postdeploy.sql
+C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\predeploy.sql

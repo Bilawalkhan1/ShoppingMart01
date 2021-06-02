@@ -1,0 +1,29 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Identity] (Table)
+       [dbo].[Order] (Table)
+       [dbo].[Product] (Table)
+       [dbo].[ProductStatus] (Table)
+       [dbo].[Role] (Table)
+       [dbo].[XrefIdentityToRole] (Table)
+       [dbo].[XrefProductToStatus] (Table)
+       [dbo].[FK_Product_Order] (Foreign Key)
+       [dbo].[FK_XrefIdentityToRole_Role] (Foreign Key)
+       [dbo].[FK_XrefIdentityToRole_Identity] (Foreign Key)
+       [dbo].[FK_XrefProductToStatus_Product] (Foreign Key)
+       [dbo].[FK_XrefProductToStatus_Status] (Foreign Key)
+
+** Supporting actions
+
+The following SqlCmd variables are not defined in the target scripts: PopulateLists.
+
