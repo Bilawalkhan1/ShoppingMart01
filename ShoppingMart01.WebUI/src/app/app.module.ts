@@ -14,8 +14,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { UserControlComponent } from './components/user-control/user-control.component';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { DataService } from './Classes/data.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './_interceptor/auth-interceptor.service';
 
@@ -38,7 +36,6 @@ import { AuthInterceptorService } from './_interceptor/auth-interceptor.service'
     ReactiveFormsModule,
     NgbModule,
     SlickCarouselModule,  
-    HttpClientInMemoryWebApiModule.forRoot(DataService),
     HttpClientModule
   ],
   providers: [

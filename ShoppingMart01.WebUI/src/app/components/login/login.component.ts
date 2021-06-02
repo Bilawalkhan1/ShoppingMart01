@@ -1,49 +1,41 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from './../../Services/authentication.service';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+selector: 'app-login',
+templateUrl: './login.component.html',
+styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({});
+loginUserData = {
+email: '',
+password: ''
+}
 
-  constructor(
-    private router: Router,
-    private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService
-  ) {}
+form: FormGroup;
+constructor(private router: Router, private as: AuthenticationService, private fb: FormBuilder, private http: HttpClient) {
+this.form = this.fb.group({
+email: ['', Validators.required],
+password: ['', Validators.required]
+});
+}
 
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-  }
-  get fields() {
-    return this.loginForm.controls;
-  }
+get f() {
+return this.form.controls;
+}
 
-  onSubmit() {
-    if (this.loginForm.invalid) {
-      return;
-    }
-    this.authenticationService.login(this.loginForm.value)
-    .subscribe(x=> console.log(x))
-      // .subscribe((x) => {
-      //   if (x) {
-      //     console.log(x);
-      //     localStorage.setItem('Token', 'xxx');
-      //   } else {
-      //     console.log('error');
-      //   }
-      // });
-  }
+ngOnInit(): void {
+}
 
-  signup() {
-    this.router.navigateByUrl('/signup');
-  }
+signup() {
+this.router.navigateByUrl('/signup')
+}
+
+loginUser() {
+this.as.userlogin(this.form.value)
+alert('user login successfully')
+}
 }

@@ -1,63 +1,39 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { User } from '../Classes/user';
 import { HttpClient } from '@angular/common/http';
-import { tap, mapTo, catchError } from 'rxjs/operators';
-import { Token } from '@angular/compiler/src/ml_parser/lexer';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 @Injectable({
-  providedIn: 'root',
+providedIn: 'root'
 })
 export class AuthenticationService {
-  private url = 'api/user/login';
- 
-  constructor(private http : HttpClient) {
-  }
 
-  login(user:{userEmail : string, password : string}): Observable<boolean>{
-    const data = this.http.post(`${this.url}`,user) 
-    if(data){
-    return this.http.post(`${this.url}`,user)
-    .pipe(
-      tap( (token: any) => this.doLoginUser(user.userEmail, token) )
-    )
-  }else{
-    return data
-  }
-  }
+cartSubject = new Subject<any>();
+userinfo: BehaviorSubject<any> = new BehaviorSubject(null);
+jwthelper = new JwtHelperService();
 
-  doLoginUser(userEmail:string , token : Token){
-    localStorage.setItem("user"  , JSON.stringify( token ) )
+private readonly JWT_TOKEN = 'JWT_TOKEN';
 
-  }
+constructor(private http: HttpClient) { }
 
-  getToken(){
-    return localStorage.getItem("user")
-  }
-  // login(data: any): Observable<any> {
-  //   console.log('response');
-  //   return this.http.post(`${this.url}`, data);
-  // }
+userlogin(userpayload: any) {
+console.log(userpayload)
+const accesstoken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRlc3QiLCJzdWIiOjIsImlhdCI6MTYwNDMwOTc0OSwiZXhwIjoxNjA0MzA5ODA5fQ.jHez9kegJ7GT1AO5A2fQp6Dg9A6PBmeiDW1YPaCQoYs";
+const refreshtoken = 'dummy';
+localStorage.setItem('access_token', accesstoken)
+localStorage.setItem('refresh_token', refreshtoken)
 
-  // private productsUrl = 'api/user';
-  // 
+const decrypteduser = this.jwthelper.decodeToken(accesstoken)
+console.log(decrypteduser)
 
-  
-
-  //  login(userEmail : string, password : string){
-  //    debugger
-  //   return this.http.post<any>(`${this.url}`, { userEmail, password })
-  //     .subscribe( x =>{
-  //       localStorage.setItem("Token", x)
-  //       debugger;
-  //       this.currUserSubject.next(x)
-  //       console.log(x)
-  //     })
-  //  }
-
+const data = {
+refresh_token: refreshtoken,
+access_token: accesstoken,
+username: decrypteduser.username,
+userid: decrypteduser.sub,
+tokenexpiration: decrypteduser.exp
 }
-
-//login
-// logout
-//islogin
-//getjwttoken
+this.userinfo.next(data)
+}
+}
