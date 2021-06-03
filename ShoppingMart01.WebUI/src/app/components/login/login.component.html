@@ -1,59 +1,60 @@
 <div class="container">
   <div class="d-flex justify-content-center">
-  <div class="card" style="width: 100%; height: auto; margin: 40px;">
-  <h5></h5>
-  <div class="row">
-  <div class="col">
-  <h5>Registered Customers</h5>
-  <p>If you have an account, sign in with your email address.</p>
-  <form [formGroup]="form">
-  <div class="row">
-  <label for="">
-  Email <input type="text" class="form-control" formControlName="email" placeholder="example@xyz.com" name=""
-  id="">
-  </label>
+    <div class="card" style="width: 100%; height: auto; margin: 40px;">
+      <h5></h5>
+      <div class="row">
+        <div class="col">
+          <h5>Registered Customers</h5>
+          <p>If you have an account, sign in with your email address.</p>
+          <form [formGroup]="form">
+            <div class="row">
+              <label for="">
+                Email <input type="text" class="form-control" formControlName="email" placeholder="example@xyz.com"
+                  name="" id="">
+              </label>
+            </div>
+            <div class="row">
+              <label for="">
+                Password <input type="text" class="form-control" formControlName="password" placeholder="*******"
+                  name="" id="">
+              </label>
+            </div>
+
+            <div class="row">
+              <div class="col-auto d-grid gap-2 col-6 ms-1 mt-1">
+                <button (click)="loginUser()" class="btn btn-primary btn-style" type="submit">SIGN IN </button>
+              </div>
+              <div class="col-auto ms-4 mt-3">
+                <a class="astyle" href=""> Forgot Your Password?</a>
+              </div>
+            </div>
+          </form>
+
+          <div class="row-auto">
+            <h6 class="d-flex justify-content-center">Or</h6>
+            <div class="d-grid gap-2 col-9 mx-auto">
+              <button class="btn btn-primary btn-style" type="submit"><i class="fa fa-google me-4"></i>SIGN IN WITH
+                GOOGLE </button>
+            </div>
+            <div class="d-grid gap-2 col-9 mx-auto mt-2">
+              <button class="btn btn-primary btn-style" type="submit"> <i class="fa fa-facebook me-3"></i>SIGN IN WITH
+                FACEBOOK </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <h5>New Customer</h5>
+            <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
+            <div class="d-grid gap-2 col-6 mx-auto ms-0">
+              <button (click)="signup()" class="btn btn-primary"> CREATE AN ACCOUNT</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row">
-  <label for="">
-  Password <input type="text" class="form-control" formControlName="password" placeholder="*******" name="" id="">
-  </label>
-  </div>
-  
-  <div class="row">
-  <div class="col-auto d-grid gap-2 col-6 ms-1 mt-1">
-  <button (click)="loginUser()" class="btn btn-primary btn-style" type="submit">SIGN IN </button>
-  </div>
-  <div class="col-auto ms-4 mt-3">
-  <a class="astyle" href=""> Forgot Your Password?</a>
-  </div>
-  </div>
-  </form>
-  
-  <div class="row-auto">
-  <h6 class="d-flex justify-content-center">Or</h6>
-  <div class="d-grid gap-2 col-9 mx-auto">
-  <button class="btn btn-primary btn-style" type="submit"><i class="fa fa-google me-4"></i>SIGN IN WITH
-  GOOGLE </button>
-  </div>
-  <div class="d-grid gap-2 col-9 mx-auto mt-2">
-  <button class="btn btn-primary btn-style" type="submit"> <i class="fa fa-facebook me-3"></i>SIGN IN WITH
-  FACEBOOK </button>
-  </div>
-  </div>
-  
-  </div>
-  
-  <div class="col">
-  <div class="row">
-  <h5>New Customer</h5>
-  <p>Creating an account has many benefits: check out faster, keep more than one address and more.</p>
-  <div class="d-grid gap-2 col-6 mx-auto ms-0">
-  <button (click)="signup()" class="btn btn-primary"> CREATE AN ACCOUNT</button>
-  </div>
-  </div>
-  
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+</div>

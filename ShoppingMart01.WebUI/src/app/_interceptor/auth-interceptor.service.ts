@@ -9,11 +9,7 @@ export class AuthInterceptorService implements HttpInterceptor {
   constructor( private auth : AuthenticationService ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      const tokenId = localStorage.getItem("user");
-
-    // if(this.auth.getToken()){
-    //   req  = this.addToken(req , this.auth.getToken())
-    // }
+  
     return next.handle(req)
   }
 
@@ -24,18 +20,7 @@ export class AuthInterceptorService implements HttpInterceptor {
         }
       })
     }
-      // if(tokenId){
-      //   const Api_key = '21324';
-      //   return next.handle(req.clone({ setHeaders : {Api_key} }))
-      //   // const cloned = req.clone({
-      //   //  headers : req.headers.set("Authorization", "Bearer " +tokenId)
-      //   // });
-      //   // return next.handle(cloned);
-      // }
-      //   else
-      //   {
-      //     return next.handle(req)
-      //   }
+      
 }
 
 

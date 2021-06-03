@@ -38,7 +38,7 @@ namespace EcommerceApi
                                   builder =>
                                   {
                                       builder.WithOrigins("http://localhost:4200",
-                                                          "http://www.shopit.com");
+                                                          "http://www.shopit.com").AllowAnyHeader().AllowAnyMethod();
                                   });
             });
             services.AddControllers();

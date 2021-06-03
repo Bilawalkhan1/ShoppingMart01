@@ -10,6 +10,7 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
     loginUserData = {
         email: '',
         password: ''
@@ -35,20 +36,17 @@ export class LoginComponent implements OnInit {
     }
 
     loginUser() {
-        // this.as.userlogin(this.form.value)
-        // console.log("form ", this.form.value)
-        // // const req = {
-        // //     Email: this.form.value.email,
-        // //     Password: this.form.value.password
-        // // }
-        // // this.as.userlogin(req).toPromise().then(resp => {
-        // //     console.log("resp ", resp)
-        // // })
-        // alert('user login successfully')
-        if(this.form.valid){
-            this.as.userlogin(this.form.value).subscribe(resp=>{
-                console.log('resp', resp)
-            })
+
+        const credentials = {
+            email: this.form.value.email,
+            password: this.form.value.password
         }
+        console.log("form ", this.form.value)
+
+        this.as.userlogin(credentials).toPromise().then(resp => {
+            console.log("resp ", resp)
+            localStorage.setItem('token', resp.token)
+        })
+
     }
 }

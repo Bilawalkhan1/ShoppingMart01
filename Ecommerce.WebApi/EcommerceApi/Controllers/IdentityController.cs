@@ -22,6 +22,7 @@ namespace EcommerceApi.Controllers
         {
             identityService = identity;
         }
+        [Authorize]
         [HttpGet]
         [Route("test")]
         public IActionResult Test()

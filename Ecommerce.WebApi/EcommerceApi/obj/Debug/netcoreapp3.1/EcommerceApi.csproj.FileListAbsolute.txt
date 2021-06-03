@@ -126,3 +126,6 @@ E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceA
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\obj\Debug\netcoreapp3.1\EcommerceApi.dll
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\obj\Debug\netcoreapp3.1\EcommerceApi.pdb
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\obj\Debug\netcoreapp3.1\EcommerceApi.genruntimeconfig.cache
+E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\EcommerceApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
