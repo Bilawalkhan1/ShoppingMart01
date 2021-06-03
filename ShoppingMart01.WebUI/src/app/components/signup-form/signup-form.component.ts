@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
@@ -12,23 +13,23 @@ import {
   styleUrls: ['./signup-form.component.css'],
 })
 export class SignupFormComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {}
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  private url = 'https://localhost:44309/api/Identity/register'
+  ngOnInit(): void { }
 
   signUp = this.fb.group({
-    firstName: ['',[ Validators.required, Validators.maxLength(20)]],
+    firstName: ['', [Validators.required, Validators.maxLength(20)]],
     lastName: ['', Validators.required],
     emailId: ['', Validators.compose([Validators.required, Validators.email])],
     address: this.fb.group({
       province: [''],
       city: [''],
     }),
-    password: ['',[ Validators.required,Validators.minLength(6), Validators.maxLength(20)]],
-    confirmPassword: ['',[ Validators.required,Validators.minLength(6), Validators.maxLength(20)]],
+    password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
+    confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
   });
 
-  lettersOnly(event:any) {
+  lettersOnly(event: any) {
     var charCode = event.keyCode;
     if (
       (charCode > 64 && charCode < 91) ||
@@ -37,5 +38,10 @@ export class SignupFormComponent implements OnInit {
     )
       return true;
     else return false;
+  }
+  submit() {
+    this.http.post(this.url, this.signUp.getRawValue()).subscribe(resp=>{
+      console.log('responce', resp)
+    })
   }
 }

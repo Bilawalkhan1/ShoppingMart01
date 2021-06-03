@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="Ecommerce.Database.Schema.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\HAMZAKHAN\SOURCE\REPOS\ECOMMERCE\ECOMMERCE.DATABASE.SCHEMA\OBJ\DEBUG\ECOMMERCE.DATABASE.SCHEMA.DLL" />
+			<Metadata Name="FileName" Value="E:\KPITB INTERNSHIP\ANGULARDIR\GITHUB\SHOPPINGMART01\ECOMMERCE.WEBAPI\ECOMMERCE.DATABASE.SCHEMA\OBJ\DEBUG\ECOMMERCE.DATABASE.SCHEMA.DLL" />
 			<Metadata Name="AssemblyName" Value="Ecommerce.Database.Schema" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable">
 			<Metadata Name="PopulateLists" Value="" />

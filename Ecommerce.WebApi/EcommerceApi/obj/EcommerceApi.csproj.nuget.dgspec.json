@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {}
+    "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {}
   },
   "projects": {
-    "F:\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {
+    "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
+        "projectUniqueName": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
         "projectName": "EcommerceApi",
-        "projectPath": "F:\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
-        "packagesPath": "C:\\Users\\HamzaKhan\\.nuget\\packages\\",
-        "outputPath": "F:\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\obj\\",
+        "projectPath": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
+        "packagesPath": "C:\\Users\\Dilawar khan\\.nuget\\packages\\",
+        "outputPath": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\HamzaKhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dilawar khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
