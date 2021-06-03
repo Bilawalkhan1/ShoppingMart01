@@ -8,6 +8,7 @@
 	[MobileNumber] [nvarchar](50) NULL,
 	[CreationDate] [datetime] NULL,
 	[IsActive] [bit] NULL,
+	[Country] [nvarchar](80) NULL,
     CONSTRAINT [PK_Identity] PRIMARY KEY CLUSTERED ([IdentityID] ASC),
 	CONSTRAINT [UQ_Email] UNIQUE NONCLUSTERED([Email] ASC),
 );
