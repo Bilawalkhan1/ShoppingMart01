@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
         this.as.userlogin(credentials).toPromise().then(resp => {
             console.log("resp ", resp)
-            localStorage.setItem('token', resp.token)
+            localStorage.setItem('token', resp.access_token)
         })
 
     }

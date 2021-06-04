@@ -17,3 +17,9 @@ E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dll
 E:\kpitb internship\Angulardir\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.pdb
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dacpac
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dll
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.pdb
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.sqlprojAssemblyReference.cache
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.dll
+E:\my_internship_course\github\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb

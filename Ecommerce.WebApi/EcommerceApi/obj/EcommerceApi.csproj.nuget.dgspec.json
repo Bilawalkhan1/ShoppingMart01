@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {}
+    "E:\\my_internship_course\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {}
   },
   "projects": {
-    "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {
+    "E:\\my_internship_course\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
+        "projectUniqueName": "E:\\my_internship_course\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
         "projectName": "EcommerceApi",
-        "projectPath": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
-        "packagesPath": "C:\\Users\\Dilawar khan\\.nuget\\packages\\",
-        "outputPath": "E:\\kpitb internship\\Angulardir\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\obj\\",
+        "projectPath": "E:\\my_internship_course\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\EcommerceApi.csproj",
+        "packagesPath": "C:\\Users\\Misbah urooj\\.nuget\\packages\\",
+        "outputPath": "E:\\my_internship_course\\github\\ShoppingMart01\\Ecommerce.WebApi\\EcommerceApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dilawar khan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Misbah urooj\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,46 +40,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[3.1.15, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.6, )"
-            }
-          },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

@@ -14,15 +14,16 @@ export class AuthenticationService {
 
     constructor(private http: HttpClient) { }
   
-    private url = 'https://localhost:44309/api/Identity/login'
+    private url = 'http://localhost:3000/auth/login'
     userlogin(credentials: any) {
-
+        console.log(credentials);
+        
         const request = {
-            Email: credentials.email,
+            email: credentials.email,
             password: credentials.password
         }
 
-        return this.http.post<any>(`https://localhost:44309/api/Identity/login`, request)
+        return this.http.post<any>(`http://localhost:3000/auth/login`, request)
     }
 
 

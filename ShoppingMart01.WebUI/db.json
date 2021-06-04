@@ -1,0 +1,68 @@
+{
+  "Product": [
+    {
+      "Product_id": 1,
+      "Product_Name":"",
+      "Product_Description": "",
+      "Product_Price": "",
+      "Product_Quantity":"",
+      "Product_Status":"",
+      "Product_Category":"",
+      "Product_Image" :"",
+      "Product_Images": [
+        {
+            "description": "",
+            "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        }
+    ],
+      "Product_Extra":""
+    }
+  ],
+  "Order": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Product_Img": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Category": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "User": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "login":[""]
+    }
+  ],
+  "Payment": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
