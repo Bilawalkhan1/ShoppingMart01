@@ -10,7 +10,7 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+    message =''
     loginUserData = {
         email: '',
         password: ''
@@ -42,9 +42,12 @@ export class LoginComponent implements OnInit {
             password: this.form.value.password
         }
         this.as.userlogin(credentials).toPromise().then(resp => {
+            this.message=''
             console.log("resp ", resp)
-            localStorage.setItem('token', resp.access_token)
-        })
+            localStorage.setItem('token', resp.access_token)    
+            this.router.navigateByUrl('/usercontrol')        
+        }).catch(err=>
+          this.message = "Invalid Email or Password")
 
     }
 }

@@ -10,11 +10,11 @@
                     <th>Description</th>
                 </tr>
                 <tr *ngFor="let getcartdetail of getcartdetails">
-                    <td><img class="img1" src="{{getcartdetail.blogImg}}"></td>
-                    <td>{{getcartdetail.Name}}</td>
-                    <td>{{getcartdetail.Price}}</td>
-                    <td>{{getcartdetail.proId}}</td>
-                    <td>{{getcartdetail.desp}}</td>
+                    <td><img class="img1" src="{{getcartdetail.Product_Image}}"></td>
+                    <td>{{getcartdetail.Product_Name}}</td>
+                    <td>{{getcartdetail.Product_Price}}</td>
+                    <td>{{getcartdetail.Product_id}}</td>
+                    <td>{{getcartdetail.Product_Description}}</td>
                     <td><button (click)="removesingleitem()">Remove item</button></td>
                 </tr>
 

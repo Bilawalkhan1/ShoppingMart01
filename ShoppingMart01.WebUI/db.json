@@ -5,23 +5,29 @@
       "name": "bruno",
       "email": "bruno@email.com",
       "password": "bruno"
+    },
+    {
+      "firstName": "qwerty",
+      "email": "qwerty",
+      "password": "qwerty",
+      "confirmPassword": "qwerty",
+      "id": 2
     }
-
   ],
   "Product": [
     {
       "Product_id": 1,
-      "Product_Name":"",
-      "Product_Description": "",
-      "Product_Price": "",
-      "Product_Quantity":"",
-      "Product_Status":"",
-      "Product_Category":"",
-      "Product_Image" :"",
+      "Product_Name": "Electric Bicycle",
+      "Product_Description": "An electric bicycle, also known as an e-bike, is a bicycle with an integrated electric motor.",
+      "Product_Price": "5000",
+      "Product_Quantity": "10",
+      "Product_Status": "Available",
+      "Product_Category": "Sports",
+      "Product_Image": "/assets/bikes.jfif",
       "Product_Images": [
         {
-            "description": "",
-            "url": ""
+          "description": "",
+          "url": ""
         },
         {
           "description": "",
@@ -31,8 +37,83 @@
           "description": "",
           "url": ""
         }
-    ],
-      "Product_Extra":""
+      ],
+      "Product_Extra": ""
+    },
+    {
+      "Product_id": 2,
+      "Product_Name": "Stellantis",
+      "Product_Description": "Lucky Motors is Bringing the World’s fourth Largest Car Manufacturers and tothe Pakistan.",
+      "Product_Price": "5000",
+      "Product_Quantity": "10",
+      "Product_Status": "Available",
+      "Product_Category": "Cars",
+      "Product_Image": "/assets/car.jfif",
+      "Product_Images": [
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        }
+      ],
+      "Product_Extra": ""
+    },
+    {
+      "Product_id": 3,
+      "Product_Name": "Furniture",
+      "Product_Description": "From lahore to Torento, sialkot is the fourth Largest furniture Manufacturers and tothe Pakistan.",
+      "Product_Price": "5000",
+      "Product_Quantity": "10",
+      "Product_Status": "Available",
+      "Product_Category": "Furniture",
+      "Product_Image": "/assets/furniture.jfif",
+      "Product_Images": [
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        }
+      ],
+      "Product_Extra": ""
+    },
+    {
+      "Product_id": 4,
+      "Product_Name": "Breslet",
+      "Product_Description": "925 sterling silver ring trend creative heavy industry opening adjustable personality.",
+      "Product_Price": "5000",
+      "Product_Quantity": "10",
+      "Product_Status": "Available",
+      "Product_Category": "Jewelry",
+      "Product_Image": "/assets/fur.jfif",
+      "Product_Images": [
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        },
+        {
+          "description": "",
+          "url": ""
+        }
+      ],
+      "Product_Extra": ""
     }
   ],
   "Order": [
