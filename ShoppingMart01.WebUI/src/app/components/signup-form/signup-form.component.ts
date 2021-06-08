@@ -28,7 +28,6 @@ export class SignupFormComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
   });
-
   lettersOnly(event: any) {
     var charCode = event.keyCode;
     if (
@@ -40,7 +39,7 @@ export class SignupFormComponent implements OnInit {
     else return false;
   }
   submit() {
-    this.http.post('http://localhost:8000/api/user/register', this.signUp.getRawValue()).subscribe(resp=>{
+    this.http.post('http://localhost:3000/users', this.signUp.getRawValue()).subscribe(resp=>{
       console.log('responce', resp)
     })
   }

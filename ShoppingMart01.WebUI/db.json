@@ -5,23 +5,72 @@
       "name": "bruno",
       "email": "bruno@email.com",
       "password": "bruno"
+    },
+    {
+      "email": "ali@email.com",
+      "password": "ali",
+      "id": 2
+    },
+    {
+      "email": "ali@email.com",
+      "password": "ali",
+      "id": 3
+    },
+    {
+      "email": "ali@email.com",
+      "password": "ali",
+      "id": 4
+    },
+    {
+      "firstName": "ali",
+      "email": "ali@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 5
+    },
+    {
+      "firstName": "dilawar",
+      "email": "khan@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 6
+    },
+    {
+      "firstName": "test",
+      "email": "test@test.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 7
+    },
+    {
+      "firstName": "abc",
+      "email": "123@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 8
+    },
+    {
+      "firstName": "tests",
+      "email": "tests@test.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 9
     }
-
   ],
   "Product": [
     {
       "Product_id": 1,
-      "Product_Name":"",
+      "Product_Name": "",
       "Product_Description": "",
       "Product_Price": "",
-      "Product_Quantity":"",
-      "Product_Status":"",
-      "Product_Category":"",
-      "Product_Image" :"",
+      "Product_Quantity": "",
+      "Product_Status": "",
+      "Product_Category": "",
+      "Product_Image": "",
       "Product_Images": [
         {
-            "description": "",
-            "url": ""
+          "description": "",
+          "url": ""
         },
         {
           "description": "",
@@ -31,8 +80,8 @@
           "description": "",
           "url": ""
         }
-    ],
-      "Product_Extra":""
+      ],
+      "Product_Extra": ""
     }
   ],
   "Order": [

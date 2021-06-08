@@ -1,6 +1,7 @@
 {
   "name": "shopping-mart",
   "version": "0.0.0",
+  
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,6 +11,9 @@
     "start-json-server": "json-server --watch ./db.json",
     "start-auth-server": "node server.js"
   },
+    
+  
+
 
 
   "private": true,

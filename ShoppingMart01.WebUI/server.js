@@ -11,7 +11,7 @@ const express = require('express');
 
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-let userdb = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'))
+const userdb = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'))
 
 server.use(jsonServer.defaults());
 const SECRET_KEY = '123456789'
@@ -29,6 +29,7 @@ function verifyToken(token) {
 
 // Check if the user exists in database
 function isAuthenticated({ email, password }) {
+  const userdb = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'))
   return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
 }
 
@@ -79,10 +80,9 @@ server.post('/api/user/register', function (req, res) {
     port: 3000,
     path: '/users',
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    }
+   headers: {'Content-Type':'application/x-www-form-urlencoded'}
   };
+
 
   var httpreq = http.request(options, function (response) {
     response.setEncoding('utf8');
@@ -98,12 +98,8 @@ server.post('/api/user/register', function (req, res) {
 
 });
 
-
-// server.get('/api/users', (req, res) => {
-//   res.send({ pakistan: 123 });
-// });
-
 const PORT = 8000;
 server.listen(PORT, () => {
   console.log('Listening Auth server at: ' + PORT);
 })
+
