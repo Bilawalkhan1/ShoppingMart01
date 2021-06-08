@@ -19,12 +19,12 @@ export class SignupFormComponent implements OnInit {
 
   signUp = this.fb.group({
     firstName: ['', [Validators.required, Validators.maxLength(20)]],
-    lastName: ['', Validators.required],
-    emailId: ['', Validators.compose([Validators.required, Validators.email])],
-    address: this.fb.group({
-      province: [''],
-      city: [''],
-    }),
+    // lastName: ['', Validators.required],
+    email: ['', Validators.compose([Validators.required, Validators.email])],
+    // address: this.fb.group({
+    //   province: [''],
+    //   city: [''],
+    // }),
     password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
   });
@@ -40,7 +40,7 @@ export class SignupFormComponent implements OnInit {
     else return false;
   }
   submit() {
-    this.http.post(this.url, this.signUp.getRawValue()).subscribe(resp=>{
+    this.http.post('http://localhost:8000/api/user/register', this.signUp.getRawValue()).subscribe(resp=>{
       console.log('responce', resp)
     })
   }

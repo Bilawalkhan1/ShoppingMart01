@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "bruno",
+      "email": "bruno@email.com",
+      "password": "bruno"
+    }
+
+  ],
   "Product": [
     {
       "Product_id": 1,
@@ -45,14 +54,6 @@
       "id": 1,
       "body": "some comment",
       "postId": 1
-    }
-  ],
-  "User": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "login":[""]
     }
   ],
   "Payment": [

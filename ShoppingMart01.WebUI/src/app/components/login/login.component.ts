@@ -41,8 +41,6 @@ export class LoginComponent implements OnInit {
             email: this.form.value.email,
             password: this.form.value.password
         }
-        console.log("form ", this.form.value)
-
         this.as.userlogin(credentials).toPromise().then(resp => {
             console.log("resp ", resp)
             localStorage.setItem('token', resp.access_token)
