@@ -1,4 +1,4 @@
-
+/* 
 h3,p,a{
     text-decoration: none;
     color: white;
@@ -10,4 +10,45 @@ div{
 .white{
     color: white;
     padding: 8px;
+} */
+a{
+    text-decoration: none;
+    color: white;
+}
+h4{
+    padding-bottom: 10px;
+}
+ul,li,table,th,tr{
+list-style: none;
+padding: 3px;
+margin: 0px;
+}
+.decor{
+text-align: left;
+height: 250px;
+}
+.center{
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+.icons{
+    padding: 5px;
+}
+
+.form-group .form-control {
+    padding-left: 2.375rem;
+}
+
+.form-group .form-control-icon {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
 }
