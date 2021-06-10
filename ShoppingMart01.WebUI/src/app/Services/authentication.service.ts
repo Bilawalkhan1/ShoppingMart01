@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { Users } from '../components/signup-form/users';
+import { map } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -12,10 +12,14 @@ export class AuthenticationService {
 
     cartSubject = new Subject<any>();
 
+    public currentUserSubject: BehaviorSubject<any>;
+    public currentUser : Observable<any>;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { 
+        this.currentUserSubject = new BehaviorSubject((localStorage.getItem('token')));
+        this.currentUser = this.currentUserSubject.asObservable();
+    }
   
-    private url = 'http://localhost:3000/auth/login'
     userlogin(credentials: any) {
         
         const request = {
@@ -24,7 +28,18 @@ export class AuthenticationService {
         }
 
         return this.http.post<any>(`http://localhost:8000/auth/login`, request)
+            .pipe(map(user => {
+        //    console.log( this.currentUserSubject.next(user.token) )
+            return user
+        }))
     }
 
+    public get currentUserValue(): any {
+        return this.currentUserSubject.value;
+    }
 
+    userLogout(){
+    localStorage.removeItem('token');
+    this.currentUserSubject.next(null);
+    }
 }

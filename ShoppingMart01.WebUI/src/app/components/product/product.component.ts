@@ -18,10 +18,14 @@ export class ProductComponent implements OnInit {
       if(prod){
         this.product.push(prod);
       } else{
-        this.product=[];
+        this.product=[]; 
       }
     })
    }
+   public covertPhotoUrl(photoUrl){
+    return `data:image/jpeg;base64,${photoUrl}`
+  }
+
 
   ngOnInit(): void {
   }

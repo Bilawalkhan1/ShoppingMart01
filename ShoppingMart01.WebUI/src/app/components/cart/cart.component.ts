@@ -13,6 +13,10 @@ export class CartComponent implements OnInit {
     this.cartdetails()
   }
 
+  public covertPhotoUrl(photoUrl){
+    return `data:image/jpeg;base64,${photoUrl}`
+  }
+
   getcartdetails:any = []
    cartdetails(){
      if(localStorage.getItem('localcart')){
@@ -24,7 +28,17 @@ export class CartComponent implements OnInit {
      localStorage.removeItem('localcart')
      this.getcartdetails = []
    }
-   removesingleitem(){
+   removesingleitem(getcartdetails){
+     if(localStorage.getItem('localcart')){
+       this.getcartdetails =JSON.parse( localStorage.getItem('localcart'))
+       for(let i = 0 ; i<this.getcartdetails.length; i++){
+         if(this.getcartdetails[i].id === getcartdetails){
+           this.getcartdetails.splice(i , 1)
+           localStorage.setItem('localcart',JSON.stringify(this.getcartdetails))
+           this.cartdetails()
+         }
+       }
+     }
      
    }
 }

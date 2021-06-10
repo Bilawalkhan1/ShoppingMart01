@@ -19,8 +19,8 @@
             <div class="blog grid-blog">
                 <div class="blog-image">
 
-                    <a [routerLink]="['/product', blog.Name]" (click)="sendProductDetails(blog)">
-                        <img src="{{blog.blogImg}}" class="img-fluid imgstyle1" alt="">
+                    <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+                        <img src="{{covertPhotoUrl(blog.Product_Image)}}" class="img-fluid imgstyle1" alt="">
                     </a>
                 </div>
 
@@ -28,18 +28,18 @@
                     <ul class="entry-meta meta-item">
                         <li>
                             <div class="post-author">
-                                <span><b>Name </b>{{blog.Name}}</span>
+                                <span><b>Name   </b>{{blog.Product_Name}}</span>
                             </div>
                             <div class="post-author">
-                                <span><b>Product Id </b>{{blog.Id}}</span>
+                                <span><b>Product Code    </b>{{blog.Product_id}}</span>
                             </div>
                         </li>
                     </ul>
                     <h3 class="blog-title">
-                        <a href=""><b>Price</b>{{blog.Price}}</a>
+                        <a href=""><b>Price     </b>{{blog.Product_Price}}</a>
                     </h3>
 
-                    <p class="mb-0 description">{{blog.desp}}</p>
+                    <p class="mb-0 description">{{blog.Product_Description}}</p>
                 </div>
 
                 <div>

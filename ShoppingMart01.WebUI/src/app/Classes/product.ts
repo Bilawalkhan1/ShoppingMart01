@@ -1,15 +1,19 @@
 export class product{
-    Id : number
-    Name :string 
-    Price: string 
-    blogImg:string
-    desp: string 
+    Product_id : number
+    Product_Name :string 
+    Product_Price: string 
+    Product_Image:string
+    Product_Description: string 
+    availability: string
+    address:string
     
-    constructor(id:number, name:string, price:string, blogimg:string, desp:string){
-        this.Id = id
-        this.Name=name
-        this.Price=price
-        this.blogImg=blogimg
-        this.desp=desp
+    constructor(id:number, name:string, price:string, blogimg:string, desp:string, availabilty:string, address:string){
+        this.Product_id = id
+        this.Product_Name=name
+        this.Product_Price=price
+        this.Product_Image=blogimg
+        this.Product_Description=desp
+        this.address = address
+        this.availability = availabilty
     }
 }

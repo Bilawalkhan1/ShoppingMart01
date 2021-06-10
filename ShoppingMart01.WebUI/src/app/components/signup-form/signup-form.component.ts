@@ -6,6 +6,7 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-form',
@@ -13,7 +14,7 @@ import {
   styleUrls: ['./signup-form.component.css'],
 })
 export class SignupFormComponent implements OnInit {
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient, private router:Router) { }
   private url = 'https://localhost:44309/api/Identity/register'
   ngOnInit(): void { }
 
@@ -38,9 +39,12 @@ export class SignupFormComponent implements OnInit {
       return true;
     else return false;
   }
+  message =''
   submit() {
-    this.http.post('http://localhost:3000/users', this.signUp.getRawValue()).subscribe(resp=>{
+    this.http.post('http://localhost:3000/users', this.signUp.getRawValue()).toPromise().then(resp=>{
       console.log('responce', resp)
-    })
+      this.router.navigateByUrl('/login')     
+    }).catch(err=>
+      this.message = "user not register")
   }
 }
