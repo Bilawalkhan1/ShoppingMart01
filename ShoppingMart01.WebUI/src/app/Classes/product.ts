@@ -6,9 +6,11 @@ export class product{
     Product_Description: string 
     availability: string
     address:string
+    category:string
     
-    constructor(id:number, name:string, price:string, blogimg:string, desp:string, availabilty:string, address:string){
+    constructor(id:number,category:string, name:string, price:string, blogimg:string, desp:string, availabilty:string, address:string){
         this.Product_id = id
+        this.category= category
         this.Product_Name=name
         this.Product_Price=price
         this.Product_Image=blogimg

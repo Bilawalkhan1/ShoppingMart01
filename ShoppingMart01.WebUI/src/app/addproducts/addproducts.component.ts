@@ -18,12 +18,22 @@ export class AddproductsComponent implements OnInit {
   public imagePath;
   imgURL: any;
   public message: string;
+  selectedFile: File
 
 
   get f() { return this.checkoutForm.controls; }
 
+  constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
+    private formBuilder: FormBuilder, private http: HttpClient, private rs: RestserviceService) {
+    this.checkoutForm = formBuilder.group({
+      category: formBuilder.control('initial value', Validators.required)
+    })
+
+  }
+
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
+      category: ['', Validators.required],
       Product_Name: ['', Validators.required],
       availability: ['', Validators.required],
       Product_id: ['', Validators.required],
@@ -33,17 +43,6 @@ export class AddproductsComponent implements OnInit {
       extras: ['']
     });
   }
-
-  constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
-    private formBuilder: FormBuilder, private http: HttpClient, private rs: RestserviceService) {
-    this.checkoutForm = formBuilder.group({
-      name: formBuilder.control('initial value', Validators.required)
-    })
-
-  }
-
-
-  selectedFile: File
 
   handleFileSelect(evt) {
     var files = evt.target.files;
@@ -71,7 +70,6 @@ export class AddproductsComponent implements OnInit {
       this.imgURL = reader.result;
     }
   }
-
 
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
@@ -112,7 +110,6 @@ export class AddproductsComponent implements OnInit {
         console.error(err)
       })
   }
-
 
 }
 
