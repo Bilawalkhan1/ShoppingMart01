@@ -19,7 +19,7 @@ export class AddproductsComponent implements OnInit {
   imgURL: any;
   public message: string;
   selectedFile: File
-
+  optionValue
 
   get f() { return this.checkoutForm.controls; }
 
@@ -34,6 +34,7 @@ export class AddproductsComponent implements OnInit {
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
       category: ['', Validators.required],
+      type: ['', Validators.required],
       Product_Name: ['', Validators.required],
       availability: ['', Validators.required],
       Product_id: ['', Validators.required],
@@ -78,14 +79,13 @@ export class AddproductsComponent implements OnInit {
   }
 
   onSubmit(id): void {
-    console.log('Your order has been submitted', this.checkoutForm.value);
     this.rs.createProduct(id, this.checkoutForm.value)
       .subscribe(
         (response) => {
-          console.log('user has been added successfully', response)
         },
         error => console.error(error)
       )
+    this.checkoutForm.reset();
   }
 
   onUpload() {
@@ -103,12 +103,12 @@ export class AddproductsComponent implements OnInit {
     }
     this.http.post('http://localhost:3000/Product', image).subscribe(
       (res: any) => {
-        console.log(res)
         this.onSubmit(res.id)
       },
       (err) => {
         console.error(err)
       })
+
   }
 
 }

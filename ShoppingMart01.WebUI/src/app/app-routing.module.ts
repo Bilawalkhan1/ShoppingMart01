@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "product/:name" , component: ProductComponent },
   { path: "addproduct" , component: AddproductsComponent },
-  { path: "getcategory" , component: CategoryComponent },
+  { path: "getcategory/:category/:subcategory" , component: CategoryComponent },
   { path: "User", component: UserControlComponent, canActivate: [AuthGuardService] }
 ];
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import { product } from 'src/app/Classes/product';
 import { ProductDetailsService } from 'src/app/Services/product-details.service';
 import { ProductService } from 'src/app/Services/product.service';
@@ -19,8 +20,11 @@ export class CategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.category = this.route.snapshot.queryParamMap.get('category')
-    console.log(this.category)
+ 
+    this.category = this.route.snapshot.paramMap.get('category')
+    this.subcategory = this.route.snapshot.paramMap.get('subcategory')
+    this.getcategorydata()
+
 
 
   }
@@ -46,6 +50,7 @@ export class CategoryComponent implements OnInit {
   categories$: Observable<any>;
   category: any;
   products$: Observable<any>;
+  subcategory: any
 
 
   constructor(
@@ -53,24 +58,18 @@ export class CategoryComponent implements OnInit {
     private productService: ProductService,
     private productDetails: ProductDetailsService,
     private router: Router) {
-    this.filteredProducts = [];
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    }
 
-    //Shows Categories in View
-    this.categories$ = productService.getProdByCategory(this.category);
-    route.queryParamMap.subscribe(params => {
-      this.category = params.get('category');
-    });
-
-
-    this.productService.getProdByCategory(this.category).subscribe(products => {
-      this.products = products;
-
-      //Setting the filtered Products Array
-      this.filteredProducts = this.products.filter(p => p.category === this.category)
-      console.log('filteres', this.filteredProducts); // Console.log FilteredProducts Array
-    });
-
-  }
+ getcategorydata() {
+  this.productService.getProdByCategory(this.category).subscribe(products => {
+    this.products = products;
+    //Setting the filtered Products Array
+    this.filteredProducts = this.products.filter(p => p.type === this.subcategory)
+  });
 
 }
+ }
+ 
+
+

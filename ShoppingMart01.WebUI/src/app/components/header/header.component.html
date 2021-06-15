@@ -9,66 +9,59 @@
                     <button class="btn mr-2 active">All products</button>
                     <li>
                         <div class="d-inline-block dropdown" ngbDropdown #myDrop="ngbDropdown">
-                            <a [routerLink]="[ '/getcategory']" [queryParams]="{category:'Vehicle'}">
-                                <button class="btn mr-2 dropbtn" id="dropdownManual" ngbDropdownAnchor>Vehicles</button>
-                            </a>
-<div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button class="btn1" ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Vehicle'}">Bikes</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Vehicle'}">Cars</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Vehicle'}">Buses</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Vehicle'}">Truks</button>
+                            <button class="btn mr-2 dropbtn" id="dropdownManual" ngbDropdownAnchor>Vehicles</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button class="btn1" ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Vehicle' , 'bike']">Bikes</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Vehicle' , 'car']">Cars</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Vehicle' , 'bus']">Buses</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Vehicle' , 'truck']">Truks</button>
                             </div>
-</div>
+                        </div>
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop1="ngbDropdown">
-                            <a [routerLink]="[ '/getcategory']" [queryParams]="{category:'Electronics'}">
-                                <button class="btn mr-2 dropdown" id="dropdownManual"
-                                    ngbDropdownAnchor>Electronics</button>
-                            </a>
- <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Electronics'}">Mobiles</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Electronics'}">Tablets</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Electronics'}">laptops</button>
+                            <button class="btn mr-2 dropdown" id="dropdownManual" ngbDropdownAnchor>Electronics</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Electronics' , 'mobile']">Mobiles</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Electronics' , 'tablet']">Tablets</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Electronics' , 'laptop']">laptops</button>
                             </div>
-</div>
+                        </div>
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
-                            <a [routerLink]="[ '/getcategory']" [queryParams]="{category:'Furniture'}">
-                                <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Furniture</button>
-                            </a>
-<div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Furniture'}">Brand New</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Furniture'}">Old</button>
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Furniture</button>
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Furniture' , 'new']">Brand
+                                    New</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Furniture' , 'old']">Old</button>
                             </div>
-</div>
+                        </div>
                     </li>
                     <li>
                         <div class="d-inline-block" ngbDropdown #myDrop3="ngbDropdown">
-                            <a [routerLink]="[ '/getcategory']" [queryParams]="{category:'Jewlery'}">
-                                <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Jewlery</button>
-                            </a> 
- <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Jewlery'}">Gold</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Jewlery'}">Silver</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Jewlery'}">Diamonds</button>
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory']"
-                                    [queryParams]="{category:'Jewlery'}">Others</button>
+
+                            <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Jewlery</button>
+
+                            <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Jewlery' , 'gold']">Gold</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Jewlery' , 'silver']">Silver</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Jewlery' , 'diamond']">Diamonds</button>
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Jewlery' , 'other']">Others</button>
                             </div>
-</div>
+                        </div>
                     </li>
 
                 </ul>
@@ -82,7 +75,7 @@
             <div class="icons mt-3 ">
                 <a [routerLink]="[ '/cart']"><i class="fa fa-shopping-cart fa-2x ist" aria-hidden='true'></i></a>
                 <div class="cartvalue">
-                   <b> {{cartitem}} </b> 
+                    <b> {{cartitem}} </b>
                 </div>
             </div>
 
@@ -90,4 +83,3 @@
 
     </div>
 </div>
-

@@ -19,14 +19,14 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group col mb-3">
                         <label>Category</label>
-                        <select formControlName="category" class="form-control"
+                        <select formControlName="category" class="form-control" [(ngModel)]="optionValue"
                             [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
-                            <option>Vehicle</option>
-                            <option>Furniture</option>
-                            <option>Jewlery</option>
-                            <option>Electronics</option>
+                            <option value="vehicle">Vehicle</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Jewlery">Jewlery</option>
+                            <option value="electroics">Electronics</option>
                         </select>
                         <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
                             <div *ngIf="f.category.errors.required">category is required</div>
@@ -34,6 +34,49 @@
                     </div>
                 </div>
 
+                <div class="form-row " *ngIf="optionValue == 'vehicle'">
+                    <label for="">Type</label>
+                    <select formControlName="type" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                        <option>Car</option>
+                        <option>Bike</option>
+                        <option>Bus</option>
+                        <option>Truck</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-row " *ngIf="optionValue == 'electroics'">
+                    <label for="">Type</label>
+                    <select formControlName="type" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                        <option>Mobile</option>
+                        <option>Laptop</option>
+                        <option>Tablet</option>
+                    </select>
+                </div>
+
+                <div class="form-row " *ngIf="optionValue == 'Jewlery'">
+                    <label for="">Type</label>
+                    <select formControlName="type" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                        <option>Gold</option>
+                        <option>Silver</option>
+                        <option>Diamond</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-row " *ngIf="optionValue == 'Furniture'">
+                    <label for="">Type</label>
+                    <select formControlName="type" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                        <option>Old</option>
+                        <option>Brand New</option>
+                        <option>Imported</option>
+                        <option>Other</option>
+                    </select>
+                </div>
 
 
                 <div class="form-row">
@@ -91,7 +134,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
-                        <button class="mt-3 btn btn-primary" type="submit" value="submit" (click)="onUpload()">Submit</button>
+                        <button class="mt-3 btn btn-primary" type="submit" value="submit"
+                            (click)="onUpload()">Submit</button>
                     </div>
                 </div>
 

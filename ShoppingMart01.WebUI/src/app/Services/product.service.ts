@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { product } from '../Classes/product';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   getProdByCategory(category) {
-    return this.http.get<product[]>('http://localhost:3000/Product?:category'+category)
+    return this.http.get<product[]>(`http://localhost:3000/Product?category=${category}`)
   }
 }
 
