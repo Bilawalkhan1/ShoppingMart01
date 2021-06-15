@@ -1,5 +1,7 @@
 using EcommerceApi.IServices;
+using EcommerceApi.Models;
 using EcommerceApi.Services;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,9 +13,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OData.Edm;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,10 +45,15 @@ namespace EcommerceApi
                                   builder =>
                                   {
                                       builder.WithOrigins("http://localhost:4200",
-                                                          "http://www.shopit.com");
+                                                          "http://www.shopit.com")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
                                   });
             });
             services.AddControllers();
+            
+            services.AddSwaggerGen();
+
             services.AddHttpClient();
             services.AddDbContext<Models.EcommerceContext>(options =>
                         options.UseSqlServer(Configuration["DbConnection"]));
@@ -63,14 +75,42 @@ namespace EcommerceApi
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ThisismySecretKey"))
                 };
             });
+            //services.AddOData();
+            //services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //IEdmModel model = EdmModelBuilder.Build();
+
+            //app.UseOData(model);
+
+            //app.UseMvc(builder =>
+            //{
+            //    builder.Select().Expand().Filter().OrderBy()
+            //      .MaxTop(1000).Count();
+            //    builder.MapODataServiceRoute("odata", "odata", model);
+            //    builder.MapRoute(
+            //      name: "Default",
+            //      template: "{controller=Home}/{action=Index}/{id?}");
+            //});
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger(c =>
+                {
+                    c.SerializeAsV2 = true;
+                });
+                //app.UseOpenApi();
+                //app.UseSwaggerUi3();
+                app.UseSwaggerUI(c =>
+                {
+
+                    c.IndexStream = () => GetType().Assembly.GetManifestResourceStream("EcommerceApi.SwaggerCustom.index.html");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ecommerce API V1");
+                });
             }
 
             app.UseHttpsRedirection();

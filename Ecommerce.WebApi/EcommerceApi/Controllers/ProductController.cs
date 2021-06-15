@@ -1,5 +1,7 @@
 ﻿using EcommerceApi.IServices;
 using EcommerceApi.Models;
+using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Query;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,11 +28,12 @@ namespace EcommerceApi.Controllers
         {
             productService.AddProduct(request);
         }
+        [EnableQuery()]
         [HttpGet]
         [Route("getall")]
-        public List<Product> GetAllProducts()
+        public PageResult<Product> GetAllProducts(ODataQueryOptions<Product> oDataQueryOptions)
         {
-            return productService.GetAllProducts();
+            return productService.GetAllProducts(oDataQueryOptions);
         }
     }
 }

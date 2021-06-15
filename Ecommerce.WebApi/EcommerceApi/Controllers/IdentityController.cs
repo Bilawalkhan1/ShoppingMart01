@@ -37,7 +37,10 @@ namespace EcommerceApi.Controllers
         {
             return identityService.GetAuthenticationToken(request);
         }
-
+        
+        /// <summary>
+        /// get registration Ecommerce.
+        /// </summary>
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]

@@ -1,4 +1,6 @@
 ﻿using EcommerceApi.Models;
+using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,6 @@ namespace EcommerceApi.IServices
     public interface IProductService
     {
         public Product AddProduct(Product request);
-        public List<Product> GetAllProducts();
+        PageResult<Product> GetAllProducts(ODataQueryOptions<Product> oDataQueryOptions);
     }
 }

@@ -1,6 +1,6 @@
 ﻿/*
 Post-Deployment Script. Will run the populate scripts if PopulateLists is 'true'
-*/
+
 
 SET NOEXEC OFF
 -- Done using NOEXEC to avoid syntax issues with including the scripts inside a BEGIN block.
@@ -12,4 +12,4 @@ GO
 :r .\PopulateTables.sql
 
 
-SET NOEXEC OFF
+SET NOEXEC OFF*/

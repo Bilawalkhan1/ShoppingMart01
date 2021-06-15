@@ -7,3 +7,13 @@ C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\Mo
 C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\refactor.xml
 C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\postdeploy.sql
 C:\Users\HamzaKhan\source\repos\Ecommerce\Ecommerce.Database.Schema\obj\Debug\predeploy.sql
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dacpac
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.dll
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\bin\Debug\Ecommerce.Database.Schema.pdb
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.sqlprojAssemblyReference.cache
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.dll
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Ecommerce.Database.Schema.pdb
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\Model.xml
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\refactor.xml
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\postdeploy.sql
+F:\ShoppingMart01\Ecommerce.WebApi\Ecommerce.Database.Schema\obj\Debug\predeploy.sql
