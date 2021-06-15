@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EcommerceApi</name>
+    </assembly>
+    <members>
+        <member name="M:EcommerceApi.Controllers.IdentityController.Register(EcommerceApi.IServices.RegisterRequest)">
+            <summary>
+            get registration Ecommerce.
+            </summary>
+        </member>
+    </members>
+</doc>
