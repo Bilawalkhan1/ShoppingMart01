@@ -1,5 +1,4 @@
 
-
 <div class="container">
     <div class="d-flex justify-content-center">
         <div class="card " style="width: 80%; height: auto; margin: 20px;">
@@ -15,12 +14,15 @@
                       <i class="fa fa-camera"></i>
                        </button>
                     </div>
+                    <div class="col">
+                      <img [src]="imgURL" height="120px" width=" 200px" *ngIf="imgURL">
+                    </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col mb-3">
                         <label>Category</label>
-                        <select formControlName="category" class="form-control" [(ngModel)]="optionValue"
+                        <select formControlName="category" class="form-select" [(ngModel)]="optionValue"
                             [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
                             <option value="vehicle">Vehicle</option>
                             <option value="Furniture">Furniture</option>
@@ -35,7 +37,7 @@
 
                 <div class="form-row " *ngIf="optionValue == 'vehicle'">
                     <label for="">Type</label>
-                    <select formControlName="type" class="form-control"
+                    <select formControlName="type" class="form-select"
                         [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
                         <option>Car</option>
                         <option>Bike</option>
@@ -47,7 +49,7 @@
 
                 <div class="form-row " *ngIf="optionValue == 'electroics'">
                     <label for="">Type</label>
-                    <select formControlName="type" class="form-control"
+                    <select formControlName="type" class="form-select"
                         [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
                         <option>Mobile</option>
                         <option>Laptop</option>
@@ -57,7 +59,7 @@
 
                 <div class="form-row " *ngIf="optionValue == 'Jewlery'">
                     <label for="">Type</label>
-                    <select formControlName="type" class="form-control"
+                    <select formControlName="type" class="form-select"
                         [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
                         <option>Gold</option>
                         <option>Silver</option>
@@ -68,7 +70,7 @@
 
                 <div class="form-row " *ngIf="optionValue == 'Furniture'">
                     <label for="">Type</label>
-                    <select formControlName="type" class="form-control"
+                    <select formControlName="type" class="form-select"
                         [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
                         <option>Old</option>
                         <option>Brand New</option>
