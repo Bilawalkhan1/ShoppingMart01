@@ -7,6 +7,7 @@ import { AuthService} from 'src/app/Services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  category ='car'
 
   constructor(private auth: AuthService) { 
     this.auth.cartSubject.subscribe((data)=>{
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.cartItem()
   }
+
   cartitem:number = 0;
   cartItem(){
     if(localStorage.getItem('localcart')!==null){
@@ -24,4 +26,6 @@ export class HeaderComponent implements OnInit {
       this.cartitem = cartcount.length;
     }
   }
+
+  
 }

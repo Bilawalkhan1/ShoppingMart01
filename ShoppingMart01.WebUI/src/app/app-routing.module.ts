@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddproductsComponent } from './addproducts/addproducts.component';
 import { AppComponent } from './app.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent },
   { path: "product/:name" , component: ProductComponent },
   { path: "addproduct" , component: AddproductsComponent },
+  { path: "getcategory" , component: CategoryComponent },
   { path: "User", component: UserControlComponent, canActivate: [AuthGuardService] }
 ];
 

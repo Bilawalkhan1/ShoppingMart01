@@ -2,6 +2,9 @@
     background-color: #328CC1;
     height: 60px;
 }
+.head4{
+    font-size: 25px;
+}
 ul,li,a{
     list-style: none;
     display: inline;
@@ -54,6 +57,6 @@ button:hover {
     transition: all .5s ease;
   }
   .cartvalue{
-    margin-top: -39px;
-    margin-left: 22px;
-  }
+    margin-top: -41px;
+    margin-left: 28px;
+  } 

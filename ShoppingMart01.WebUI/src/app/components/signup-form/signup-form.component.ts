@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup-form.component.css'],
 })
 export class SignupFormComponent implements OnInit {
+  
   constructor(private fb: FormBuilder, private http: HttpClient, private router:Router) { }
   private url = 'https://localhost:44309/api/Identity/register'
   ngOnInit(): void { }

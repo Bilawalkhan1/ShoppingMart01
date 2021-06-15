@@ -63,13 +63,10 @@ export class HomeComponent implements OnInit {
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
     } else {
-     // if (cartdatanull) {
+  
       this.itemcart = JSON.parse(cartdatanull);
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
-     // } else {
-       // localStorage.setItem('localcart', JSON.stringify(this.itemcart));
-     // }
     }
 
     this.cartNumberfun();

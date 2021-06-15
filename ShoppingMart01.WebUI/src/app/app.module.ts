@@ -13,11 +13,17 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { UserControlComponent } from './components/user-control/user-control.component';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './_interceptor/auth-interceptor.service';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 import { AddproductsComponent } from './addproducts/addproducts.component';
+import { CategoryComponent } from './components/category/category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -31,7 +37,8 @@ import { AddproductsComponent } from './addproducts/addproducts.component';
     CartComponent,
     ProductComponent,
     UserControlComponent,
-    AddproductsComponent
+    AddproductsComponent,
+    CategoryComponent
   ],
   imports: [
     AppRoutingModule,
@@ -42,7 +49,13 @@ import { AddproductsComponent } from './addproducts/addproducts.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
