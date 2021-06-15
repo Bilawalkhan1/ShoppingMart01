@@ -41,7 +41,7 @@ export class AddproductsComponent implements OnInit {
       address: ['', Validators.required],
       Product_Price: ['', Validators.required],
       Product_Description: ['', Validators.required],
-      extras: ['']
+      extras: [''],
     });
   }
 
@@ -90,7 +90,7 @@ export class AddproductsComponent implements OnInit {
 
   onUpload() {
     this.submitted = true;
-
+    
     if (this.checkoutForm.invalid) {
       return;
     }

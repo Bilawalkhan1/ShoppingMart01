@@ -1,3 +1,23 @@
+.row{
+    margin-bottom: 10px ;
+}
+.form-control{
+    width: 100%;
+}
+.emailcss{
+    width: 100%;
+}
+.btn-style{
+    background-color: #022140;
+}
+input,textarea,select{
+    padding: 10px;
+    margin: 10px;
+}
+label{
+    font-weight: bold;
+}
+/* 
 *{
     padding: 0;
     margin: 0;
@@ -5,7 +25,7 @@
 .main{
     width: 400px;
     margin: 0px auto 0px auto;  
-}
+} */
 
 .register{
     background-color: rgba(0, 0, 0, 0.3);

@@ -10,3 +10,10 @@
 .btn-style{
     background-color: #022140;
 }
+.success{
+    width: 70%;
+    margin: 50px;
+    margin-left: 15%;
+    padding: 50px;
+    text-align: center;
+}
