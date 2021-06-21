@@ -1,44 +1,18 @@
-.col-mid{
+
+
+h6{
+    font-size:medium;
     padding: 10px;
+    text-align: left;
 }
-.row{
-    padding: 5px;
-}
-
 .btn-style{
-    background-color: #000000;
-}
-.astyle{
-    text-decoration: none;
-    color: black;
-}
-.astyle:hover{
-    background-color: black;
+    background-color: #0B3C5D; 
     color: white;
-    padding: 5px;
+    /*022140  */
 }
-* {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-   
-}
-
-.image-box {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    width: 500px;
-}
-.image-box img {
-    max-width: 100%;
-    transition: all 0.5s;
-    display: block;
-    width: 100%;
-    height: auto;
-    transform: scale(1);
-}
-
-.image-box:hover img {
-    transform: scale(1.1);
-}
+.img1{
+    max-height: 30vw;
+    min-height: 20vw;
+    max-width :50vw;
+    min-width: 30vw;
+  }

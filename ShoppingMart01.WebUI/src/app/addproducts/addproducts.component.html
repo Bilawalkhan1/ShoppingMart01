@@ -118,7 +118,7 @@
               </div>
               <br>
               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary btn-style" type="submit" > Submitt </button>    
+                <button class="btn btn-primary btn-style" type="submit" (click)="onUpload()" > Submitt </button>    
               </div>
             </form>
           </div>
@@ -126,6 +126,7 @@
       </div>
 </div>
  {{ checkoutForm.value | json }} 
+ {{ checkoutForm.status}}
 
 <!-- 
 <div class="container-fluid">

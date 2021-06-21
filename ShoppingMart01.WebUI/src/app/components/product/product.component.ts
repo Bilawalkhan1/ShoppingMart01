@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductDetailsService } from 'src/app/Services/product-details.service';
+import { ProductService } from 'src/app/Services/product.service';
 import { product } from '../../Classes/product';
 
 @Component({
@@ -12,11 +13,28 @@ import { product } from '../../Classes/product';
 export class ProductComponent implements OnInit {
   product: product[] =[];
   subscription = new Subscription();
+  count : number = 0
+  Productcategory : string
+  products: product[] = []
+  productId : number
 
-  constructor(private productDetails : ProductDetailsService) {
+  addcount(){
+   return this.count += 1 
+  }
+  reducecount(){
+    if(this.count>0){
+    return  this.count -= 1
+    }
+   return  this.count 
+  }
+
+  constructor(private productDetails : ProductDetailsService,
+    private productService: ProductService,) {
     this.subscription = this.productDetails.getProduct().subscribe(prod=>{
       if(prod){
         this.product.push(prod);
+       this.Productcategory = prod.category  // category get
+       this.productId = prod.Product_id
       } else{
         this.product=[]; 
       }
@@ -28,7 +46,23 @@ export class ProductComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getRelatedProd(this.Productcategory, this.productId);
   }
+
+  getRelatedProd(prodCategory, prodId){
+    this.subscription = this.productService.getProdByCategory(prodCategory)
+      .subscribe( prod =>  {
+       this.products = prod
+       this.RemoveElementFromArray(prodId);
+      })
+  }
+
+  RemoveElementFromArray(key: number) {
+   return this.products.forEach((value,index)=>{
+        if(value.Product_id==key)
+         this.products.splice(index,1);
+    });
+}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

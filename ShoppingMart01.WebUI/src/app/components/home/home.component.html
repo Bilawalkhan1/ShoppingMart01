@@ -1,54 +1,155 @@
 <div class="container">
-    <div class="row mt-2">
-        <div class="col-md-12 col-lg-12">
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let image of images" class="slide">
-                    <img src="{{ image.img }}" class="img-fluid imgstyle">
-                </div>
-            </ngx-slick-carousel>
+  <div class="row mt-2">
+    <div class="col-md-12 col-lg-12">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let image of images" class="slide">
+          <img src="{{ image.img }}" class="img-fluid imgstyle">
         </div>
+      </ngx-slick-carousel>
     </div>
+  </div>
+</div>
+<!-- Product Body -->
+<div class="portfolio">
+  <h2 class="title">CLEVER PRODUCTS FOR EVERY CORNER</h2>
+  <div class="containerxx ">
+    <div class="p-2 bd-highlight xx" *ngFor="let blog of products">
+      <div class="card" style="width: 18rem;">
+        <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+          <img class="card-img-top img-fluid py-2 imgstyle1" src="{{covertPhotoUrl(blog.Product_Image)}}"
+            alt="Card image cap">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title">{{blog.Product_Name}}</h5>
+          <h6 class="card-title" style="color: chocolate;">Price: Rs. {{blog.Product_Price}}</h6>
+          <!-- <p class="card-text">{{blog.Product_Description}}</p> -->
+          <div class="row justify-content-center">
+            <button type="button" class="btn btn-outline-dark outline" data-toggle="modal" data-target="#exampleModal">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+<div class="portfolio">
+  <h2 class="title">CATEGORIES</h2>
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Electronic Devices</span>
+      <span class="category">Mobile / Laptop / Tablets</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">UX Design</span>
+      <span class="category">UX / UI / Research </span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Concepts</span>
+      <span class="category">Design / Creative</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1553531888-a5892402adce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Creative & Cool</span>
+      <span class="category">Design / Food</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1684&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">AR-VR</span>
+      <span class="category">VR / AR / Creative</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1398&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Logo</span>
+      <span class="category">Design / Logo / Clothing</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1600609842388-3e2ed2a1454a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Art</span>
+      <span class="category">Drawing / Painting / Abstract</span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1544273677-c433136021d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
+  <a href="#" class="card">
+    <div class="content">
+      <span class="title">Native Apps</span>
+      <span class="category">Coding / Mobile </span>
+    </div>
+    <div class="image">
+      <img
+        src="https://images.unsplash.com/photo-1551650992-ee4fd47df41f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80"
+        alt="" />
+    </div>
+  </a>
+
 </div>
 
 
-<h2 class="text-center">Clever products for every corner</h2>
-
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let blog of products">
-            <div class="blog grid-blog">
-                <div class="blog-image">
-
-                    <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
-                        <img src="{{covertPhotoUrl(blog.Product_Image)}}" class="img-fluid imgstyle1" alt="">
-                    </a>
-                </div>
-
-                <div class="blog-content">
-                    <ul class="entry-meta meta-item">
-                        <li>
-                            <div class="post-author">
-                                <span><b>{{blog.Product_Name}}</b></span>
-                            </div>
-                            <div class="post-author">
-                                <span>Product_Code  <b>{{blog.Product_id}}</b></span>
-                            </div>
-                        </li>
-                    </ul>
-                    <h3 class="blog-title">
-                        <a href=""><b>{{blog.Product_Price}} RS</b></a>
-                    </h3>
-
-                    <p class="mb-0 description">{{blog.Product_Description}}</p>
-                </div>
-
-                <div>
-                    <button class="btn1" (click)="addtocart(blog)">Add to Cart</button>
-                    <button (click)="onLoadActive()" class="btn1">Buy</button>
-                </div>
-            </div>
-
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-
+  </div>
 </div>

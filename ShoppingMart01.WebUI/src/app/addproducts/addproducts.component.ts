@@ -36,12 +36,12 @@ export class AddproductsComponent implements OnInit {
       category: ['', Validators.required],
       type: ['', Validators.required],
       Product_Name: ['', Validators.required],
-      availability: ['', Validators.required],
-      Product_id: ['', Validators.required],
+      //availability: ['', Validators.required],
+    //  Product_id: ['', Validators.required],
       address: ['', Validators.required],
       Product_Price: ['', Validators.required],
       Product_Description: ['', Validators.required],
-      extras: [''],
+      //extras: [''],
     });
   }
 
@@ -89,6 +89,7 @@ export class AddproductsComponent implements OnInit {
   }
 
   onUpload() {
+    debugger
     this.submitted = true;
     
     if (this.checkoutForm.invalid) {
