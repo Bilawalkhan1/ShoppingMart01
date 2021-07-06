@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     autoplay: true,
     infinite: true,
     arrows: true
@@ -70,9 +70,8 @@ export class HomeComponent implements OnInit {
     slidesToScroll: 1,
     dots: true,
     infinite: true,
-  }
-
-
+    arrows: true
+  };
 
   sendProductDetails(blog: object) {
     this.productDetails.sendProduct(blog);
@@ -80,7 +79,7 @@ export class HomeComponent implements OnInit {
 
   itemcart: any[] = [];
 
-  addtocart(category: any) {
+  addtocart(category: any, element , text) {
     let cartdatanull = localStorage.getItem('localcart');
     if (cartdatanull == null) {
       this.itemcart.push(category);
@@ -91,7 +90,9 @@ export class HomeComponent implements OnInit {
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
     }
-
+    element.textContent = text;
+    element.disabled = true;
+    element.hide;
     this.cartNumberfun();
   }
   cartNumber: number = 0;

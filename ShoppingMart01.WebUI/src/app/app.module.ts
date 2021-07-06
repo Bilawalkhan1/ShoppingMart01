@@ -22,7 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxModelModule } from 'ngx-model';
 import { MaterialModule } from './material.module';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -32,6 +31,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FilterPipe } from './filter.pipe';
 
 
+import { BreadcrumbModule } from 'angular-crumbs';
+import { ProductRelatedCarouselComponent } from './components/product-related-carousel/product-related-carousel.component';
+import { CategoriesListViewComponent } from './components/categories-list-view/categories-list-view.component';
+import {MatIconModule} from '@angular/material/icon';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomePageSliderComponent } from './components/home-page-slider/home-page-slider.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,10 @@ import { FilterPipe } from './filter.pipe';
     AddproductsComponent,
     CategoryComponent,
     FilterPipe,
+    ProductRelatedCarouselComponent,
+    CategoriesListViewComponent,
+    ProductListComponent,
+    HomePageSliderComponent
   ],
   imports: [
     AppRoutingModule,
@@ -70,8 +79,9 @@ import { FilterPipe } from './filter.pipe';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MaterialModule
-
+    MaterialModule,
+    BreadcrumbModule,
+    MatIconModule
   ],
   exports:[
     RouterModule,

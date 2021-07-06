@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SocialAuthService } from 'angularx-social-login';
 import { User } from 'src/app/Classes/user';
-import { AuthService } from 'src/app/Services/auth.service';
-import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthguardService } from 'src/app/Services/authguard.service';
 import { LoginComponent } from '../login/login.component';
 import { Users } from '../signup-form/users';
+import { AuthService } from 'src/app/Services/auth.service';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +17,8 @@ import { Users } from '../signup-form/users';
 export class HeaderComponent implements OnInit {
   category = 'car'
   userLoggedIn = Users
+  isUserLogin
+  userType: string
   user: any;
   userdata;
   dataset = ['MDB', 'Angular', 'Bootstrap', 'Framework', 'SPA', 'React', 'Vue'];
@@ -33,6 +35,8 @@ export class HeaderComponent implements OnInit {
     private authguard: AuthguardService) {
     this.auth.cartSubject.subscribe((data) => {
       this.cartitem = data
+      this.isUserLogin = this.authenticatinservice.currentUserValue;
+      // this.isUserLogin = this.authServ.logUserDetails
     })
     // this.authenticatinservice.filterProducts().subscribe(data=>{
     //   JSON.parse(JSON.stringify(data)).dataforEach(element => {
@@ -41,8 +45,21 @@ export class HeaderComponent implements OnInit {
     // })
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.cartItem()
+   
+  }
+
+  ngAfterContentChecked(): void {
+    //Called after every check of the component's or directive's content.
+    //Add 'implements AfterContentChecked' to the class.
+    // this.userType = this.authServ.getUserData()
+    // console.log('oncheck' , this.userType)
+  } 
+  
+  
+  get isAdmin() {
+    return this.userType === 'admin';
   }
 
   cartitem: number = 0;

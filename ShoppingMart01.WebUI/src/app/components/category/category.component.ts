@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { product } from 'src/app/Classes/product';
 import { ProductDetailsService } from 'src/app/Services/product-details.service';
 import { ProductService } from 'src/app/Services/product.service';
-
+declare var $  : any;
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit,AfterViewInit {
   dataproduct: any
   products: product[] = [];
   slideConfig2 = {
@@ -30,10 +30,21 @@ export class CategoryComponent implements OnInit {
     this.category = this.route.snapshot.paramMap.get('category')
     this.subcategory = this.route.snapshot.paramMap.get('subcategory')
     this.getcategorydata()
-
-
-
   }
+
+  ngAfterViewInit(): void {
+    $(document).ready(function(){
+      const sidebarToggle = document.body.querySelector('#sidebarToggle');
+      if (sidebarToggle) {         
+          sidebarToggle.addEventListener('click', event => {
+              event.preventDefault();
+              document.body.classList.toggle('sb-sidenav-toggled');
+           });
+      }
+    })
+    
+  }
+
   images = [
     { img: '/assets/bikes.jfif' },
     { img: '/assets/car.jfif' },
