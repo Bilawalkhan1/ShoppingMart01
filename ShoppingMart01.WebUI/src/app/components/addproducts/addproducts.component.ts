@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ImageserviceService } from '../Services/imageservice.service';
+import { ImageserviceService } from '../../Services/imageservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RestserviceService } from '../Services/restservice.service';
+import { RestserviceService } from '../../Services/restservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addproducts',
@@ -19,12 +20,21 @@ export class AddproductsComponent implements OnInit {
   imgURL: any;
   public message: string;
   selectedFile: File
+
+  images = []
+
+
+
   optionValue
+  urls = [];
 
   get f() { return this.checkoutForm.controls; }
 
   constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
-    private formBuilder: FormBuilder, private http: HttpClient, private rs: RestserviceService) {
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private rs: RestserviceService,
+    private router: Router) {
     this.checkoutForm = formBuilder.group({
       category: formBuilder.control('initial value', Validators.required)
     })
@@ -51,10 +61,11 @@ export class AddproductsComponent implements OnInit {
 
     if (files && file) {
       var reader = new FileReader();
-
       reader.onload = this._handleReaderLoaded.bind(this);
       reader.readAsBinaryString(file);
+
     }
+
     if (files.length === 0)
       return;
 
@@ -68,39 +79,36 @@ export class AddproductsComponent implements OnInit {
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      this.imgURL = reader.result;
+      this.urls.push(reader.result)  
     }
   }
 
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
     this.base64textString = btoa(binaryString);
+    this.images.push({img:this.base64textString})
     console.log('string', btoa(binaryString));
   }
 
   onSubmit(id): void {
     this.rs.createProduct(id, this.checkoutForm.value)
       .subscribe(
-        (response) => {
+        (response) => { 
         },
         error => console.error(error)
       )
     this.checkoutForm.reset();
+    this.router.navigateByUrl('/home')
   }
 
   onUpload() {
-    debugger
     this.submitted = true;
     
     if (this.checkoutForm.invalid) {
       return;
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.checkoutForm.value, null, 4));
-
-    const fd = new FormData()
-    fd.append('image', this.base64textString)
     const image = {
-      Product_Image: this.base64textString
+      Product_Image: this.images
     }
     this.http.post('http://localhost:3000/Product', image).subscribe(
       (res: any) => {

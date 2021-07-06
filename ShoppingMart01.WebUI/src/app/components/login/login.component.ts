@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { SignupFormComponent } from '../signup-form/signup-form.component';
+import { DOCUMENT } from '@angular/common';
+import { AuthguardService } from 'src/app/Services/authguard.service';
 
 @Component({
     selector: 'app-login',
@@ -12,15 +16,24 @@ import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-soc
 })
 export class LoginComponent implements OnInit {
     message = ''
+    register: boolean
     socialUser: SocialUser;
     isLoggedin = true;
     form: FormGroup;
+    submitted: boolean
+    returnUrl: string;
+    loading = false
+    notify: any;
+    redirectUser: any;
 
     constructor(private router: Router,
         private as: AuthenticationService,
         private socialAuthService: SocialAuthService,
         private fb: FormBuilder,
-        private http: HttpClient) {
+        private route: ActivatedRoute,
+        private modelservice: NgbModal,
+        private http: HttpClient,
+        private authguardService: AuthguardService) {
 
         this.form = this.fb.group({
             email: ['', Validators.required],
@@ -33,6 +46,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.register = false;
         this.socialAuthService.authState.subscribe((user) => {
             this.socialUser = user;
             //   this.isLoggedin = (user != null);
@@ -41,7 +55,7 @@ export class LoginComponent implements OnInit {
     }
 
     loginWithGoogle() {
-        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(resp=>{
+        this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(resp => {
 
             console.log("resp ", resp)
             localStorage.setItem('token', resp.idToken)
@@ -49,24 +63,36 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/User')
     }
 
-
     signup() {
-        this.router.navigateByUrl('/signup')
+        this.modelservice.open(SignupFormComponent)
     }
 
     loginUser() {
-
+        this.submitted = true;
         const credentials = {
             email: this.form.value.email,
             password: this.form.value.password
         }
+        this.loading = true
         this.as.userlogin(credentials).toPromise().then(resp => {
             this.message = ''
-            console.log("resp ", resp)
-            localStorage.setItem('token', resp.access_token)
-            this.router.navigateByUrl('/User')
-        }).catch(err =>
-            this.message = "Invalid Email or Password")
+            this.register = true
+            localStorage.setItem('token', resp.access_token);
+            if (resp.access_token) {
+                this.as.setUserDetails(credentials.email).toPromise().then(resp => {
+                    localStorage.setItem('user', JSON.stringify(resp))
+                })
+            }
+            if (this.authguardService.returnUrl != null) {
+                this.router.navigateByUrl(`/${this.authguardService.returnUrl}`)
+                this.authguardService.returnUrl = null
+            }
+            this.modelservice.dismissAll()
+        }).catch(
+            err => this.message = "Invalid Email or Password")
+    }
 
+    close() {
+        this.modelservice.dismissAll()
     }
 }

@@ -1,40 +1,63 @@
 <div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <div class="border-end bg-white" id="sidebar-wrapper">
-        <!-- <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
-        <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Search query items</a>
-        </div> -->
-    </div>
-    <!-- Page content wrapper-->
+
     <div id="page-content-wrapper">
-        <!-- Page content-->
         <div class="container-fluid mt-3">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12"
                     *ngFor="let product of filteredProducts ; let i = index">
                     <div class="blog grid-blog">
-                        <div class="blog-image">
-                            <img src="{{covertPhotoUrl(product.Product_Image)}}" class="img-fluid imgstyle1" alt="">
-                        </div>
+                        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+                            <div ngxSlickItem *ngFor="let i of product.Product_Image" class="slide">
+                                <img class="img-fluid imgstyle1" src="{{covertPhotoUrl(i['img'])}}">
+                            </div>
+
+                        </ngx-slick-carousel>
                         <div class="blog-content">
                             <ul class="entry-meta meta-item">
                                 <li>
                                     <div class="post-author">
-                                        <span><b>Name </b>{{product.Product_Name}}</span>
+                                        <span><b> {{product.Product_Name}}</b></span>
                                     </div>
                                 </li>
                             </ul>
                             <h3 class="blog-title">
-                                <a href=""><b>Price </b>{{product.Product_Price}}</a>
+                                <b>Price </b>{{product.Product_Price}}
                             </h3>
                             <p class="mb-0 description">{{product.Product_Description}}</p>
                         </div>
                         <div>
-                            <!-- <button class="btn1" (click)="addtocart(blog)">Add to Cart</button> -->
+                        </div>
+                        <div class="button">
+                            <button class="add">Add to Cart</button>
+                            <button class="like"><span>♥</span></button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        <!--  -->
+    </div>
+</div>
+<!-- <div class="container" *ngFor="let product of filteredProducts ; let i = index">
+    <div class="images">
+        <img src="{{covertPhotoUrl(product.Product_Image)}}" class="img-fluid imgstyle1">
+
+    </div>
+    <div class="btn">
+        <button class="add">Purchase</button>
+        <button class="like"><span>♥</span></button>
+    </div>
+
+
+    <div class="product">
+        <p class="name">{{product.category}}</p>
+        <h1>{{product.Product_Name}}</h1>
+        <h2>{{product.Product_Price}}</h2>
+        <p class="desc">{{product.Product_Description}}</p>
+        <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="like"><span>♥</span></button>
+        </div>
+    </div>
+</div> -->

@@ -1,19 +1,7 @@
-.containerxx{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.xx{
-  position: relative;
-  margin: 10px;
-  padding: 10px;
-}
-.xx:hover{
-  border: 1px solid black;
-}
-.outline{
-  border-radius: 0%;
+@import '../../../styles.css';
 
+.highlight:hover{
+  background-color: cadetblue;
 }
 .blog {
     border: 1px solid #f0f0f0;
@@ -105,9 +93,6 @@
   .grid-blog .blog-content p {
     margin: 0 0 15px;
   }
-  /* // .blog-image:hover img {
-  //   transform: scale(1.15);
-  // } */
   .blog-image a:hover img {
     -webkit-transform: scale(1.15);
     -moz-transform: scale(1.15);
@@ -138,16 +123,25 @@
 .imgstyle{
   max-height: 23vw;
   min-height: 23vw;
-  max-width: 30vw;
-  min-width: 30vw;
+  max-width: 28vw;
+  min-width: 28vw;
   padding: 37px;
+ 
+}
+.smallscreenslider{
+  max-height: 40vw;
+  min-height: 45vw;
+  max-width: 60vw;
+  min-width: 60vw;
+  margin-left: 58px;
+  
 }
 .imgstyle1{
     max-height: 15vw;
     min-height: 15vw;
     max-width : 25vw;
     min-width: 25vw;
-    
+
 }
 
 .description{
@@ -157,22 +151,21 @@
     min-width: 20vw;
     overflow: hidden;
 }
-
-
-  /*  */
-
-  /* * {
-    margin: 0;
-    padding: 0;
-  } */
-
   .portfolio {
     display: flex;
     flex-wrap: wrap;
     min-width: 320px;     
     margin: 20px;
   }
-  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+  .layout_buttons{
+    margin-bottom: 20px;
+  }
   .portfolio h2 {
     flex-basis: 100%;
     text-align: center;
@@ -201,17 +194,6 @@
     min-height: 100px;
     background: #111;
   }
-  .card .image {
-    z-index: 1;
-    height: 100%;
-  }
-  .card img {
-    height: 100%;
-    width: 100%;
-    transition: all 0.5s ease;
-    transform: scale(1.2);
-  }
-  
   .card:hover .content {
     bottom: 0px;
     color: #fff;
@@ -230,7 +212,6 @@
     color: #fff;
     font-size: 16px;
   }
-  
   .card .content span:last-child {
     font-size: 14px;
     color: #18cfab;
@@ -246,6 +227,9 @@
     .card .content {
       bottom: 0;
     }
+    .imgstyle1{
+      display: none;
+    }
   }
   
   @media screen and (max-width: 480px) {
@@ -253,3 +237,15 @@
     width: 100%;
     }
   }
+  
+  @media only screen and (max-width: 576px) {
+    .imagestyle1 {
+    display: none;
+    }
+  }
+
+
+
+    
+     
+  

@@ -1,31 +1,8 @@
-.blue{
-    background-color: #328CC1;
-    height: 60px;
-}
 .head4{
-    font-size: 25px;
-}
-ul,li,a{
-    list-style: none;
-    display: inline;
     color: white;
     text-decoration: none;
-    padding-left: 5px;
-    display: inline-block;
-   
 }
-.ist{
-    margin-right: 10px;
-}
-.icons{
-    float: right;
-    color: white;
-}
-.btn{
-    margin-top:-3px;
-    color: white;
-    border: none;
-}
+
 button:hover {
     color:black;
     border: none;
@@ -56,7 +33,52 @@ button:hover {
     opacity: 0;
     transition: all .5s ease;
   }
-  .cartvalue{
-    margin-top: -41px;
-    margin-left: 28px;
-  } 
+ .search{
+    border: none;
+    border-radius: 15px;
+    padding: 2px 22px;
+    margin-top: 5px;
+    margin-left: 150px;
+ }
+ .search_bar{
+    border: none;
+ }
+.sellbtn{
+    border: none;
+    border-radius: 20px;
+    margin-top: 26px;
+    background-color: white;
+    color: black;
+    margin-top: 18px;
+    
+}
+.plus{
+    margin: 5px
+}
+.account{
+margin-top: 20px;
+}
+.shopping_icon{
+    margin-top: -9px;
+}
+.Shopping{
+    color: white;
+}
+
+.btn1{
+    margin-top: -9px;
+    color: blue;
+    border: none;
+    width: 39px;
+    cursor: pointer;
+}
+
+
+.cartvalue{
+    font-weight: 400;
+}
+@media screen and (max-width:576px){
+    .search_box{
+        display: none;
+    }
+}

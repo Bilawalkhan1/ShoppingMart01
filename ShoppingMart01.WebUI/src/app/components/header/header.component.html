@@ -1,12 +1,16 @@
-<div class="container-fluid blue">
+<!-- <div class="container-fluid blue">
     <div class="row ">
         <div class="col-md-3 col-lg-3 ">
             <h4 class="mt-3 head4"><a href="#"> Shopping Mart</a></h4>
         </div>
-        <div class="col-md-7 col-lg-7 ">
-            <menu>
-                <ul>
-                    <button class="btn mr-2 active">All products</button>
+        <div class="col-md-9 col-lg-9">
+            <button class="navbar-btn d-sm-block d-lg-none d-md-none" type="button" data-toggle="collapse"
+                data-target="#nvbCollapse" aria-controls="nvbCollapse">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="collapse navbar-collapse d-lg-block d-md-block" id="nvbCollapse">
+                <ul class="navbar">
+                    <a href="#"><button class="btn mr-2 active"> All products </button></a> 
                     <li>
                         <div class="d-inline-block dropdown" ngbDropdown #myDrop="ngbDropdown">
                             <button class="btn mr-2 dropbtn" id="dropdownManual" ngbDropdownAnchor>Vehicles</button>
@@ -39,7 +43,8 @@
                         <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
                             <button class="btn mr-2" id="dropdownManual" ngbDropdownAnchor>Furniture</button>
                             <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                                <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Furniture' , 'new']">Brand
+                                <button ngbDropdownItem
+                                    [routerLink]="[ '/getcategory', 'Furniture' , 'brand New']">Brand
                                     New</button>
                                 <button ngbDropdownItem
                                     [routerLink]="[ '/getcategory', 'Furniture' , 'old']">Old</button>
@@ -64,22 +69,156 @@
                         </div>
                     </li>
 
+                    <li>
+                        <div class="ml-5 mr-5">
+                            <button (click)="addProduct()" class="sellbtn">
+                                <i class="fa fa-plus "></i>
+                                <b>SELL</b>
+                            </button>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="Shopping">
+                            <div class="cartvalue">
+                                <b> {{cartitem}} </b>
+                            </div>
+                            <div class="carticon">
+                                <i (click)="cartComponent()" class="fa fa-shopping-cart fa-2x " aria-hidden='true'></i>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div ngbDropdown class="d-inline-block account">
+                            <img class="btn1" id="dropdownBasic1" (click)="getUserData()" ngbDropdownToggle
+                                src="assets/profile.png" width="39px">
+                            <div *ngFor="let user of userdata" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <h3 ngbDropdownItem>{{user.firstName}}</h3>
+                                <h3 ngbDropdownItem>{{user.email}}</h3>
+                                <button (click)="logout()" ngbDropdownItem><b>Logout</b></button>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
-            </menu>
-        </div>
-        <div class="col-md-2 col-lg-2">
-            <div class="icons mt-3 ">
-                <a [routerLink]="[ '/login']"><i class="fa fa-user-circle fa-2x"></i></a>
-
             </div>
-            <div class="icons mt-3 ">
-                <a [routerLink]="[ '/cart']"><i class="fa fa-shopping-cart fa-2x ist" aria-hidden='true'></i></a>
-                <div class="cartvalue">
-                    <b> {{cartitem}} </b>
-                </div>
-            </div>
-
         </div>
-
     </div>
-</div>
+</div> -->
+
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-info " [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <h4 class="mt-2 mr-5"><a class="head4" href="#"> Shopping Mart</a></h4>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto mt-1">
+            <li class="nav-item">
+                <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+                    <button class="btn mr-2 head4" id="dropdownManual" ngbDropdownAnchor>Furniture</button>
+                    <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Furniture' , 'brand New']">Brand
+                            New</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Furniture' , 'old']">Old</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="d-inline-block dropdown" ngbDropdown #myDrop="ngbDropdown">
+                    <button class="btn mr-2 dropbtn head4" id="dropdownManual" ngbDropdownAnchor>Vehicles</button>
+                    <div class="dropdowncontent" ngbDropdownMenu aria-labelledby= "dropdownManual">
+                        <button class="btn1" ngbDropdownItem
+                            [routerLink]="[ '/getcategory', 'Vehicle' , 'bike']">Bikes</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Vehicle' , 'car']">Cars</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Vehicle' , 'bus']">Buses</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Vehicle' , 'truck']">Truks</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="d-inline-block" ngbDropdown #myDrop1="ngbDropdown">
+                    <button class="btn mr-2 head4 dropdown" id="dropdownManual" ngbDropdownAnchor>Electronics</button>
+                    <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <button ngbDropdownItem
+                            [routerLink]="[ '/getcategory', 'Electronics' , 'mobile']">Mobiles</button>
+                        <button ngbDropdownItem
+                            [routerLink]="[ '/getcategory', 'Electronics' , 'tablet']">Tablets</button>
+                        <button ngbDropdownItem
+                            [routerLink]="[ '/getcategory', 'Electronics' , 'laptop']">laptops</button>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown" dropdown>
+                <div class="d-inline-block" ngbDropdown #myDrop3="ngbDropdown">
+
+                    <button class="btn mr-2 head4" id="dropdownManual" ngbDropdownAnchor>Jewlery</button>
+
+                    <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Jewlery' , 'gold']">Gold</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Jewlery' , 'silver']">Silver</button>
+                        <button ngbDropdownItem
+                            [routerLink]="[ '/getcategory', 'Jewlery' , 'diamond']">Diamonds</button>
+                        <button ngbDropdownItem [routerLink]="[ '/getcategory', 'Jewlery' , 'other']">Others</button>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item search_box">
+                <button class="search">
+                    <input class="search_bar" [(ngModel)]="searchText" type="search" placeholder="search">
+                    <i class="fa fa-search"></i>
+                </button>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+                <a class="nav-link">
+                    <button (click)="addProduct()" class="sellbtn">
+                        <i class="fa fa-plus plus"></i>
+                        <b>SELL</b>
+                    </button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <div class="Shopping">
+                        <div class="cartvalue">
+                            <b> {{cartitem}} </b>
+                        </div>
+                        <div class="carticon">
+                            <i (click)="cartComponent()" class="fa fa-shopping-cart fa-2x shopping_icon"
+                                aria-hidden='true'></i>
+                        </div>
+
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">
+                    <div ngbDropdown class="d-inline-block account">
+                        <img class="btn1" id="dropdownBasic1" (click)="getUserData()" ngbDropdownToggle
+                            src="assets/profile.png" width="39px">
+                        <div *ngFor="let user of userdata" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                            <h3 ngbDropdownItem>{{user.firstName}}</h3>
+                            <h3 ngbDropdownItem>{{user.email}}</h3>
+                            <button (click)="logout()" ngbDropdownItem><b>Logout</b></button>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

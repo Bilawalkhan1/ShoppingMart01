@@ -12,22 +12,26 @@ import { ProductService } from 'src/app/Services/product.service';
 })
 export class HomeComponent implements OnInit {
   searchText: any;
+  displayMode: number;
   constructor(
     private productDetails: ProductDetailsService,
     private auth: AuthService,
     private productService: ProductService
-  ) {}
+  ) { }
 
-  products: product[] = [];
+  products: any[] = [];
 
- ngOnInit(): void {
+  ngOnInit(): void {
     this.getProducts()
+    this.onDisplayModeChange(1) 
   }
 
-  public covertPhotoUrl(photoUrl){
+  public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
   }
-
+  public onDisplayModeChange(mode: number): void {
+    this.displayMode = mode;
+  }
 
   private getProducts() {
     this.productService.getProducts().subscribe(products => this.products = products);
@@ -46,10 +50,29 @@ export class HomeComponent implements OnInit {
   ];
   slideConfig = {
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
+    dots: true,
+    autoplaySpeed: 1000,
+    autoplay: true,
+    infinite: true,
+    arrows: true
+  }
+  slideConfig1 = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    autoplaySpeed: 1000,
+    autoplay: true,
+    infinite: true,
+  }
+  slideConfig2 = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
     dots: true,
     infinite: true,
-  };
+  }
+
+
 
   sendProductDetails(blog: object) {
     this.productDetails.sendProduct(blog);
@@ -63,7 +86,7 @@ export class HomeComponent implements OnInit {
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
     } else {
-  
+
       this.itemcart = JSON.parse(cartdatanull);
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
@@ -78,5 +101,5 @@ export class HomeComponent implements OnInit {
     this.auth.cartSubject.next(this.cartNumber);
   }
 
-  onLoadActive() {}
+  onLoadActive() { }
 }

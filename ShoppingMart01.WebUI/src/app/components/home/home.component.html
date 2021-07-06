@@ -1,6 +1,7 @@
+<!-- large screen slider -->
 <div class="container">
   <div class="row mt-2">
-    <div class="col-md-12 col-lg-12">
+    <div class="col-md-12 col-lg-12 d-lg-block d-sm-none d-none ">
       <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
         <div ngxSlickItem *ngFor="let image of images" class="slide">
           <img src="{{ image.img }}" class="img-fluid imgstyle">
@@ -9,29 +10,99 @@
     </div>
   </div>
 </div>
+<!-- smaller screen slider -->
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-md-12 col-lg-12 d-lg-none d-sm-block">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig1">
+        <div ngxSlickItem *ngFor="let image of images" class="slide">
+          <img src="{{ image.img }}" class=" smallscreenslider">
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</div>
 <!-- Product Body -->
 <div class="portfolio">
   <h2 class="title">CLEVER PRODUCTS FOR EVERY CORNER</h2>
-  <div class="containerxx ">
-    <div class="p-2 bd-highlight xx" *ngFor="let blog of products">
-      <div class="card" style="width: 18rem;">
-        <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
-          <img class="card-img-top img-fluid py-2 imgstyle1" src="{{covertPhotoUrl(blog.Product_Image)}}"
-            alt="Card image cap">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">{{blog.Product_Name}}</h5>
-          <h6 class="card-title" style="color: chocolate;">Price: Rs. {{blog.Product_Price}}</h6>
-          <!-- <p class="card-text">{{blog.Product_Description}}</p> -->
-          <div class="row justify-content-center">
-            <button type="button" class="btn btn-outline-dark outline" data-toggle="modal" data-target="#exampleModal">ADD TO CART</button>
+</div>
+<div class="layout_buttons">
+  <button class="btn btn-white" type="button" (click)="onDisplayModeChange(1)"
+    [ngClass]="{'btn-primary active': displayMode === 1}">
+    <i class="fa fa-th"></i>
+  </button>
+  <button class="btn btn-white" type="button" (click)="onDisplayModeChange(2)"
+    [ngClass]="{'btn-primary active': displayMode === 2}">
+    <i class="fa fa-list"></i>
+  </button>
+</div>
+<!-- grid -->
+<div class="row" *ngIf="displayMode === 1">
+  <div class="container-fluid">
+    <div class="row container1">
+      <div class="col-lg-3 col-md-6 col-sm-12 p-2" *ngFor="let blog of products">
+        <div class="card highlight" style="width: 18rem;">
+          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+            <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+              <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+                <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
+                <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
+              </a>
+            </div>
+
+          </ngx-slick-carousel>
+
+
+          <div class="card-body">
+            <h5 class="card-title">{{blog.Product_Name}}</h5>
+            <h6 class="card-title" style="color: chocolate;"> Rs. {{blog.Product_Price}}</h6>
+            <div class="row justify-content-center">
+              <button type="button" (click)="addtocart(blog)" class="btn btn-outline-dark outline"
+                data-target="#exampleModal">ADD TO CART</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!--  -->
+<!-- List -->
+<div class="container" *ngIf="displayMode === 2">
+  <div class="row" *ngFor="let blog of products">
+
+    <div class="col-lg-4 col-md-4 col-sm-4 p-2">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+        <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+          <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+            <div class=" imgstyle1">
+              <img class=" imgstyle1" src="{{covertPhotoUrl(i.img)}}">
+            </div>
+            <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
+          </a>
+        </div>
+
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 p-2">
+      <p>{{blog.Product_Description}}</p>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 p-2">
+      <h5 class="card-title">{{blog.Product_Name}}</h5>
+      <h6 class="card-title" style="color: chocolate;"> Rs. {{blog.Product_Price}}</h6>
+      <div class="row justify-content-center">
+        <button type="button" (click)="addtocart(blog)" class="btn btn-outline-dark outline"
+          data-target="#exampleModal">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 
 <div class="portfolio">
   <h2 class="title">CATEGORIES</h2>
   <a href="#" class="card">
@@ -133,8 +204,9 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -152,4 +224,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

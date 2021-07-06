@@ -15,6 +15,12 @@ import { ProductService } from 'src/app/Services/product.service';
 export class CategoryComponent implements OnInit {
   dataproduct: any
   products: product[] = [];
+  slideConfig2 = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+  }
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
   }
@@ -62,10 +68,13 @@ export class CategoryComponent implements OnInit {
     }
 
  getcategorydata() {
+   console.log('category',this.category)
   this.productService.getProdByCategory(this.category).subscribe(products => {
     this.products = products;
+    console.log('products',products)
     //Setting the filtered Products Array
     this.filteredProducts = this.products.filter(p => p.type === this.subcategory)
+    console.log('filterproducts',this.filteredProducts)
   });
 
 }

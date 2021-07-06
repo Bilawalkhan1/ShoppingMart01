@@ -1,0 +1,252 @@
+<div class="container section1">
+  <div class="d-flex justify-content-center">
+    <div class="card " style="width: 80%; height: auto; margin: 20px;">
+      <div class="card-body mx-auto" style="width: 75%;">
+        <h4 class="card-title mb-4" style="text-align: center;">Add New Product</h4>
+        <form [formGroup]="checkoutForm">
+          <div class="row">
+            <div class="col" style="display: flex; justify-content: center;">
+              <label for="">
+                Choose Product Image : <br> <input style="margin-left: 30px; margin-bottom: 10px;" multiple type="file"
+                  accept='image/*' (change)="handleFileSelect($event)" required #fileInput> </label>
+              <button style="display: none" (click)="fileInput.click()">
+                <i class="fa fa-camera"></i>
+              </button>
+            </div>
+            <div class="col">
+              <img *ngFor='let url of urls' [src]="url" height="120px" width=" 200px">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col mb-3">
+              <label>Category</label>
+              <select formControlName="category" class="form-select" [(ngModel)]="optionValue"
+                [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+                <option value="Vehicle">Vehicle</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Jewlery">Jewlery</option>
+                <option value="Electronics">Electronics</option>
+              </select>
+              <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                <div *ngIf="f.category.errors.required">category is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Vehicle'">
+            <label for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>car</option>
+              <option>bike</option>
+              <option>bus</option>
+              <option>truck</option>
+              <option>other</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Electronics'">
+            <label for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>mobile</option>
+              <option>laptop</option>
+              <option>tablet</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Jewlery'">
+            <label for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>gold</option>
+              <option>silver</option>
+              <option>diamond</option>
+              <option>other</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Furniture'">
+            <label for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>old</option>
+              <option>brand New</option>
+              <option>imported</option>
+              <option>other</option>
+            </select>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col">
+              <label>Product Name</label>
+              <input type="text" formControlName="Product_Name" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.Product_Name.errors }" required>
+            </div>
+            <div *ngIf="submitted && f.Product_Name.errors" class="invalid-feedback">
+              <div *ngIf="f.Product_Name.errors.required">Product Name required</div>
+            </div>
+          </div>
+          <div class="row">
+            <label for="">
+              Description : <textarea rows="4" type="text-area" formControlName="Product_Description"
+                placeholder="Enter Product Details" class="form-control"></textarea></label>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="">
+                Price : <input class="form-control" formControlName="Product_Price" placeholder="Enter Price"
+                  type="text">
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label for="">
+                Quantity : <input type="text" placeholder="Enter Total Quantity" class="form-control"></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="">
+              Address : <input class="form-control" formControlName="address" placeholder="Enter Product Location"
+                type="text">
+            </label>
+          </div>
+          <div class="row">
+            <label for="">
+              Code : <input class="form-control" placeholder="Enter Product Code" type="text">
+            </label>
+          </div>
+          <br>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary btn-style" type="submit" (click)="onUpload()"> Submitt </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- for mobiles -->
+
+<div class="container section2">
+  <div class="d-flex d-lg-none d-md-none d-sm-block hide justify-content-center">
+    <div class="card " style="width: 100%; height: auto; margin: 20px;">
+      <div class="card-body mx-auto" style="width: 100%;">
+        <h4 class="card-title mb-4" style="text-align: center;">Add New Product</h4>
+        <form [formGroup]="checkoutForm">
+          <div class="row">
+            <div class="col ml-5" style="display: flex; justify-content: center;">
+              <label for="">
+                Choose Image : <br> <input type="file" accept='image/*' (change)="handleFileSelect($event)" required
+                  #fileInput> </label>
+              <button style="display: none" (click)="fileInput.click()">
+                <i class="fa fa-fa-camera"></i>
+              </button>
+            </div>
+            <div class="col">
+              <img  *ngFor='let url of urls' [src]="url" height="120px" width=" 200px">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col mb-3">
+              <label class="labels">Category</label>
+              <select formControlName="category" class="form-select" [(ngModel)]="optionValue"
+                [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
+                <option value="Vehicle">Vehicle</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Jewlery">Jewlery</option>
+                <option value="Electronics">Electronics</option>
+              </select>
+              <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                <div *ngIf="f.category.errors.required">category is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Vehicle'">
+            <label class="labels" for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>car</option>
+              <option>bike</option>
+              <option>bus</option>
+              <option>truck</option>
+              <option>other</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Electronics'">
+            <label class="labels" for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>mobile</option>
+              <option>laptop</option>
+              <option>tablet</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Jewlery'">
+            <label class="labels" for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>gold</option>
+              <option>silver</option>
+              <option>diamond</option>
+              <option>other</option>
+            </select>
+          </div>
+
+          <div class="form-row " *ngIf="optionValue == 'Furniture'">
+            <label class="labels" for="">Type</label>
+            <select formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+              <option>old</option>
+              <option>brand New</option>
+              <option>imported</option>
+              <option>other</option>
+            </select>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col">
+              <label class="labels">Product Name</label>
+              <input type="text" formControlName="Product_Name" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.Product_Name.errors }" required>
+            </div>
+            <div *ngIf="submitted && f.Product_Name.errors" class="invalid-feedback">
+              <div *ngIf="f.Product_Name.errors.required">Product Name required</div>
+            </div>
+          </div>
+          <div class="row">
+            <label class="labels" for="">
+              Description : <textarea rows="4" type="text-area" formControlName="Product_Description"
+                placeholder="Enter Product Details" class="form-control"></textarea></label>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label class="labels" for="">
+                Price : <input class="form-control" formControlName="Product_Price" placeholder="Enter Price"
+                  type="text">
+              </label>
+            </div>
+            <div class="col-md-6">
+              <label class="labels" for="">
+                Quantity : <input type="text" placeholder="Enter Total Quantity" class="form-control"></label>
+            </div>
+          </div>
+
+          <div class="row">
+            <label class="labels" for="">
+              Address : <input class="form-control" formControlName="address" placeholder="Enter Product Location"
+                type="text">
+            </label>
+          </div>
+          <div class="row">
+            <label class="labels" for="">
+              Code : <input class="form-control" placeholder="Enter Product Code" type="text">
+            </label>
+          </div>
+          <br>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary btn-style" type="submit" (click)="onUpload()"> Submitt </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

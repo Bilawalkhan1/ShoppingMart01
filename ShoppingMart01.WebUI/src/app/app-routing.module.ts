@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddproductsComponent } from './addproducts/addproducts.component';
-import { AppComponent } from './app.component';
-import { CartComponent } from './components/cart/cart.component';
+import { AddproductsComponent } from './components/addproducts/addproducts.component';
 import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,9 +11,10 @@ import { AuthGuardService } from './Services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupFormComponent},
-  { path: "cart", component: CartComponent },
+  {path: 'cart', loadChildren:()=> import('./components/cart/cart.module').then(x=> x.CartModule)},
   { path: "product/:name" , component: ProductComponent },
   { path: "addproduct" , component: AddproductsComponent },
   { path: "getcategory/:category/:subcategory" , component: CategoryComponent },
@@ -23,7 +22,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], 
+ 
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
