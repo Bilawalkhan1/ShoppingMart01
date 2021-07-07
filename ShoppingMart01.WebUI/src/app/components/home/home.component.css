@@ -1,7 +1,21 @@
-@import '../../../styles.css';
-
+.containerxx{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .highlight:hover{
   background-color: cadetblue;
+}
+.xx{
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+}
+.xx:hover{
+  background-color: rgba(40, 47, 51, 0.2)
+}
+.outline{
+  border-radius: 0%;
 }
 .blog {
     border: 1px solid #f0f0f0;

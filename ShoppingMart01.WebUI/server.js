@@ -30,13 +30,20 @@ function verifyToken(token) {
 // Check if the user exists in database
 function isAuthenticated({ email, password }) {
   const userdb = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'))
-  return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
+ return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
+  // const user = userdb.users.findIndex(user => user.email === email && user.password === password);
+  // return user({
+  //     id: user.id,
+  //     username: user.name,
+  //     email: user.email,
+  //     password: user.password,
+  //     role: user.role
+  // });
 }
 
 server.post('/auth/login', (req, res) => {
   const { email, password } = req.body
-  // const email =  req.body.email
-  // const  password =  req.body.password
+ // const userData = isAuthenticated({email, password})
   if (isAuthenticated({ email, password }) === false) {
     const status = 401
     const message = 'Incorrect email or password'
@@ -44,6 +51,7 @@ server.post('/auth/login', (req, res) => {
     return
   }
   const access_token = createToken({ email, password })
+  // const access_token = createToken({ userData })
   res.status(200).json({ access_token })
 })
 

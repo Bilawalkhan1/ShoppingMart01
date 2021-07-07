@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ProductDetailsService } from 'src/app/Services/product-details.service';
 import { ProductService } from 'src/app/Services/product.service';
 import { product } from '../../Classes/product';
+declare var $: any;
 
 @Component({
   selector: 'app-product',
@@ -35,9 +36,10 @@ export class ProductComponent implements OnInit {
     return this.count
   }
 
-  constructor(private productDetails: ProductDetailsService,
-    private productService: ProductService,
-    private router: Router) {
+  constructor (
+    private productDetails: ProductDetailsService,
+    private productService: ProductService,  private router: Router) 
+    {
     this.subscription = this.productDetails.getProduct().subscribe(prod => {
       if (prod) {
         this.product.push(prod);
@@ -55,6 +57,38 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRelatedProd(this.Productcategory, this.productId);
+  }
+
+  ngAfterViewInit(): void {
+    $(document).ready(function () {
+
+      $(".tb").hover(function () {
+
+        $(".tb").removeClass("tb-active");
+        $(this).addClass("tb-active");
+
+        const current_fs = $(".active");
+
+        let next_fs = $(this).attr('id');
+        next_fs = "#" + next_fs + "1";
+
+        $("fieldset").removeClass("active");
+        $(next_fs).addClass("active");
+
+        current_fs.animate({}, {
+          step: function () {
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
+            });
+            next_fs.css({
+              'display': 'block'
+            });
+          }
+        });
+      });
+    });
+    $('#PS4').jzoom();
   }
 
   getRelatedProd(prodCategory, prodId) {
