@@ -9,10 +9,26 @@
                     <th>Quantity</th>
                     <th>Description</th>
                 </tr>
-                
+
                 <tr *ngFor="let getcartdetail of getcartdetails">
-                    <td><img class="img1" src="{{covertPhotoUrl(getcartdetail.Product_Image)}}"></td>
-                    <td>{{getcartdetail.Product_Name}}</td>
+                    <td>
+                        <div class="img">
+                            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig3">
+
+                                <div ngxSlickItem *ngFor="let i of getcartdetail.Product_Image" class="slide">
+                                    <img class="imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
+                                </div>
+
+                            </ngx-slick-carousel>
+                        </div>
+
+                    </td>
+
+                    <td>
+                        <div class="name">
+                            {{getcartdetail.Product_Name}}
+                        </div>
+                    </td>
                     <td>{{getcartdetail.Product_Price}}</td>
                     <td>{{getcartdetail.Product_id}}</td>
                     <td>{{getcartdetail.Product_Description}}</td>
@@ -23,9 +39,10 @@
 
         </div>
         <div>
-            <button class="btn" type="button" (click)="removeitem()"><i class=" icon fa fa-trash">Remove all</i></button>
+            <button class="btn" type="button" (click)="removeitem()"><i class=" icon fa fa-trash">Remove
+                    all</i></button>
 
         </div>
-        
+
     </div>
 </div>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
+import { NgxModelModule } from 'ngx-model';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { CartComponent } from './cart.component';
   ],
   imports: [
     CommonModule,
-    CartRoutingModule
+    CartRoutingModule,
+    NgxModelModule,
+    SlickCarouselModule
   ]
 })
 export class CartModule { }

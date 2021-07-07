@@ -4,9 +4,8 @@ table {
   }
   
   td, th {
-    /* border: 1px solid #dddddd; */
     text-align: left;
-    padding: 8px;
+    padding: 10px;
   }
   
   tr:nth-child(even) {
@@ -28,3 +27,19 @@ table {
     max-width :23vw;
     min-width: 23vw;
   }
+  .imgstyle1{
+    max-height: 15vw;
+    min-height: 15vw;
+    max-width: 20vw;
+    min-width: 0vw;
+
+}
+.img{
+  max-height: 15vw;
+  min-height: 15vw;
+  max-width: 20vw;
+  min-width: 0vw;
+}
+.name{
+  margin-left: 10px;
+}

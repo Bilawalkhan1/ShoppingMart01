@@ -33,16 +33,7 @@ button:hover {
     opacity: 0;
     transition: all .5s ease;
   }
- .search{
-    border: none;
-    border-radius: 15px;
-    padding: 2px 22px;
-    margin-top: 5px;
-    margin-left: 150px;
- }
- .search_bar{
-    border: none;
- }
+
 .sellbtn{
     border: none;
     border-radius: 20px;
@@ -73,6 +64,23 @@ margin-top: 20px;
     cursor: pointer;
 }
 
+.has-search .form-control {
+    padding-left: 2.1rem;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 
 .cartvalue{
     font-weight: 400;

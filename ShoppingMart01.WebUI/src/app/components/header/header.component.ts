@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
   userLoggedIn = Users
   user: any;
   userdata;
-  dataset = ['MDB', 'Angular', 'Bootstrap', 'Framework', 'SPA', 'React', 'Vue'];
   searchText = '';
   collapsed = true
   public onToggleSidenav = () => {
@@ -34,11 +33,7 @@ export class HeaderComponent implements OnInit {
     this.auth.cartSubject.subscribe((data) => {
       this.cartitem = data
     })
-    // this.authenticatinservice.filterProducts().subscribe(data=>{
-    //   JSON.parse(JSON.stringify(data)).dataforEach(element => {
-    //     this.usersArray.push(element.name);
-    //   });
-    // })
+
   }
 
   ngOnInit(): void {
@@ -58,14 +53,17 @@ export class HeaderComponent implements OnInit {
   }
 
   cartComponent() {
-    if (localStorage.getItem('token') !== null) {
-      this.router.navigateByUrl('/cart')
-
-    }
+    let result;             
+    if (localStorage.getItem('localcart') == null)
+      result = alert('Please add products ist')
     else {
-      this.modalService.open(LoginComponent)
-      this.authguard.returnUrl = 'cart'
+      if (localStorage.getItem('token') !== null)
+        result = this.router.navigateByUrl('/cart');
+      else
+        result = this.modalService.open(LoginComponent)
+      result = this.authguard.returnUrl = 'cart'
     }
+
   }
 
   addProduct() {
