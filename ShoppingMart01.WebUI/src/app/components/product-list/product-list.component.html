@@ -1,20 +1,25 @@
 
 <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
     <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
-        <div class="col">
-            <div class="card h-100 shadow-sm"> <img src="\assets\notebook-laptop.png" class="card-img-top" alt="...">
-                <div class="label-top shadow-sm">DELL</div>
-                <div class="card-body">
-                    <div class="clearfix mb-3"> <span class="float-start badge rounded bg-success">12354.00€</span>
+        <div class="col"  *ngFor="let product of getProductList ; let i = index">
+            <div class="card h-100 shadow-sm">
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+                    <div ngxSlickItem *ngFor="let i of product.Product_Image" class="slide">
+                        <img class="size-img" src="{{covertPhotoUrl(i['img'])}}">
                     </div>
-                    <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam quidem eaque
-                        ut eveniet aut quis rerum. Asperiores accusamus harum ducimus velit odit ut. Saepe, iste optio
-                        laudantium sed aliquam sequi.</h5>
-                    <div class="text-center my-4"> <a href="#" class="btn btn-warning">Check offer</a> </div>
+
+                </ngx-slick-carousel>
+                <div class="label-top shadow-sm"></div>
+                <div class="card-body">
+                    <div class="clearfix mb-3"> <span class="float-start badge rounded bg-success"> {{product.Product_Price}} $</span>
+                    </div>
+                    <h5 class="card-title"> {{product.Product_Description}} </h5>
+                    <div class="text-center my-4"> <a href="#" class="btn btn-warning">View Details</a> </div>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <!-- <div class="col">
             <div class="card h-100 shadow-sm"> <img src="\assets\notebook-laptop.png" class="card-img-top" alt="...">
                 <div class="label-top shadow-sm">DELL</div>
                 <div class="card-body">
@@ -55,6 +60,6 @@
                         <span class="float-end"><i class="fas fa-plus"></i></span> </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

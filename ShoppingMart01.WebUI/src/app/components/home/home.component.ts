@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit {
     slidesToScroll: 1,
     dots: true,
     infinite: true,
-    arrows: true
+    arrows: false
   };
 
   sendProductDetails(blog: object) {

@@ -23,10 +23,11 @@
   </div>
 </div>
 <!-- Product Body -->
+
 <div class="portfolio">
   <h2 class="title">CLEVER PRODUCTS FOR EVERY CORNER</h2>
 </div>
-<div class="layout_buttons">
+<div class="layout_buttons" style="float: right; margin-left: 10px;">
   <button class="btn btn-white" type="button" (click)="onDisplayModeChange(1)"
     [ngClass]="{'btn-primary active': displayMode === 1}">
     <i class="fa fa-th"></i>
@@ -37,37 +38,31 @@
   </button>
 </div>
 <!-- grid -->
-<div class="row" *ngIf="displayMode === 1">
-  <div class="container-fluid">
-    <div class="row container1">
-      <div class="col-lg-3 col-md-6 col-sm-12 p-2" *ngFor="let blog of products">
-        <div class="card highlight" style="width: 18rem;">
-          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
 
-            <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
-              <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
-                <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
-                <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
-              </a>
-            </div>
-
-          </ngx-slick-carousel>
-
-
-          <div class="card-body">
-            <h5 class="card-title">{{blog.Product_Name}}</h5>
-            <h6 class="card-title" style="color: chocolate;"> Rs. {{blog.Product_Price}}</h6>
-            <div class="row justify-content-center">
-              <button type="button"  class="btn btn-outline-dark outline"
-                data-target="#exampleModal">ADD TO CART</button>     
-                <!-- (click)="addtocart(blog)" -->
-            </div>
+<div  *ngIf="displayMode === 1">
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let blog of products">
+        <div class="cardx card-blockx">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+          <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+            <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+              <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
+              <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
+            </a>
           </div>
+        </ngx-slick-carousel>
+        <h5 class="card-titlex mt-3 mb-3">{{blog.Product_Name}}</h5>
+        <h6 class="card-titlex" style="color: chocolate; font-weight: 500;"> Rs. {{blog.Product_Price}}</h6>
+          <p class="card-textx">{{ blog.Product_Description}}</p> 
+          <div class="row justify-content-center">
+          <button type="button"  class="btn btn-primary outline">ADD TO CART</button>
         </div>
-      </div>
+    </div>
+      </div>  
     </div>
   </div>
-</div>
+  </div>
 
 <!-- List -->
 <div class="container" *ngIf="displayMode === 2">
@@ -95,7 +90,8 @@
       <h5 class="card-title">{{blog.Product_Name}}</h5>
       <h6 class="card-title" style="color: chocolate;"> Rs. {{blog.Product_Price}}</h6>
       <div class="row justify-content-center">
-        <button type="button" class="btn btn-outline-dark outline"
+        <button type="button"
+         class="btn btn-outline-dark outline"
           data-target="#exampleModal">ADD TO CART</button>
       </div>
     </div>
@@ -103,18 +99,7 @@
 
 </div>
 <!-- Category List View  -->
+  <h2 class="title text-center mt-5"> CATEGORIES</h2>
+
 <app-categories-list-view> </app-categories-list-view>
 
-
-<!-- <div class="containerxx ">
-  <div class="p-2 bd-highlight xx" *ngFor="let blog of products">
-    <div class="card" style="width: 18rem;">
-      <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
-        <img class="card-img-top img-fluid py-2 imgstyle1" src="{{covertPhotoUrl(blog.Product_Image)}}"
-          alt="Card image cap">
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">{{blog.Product_Name}}</h5>
-        <h6 class="card-title" style="color: chocolate;">Price: Rs. {{blog.Product_Price}}</h6>
-       <p class="card-text">{{blog.Product_Description}}</p>
-        <div class="row justify-content-center"> -->
