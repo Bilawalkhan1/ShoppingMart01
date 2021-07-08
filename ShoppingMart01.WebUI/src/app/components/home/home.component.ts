@@ -16,8 +16,13 @@ export class HomeComponent implements OnInit {
   constructor(
     private productDetails: ProductDetailsService,
     private auth: AuthService,
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    private cartservice: CartService
+  ) {
+    cartservice.event.subscribe(res => {
+      this.cartNumberfun();
+  })
+   }
 
   products: any[] = [];
 
@@ -79,7 +84,7 @@ export class HomeComponent implements OnInit {
 
   itemcart: any[] = [];
 
-  addtocart(category: any, element , text) {
+  addtocart(category: any) {
     let cartdatanull = localStorage.getItem('localcart');
     if (cartdatanull == null) {
       this.itemcart.push(category);
@@ -90,10 +95,10 @@ export class HomeComponent implements OnInit {
       this.itemcart.push(category);
       localStorage.setItem('localcart', JSON.stringify(this.itemcart));
     }
-    element.textContent = text;
-    element.disabled = true;
-    element.hide;
-    this.cartNumberfun();
+    // element.textContent = text;
+    // element.disabled = true;
+    // element.hide;
+   this.cartNumberfun();
   }
   cartNumber: number = 0;
   cartNumberfun() {

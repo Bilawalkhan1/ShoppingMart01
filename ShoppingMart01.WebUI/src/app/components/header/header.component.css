@@ -1,6 +1,25 @@
-.head4{
+.heading1{
     color: white;
     text-decoration: none;
+    font-weight: 500;
+    font-size: 26px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+.search_box{
+    margin-left: 140px;
+}
+.icons{
+    margin-left: 110px;
+}
+.cart{
+    margin-top: 5px;
+}
+.headg{
+    margin-left: 30px;
+}
+.head4{
+    color: white;
 }
 
 button:hover {
@@ -67,7 +86,7 @@ margin-top: 20px;
 .has-search .form-control {
     padding-left: 2.1rem;
     border-radius: 15px;
-    margin-top: 20px;
+    margin-top: 10px
 }
 
 .has-search .form-control-feedback {
@@ -88,5 +107,11 @@ margin-top: 20px;
 @media screen and (max-width:576px){
     .search_box{
         display: none;
+    }
+    .headg{
+        margin-left: 0px;
+    }
+    .icons{
+        margin-left: 0px;
     }
 }

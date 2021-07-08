@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +14,10 @@ export class CartComponent implements OnInit {
     dots: true,
     infinite: true,
   }
-  constructor() { }
+  constructor( private cartservice: CartService,
+    private router:Router) { 
+    
+  }
 
   ngOnInit(): void {
     this.cartdetails()
@@ -29,10 +34,13 @@ export class CartComponent implements OnInit {
        console.log(this.getcartdetails)
      }
    }
+
    removeitem(){
      localStorage.removeItem('localcart')
-     this.getcartdetails = []
+     this.getcartdetails = []  
+     this.cartservice.emitEvent(true);  
    }
+
    removesingleitem(getcartdetails){
      if(localStorage.getItem('localcart')){
        this.getcartdetails =JSON.parse( localStorage.getItem('localcart'))
@@ -40,8 +48,13 @@ export class CartComponent implements OnInit {
          if(this.getcartdetails[i].id === getcartdetails){
            this.getcartdetails.splice(i , 1)
            localStorage.setItem('localcart',JSON.stringify(this.getcartdetails))
-           this.cartdetails()
+           this.cartdetails()  
          }
+         this.cartservice.emitEvent(true);
+         if(this.getcartdetails.length === 0){
+          this.router.navigateByUrl('home')
+          localStorage.removeItem('localcart')
+        }
        }
      }
      

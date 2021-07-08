@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     notify: any;
     redirectUser: any;
 
-    constructor (private router: Router,
+    constructor(private router: Router,
         private as: AuthenticationService,
         private socialAuthService: SocialAuthService,
         private fb: FormBuilder,
@@ -77,11 +77,9 @@ export class LoginComponent implements OnInit {
         this.as.userlogin(credentials).toPromise().then(resp => {
             this.message = ''
             this.register = true
-            // localStorage.setItem('token', resp.access_token);
             if (resp.access_token) {
                 this.as.setUserDetails(credentials.email).toPromise().then(resp => {
                     localStorage.setItem('user', JSON.stringify(resp))
-                    //  this.redirectUser(resp[0].role)
                 })
             }
             if (this.authguardService.returnUrl != null) {

@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SocialAuthService } from 'angularx-social-login';
 import { User } from 'src/app/Classes/user';
+import { AuthService } from 'src/app/Services/auth.service';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthguardService } from 'src/app/Services/authguard.service';
 import { LoginComponent } from '../login/login.component';
 import { Users } from '../signup-form/users';
-import { AuthService } from 'src/app/Services/auth.service';
-import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -17,8 +17,6 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
 export class HeaderComponent implements OnInit {
   category = 'car'
   userLoggedIn = Users
-  isUserLogin
-  userType: string
   user: any;
   userdata;
   searchText = '';
@@ -34,27 +32,12 @@ export class HeaderComponent implements OnInit {
     private authguard: AuthguardService) {
     this.auth.cartSubject.subscribe((data) => {
       this.cartitem = data
-      this.isUserLogin = this.authenticatinservice.currentUserValue;
-      // this.isUserLogin = this.authServ.logUserDetails
     })
 
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.cartItem()
-   
-  }
-
-  ngAfterContentChecked(): void {
-    //Called after every check of the component's or directive's content.
-    //Add 'implements AfterContentChecked' to the class.
-    // this.userType = this.authServ.getUserData()
-    // console.log('oncheck' , this.userType)
-  } 
-  
-  
-  get isAdmin() {
-    return this.userType === 'admin';
   }
 
   cartitem: number = 0;
@@ -74,7 +57,7 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem('localcart') == null)
       result = alert('Please add products ist')
     else {
-      if (localStorage.getItem('token') !== null)
+      if (localStorage.getItem('token')!== null)
         result = this.router.navigateByUrl('/cart');
       else
         result = this.modalService.open(LoginComponent)
@@ -84,7 +67,7 @@ export class HeaderComponent implements OnInit {
   }
 
   addProduct() {
-    if (localStorage.getItem('token') !== null) {
+    if (localStorage.getItem('token')!== null) {
       this.router.navigateByUrl('/addproduct')
 
     }
