@@ -1,0 +1,14 @@
+<div class="container-fluid">
+<div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let image of images" class="slide">
+          <div class="carousel-item active"> <img src="{{ image.img }}" class="img-fluid imgstyle">
+          </div>
+        </div>
+      </ngx-slick-carousel>
+      <div class="carousel-caption d-none d-md-block">
+       <app-search></app-search>
+      </div>
+  </div>
+</div>

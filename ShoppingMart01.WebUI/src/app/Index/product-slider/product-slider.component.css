@@ -1,0 +1,20 @@
+
+.imgstyle{
+    max-height: 23vw;
+    min-height: 23vw;
+    max-width: 28vw;
+    min-width: 28vw;
+    padding: 37px;
+   
+  }
+  .smallscreenslider{
+    max-height: 40vw;
+    min-height: 45vw;
+    max-width: 60vw;
+    min-width: 60vw;
+    margin-left: 58px;
+    
+  }
+  .imgstyle1{
+      height: 17vw;
+  }

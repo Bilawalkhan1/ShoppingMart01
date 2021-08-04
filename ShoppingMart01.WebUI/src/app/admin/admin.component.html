@@ -1,0 +1,39 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+      <!-- <div class="navbar-start">AA</div> -->
+      <div class="navbar-end">
+        <a class="navbar-item " routerLink="/" routerLinkActive="active">
+          Dashboard
+        </a>
+        <a class="navbar-item " routerLink="/products" routerLinkActive="active">
+         Products
+        </a>
+        <a class="navbar-item " routerLink="/settings" routerLinkActive="active">
+         Settings
+        </a>
+        <a class="navbar-item "  >
+          <span class="icon has-text-danger">
+            <i class="fas fa-ban"></i>
+          </span> Logout
+        </a>
+<!-- (click)="logoutAction()" -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <section class="section">
+      <div class="container mainBlock">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+  </div>

@@ -2,94 +2,47 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { SignupFormComponent } from './components/signup-form/signup-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { ProductComponent } from './components/product/product.component';
-import { UserControlComponent } from './components/user-control/user-control.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './Services/_interceptor/auth-interceptor.service';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
-import { AddproductsComponent } from './components/addproducts/addproducts.component';
-import { CategoryComponent } from './components/category/category.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxModelModule } from 'ngx-model';
-import { MaterialModule } from './material.module';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { FilterPipe } from './Classes/filter.pipe';
 import { RouterModule } from '@angular/router';
-import { NavbarModule, WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FilterPipe } from './filter.pipe';
-
-
-import { BreadcrumbModule } from 'angular-crumbs';
-import { ProductRelatedCarouselComponent } from './components/product-related-carousel/product-related-carousel.component';
-import { CategoriesListViewComponent } from './components/categories-list-view/categories-list-view.component';
-import {MatIconModule} from '@angular/material/icon';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { HomePageSliderComponent } from './components/home-page-slider/home-page-slider.component';
+import { IndexComponent } from './Index/index/index.component';
+import { SharedModule } from './shared/shared.module';
+import { HeaderComponent } from './Index/header/header.component';
+import { FooterComponent } from './Index/footer/footer.component';
+import { MainViewComponent } from './Index/MainView/MainView.component';
+import { TopNavBarComponent } from './Index/top-nav-bar/top-nav-bar.component';
+import { SearchComponent } from './Index/search/search.component';
+import { HomePageSliderComponent } from './Index/home-page-slider/home-page-slider.component';
+import { ProductSliderComponent } from './Index/product-slider/product-slider.component';
+import { ProductBrowsingModule } from './product-browsing/product-browsing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
+    IndexComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
-    HomeComponent,
-    SignupFormComponent,
-    ProductComponent,
-    UserControlComponent,
-    AddproductsComponent,
-    CategoryComponent,
-    FilterPipe,
-    ProductRelatedCarouselComponent,
-    CategoriesListViewComponent,
-    ProductListComponent,
-    HomePageSliderComponent
+    MainViewComponent,
+    TopNavBarComponent,
+    SearchComponent,
+    HomePageSliderComponent,
+    ProductSliderComponent
   ],
   imports: [
     AppRoutingModule,
     CommonModule,
-    ReactiveFormsModule,
-    NgbModule,
-    SlickCarouselModule,
     HttpClientModule,
     BrowserModule,
-    FormsModule,
-    NavbarModule,
-    IconsModule,
-    ButtonsModule,
-    WavesModule,
-    ReactiveFormsModule,
     SocialLoginModule,
-    BrowserAnimationsModule,
-    NgxModelModule,
-    MatTabsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MaterialModule,
-    BreadcrumbModule,
-    MatIconModule
+    SharedModule,  
+    ProductBrowsingModule  
   ],
-  exports:[
+  exports: [
     RouterModule,
-      MatTabsModule,
-      MatSidenavModule,
-      MatToolbarModule,
-      MatIconModule,
-      MatButtonModule
   ],
 
   providers: [

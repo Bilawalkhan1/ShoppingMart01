@@ -1,0 +1,20 @@
+.carousel-item {
+  height                 : 80vh;
+  min-height             : 350px;
+  background             : no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size   : cover;
+  -o-background-size     : cover;
+  background-size        : cover;
+}
+
+.carousel-caption {
+  top      : 50%;
+  transform: translateY(-50%);
+  bottom   : initial;
+}
+
+.container-fluid {
+  margin : 0px;
+  padding: 0px;
+}

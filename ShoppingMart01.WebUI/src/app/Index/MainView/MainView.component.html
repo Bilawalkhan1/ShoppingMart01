@@ -1,0 +1,77 @@
+
+<app-home-page-slider></app-home-page-slider>
+<!-- Product Slider -->
+<app-product-slider></app-product-slider>
+<!-- / -->
+<!-- Product Body -->
+
+<div class="portfolio">
+  <h2 class="title">CLEVER PRODUCTS FOR EVERY CORNER</h2>
+</div>
+<div class="layout_buttons">
+  <button class="btn btn-white mb-5" type="button" (click)="onDisplayModeChange(1)"
+    [ngClass]="{'btn-primary active': displayMode === 1}">
+    <i class="fa fa-th"></i>
+  </button>
+  <button class="btn btn-white mb-5" type="button" (click)="onDisplayModeChange(2)"
+    [ngClass]="{'btn-primary active': displayMode === 2}">
+    <i class="fa fa-list"></i>
+  </button>
+</div>
+<!-- grid -->
+
+<div *ngIf="displayMode === 1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mt-3"  *ngFor="let blog of products">
+        <div class="cardx card-blockx">
+          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+            <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+              <a [routerLink]="['ProductBrowsing/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+                <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
+                <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
+              </a>
+            </div>
+          </ngx-slick-carousel>
+          <h5 class="card-titlex mt-3 mb-3">{{blog.Product_Name}}</h5>
+          <h6 class="card-titlex" style="color: chocolate; font-weight: 500;"> Rs. {{blog.Product_Price}}</h6>
+          <p class="card-textx">{{ blog.Product_Description}}</p>
+          <div class="row justify-content-center">
+            <button type="button" (click)="addtocart(blog,$event.target)" class="btn btn-primary outline">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- List -->
+<div class="container" *ngIf="displayMode === 2">
+  <div class="row" *ngFor="let blog of products">
+    <div class="mt-5 col-lg-6 col-md-6 col-sm-12 p-2 image">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+        <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+          <a [routerLink]="['ProductBrowsing/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+            <div class=" imgstyle1">
+              <img class=" imgstyle1" src="{{covertPhotoUrl(i.img)}}">
+            </div>
+            <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid" src="{{covertPhotoUrl(i.img)}}">
+          </a>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 p-2">
+      <p class="card-textlist">{{blog.Product_Description}}</p>
+      <h5 class="card-title1">{{blog.Product_Name}}</h5>
+      <h6 class="card-title2"> Rs. {{blog.Product_Price}}</h6>
+      <button type="button" (click)="addtocart(blog,$event.target)" class="btn btn-outline-dark outline cartbtn"
+        data-target="#exampleModal">ADD TO
+        CART
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Category List View  -->
+<h2 class="title text-center mt-5"> CATEGORIES</h2>
+
+<app-categories-list-view> </app-categories-list-view>

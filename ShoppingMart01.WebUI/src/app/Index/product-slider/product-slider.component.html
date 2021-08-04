@@ -1,0 +1,25 @@
+
+<!-- large screen slider -->
+<div class="container">
+    <div class="row mt-2">
+      <div class="col-md-12 col-lg-12 d-lg-block d-sm-none d-none ">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let image of images" class="slide">
+            <img src="{{ image.img }}" class="img-fluid imgstyle">
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
+  <!-- smaller screen slider -->
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-md-12 col-lg-12 d-lg-none d-sm-block">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig1">
+          <div ngxSlickItem *ngFor="let image of images" class="slide">
+            <img src="{{ image.img }}" class=" smallscreenslider">
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
+  </div>
