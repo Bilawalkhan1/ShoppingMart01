@@ -1,3 +1,59 @@
-<p>filter works!</p>
-{{CategoryId}}
-{{SubCategoryId}}
+<div class="border-end bg-white p-3 pt-0" id="sidebar-wrapper">
+    <div class="sidebar-heading border-bottom bg-light">
+        <h2>Filters</h2>
+    </div>
+    <h2 class="sidebar-heading border-bottom">Location</h2>
+    <div class="list-group list-group-flush">
+        <label class="filterlabel">Province</label>
+        <div>
+            <select class="form-select" placeholder="Select Province" (change)="changeProvince($event.target.value)">
+                <option *ngFor="let count of provinceList">{{count.name}} </option>
+            </select>
+        </div>
+
+        <div *ngIf="cities.length>0">
+            <label class="filterlabel">City</label>
+            <select class="form-select" (change)="onStateChange($event.target.value)" placeholder="Anycity">
+                <option *ngFor="let city of cities">{{city}} </option>
+            </select>
+        </div>
+
+        <div *ngFor="let item of filters">
+            <ng-container *ngFor="let i of item.filters">
+                <label class="filterlabel">{{i.label}}</label>
+                <div>
+                    <select class="form-select" (change)="onValueChange($event.target.value)">
+                        <option hidden value="" disabled selected>--select-- </option>
+                        <option *ngFor="let a of i.options">
+                            {{a.displayValue}}
+                        </option>
+                    </select>
+                </div>
+            </ng-container>
+        </div>
+
+        <ng-container *ngIf="modelData.length>0">
+            <div *ngFor="let item of modelData">
+                <label class="filterlabel">{{item.label}}</label>
+                <div>
+                    <select class="form-select">
+                        <option *ngFor="let a of item.models">
+                            {{a}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="row">
+            <label class="filterlabel" for="">Price(RS)</label>
+            <div class="col-6 m-0 p-0 minprice">
+                <input type="number" class="form-control" placeholder="Min Price">
+            </div>
+            <div class="col-6 m-0 p-0 maxprice">
+                <input type="number" class="form-control" placeholder="Max Price">
+            </div>
+
+        </div>
+    </div>
+</div>

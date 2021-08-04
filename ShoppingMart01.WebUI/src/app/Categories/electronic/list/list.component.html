@@ -1,16 +1,12 @@
 <div class="d-flex" id="wrapper" style="background-color: #eee">
-    <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light"> Filters</div>
-        <div class="list-group list-group-flush">
-            <div class="filterList">
-                <span *ngIf="!SubCategoryId">
-                    <app-filter [CategoryId]=GetCategoryId></app-filter>
-                </span>
-               <span *ngIf="SubCategoryId">
-                <app-filter [SubCategoryId] = SubCategoryId> </app-filter>
-               </span>
-            </div>
-        </div>
+
+    <div class="filterList">
+        <span *ngIf="!SubCategoryId">
+            <app-filter [CategoryId]=GetCategoryId></app-filter>
+        </span>
+        <span *ngIf="SubCategoryId">
+            <app-filter [SubCategoryId]=SubCategoryId> </app-filter>
+        </span>
     </div>
     <div class="container-fluid">
         <app-product-list [getProductList]=List> </app-product-list>

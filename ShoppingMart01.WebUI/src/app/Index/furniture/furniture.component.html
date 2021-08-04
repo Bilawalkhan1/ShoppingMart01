@@ -1,0 +1,23 @@
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
+    <div ngxSlickItem class="slide" *ngFor="let blog of products">
+        <div class="cardx card-blockx ">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig1">
+                <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+                    <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+                        <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
+                        <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid"
+                            src="{{covertPhotoUrl(i.img)}}">
+                    </a>
+                </div>
+            </ngx-slick-carousel>
+            <a class="card-action" href="#"><i class="material-icons">home_repair_service</i> </a>
+            <h5 class="card-titlex mt-3 mb-3">{{blog.Product_Name}}</h5>
+            <h6 class="card-titlex" style="color: chocolate; font-weight: 500;"> Rs. {{blog.Product_Price}}</h6>
+            <p class="card-textx">{{ blog.Product_Description}}</p>
+            <div class="row justify-content-center">
+                <button type="button" (click)="addtocart(blog)" class="btn btn-primary outline">ADD TO
+                    CART</button>
+            </div>
+        </div>
+    </div>
+</ngx-slick-carousel>

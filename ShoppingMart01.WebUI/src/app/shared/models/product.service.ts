@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { filter } from 'src/app/Classes/filter';
 import { product } from '../../Classes/product';
 
 @Injectable({
@@ -28,32 +29,23 @@ export class ProductService {
   getProduct(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  getFilterData(category) {
+    return this.http.get<filter[]>(`http://localhost:3000/categories?categoryid=${category}`)
+  }
+  getModelData(name) {
+    console.log('name', name)
+    return this.http.get(`http://localhost:3000/brands?name=${name}`)
+    
+  }
+  getProdByCategoryData(category) {
+    return this.http.get<product[]>(`http://localhost:3000/Product?category=Vehicle`)
+  }
+  getVehicleData(category) {
+    return this.http.get<product[]>(`http://localhost:3000/Product?category=Furniture`)
+  }
+
+  getProdByLocation(address) {
+    return this.http.get<product[]>(`http://localhost:3000/Product?address=${address}`)
+  }
 }
-
-// getProducts(): Observable<Product[]> {
-//   return this.http.get<Product[]>(this.productsUrl).pipe(
-//     retry(2),
-//     catchError((error: HttpErrorResponse) => {
-//       console.error(error);
-//       return throwError(error);
-//     })
-//   );
-// }
-
-// createProduct(product: Product): Observable<Product> {
-//   product.id = null;
-//   return this.http.post<Product>(this.productsUrl, product).pipe(
-//     catchError((error: HttpErrorResponse) => {
-//       console.error(error);
-//       return throwError(error);
-//     })
-//   )
-// }
-
-// editProduct(product: Product): Observable<any> {
-//   return this.http.put(this.productsUrl + product.id, product);
-// }
-
-// deleteProduct(id: number): Observable<any> {
-//   return this.http.delete(this.productsUrl + id);
-// }

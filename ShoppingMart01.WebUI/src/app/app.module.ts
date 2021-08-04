@@ -18,6 +18,8 @@ import { SearchComponent } from './Index/search/search.component';
 import { HomePageSliderComponent } from './Index/home-page-slider/home-page-slider.component';
 import { ProductSliderComponent } from './Index/product-slider/product-slider.component';
 import { ProductBrowsingModule } from './product-browsing/product-browsing.module';
+import { VehiclesComponent } from './Index/vehicle/vehicle.component';
+import { FurnituresComponent } from './Index/furniture/furniture.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProductBrowsingModule } from './product-browsing/product-browsing.modul
     TopNavBarComponent,
     SearchComponent,
     HomePageSliderComponent,
+    VehiclesComponent,
+    FurnituresComponent,
     ProductSliderComponent
   ],
   imports: [

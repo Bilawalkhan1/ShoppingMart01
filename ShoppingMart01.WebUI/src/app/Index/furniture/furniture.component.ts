@@ -1,58 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/Services/cart.service';
+import { ActivatedRoute } from '@angular/router';
+import { product } from 'src/app/Classes/product';
 import { AuthService } from 'src/app/Services/auth.service';
+import { CartService } from 'src/app/Services/cart.service';
 import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
-  selector: 'app-MainView',
-  templateUrl: './MainView.component.html',
-  styleUrls: ['./MainView.component.css'],
+  selector: 'app-furnitures',
+  templateUrl: './furniture.component.html',
+  styleUrls: ['./furniture.component.css']
 })
-export class MainViewComponent implements OnInit {
-  searchText: any;
+export class FurnituresComponent implements OnInit {
+
   displayMode: number;
   products: any[] = [];
   itemcart: any[] = [];
-
-  images = [
-    { img: '/assets/bikes.jfif' },
-    { img: '/assets/car.jfif' },
-    { img: '/assets/bike.jfif' },
-    { img: '/assets/fur.jfif' },
-    { img: '/assets/jewel.jfif' },
-    { img: '/assets/furn.jfif' },
-    { img: '/assets/jewelery.jfif' },
-    { img: '/assets/furniture.jfif' },
-    { img: '/assets/cars.jfif' },
-  ];
+  category: any
+  filteredProducts: product[] = [];
   slideConfig = {
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    dots: true,
-    autoplaySpeed: 2000,
-    autoplay: true,
-    infinite: true,
-    arrows: false
+    arrows: true,
+    'responsive': [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   }
   slideConfig1 = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
-    autoplaySpeed: 1000,
-    autoplay: true,
-    infinite: true,
     arrows: false
   }
-  slideConfig2 = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    arrows: false
-  };
-
   constructor(
     private auth: AuthService,
+    private route: ActivatedRoute,
     private productService: ProductService,
     private cartservice: CartService
   ) {
@@ -62,9 +59,11 @@ export class MainViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.category = this.route.snapshot.paramMap.get('category')
     this.getProducts()
     this.onDisplayModeChange(1)
   }
+
 
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
@@ -74,7 +73,8 @@ export class MainViewComponent implements OnInit {
   }
 
   private getProducts() {
-    this.productService.getProducts().subscribe(products => this.products = products);
+    this.productService.getVehicleData(this.category).subscribe(products => this.products = products);
+    this.filteredProducts = this.products.filter(p => p.type = this.category)
   }
 
   public sendProductDetails(blog: object) {
@@ -101,6 +101,5 @@ export class MainViewComponent implements OnInit {
     this.cartNumber = cartvalue.length;
     this.auth.cartSubject.next(this.cartNumber);
   }
-
-  onLoadActive() { }
 }
+

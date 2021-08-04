@@ -15,3 +15,14 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.slick-prev {
+  z-index: 9999 !important;
+}
+@media only screen and (max-width: 600px) {
+  .slick-prev { 
+    margin-left: -10px;
+  } 
+  .slick-next {
+    margin-right: -37px;
+  } 
+}

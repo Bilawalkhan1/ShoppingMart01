@@ -5,6 +5,7 @@
     font-size: 26px;
     margin-left: 25px;
     margin-bottom: 10px;
+    margin-right: 25px;
 }
 .search_box{
     margin-left: 140px;
@@ -16,7 +17,8 @@
     margin-top: 5px;
 }
 .headg{
-    margin-left: 30px;
+    margin-left: 0px;
+    font-size: 18px;
 }
 .head4{
     color: white;

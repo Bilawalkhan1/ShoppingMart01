@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   navItem: Array<any> = [
     {
       id: "10",
-      displayName: "vehicle",
+      displayName: "Vehicle",
       route: "/vehicle",
       children: [
         {

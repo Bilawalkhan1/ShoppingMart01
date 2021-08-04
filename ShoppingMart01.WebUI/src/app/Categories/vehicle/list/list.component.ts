@@ -12,10 +12,11 @@ import { product } from 'src/app/Classes/product';
 export class ListComponent implements OnInit {
   GetCategoryId: number;
   SubCategoryId?: number;
+  categoryName: string
   List: product[] = [];
   subscription = new Subscription();
 
-  constructor (private route: ActivatedRoute, private prodList: Category, private router: Router) {
+  constructor(private route: ActivatedRoute, private prodList: Category, private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false
   }
 
@@ -26,8 +27,8 @@ export class ListComponent implements OnInit {
         this.SubCategoryId = Number(params.get('sid'));
         console.log('xxxx', this.GetCategoryId, this.SubCategoryId);
       });
-      this.subscription.add( this.GetProductList());
-   
+    this.subscription.add(this.GetProductList());
+
   }
 
   GetProductList() {

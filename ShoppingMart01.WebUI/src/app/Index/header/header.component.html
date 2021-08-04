@@ -10,23 +10,33 @@
             <li class="nav-item">
                 <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown" *ngFor="let menu of navItem">
 
-                    <button class="btn mr-2 headg head4" id="dropdownManual" ngbDropdownAnchor [routerLink]="[menu.route,menu.id]" > 
+                    <button class="btn ml-2 headg head4" id="dropdownManual" ngbDropdownAnchor
+                        [routerLink]="[menu.route,menu.id]">
                         {{ menu.displayName}}
                     </button>
 
                     <span *ngIf="menu.children">
                         <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                            <button *ngFor="let child of menu.children"
-                             ngbDropdownItem [routerLink]="[menu.route,menu.id,child.route,child.id]">
-                                 {{ child.displayName}}
-                                </button>
+                            <button *ngFor="let child of menu.children" ngbDropdownItem
+                                [routerLink]="[menu.route,menu.id,child.route,child.id]">
+                                {{ child.displayName}}
+                            </button>
                         </div>
                     </span>
 
                 </div>
             </li>
         </ul>
-   
+
+        <ul class="navbar-nav ml-auto search_box">
+            <li>
+                <div class="form-group searchbar has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" placeholder="Search">
+                </div>
+            </li>
+        </ul>
+
         <ul class="navbar-nav icons">
             <li class="nav-item">
                 <a class="nav-link">
