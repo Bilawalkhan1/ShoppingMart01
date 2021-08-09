@@ -56,8 +56,8 @@ export class HeaderComponent implements OnInit {
         },
         {
           id: "2020",
-          displayName: "Blind",
-          route: "blind"
+          displayName: "brand new",
+          route: "brand new"
         },
         {
           id: "2030",
@@ -66,8 +66,8 @@ export class HeaderComponent implements OnInit {
         },
         {
           id: "2040",
-          displayName: "Carpet",
-          route: "carpet"
+          displayName: "old",
+          route: "old"
         }
       ]
     },

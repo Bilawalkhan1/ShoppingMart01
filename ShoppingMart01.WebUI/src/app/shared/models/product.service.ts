@@ -34,9 +34,7 @@ export class ProductService {
     return this.http.get<filter[]>(`http://localhost:3000/categories?categoryid=${category}`)
   }
   getModelData(name) {
-    console.log('name', name)
-    return this.http.get(`http://localhost:3000/brands?name=${name}`)
-    
+    return this.http.get(`http://localhost:3000/brands?name=${name}`) 
   }
   getProdByCategoryData(category) {
     return this.http.get<product[]>(`http://localhost:3000/Product?category=Vehicle`)

@@ -1,4 +1,7 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { product } from 'src/app/Classes/product';
@@ -11,11 +14,11 @@ import { ProductService } from '../../models/product.service';
 })
 export class FilterComponent implements OnInit {
 
-  @Input() CategoryId : string
-  @Input() SubCategoryId? : number
+  @Input() CategoryId: string
+  @Input() SubCategoryId?: number
 
   dataproduct: any
-  modelData:any[]=[]
+  modelData: any[] = []
   products: product[] = [];
   filters: any[] = [];
   filterData: any[] = [];
@@ -27,9 +30,9 @@ export class FilterComponent implements OnInit {
   products$: Observable<any>;
   subcategory: any
   province: any;
-  address: any;  
-  display:boolean
-  cities: any[]=[]
+  address: any;
+  display: boolean
+  cities: any[] = []
   provinceList: Array<any> = [
     {},
     { name: 'kpk', cities: ['', 'Abbottabad', 'Bannu', 'Battagram', 'Buner', 'Charsadda', 'Chitral', 'Dera Ismail Khan', 'Hangu', 'Haripur', 'Karak', 'Kohat', 'Charsadda', 'Lakki Marwat', 'Lower Dir'] },
@@ -40,15 +43,28 @@ export class FilterComponent implements OnInit {
   ];
   GetCategoryId: number;
 
+  public myForm: FormGroup
+  data: ArrayBuffer;
+
   constructor(
+    private fb: FormBuilder,
     private route: ActivatedRoute,
-    private productService: ProductService, 
+    private productService: ProductService,
+    private http: HttpClient,
     private router: Router) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(): void {
-console.log("check", this.CategoryId)
+    this.myForm = this.fb.group({
+      minprice: ['', Validators.required],
+      maxprice: ['', Validators.required],
+      companyName: ['', Validators.required],
+      condition: ['', Validators.required],
+      city: ['', Validators.required],
+      province: ['', Validators.required],
+      model: ['', Validators.required]
+    })
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.category = params.get('category');
       this.subcategory = params.get('subcategory');
@@ -75,17 +91,75 @@ console.log("check", this.CategoryId)
     this.cities = this.provinceList.find(con => con.name == count).cities;
   }
 
-  onValueChange(event){
-    this.productService.getModelData(event).subscribe((filterData:any) => {
+  onValueChange(event) {
+    this.productService.getModelData(event).subscribe((filterData: any) => {
       this.modelData = filterData;
-  })
-}
+    })
+    // this.router.navigate([], { queryParams: { condition: event } })
+  }
 
   onStateChange(event) {
-    this.productService.getProdByLocation(event).subscribe(products => {
-      this.products = products;
-      // this.filteredProducts = this.products
-    });
+    // this.productService.getProdByLocation(event).subscribe(products => {
+    //   this.products = products;
+    //   this.filteredProducts = this.products
+    //   console.log('productss', this.filteredProducts)
+    // });
     // this.router.navigate([], { queryParams: { address: event } })
+  }
+
+  onSubmit() {
+    const data = {
+      province: this.myForm.value.province,
+      city: this.myForm.value.city,
+      condition: this.myForm.value.condition,
+      model: this.myForm.value.model,
+      minprice: this.myForm.value.minprice,
+      maxprice: this.myForm.value.maxprice,
+      companyName: this.myForm.value.companyName,
+    }
+    const values = (data)
+    let routePath: any = {}
+    if (this.myForm.value.city.length > 0) {
+      routePath['city'] = this.myForm.value.city
+    }
+    if (this.myForm.value.condition.length > 0) {
+      routePath['condition'] = this.myForm.value.condition
+    }
+    if (this.myForm.value.companyName.length > 0) {
+      routePath['brand'] = this.myForm.value.companyName
+    }
+    if (this.myForm.value.province.length > 0) {
+      routePath['province'] = this.myForm.value.province
+    }
+    if (this.myForm.value.model.length > 0) {
+      routePath['model'] = this.myForm.value.model
+    }
+    if (this.myForm.value.minprice.length > 0) {
+      routePath['minprice'] = this.myForm.value.minprice
+    }
+    if (this.myForm.value.maxprice.length > 0) {
+      routePath['maxprice'] = this.myForm.value.maxprice
+    }
+
+    this.router.navigate([], { queryParams: routePath })
+    console.log('route', routePath)
+    this.http.get(`http://localhost:3000/Product?routePath=${routePath}`, routePath)
+      .subscribe(products => {
+        this.data = products;
+        this.filteredProducts = this.products
+        console.log('daata', products)
+      }
+      )
+
+  }
+  createForm() {
+    this.filters.map(x => {
+      x.filters.amp(p => {
+        this.myForm.addControl(p.control, p.validator)
+
+      })
+
+
+    })
   }
 }

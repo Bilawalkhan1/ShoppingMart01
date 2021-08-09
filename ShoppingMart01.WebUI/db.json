@@ -9,13 +9,8 @@
       "filters": [
         {
           "type": "select",
-          "name": "model",
-          "label": "Conditon",
-          "options":[{"value": "new", "displayValue": "New"}, {"value": "old", "displayValue": "Old"} ]
-        },
-        {
-          "type": "select",
           "label": "Vehicles For Sale",
+          "control":"company",
           "placeholder": "--select--",
           "options":[
             {"value": "Audi", "displayValue": "Audi"},
@@ -394,6 +389,10 @@
       "subcategoryid":"1010",
       "type": "bike",
       "province": "kpk",
+      "city": "Abbottabad",
+      "condition": "New",
+      "model": "A2",
+      "companyName":"Audi",
       "Product_Name": "Bike",
       "address": "Abbottabad",
       "Product_Price": "200000",

@@ -44,4 +44,13 @@
     width: 120px;
     margin-left: 8px !important;
   }
+  .btn-search{
+    padding: 5px 30px 5px 30px;
+    background-color: #0DCAF0;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    margin-top: 29px !important;
+
+  }
   

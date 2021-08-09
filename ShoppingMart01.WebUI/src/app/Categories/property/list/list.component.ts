@@ -24,7 +24,6 @@ export class ListComponent implements OnInit {
       .subscribe(params => {
         this.GetCategoryId = Number(params.get('id'));
         this.SubCategoryId = Number(params.get('sid'));
-        console.log('xxxx', this.GetCategoryId, this.SubCategoryId);
       });
       this.subscription.add( this.GetProductList());
    
@@ -34,7 +33,6 @@ export class ListComponent implements OnInit {
     return this.prodList.GetProdByCategoryId(this.GetCategoryId, this.SubCategoryId)
       .subscribe(products => {
         this.List = products;
-        console.log('product', products);
       });
   }
 
