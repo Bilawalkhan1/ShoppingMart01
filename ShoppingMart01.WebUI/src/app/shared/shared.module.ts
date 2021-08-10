@@ -29,7 +29,8 @@ import { FilterComponent } from './components/filter/filter.component';
     MatIconModule,
     NavbarModule,
     IconsModule ,
-    NgbModule
+    NgbModule,
+    
   ],
   exports: [
     FormsModule,

@@ -2,14 +2,14 @@
     <div class="list-group list-group-flush">
         <div class="filterList">
             <span *ngIf="!SubCategoryId">
-                <app-filter [CategoryId]=GetCategoryId></app-filter>
+                <app-filter [CategoryId]=GetCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"></app-filter>
             </span>
             <span *ngIf="SubCategoryId">
-                <app-filter [SubCategoryId]=SubCategoryId> </app-filter>
+                <app-filter [SubCategoryId]=SubCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"> </app-filter>
             </span>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <app-product-list [getProductList]=List> </app-product-list>
     </div>
 </div>

@@ -1,7 +1,6 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { product } from 'src/app/Classes/product';
@@ -17,22 +16,12 @@ export class FilterComponent implements OnInit {
   @Input() CategoryId: string
   @Input() SubCategoryId?: number
 
-  dataproduct: any
   modelData: any[] = []
   products: product[] = [];
   filters: any[] = [];
-  filterData: any[] = [];
-  filteredProducts: product[] = [];
-  locationFilteredProducts: product[] = [];
-  categories$: Observable<any>;
-  category: any;
-  models: any;
-  products$: Observable<any>;
-  subcategory: any
-  province: any;
   address: any;
-  display: boolean
   cities: any[] = []
+
   provinceList: Array<any> = [
     {},
     { name: 'kpk', cities: ['', 'Abbottabad', 'Bannu', 'Battagram', 'Buner', 'Charsadda', 'Chitral', 'Dera Ismail Khan', 'Hangu', 'Haripur', 'Karak', 'Kohat', 'Charsadda', 'Lakki Marwat', 'Lower Dir'] },
@@ -45,8 +34,11 @@ export class FilterComponent implements OnInit {
 
   public myForm: FormGroup
   data: ArrayBuffer;
+  filteredProducts: product[];
+  paramsObject: any
+  myFormGroup: FormGroup;
 
-  constructor(
+  constructor (
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -56,6 +48,7 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.myForm = this.fb.group({
       minprice: ['', Validators.required],
       maxprice: ['', Validators.required],
@@ -65,9 +58,17 @@ export class FilterComponent implements OnInit {
       province: ['', Validators.required],
       model: ['', Validators.required]
     })
+
+    if (this.router.url.includes('?')) {
+      this.route.queryParamMap
+        .subscribe((params) => {
+          this.paramsObject = { ...params };
+          console.log(this.paramsObject.params);
+        }
+        );
+    }
+
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.category = params.get('category');
-      this.subcategory = params.get('subcategory');
       this.GetCategoryId = Number(params.get('id'));
       this.SubCategoryId = Number(params.get('sid'));
     });
@@ -76,14 +77,21 @@ export class FilterComponent implements OnInit {
       .subscribe(params => {
         this.address = +params['address'];
       });
-    this.getFilterData()
+    this.getFilters()
+    let group = {}
+    this.filters.forEach(input_template => {
+      group[input_template.label] = new FormControl('');
+    })
+    this.myFormGroup = new FormGroup(group);
   }
 
-  getFilterData() {
+  getFilters() {
     if (this.GetCategoryId) {
-      this.productService.getFilterData(this.GetCategoryId).subscribe(filters => {
-        this.filters = filters;
-      });
+      this.productService.getFilterData(this.GetCategoryId, this.SubCategoryId)
+        .subscribe(xx => {
+          this.filters = xx;
+          console.log(xx)
+        });
     }
   }
 
@@ -95,7 +103,6 @@ export class FilterComponent implements OnInit {
     this.productService.getModelData(event).subscribe((filterData: any) => {
       this.modelData = filterData;
     })
-    // this.router.navigate([], { queryParams: { condition: event } })
   }
 
   onStateChange(event) {
@@ -108,17 +115,11 @@ export class FilterComponent implements OnInit {
   }
 
   onSubmit() {
-    const data = {
-      province: this.myForm.value.province,
-      city: this.myForm.value.city,
-      condition: this.myForm.value.condition,
-      model: this.myForm.value.model,
-      minprice: this.myForm.value.minprice,
-      maxprice: this.myForm.value.maxprice,
-      companyName: this.myForm.value.companyName,
-    }
-    const values = (data)
+
     let routePath: any = {}
+    if (this.myForm.value.province.length > 0) {
+      routePath['province'] = this.myForm.value.province
+    }
     if (this.myForm.value.city.length > 0) {
       routePath['city'] = this.myForm.value.city
     }
@@ -128,9 +129,7 @@ export class FilterComponent implements OnInit {
     if (this.myForm.value.companyName.length > 0) {
       routePath['brand'] = this.myForm.value.companyName
     }
-    if (this.myForm.value.province.length > 0) {
-      routePath['province'] = this.myForm.value.province
-    }
+
     if (this.myForm.value.model.length > 0) {
       routePath['model'] = this.myForm.value.model
     }
@@ -140,26 +139,7 @@ export class FilterComponent implements OnInit {
     if (this.myForm.value.maxprice.length > 0) {
       routePath['maxprice'] = this.myForm.value.maxprice
     }
-
     this.router.navigate([], { queryParams: routePath })
-    console.log('route', routePath)
-    this.http.get(`http://localhost:3000/Product?routePath=${routePath}`, routePath)
-      .subscribe(products => {
-        this.data = products;
-        this.filteredProducts = this.products
-        console.log('daata', products)
-      }
-      )
-
   }
-  createForm() {
-    this.filters.map(x => {
-      x.filters.amp(p => {
-        this.myForm.addControl(p.control, p.validator)
 
-      })
-
-
-    })
-  }
 }

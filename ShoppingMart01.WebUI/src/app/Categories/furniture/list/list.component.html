@@ -1,10 +1,10 @@
 <div class="d-flex" id="wrapper" style="background-color: #eee">
     <div class="filterList">
         <span *ngIf="!SubCategoryId">
-            <app-filter [CategoryId]=GetCategoryId></app-filter>
+            <app-filter [CategoryId]=GetCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"></app-filter>
         </span>
         <span *ngIf="SubCategoryId">
-            <app-filter [SubCategoryId]=SubCategoryId> </app-filter>
+            <app-filter [SubCategoryId]=SubCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"> </app-filter>
         </span>
     </div>
     <div class="container-fluid">

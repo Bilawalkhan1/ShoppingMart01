@@ -1,52 +1,122 @@
 {
-
   "categories": [
+    {
+      "CategoryTilte": "Bike",
+      "categoryid": "10",
+      "subcategoryid": "1010",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "value": "Select Brand",
+          "name": "brand",
+          "options": [
+            { "value": "Atlas Honda", "displayValue": "Atlas Honda" },
+            { "value": "Metro Motor Bike", "displayValue": "Metro Motor Bikes" },
+            { "value": "Yamaha Motors", "displayValue": "Yamaha Motors" },
+            { "value": "Super Power Bike", "displayValue": "Super Power Bike" },
+            { "value": "Imperial Bike", "displayValue": "Imperial Bike" },
+            { "value": "Ravi Bike", "displayValue": "Ravi Bike" }
+          ],
+          "validators": {}
+        },
+        {
+          "label": "Engine displacement(cc)",
+          "type": "select",
+          "value": "Select Engine displacement",
+          "options": [
+            { "value": "70cc", "displayValue": "70cc" },
+            { "value": "125cc", "displayValue": "125cc" },
+            { "value": "100cc", "displayValue": "100cc" },
+            { "value": "150cc", "displayValue": "150cc" },
+            { "value": "250cc", "displayValue": "250cc" },
+            { "value": "200cc", "displayValue": "200cc" }
+          ],
+          "validators": {}
+        },
+        {
+          "label": "Model Year",
+          "type": "select",
+          "value": "Select Model Year",
+          "options": [
+            { "value": "2021", "displayValue": "2021" },
+            { "value": "2020", "displayValue": "2020" },
+            { "value": "2019", "displayValue": "2019" },
+            { "value": "2018", "displayValue": "2018" },
+            { "value": "2017", "displayValue": "2017" },
+            { "value": "2016", "displayValue": "2016" }
+          ],
+          "validators": {}
+        },
+        {
+          "label": "Color Family",
+          "type": "select",
+          "value": "Select Color",
+          "options": [
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "White", "displayValue": "White" },
+            { "value": "Blue", "displayValue": "Blue" }
+          ],
+          "validators": {}
+        },
+        {
+          "label": "Number of Gears",
+          "type": "select",
+          "value": "Select number of gears",
+          "options": [
+            { "value": "4", "displayValue": "4" },
+            { "value": "5", "displayValue": "5" }
+          ],
+          "validators": {}
+        }
+      ]
+    },
     {
       "id": 1101,
       "category": "Vehicle",
-      "categoryid":"10",
+      "categoryid": "10",
       "type": "car",
       "filters": [
         {
           "type": "select",
           "label": "Vehicles For Sale",
-          "control":"company",
+          "control": "company",
           "placeholder": "--select--",
-          "options":[
-            {"value": "Audi", "displayValue": "Audi"},
-            {"value": "Bmw", "displayValue": "BMW"},
-            {"value": "Bentley", "displayValue": "Bentley"},           
-            {"value": "Buick", "displayValue": "Buick"},
-            {"value": "Cadillac", "displayValue": "Cadillac"},
-            {"value": "Chevrolet", "displayValue": "Chevrolet"},
-            {"value": "Chrysler", "displayValue": "Chrysler"},
-            {"value": "Dodge", "displayValue": "Dodge"},
-            {"value": "Fiat", "displayValue": "Fiat"},
-            {"value": "Genesis", "displayValue": "Genesis"},
-            {"value": "Ford", "displayValue": "Ford"},
-            {"value": "GMC", "displayValue": "GMC"},
-            {"value": "Alfa", "displayValue": "Alfa"},
-            {"value": "Honda", "displayValue": "Honda"},
-            {"value": "Hyundai", "displayValue": "Hyundai"},
-            {"value": "Infiniti", "displayValue": "Infiniti"},
-            {"value": "Jaguar", "displayValue": "Jaguar"},
-            {"value": "Jeep", "displayValue": "Jeep"},
-            {"value": "Kia", "displayValue": "Kia"},
-            {"value": "Land", "displayValue": "Land"},
-            {"value": "Rover", "displayValue": "Rover"},
-            {"value": "Romeo", "displayValue": "Romeo"},
-            {"value": "Lexus", "displayValue": "Lexus"},
-            {"value": "Lincoln", "displayValue": "Lincoln"},
-            {"value": "Mazda", "displayValue": "Mazda"},
-            {"value": "Mercedes-Benz", "displayValue": "Mercedes-Benz"},
-            {"value": "Mini", "displayValue": "Mini"},
-            {"value": "Mitsubishi", "displayValue": "Mitsubishi"},
-            {"value": "Nissan", "displayValue": "Nissan"},
-            {"value": "Volvo", "displayValue": "Volvo"},
-            {"value": "Suzuki", "displayValue": "Suzuki"},
-            {"value": "Tesla", "displayValue": "Tesla"}
-          
-          ]     
+          "options": [
+            { "value": "Audi", "displayValue": "Audi" },
+            { "value": "Bmw", "displayValue": "BMW" },
+            { "value": "Bentley", "displayValue": "Bentley" },
+            { "value": "Buick", "displayValue": "Buick" },
+            { "value": "Cadillac", "displayValue": "Cadillac" },
+            { "value": "Chevrolet", "displayValue": "Chevrolet" },
+            { "value": "Chrysler", "displayValue": "Chrysler" },
+            { "value": "Dodge", "displayValue": "Dodge" },
+            { "value": "Fiat", "displayValue": "Fiat" },
+            { "value": "Genesis", "displayValue": "Genesis" },
+            { "value": "Ford", "displayValue": "Ford" },
+            { "value": "GMC", "displayValue": "GMC" },
+            { "value": "Alfa", "displayValue": "Alfa" },
+            { "value": "Honda", "displayValue": "Honda" },
+            { "value": "Hyundai", "displayValue": "Hyundai" },
+            { "value": "Infiniti", "displayValue": "Infiniti" },
+            { "value": "Jaguar", "displayValue": "Jaguar" },
+            { "value": "Jeep", "displayValue": "Jeep" },
+            { "value": "Kia", "displayValue": "Kia" },
+            { "value": "Land", "displayValue": "Land" },
+            { "value": "Rover", "displayValue": "Rover" },
+            { "value": "Romeo", "displayValue": "Romeo" },
+            { "value": "Lexus", "displayValue": "Lexus" },
+            { "value": "Lincoln", "displayValue": "Lincoln" },
+            { "value": "Mazda", "displayValue": "Mazda" },
+            { "value": "Mercedes-Benz", "displayValue": "Mercedes-Benz" },
+            { "value": "Mini", "displayValue": "Mini" },
+            { "value": "Mitsubishi", "displayValue": "Mitsubishi" },
+            { "value": "Nissan", "displayValue": "Nissan" },
+            { "value": "Volvo", "displayValue": "Volvo" },
+            { "value": "Suzuki", "displayValue": "Suzuki" },
+            { "value": "Tesla", "displayValue": "Tesla" }
+          ]
         }
       ]
     },
@@ -54,44 +124,55 @@
     {
       "id": 1102,
       "category": "Furniture",
-      "categoryid":"20",
+      "categoryid": "20",
       "filters": [
         {
           "type": "select",
           "name": "model",
           "label": "Conditon",
-          "options":[{"value": "new", "displayValue": "New"}, {"value": "old", "displayValue": "Old"} ]
+          "options": [
+            { "value": "new", "displayValue": "New" },
+            { "value": "old", "displayValue": "Old" }
+          ]
         },
         {
           "type": "brand New",
           "label": "Furniture For Sale",
-          "options":[
-            {"value": "bentwoodfurniture", "displayValue": "bentwoodfurniture"},
-            {"value": "bobbinfurniture", "displayValue": "bobbinfurniture"},
-            {"value": "countryfurniture", "displayValue": "countryfurniture"},
-            {"value": "cornerfurniture", "displayValue": "cornerfurniture"},
-            {"value": "EarlyAmericanfurniture", "displayValue": "EarlyAmericanfurniture"},
-            {"value": "rusticstyle", "displayValue": "rusticstyle"},
-            {"value": "Shakerfurniture", "displayValue": "Shakerfurniture"},
-            {"value": "Chevrolet", "displayValue": "Chevrolet"},
-            {"value": "tilt-toptable", "displayValue": "tilt-toptable"},
-            {"value": "candlestand", "displayValue": "candlestand"},
-            {"value": "dressingtable", "displayValue": "dressingtable"},
-            {"value": "Windsorchair", "displayValue": "Windsorchair"},
-            {"value": "Morrischair", "displayValue": "Morrischair"},
-            {"value": "Brewsterchair", "displayValue": "Brewsterchair"},
-            {"value": "couch", "displayValue": "couch"},
-            {"value": "Barcelonachair", "displayValue": "Barcelonachair"},
-            {"value": "vargueno", "displayValue": "vargueno"},
-            {"value": "courtcupboard", "displayValue": "courtcupboard"},
-            {"value": "cellarette", "displayValue": "cellarette"},
-            {"value": "cradle", "displayValue": "cradle"},
-            {"value": "trundlebed", "displayValue": "trundlebed"},
-            {"value": "Turkishstyle", "displayValue": "Turkishstyle"},
-            {"value": "Missionstyle", "displayValue": "Missionstyle"},
-            {"value": "canefurniture", "displayValue": "canefurniture"},
-            {"value": "campaignfurniture", "displayValue": "campaignfurniture"}
-          
+          "options": [
+            {
+              "value": "bentwoodfurniture",
+              "displayValue": "bentwoodfurniture"
+            },
+            { "value": "bobbinfurniture", "displayValue": "bobbinfurniture" },
+            { "value": "countryfurniture", "displayValue": "countryfurniture" },
+            { "value": "cornerfurniture", "displayValue": "cornerfurniture" },
+            {
+              "value": "EarlyAmericanfurniture",
+              "displayValue": "EarlyAmericanfurniture"
+            },
+            { "value": "rusticstyle", "displayValue": "rusticstyle" },
+            { "value": "Shakerfurniture", "displayValue": "Shakerfurniture" },
+            { "value": "Chevrolet", "displayValue": "Chevrolet" },
+            { "value": "tilt-toptable", "displayValue": "tilt-toptable" },
+            { "value": "candlestand", "displayValue": "candlestand" },
+            { "value": "dressingtable", "displayValue": "dressingtable" },
+            { "value": "Windsorchair", "displayValue": "Windsorchair" },
+            { "value": "Morrischair", "displayValue": "Morrischair" },
+            { "value": "Brewsterchair", "displayValue": "Brewsterchair" },
+            { "value": "couch", "displayValue": "couch" },
+            { "value": "Barcelonachair", "displayValue": "Barcelonachair" },
+            { "value": "vargueno", "displayValue": "vargueno" },
+            { "value": "courtcupboard", "displayValue": "courtcupboard" },
+            { "value": "cellarette", "displayValue": "cellarette" },
+            { "value": "cradle", "displayValue": "cradle" },
+            { "value": "trundlebed", "displayValue": "trundlebed" },
+            { "value": "Turkishstyle", "displayValue": "Turkishstyle" },
+            { "value": "Missionstyle", "displayValue": "Missionstyle" },
+            { "value": "canefurniture", "displayValue": "canefurniture" },
+            {
+              "value": "campaignfurniture",
+              "displayValue": "campaignfurniture"
+            }
           ]
         }
       ]
@@ -99,202 +180,636 @@
     {
       "id": 1103,
       "category": "Jewlery",
-      "categoryid":"50",
+      "categoryid": "50",
       "type": "gold",
       "filters": [
         {
           "type": "select",
           "label": "Jewlery For Sale",
           "placeholder": "--select--",
-          "options":[
-            {"value": "Gold", "displayValue": "Gold"},
-            {"value": "Diamond", "displayValue": "Diamond"},
-            {"value": "Silver", "displayValue": "Silver"},           
-            {"value": "Antique", "displayValue": "Antique"},
-            {"value": "Other", "displayValue": "Other"}
-
-          ]     
+          "options": [
+            { "value": "Gold", "displayValue": "Gold" },
+            { "value": "Diamond", "displayValue": "Diamond" },
+            { "value": "Silver", "displayValue": "Silver" },
+            { "value": "Antique", "displayValue": "Antique" },
+            { "value": "Other", "displayValue": "Other" }
+          ]
         }
       ]
-    }
-    ,
+    },
     {
       "id": 1104,
       "category": "Electronics",
       "type": "mobile",
-      "categoryid":"30",
+      "categoryid": "30",
       "filters": [
         {
           "type": "select",
           "label": "Electronics For Sale",
           "placeholder": "--select--",
-          "options":[
-            {"value": "Mobiles", "displayValue": "Mobiles"},
-            {"value": "Laptops", "displayValue": "Laptops"},
-            {"value": "Tablets", "displayValue": "Tablets"},           
-            {"value": "Other", "displayValue": "Other"}
-          ]     
+          "options": [
+            { "value": "Mobiles", "displayValue": "Mobiles" },
+            { "value": "Laptops", "displayValue": "Laptops" },
+            { "value": "Tablets", "displayValue": "Tablets" },
+            { "value": "Other", "displayValue": "Other" }
+          ]
         }
       ]
     }
   ],
 
-  "brands":[
-    {
-    "label": "All Models",
-    "name":"Audi",
-    "models":["A1","A2","A3","A4","A5","A6","A7","A8","Q2","Q3","Q4","Q5","Q6","Q7","Q8","S3","S4","S5","S6","S7","S8","others"]},
+  "brands": [
     {
       "label": "All Models",
-      "name":"BMW", "models":["1 series","2 series","3 series","4 series","5 series","6 series","7 series","M coupe","M roadster","M3","M4","M5","M6","M7","X1","X2","X3","X4","X5","X6","X7", "others"]
+      "name": "Audi",
+      "models": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "others"
+      ]
     },
     {
       "label": "All Models",
-      "name":"Bentley", "models":["arnage","azure","bentayga","brooklands","continental","continental gt","mulsane","bentayga S","bentayga hybrid","bentayga v8","continental gt v8","gt sport", "others" ]
-    }
-    ,
-    {
-      "label": "All Models",
-      "name":"Buick", "models":["other"]
+      "name": "BMW",
+      "models": [
+        "1 series",
+        "2 series",
+        "3 series",
+        "4 series",
+        "5 series",
+        "6 series",
+        "7 series",
+        "M coupe",
+        "M roadster",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "X1",
+        "X2",
+        "X3",
+        "X4",
+        "X5",
+        "X6",
+        "X7",
+        "others"
+      ]
     },
     {
       "label": "All Models",
-      "name":"Genesis", "models":["other"]
-    }
-    ,
+      "name": "Bentley",
+      "models": [
+        "arnage",
+        "azure",
+        "bentayga",
+        "brooklands",
+        "continental",
+        "continental gt",
+        "mulsane",
+        "bentayga S",
+        "bentayga hybrid",
+        "bentayga v8",
+        "continental gt v8",
+        "gt sport",
+        "others"
+      ]
+    },
     {
       "label": "All Models",
-      "name":"Cadillac", "models":["Ats","Bls","Ct6","Cts/Catera","Dts/De ville","Escalade ","Fleetwood","Srx ","Xlr ","Xt5","Xtr/Eldorado","other" ]
-    }
-    ,
+      "name": "Buick",
+      "models": ["other"]
+    },
     {
       "label": "All Models",
-      "name":"Chevrolet", "models":["Astro","Aveo","Bolt","Csv","Camaro","Captiva","Colorado","Cruze ","Epica","Explorer" ]
-    }
-    ,
+      "name": "Genesis",
+      "models": ["other"]
+    },
     {
       "label": "All Models",
-      "name":"Chrysler", "models":["Neon","200/200c","300C/300M","Concord","Crossfire","Pt Cruiser","Pacifica","Prowoler ","Sebring","other" ]
-    }
-    ,
+      "name": "Cadillac",
+      "models": [
+        "Ats",
+        "Bls",
+        "Ct6",
+        "Cts/Catera",
+        "Dts/De ville",
+        "Escalade ",
+        "Fleetwood",
+        "Srx ",
+        "Xlr ",
+        "Xt5",
+        "Xtr/Eldorado",
+        "other"
+      ]
+    },
     {
       "label": "All Models",
-      "name":"Dodge", "models":["Avenger","Caliber","Caravan","Charger","Caliber","Dart Durango","Journey","Magnum ","Neon","Nitro", "Pickup"]
-    }
-    ,
+      "name": "Chevrolet",
+      "models": [
+        "Astro",
+        "Aveo",
+        "Bolt",
+        "Csv",
+        "Camaro",
+        "Captiva",
+        "Colorado",
+        "Cruze ",
+        "Epica",
+        "Explorer"
+      ]
+    },
     {
       "label": "All Models",
-      "name":"Fiat", "models":["124Spider","500X","Barchetta","Brava","Linea","Marea Punto","Tempra","Uno ","other" ]
-    }
-    ,
+      "name": "Chrysler",
+      "models": [
+        "Neon",
+        "200/200c",
+        "300C/300M",
+        "Concord",
+        "Crossfire",
+        "Pt Cruiser",
+        "Pacifica",
+        "Prowoler ",
+        "Sebring",
+        "other"
+      ]
+    },
     {
       "label": "All Models",
-      "name":"Ford", "models":["Aerostar","Brunco","300C/300M","Crown","Edge","Escape Excort","Excorison","Explorer ","Fiesta","Figo" ]
+      "name": "Dodge",
+      "models": [
+        "Avenger",
+        "Caliber",
+        "Caravan",
+        "Charger",
+        "Caliber",
+        "Dart Durango",
+        "Journey",
+        "Magnum ",
+        "Neon",
+        "Nitro",
+        "Pickup"
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Fiat",
+      "models": [
+        "124Spider",
+        "500X",
+        "Barchetta",
+        "Brava",
+        "Linea",
+        "Marea Punto",
+        "Tempra",
+        "Uno ",
+        "other"
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Ford",
+      "models": [
+        "Aerostar",
+        "Brunco",
+        "300C/300M",
+        "Crown",
+        "Edge",
+        "Escape Excort",
+        "Excorison",
+        "Explorer ",
+        "Fiesta",
+        "Figo"
+      ]
     },
     {
       "label": "Furniture",
-      "name":"bentwoodfurniture", "models":["Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","other"]
+      "name": "bentwoodfurniture",
+      "models": [
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "other"
+      ]
     },
     {
       "label": "Furniture",
-      "name":"bobbinfurniture", "models":["Dressers","Tv Units"," Office Furniture","Kitchen Counters","Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Tables & Consoles","other"]
+      "name": "bobbinfurniture",
+      "models": [
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Tables & Consoles",
+        "other"
+      ]
     },
     {
       "label": "Furniture",
-      "name":"candlestand", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "candlestand",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"Morrischair", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "Morrischair",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"Windsorchair", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "Windsorchair",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"till-toptable", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "till-toptable",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"Barcelonachair", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "Barcelonachair",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"cough", "models":["Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "cough",
+      "models": [
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"dressingtable", "models":["Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Wardrobes","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "dressingtable",
+      "models": [
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Wardrobes",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"Shakerfurniture", "models":["Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Wardrobes","Beds and Sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "Shakerfurniture",
+      "models": [
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Wardrobes",
+        "Beds and Sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"EarlyAmericanfurniture", "models":["Tables & Consoles","Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Kitchen Counters","other"]
-    }
-    ,
+      "name": "EarlyAmericanfurniture",
+      "models": [
+        "Tables & Consoles",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"cornerfurniture", "models":["Chairs & Seats","Children Furniture","Dinning sets","Dressers","Wardrobes","Beds and Sets","Cupboards","Tv Units"," Office Furniture","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "cornerfurniture",
+      "models": [
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Tv Units",
+        " Office Furniture",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"countryfurniture", "models":[" Office Furniture","Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units","Kitchen Counters","Tables & Consoles","other"]
-    }
-    ,
+      "name": "countryfurniture",
+      "models": [
+        " Office Furniture",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        "Kitchen Counters",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Furniture",
-      "name":"rusticstyle", "models":["Kitchen Counters","Wardrobes","Beds and Sets","Cupboards","Chairs & Seats","Children Furniture","Dinning sets","Dressers","Tv Units"," Office Furniture","Tables & Consoles","other"]
-    }
-    ,
+      "name": "rusticstyle",
+      "models": [
+        "Kitchen Counters",
+        "Wardrobes",
+        "Beds and Sets",
+        "Cupboards",
+        "Chairs & Seats",
+        "Children Furniture",
+        "Dinning sets",
+        "Dressers",
+        "Tv Units",
+        " Office Furniture",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Jewlery",
-      "name":"Gold", "models":["Yellow Gold Alloys","Colored Gold Alloys","Copper Based Alloys","Gold-Filled","Rolled Gold","Gold-Plated ","Gold-Dipped","Electroplating","Tv Units"," Office Furniture","Tables & Consoles","other"]
-    }
-    ,
+      "name": "Gold",
+      "models": [
+        "Yellow Gold Alloys",
+        "Colored Gold Alloys",
+        "Copper Based Alloys",
+        "Gold-Filled",
+        "Rolled Gold",
+        "Gold-Plated ",
+        "Gold-Dipped",
+        "Electroplating",
+        "Tv Units",
+        " Office Furniture",
+        "Tables & Consoles",
+        "other"
+      ]
+    },
     {
       "label": "Jewlery",
-      "name":"Diamond", "models":["White Diamonds","Champagne Diamonds","Pink Champagne Diamonds","Yellow Diamonds","Blue Diamonds","Green Diamonds","Purple Diamonds","Synthetic Diamonds","other"]
-    }
-    ,
+      "name": "Diamond",
+      "models": [
+        "White Diamonds",
+        "Champagne Diamonds",
+        "Pink Champagne Diamonds",
+        "Yellow Diamonds",
+        "Blue Diamonds",
+        "Green Diamonds",
+        "Purple Diamonds",
+        "Synthetic Diamonds",
+        "other"
+      ]
+    },
     {
       "label": "Jewlery",
-      "name":"Silver", "models":["Quality Stamp ","Fine .999 Silver.","Sterling .925 Silver","Argentium Silver","Coin Silver","Silver Filled ","Silver Plated","other"]
-    }
-    ,
+      "name": "Silver",
+      "models": [
+        "Quality Stamp ",
+        "Fine .999 Silver.",
+        "Sterling .925 Silver",
+        "Argentium Silver",
+        "Coin Silver",
+        "Silver Filled ",
+        "Silver Plated",
+        "other"
+      ]
+    },
     {
       "label": "Jewlery",
-      "name":"Antique", "models":["Retro Jewelry ","Art Deco Jewelry","Edwardian Jewelry","Art Nouveau Jewelry","Victorian Jewelry","Georgian Jewelry ","other"]
-    }
-    ,
+      "name": "Antique",
+      "models": [
+        "Retro Jewelry ",
+        "Art Deco Jewelry",
+        "Edwardian Jewelry",
+        "Art Nouveau Jewelry",
+        "Victorian Jewelry",
+        "Georgian Jewelry ",
+        "other"
+      ]
+    },
     {
       "label": "Electronics",
-      "name":"Mobiles", "models":["ACER", "ALCATEL", "ALLVIEW", "AMAZON", "AMOI", "APPLE", "ARCHOS", "ASUS", "AT&T", "BENEFON", "BENQ", "BENQ-SIEMENS", "BIRD", "BLACKBERRY", "BLACKVIEW", "DELL", "EMPORIA", "ERICSSON", "GOOGLE", "HAIER", "HONORHUAWEI", "I-MATE ","I-MOBILE", "ICEMOBILE", "INFINIX", "INNOSTREAM", "INTEX", "LENOVO", "LG", "MAXON", "MICROMAX" ,"MICROSOFT", "MOTOROLA", "NOKIA" ,"OPPO", "ORANGE", "PANASONIC", "QMOBILE", "REALME", "SAMSUNG", "SONY", "SONY ERICSSON", "T-MOBILE", "TECNO", "VIVO", "VODAFONE", "XIAOMI", "ZTE"
+      "name": "Mobiles",
+      "models": [
+        "ACER",
+        "ALCATEL",
+        "ALLVIEW",
+        "AMAZON",
+        "AMOI",
+        "APPLE",
+        "ARCHOS",
+        "ASUS",
+        "AT&T",
+        "BENEFON",
+        "BENQ",
+        "BENQ-SIEMENS",
+        "BIRD",
+        "BLACKBERRY",
+        "BLACKVIEW",
+        "DELL",
+        "EMPORIA",
+        "ERICSSON",
+        "GOOGLE",
+        "HAIER",
+        "HONORHUAWEI",
+        "I-MATE ",
+        "I-MOBILE",
+        "ICEMOBILE",
+        "INFINIX",
+        "INNOSTREAM",
+        "INTEX",
+        "LENOVO",
+        "LG",
+        "MAXON",
+        "MICROMAX",
+        "MICROSOFT",
+        "MOTOROLA",
+        "NOKIA",
+        "OPPO",
+        "ORANGE",
+        "PANASONIC",
+        "QMOBILE",
+        "REALME",
+        "SAMSUNG",
+        "SONY",
+        "SONY ERICSSON",
+        "T-MOBILE",
+        "TECNO",
+        "VIVO",
+        "VODAFONE",
+        "XIAOMI",
+        "ZTE"
+      ]
+    },
+    {
+      "label": "Electronics",
+      "name": "Laptops",
+      "models": [
+        "APPLE",
+        "ACER",
+        "HAIER",
+        "WINDOWS",
+        "HP",
+        "DELL",
+        "SAMSUNG",
+        "LENOVO",
+        "LG",
+        "MICROSOFT",
+        "NOKIA",
+        "OPPO",
+        "ORANGE"
+      ]
+    },
+    {
+      "label": "Electronics",
+      "name": "Tablets",
+      "models": [
+        "SAMSUNG",
+        "APPLE",
+        "ACER",
+        "QMOBILE",
+        "REALME",
+        "INFINIX",
+        "LENOVO",
+        "LG",
+        "MAXON",
+        "MICROMAX",
+        "MICROSOFT",
+        "MOTOROLA",
+        "NOKIA",
+        "OPPO",
+        "TECNO",
+        "ORANGE",
+        "other"
       ]
     }
-    ,
-    {
-      "label": "Electronics",
-      "name":"Laptops", "models":["APPLE","ACER","HAIER","WINDOWS","HP","DELL", "SAMSUNG", "LENOVO", "LG" ,"MICROSOFT","NOKIA" ,"OPPO", "ORANGE"]
-    }
-    ,
-    {
-      "label": "Electronics",
-      "name":"Tablets", "models":[ "SAMSUNG", "APPLE","ACER","QMOBILE", "REALME","INFINIX", "LENOVO", "LG", "MAXON", "MICROMAX" ,"MICROSOFT", "MOTOROLA", "NOKIA" ,"OPPO", "TECNO", "ORANGE","other"]
-    }
-
   ],
 
   "users": [
@@ -385,14 +900,14 @@
       ],
       "id": 1,
       "category": "Vehicle",
-      "categoryid":"10",
-      "subcategoryid":"1010",
+      "categoryid": "10",
+      "subcategoryid": "1010",
       "type": "bike",
       "province": "kpk",
       "city": "Abbottabad",
       "condition": "New",
       "model": "A2",
-      "companyName":"Audi",
+      "companyName": "Audi",
       "Product_Name": "Bike",
       "address": "Abbottabad",
       "Product_Price": "200000",
@@ -409,8 +924,8 @@
       ],
       "id": 4,
       "category": "Electronics",
-      "categoryid":"30",
-      "subcategoryid":"3010",
+      "categoryid": "30",
+      "subcategoryid": "3010",
       "type": "mobile",
       "Product_Name": "Mobiles",
       "province": "punjab",
@@ -429,8 +944,8 @@
       ],
       "id": 2,
       "category": "Furniture",
-      "categoryid":"20",
-      "subcategoryid":"3020",
+      "categoryid": "20",
+      "subcategoryid": "3020",
       "type": "brand New",
       "province": "kpk",
       "address": "Mansehra",
@@ -467,8 +982,8 @@
       ],
       "id": 5,
       "category": "Electronics",
-      "categoryid":"30",
-      "subcategoryid":"3020",
+      "categoryid": "30",
+      "subcategoryid": "3020",
       "type": "mobile",
       "Product_Name": "Mobiles",
       "province": "punjab",
@@ -484,10 +999,14 @@
       ],
       "id": 6,
       "category": "Vehicle",
-      "categoryid":"10",
-      "subcategoryid":"1020",
+      "categoryid": "10",
+      "subcategoryid": "1020",
       "type": "car",
+      "brand": "Honda",
       "Product_Name": "Honda Civic",
+      "province": "kpk",
+      "city": "Abbottabad",
+      "condition": "New",
       "Product_Price": "850000",
       "Product_Description": "The 2010 Honda Civic is a fine pick if you're shopping for a used compact car. Available as a two-door coupe or four-door sedan"
     },
@@ -499,8 +1018,8 @@
       ],
       "id": 7,
       "category": "Vehicle",
-      "categoryid":"10",
-      "subcategoryid":"1020",
+      "categoryid": "10",
+      "subcategoryid": "1020",
       "type": "car",
       "province": "sindh",
       "address": "Multan",
@@ -526,8 +1045,8 @@
       ],
       "id": 8,
       "category": "Vehicle",
-      "categoryid":"10",
-      "subcategoryid":"1020",
+      "categoryid": "10",
+      "subcategoryid": "1020",
       "type": "car",
       "province": "punjab",
       "address": "Gujrat",
@@ -544,8 +1063,8 @@
       ],
       "id": 9,
       "category": "Furniture",
-      "categoryid":"20",
-      "subcategoryid":"2030",
+      "categoryid": "20",
+      "subcategoryid": "2030",
       "type": "brand New",
       "province": "kpk",
       "address": "Haripur",
@@ -578,8 +1097,8 @@
       ],
       "id": 11,
       "category": "Furniture",
-      "categoryid":"20",
-      "subcategoryid":"2030",
+      "categoryid": "20",
+      "subcategoryid": "2030",
       "type": "old",
       "province": "kpk",
       "address": "Abbottabad",
@@ -596,8 +1115,8 @@
       ],
       "id": 12,
       "category": "Furniture",
-      "categoryid":"20",
-      "subcategoryid":"2030",
+      "categoryid": "20",
+      "subcategoryid": "2030",
       "type": "old",
       "province": "kpk",
       "address": "Abbottabad",
@@ -617,8 +1136,8 @@
       ],
       "id": 13,
       "category": "Vehicle",
-      "categoryid":"10",
-      "subcategoryid":"1020",
+      "categoryid": "10",
+      "subcategoryid": "1020",
       "type": "car",
       "province": "kpk",
       "address": "Mansehra",

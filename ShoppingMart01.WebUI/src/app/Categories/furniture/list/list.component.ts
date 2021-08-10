@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Category } from 'src/app/Classes/category';
 import { product } from 'src/app/Classes/product';
+import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +16,8 @@ export class ListComponent implements OnInit {
   List: product[] = [];
   subscription = new Subscription();
 
-  constructor (private route: ActivatedRoute, private prodList: Category, private router: Router) {
+  constructor (private route: ActivatedRoute, private prodList: Category, private router: Router,
+    private productService: ProductService) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false
   }
 
@@ -34,6 +36,11 @@ export class ListComponent implements OnInit {
       .subscribe(products => {
         this.List = products;
       });
+  }
+
+  FilteredDataReturnList(event) {
+    this.productService.getList(event)
+    .subscribe((x:product[])=>this.List=x)
   }
 
   ngOnDestroy(): void {

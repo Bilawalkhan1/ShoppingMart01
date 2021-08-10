@@ -3,11 +3,11 @@
     max-height: 15vw;
     min-height: 15vw;
     max-width: 15vw;
-    min-width: 22vw;
+    min-width: 18vw;
     
 }
-.container-fluid {
-    max-width: 1200px
+.container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 980px;
 }
 
 .card {

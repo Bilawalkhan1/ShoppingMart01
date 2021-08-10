@@ -15,7 +15,8 @@
 
             <div *ngIf="cities.length>0">
                 <label class="filterlabel">City</label>
-                <select class="form-select" formControlName="city" (change)="onStateChange($event.target.value)" placeholder="Anycity">
+                <select class="form-select" formControlName="city" (change)="onStateChange($event.target.value)"
+                    placeholder="Anycity">
                     <option *ngFor="let city of cities">{{city}} </option>
                 </select>
             </div>
@@ -40,7 +41,7 @@
                                 {{a.displayValue}}
                             </option>
                         </select>
-                    </div>
+                    </div> 
                 </ng-container>
             </div>
 
@@ -74,3 +75,28 @@
     </form>
 
 </div>
+
+<!-- <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+    <div *ngFor="let form_elem of filters">
+        <div [ngSwitch]="form_elem.type">
+            <div *ngSwitchCase="'textBox'">
+                <input type="text" />
+            </div>
+            <div *ngSwitchCase="'number'">
+                <input type="number"  />
+            </div>
+            <label for="">{{form_elem.label}} </label>
+            <div *ngSwitchCase="'select'">
+                <select formControlName="{{form_elem.label}}">
+                    <ng-container  *ngFor="let value of form_elem.options">
+
+                        <option *ngFor="let a of value.display">
+                            {{a}}
+                        </option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+    </div>
+    <input type="submit" value="save" />
+</form> -->
