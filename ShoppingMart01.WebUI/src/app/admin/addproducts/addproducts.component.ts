@@ -31,6 +31,7 @@ export class AddproductsComponent implements OnInit {
   SubCategoryId: number;
   CategoryName: string;
   SubCategoryName: string;
+  xx: any;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
     {},
@@ -57,14 +58,17 @@ export class AddproductsComponent implements OnInit {
       this.SubCategoryId = Number(params.get('id'));
       this.SubCategoryName = params.get('subcateg');
     });
+    this.xx = this.capitalizeFirstLetter(this.SubCategoryName);
     console.log(this.CategoryName,this.SubCategoryId, this.SubCategoryName)
   }
-
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
       categoryid:[''],
-      Category:[this.CategoryName],
-      CategoryType:[this.SubCategoryName],
+      Category:[this.capitalizeFirstLetter(this.CategoryName)],
+      CategoryType:[this.capitalizeFirstLetter(this.SubCategoryName)],
       category: ['', Validators.required],
       type: ['', Validators.required],
       Product_Name: ['', Validators.required],
@@ -79,7 +83,7 @@ export class AddproductsComponent implements OnInit {
       gear: [''],
     });
 
-    this.productService.getModelData(this.SubCategoryName).subscribe((filterData: any) => {
+    this.productService.getModelData(this.xx).subscribe((filterData: any) => {
       this.model = filterData;
       console.log(this.model)
     })
