@@ -11,44 +11,43 @@ export class SelectcategoryComponent implements OnInit {
   constructor() { }
 
   subcategory: Array<any> = [
-    { name: 'mobile', value: ['Mobile'] },
-    { name: 'mobile', value: ['Tablet'] },
-    { name: 'mobile', value: ['Laptop'] }
+    { id:"3010", name: 'Mobile', value: ['Mobile'], route:"mobile" },
+    { id:"3020",  name: 'Tablet', value: ['Tablet'], route:"tablet" },
+    { id:"3030",  name: 'Laptop', value: ['Laptop'], route:"laptop" }
   ];
   vehicle: Array<any> = [
-    { value: ['Car'] },
-    { value: ['Bike'] },
-    { value: ['Bus'] },
-    { value: ['Truck'] },
-    { value: ['Jeep'] },
-    { value: ['Other'] },
+    { id:"1010", name: 'Bike', value: ['Bike'] , route:"bike"},
+    { id:"1020", name: 'Car', value: ['Car'], route:"mobile" },
+    { id:"1030", name: 'Bus', value: ['Bus'], route:"bus" },
+    { id:"1040", name: 'Truck', value: ['Truck'] , route:"truck"},
+    { id:"1050", name: 'Jeep', value: ['Jeep'] , route:"jeep"}
   ];
   furnitures: Array<any> = [
-    { value: ['Gold'] },
-    { value: ['Silver'] },
-    { value: ['Diamond'] },
-    { value: ['Other'] }
+    { id:"2010", name: 'Curtain', value: ['Curtain'] , route:"curtain"},
+    { id:"2020", name: 'Wood furniture', value: ['Wood furniture'] , route:"woodfurnitre"},
+    { id:"2030", name: 'Sofa set', value: ['Sofa set'] , route:"sofaset"},
+    { id:"2040", name: 'Blinds', value: ['Blinds'] , route:"blind"},   
   ];
   properties: Array<any> = [
-    { value: ['For Sale'] },
-    { value: ['For Rent'] }
+    { id:"4010", name: 'For Sale', value: ['For Sale'] , route:"forsale"},
+    { id:"4020", name: 'For Rent', value: ['For Rent'] , route:"forrent"}
   ];
   ngOnInit(): void {
   }
   displayValue() {
-    this.values = this.subcategory.map(x => x.value)
+    this.values = this.subcategory
     console.log('values', this.values)
   }
   vehicles() {
-    this.values = this.vehicle.map(x => x.value)
+    this.values = this.vehicle
     console.log('values', this.values)
   }
   furniture() {
-    this.values = this.furnitures.map(x => x.value)
+    this.values = this.furnitures
     console.log('values', this.values)
   }
   property() {
-    this.values = this.properties.map(x => x.value)
+    this.values = this.properties
     console.log('values', this.values)
   }
 }

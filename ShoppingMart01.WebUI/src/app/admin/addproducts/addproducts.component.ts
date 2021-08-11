@@ -4,7 +4,7 @@ import { ImageserviceService } from '../../Services/imageservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestserviceService } from '../../Services/restservice.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
@@ -27,6 +27,8 @@ export class AddproductsComponent implements OnInit {
   formData: any = [];
   modelData: any = []
   cities: any[] = []
+  CategoryId: number;
+  CategoryName: string;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
     {},
@@ -37,15 +39,22 @@ export class AddproductsComponent implements OnInit {
     { name: 'gilgit', cities: ['', 'Diamer', 'Ghanche', 'Ghizer', 'Gilgit', '	Gojal Upper Hunza', '	Kharmang', 'Nagar', 'Astore', '	Skardu'] },
   ];
 
-  constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
+  constructor (private sanitizer: DomSanitizer, private imageService: ImageserviceService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private rs: RestserviceService,
     private productService: ProductService,
-    private router: Router) {
+    private router: Router,
+    private route:ActivatedRoute) {
     this.checkoutForm = formBuilder.group({
       category: formBuilder.control('initial value', Validators.required)
-    })
+    });
+
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.CategoryId = Number(params.get('id'));
+      this.CategoryName = params.get('categ');
+    });
+    console.log( this.CategoryId ,  this.CategoryName)
   }
 
   ngOnInit() {
