@@ -11,12 +11,30 @@
           "value": "Select Brand",
           "name": "brand",
           "options": [
-            { "value": "Atlas Honda", "displayValue": "Atlas Honda" },
-            { "value": "Metro Motor Bike", "displayValue": "Metro Motor Bikes" },
-            { "value": "Yamaha Motors", "displayValue": "Yamaha Motors" },
-            { "value": "Super Power Bike", "displayValue": "Super Power Bike" },
-            { "value": "Imperial Bike", "displayValue": "Imperial Bike" },
-            { "value": "Ravi Bike", "displayValue": "Ravi Bike" }
+            {
+              "value": "Atlas Honda",
+              "displayValue": "Atlas Honda"
+            },
+            {
+              "value": "Metro Motor Bike",
+              "displayValue": "Metro Motor Bikes"
+            },
+            {
+              "value": "Yamaha Motors",
+              "displayValue": "Yamaha Motors"
+            },
+            {
+              "value": "Super Power Bike",
+              "displayValue": "Super Power Bike"
+            },
+            {
+              "value": "Imperial Bike",
+              "displayValue": "Imperial Bike"
+            },
+            {
+              "value": "Ravi Bike",
+              "displayValue": "Ravi Bike"
+            }
           ],
           "validators": {}
         },
@@ -25,12 +43,30 @@
           "type": "select",
           "value": "Select Engine displacement",
           "options": [
-            { "value": "70cc", "displayValue": "70cc" },
-            { "value": "125cc", "displayValue": "125cc" },
-            { "value": "100cc", "displayValue": "100cc" },
-            { "value": "150cc", "displayValue": "150cc" },
-            { "value": "250cc", "displayValue": "250cc" },
-            { "value": "200cc", "displayValue": "200cc" }
+            {
+              "value": "70cc",
+              "displayValue": "70cc"
+            },
+            {
+              "value": "125cc",
+              "displayValue": "125cc"
+            },
+            {
+              "value": "100cc",
+              "displayValue": "100cc"
+            },
+            {
+              "value": "150cc",
+              "displayValue": "150cc"
+            },
+            {
+              "value": "250cc",
+              "displayValue": "250cc"
+            },
+            {
+              "value": "200cc",
+              "displayValue": "200cc"
+            }
           ],
           "validators": {}
         },
@@ -39,12 +75,30 @@
           "type": "select",
           "value": "Select Model Year",
           "options": [
-            { "value": "2021", "displayValue": "2021" },
-            { "value": "2020", "displayValue": "2020" },
-            { "value": "2019", "displayValue": "2019" },
-            { "value": "2018", "displayValue": "2018" },
-            { "value": "2017", "displayValue": "2017" },
-            { "value": "2016", "displayValue": "2016" }
+            {
+              "value": "2021",
+              "displayValue": "2021"
+            },
+            {
+              "value": "2020",
+              "displayValue": "2020"
+            },
+            {
+              "value": "2019",
+              "displayValue": "2019"
+            },
+            {
+              "value": "2018",
+              "displayValue": "2018"
+            },
+            {
+              "value": "2017",
+              "displayValue": "2017"
+            },
+            {
+              "value": "2016",
+              "displayValue": "2016"
+            }
           ],
           "validators": {}
         },
@@ -53,10 +107,22 @@
           "type": "select",
           "value": "Select Color",
           "options": [
-            { "value": "Red", "displayValue": "Red" },
-            { "value": "Black", "displayValue": "Black" },
-            { "value": "White", "displayValue": "White" },
-            { "value": "Blue", "displayValue": "Blue" }
+            {
+              "value": "Red",
+              "displayValue": "Red"
+            },
+            {
+              "value": "Black",
+              "displayValue": "Black"
+            },
+            {
+              "value": "White",
+              "displayValue": "White"
+            },
+            {
+              "value": "Blue",
+              "displayValue": "Blue"
+            }
           ],
           "validators": {}
         },
@@ -65,8 +131,14 @@
           "type": "select",
           "value": "Select number of gears",
           "options": [
-            { "value": "4", "displayValue": "4" },
-            { "value": "5", "displayValue": "5" }
+            {
+              "value": "4",
+              "displayValue": "4"
+            },
+            {
+              "value": "5",
+              "displayValue": "5"
+            }
           ],
           "validators": {}
         }
@@ -84,43 +156,138 @@
           "control": "company",
           "placeholder": "--select--",
           "options": [
-            { "value": "Audi", "displayValue": "Audi" },
-            { "value": "Bmw", "displayValue": "BMW" },
-            { "value": "Bentley", "displayValue": "Bentley" },
-            { "value": "Buick", "displayValue": "Buick" },
-            { "value": "Cadillac", "displayValue": "Cadillac" },
-            { "value": "Chevrolet", "displayValue": "Chevrolet" },
-            { "value": "Chrysler", "displayValue": "Chrysler" },
-            { "value": "Dodge", "displayValue": "Dodge" },
-            { "value": "Fiat", "displayValue": "Fiat" },
-            { "value": "Genesis", "displayValue": "Genesis" },
-            { "value": "Ford", "displayValue": "Ford" },
-            { "value": "GMC", "displayValue": "GMC" },
-            { "value": "Alfa", "displayValue": "Alfa" },
-            { "value": "Honda", "displayValue": "Honda" },
-            { "value": "Hyundai", "displayValue": "Hyundai" },
-            { "value": "Infiniti", "displayValue": "Infiniti" },
-            { "value": "Jaguar", "displayValue": "Jaguar" },
-            { "value": "Jeep", "displayValue": "Jeep" },
-            { "value": "Kia", "displayValue": "Kia" },
-            { "value": "Land", "displayValue": "Land" },
-            { "value": "Rover", "displayValue": "Rover" },
-            { "value": "Romeo", "displayValue": "Romeo" },
-            { "value": "Lexus", "displayValue": "Lexus" },
-            { "value": "Lincoln", "displayValue": "Lincoln" },
-            { "value": "Mazda", "displayValue": "Mazda" },
-            { "value": "Mercedes-Benz", "displayValue": "Mercedes-Benz" },
-            { "value": "Mini", "displayValue": "Mini" },
-            { "value": "Mitsubishi", "displayValue": "Mitsubishi" },
-            { "value": "Nissan", "displayValue": "Nissan" },
-            { "value": "Volvo", "displayValue": "Volvo" },
-            { "value": "Suzuki", "displayValue": "Suzuki" },
-            { "value": "Tesla", "displayValue": "Tesla" }
+            {
+              "value": "Audi",
+              "displayValue": "Audi"
+            },
+            {
+              "value": "Bmw",
+              "displayValue": "BMW"
+            },
+            {
+              "value": "Bentley",
+              "displayValue": "Bentley"
+            },
+            {
+              "value": "Buick",
+              "displayValue": "Buick"
+            },
+            {
+              "value": "Cadillac",
+              "displayValue": "Cadillac"
+            },
+            {
+              "value": "Chevrolet",
+              "displayValue": "Chevrolet"
+            },
+            {
+              "value": "Chrysler",
+              "displayValue": "Chrysler"
+            },
+            {
+              "value": "Dodge",
+              "displayValue": "Dodge"
+            },
+            {
+              "value": "Fiat",
+              "displayValue": "Fiat"
+            },
+            {
+              "value": "Genesis",
+              "displayValue": "Genesis"
+            },
+            {
+              "value": "Ford",
+              "displayValue": "Ford"
+            },
+            {
+              "value": "GMC",
+              "displayValue": "GMC"
+            },
+            {
+              "value": "Alfa",
+              "displayValue": "Alfa"
+            },
+            {
+              "value": "Honda",
+              "displayValue": "Honda"
+            },
+            {
+              "value": "Hyundai",
+              "displayValue": "Hyundai"
+            },
+            {
+              "value": "Infiniti",
+              "displayValue": "Infiniti"
+            },
+            {
+              "value": "Jaguar",
+              "displayValue": "Jaguar"
+            },
+            {
+              "value": "Jeep",
+              "displayValue": "Jeep"
+            },
+            {
+              "value": "Kia",
+              "displayValue": "Kia"
+            },
+            {
+              "value": "Land",
+              "displayValue": "Land"
+            },
+            {
+              "value": "Rover",
+              "displayValue": "Rover"
+            },
+            {
+              "value": "Romeo",
+              "displayValue": "Romeo"
+            },
+            {
+              "value": "Lexus",
+              "displayValue": "Lexus"
+            },
+            {
+              "value": "Lincoln",
+              "displayValue": "Lincoln"
+            },
+            {
+              "value": "Mazda",
+              "displayValue": "Mazda"
+            },
+            {
+              "value": "Mercedes-Benz",
+              "displayValue": "Mercedes-Benz"
+            },
+            {
+              "value": "Mini",
+              "displayValue": "Mini"
+            },
+            {
+              "value": "Mitsubishi",
+              "displayValue": "Mitsubishi"
+            },
+            {
+              "value": "Nissan",
+              "displayValue": "Nissan"
+            },
+            {
+              "value": "Volvo",
+              "displayValue": "Volvo"
+            },
+            {
+              "value": "Suzuki",
+              "displayValue": "Suzuki"
+            },
+            {
+              "value": "Tesla",
+              "displayValue": "Tesla"
+            }
           ]
         }
       ]
     },
-
     {
       "id": 1102,
       "category": "Furniture",
@@ -131,8 +298,14 @@
           "name": "model",
           "label": "Conditon",
           "options": [
-            { "value": "new", "displayValue": "New" },
-            { "value": "old", "displayValue": "Old" }
+            {
+              "value": "new",
+              "displayValue": "New"
+            },
+            {
+              "value": "old",
+              "displayValue": "Old"
+            }
           ]
         },
         {
@@ -143,32 +316,98 @@
               "value": "bentwoodfurniture",
               "displayValue": "bentwoodfurniture"
             },
-            { "value": "bobbinfurniture", "displayValue": "bobbinfurniture" },
-            { "value": "countryfurniture", "displayValue": "countryfurniture" },
-            { "value": "cornerfurniture", "displayValue": "cornerfurniture" },
+            {
+              "value": "bobbinfurniture",
+              "displayValue": "bobbinfurniture"
+            },
+            {
+              "value": "countryfurniture",
+              "displayValue": "countryfurniture"
+            },
+            {
+              "value": "cornerfurniture",
+              "displayValue": "cornerfurniture"
+            },
             {
               "value": "EarlyAmericanfurniture",
               "displayValue": "EarlyAmericanfurniture"
             },
-            { "value": "rusticstyle", "displayValue": "rusticstyle" },
-            { "value": "Shakerfurniture", "displayValue": "Shakerfurniture" },
-            { "value": "Chevrolet", "displayValue": "Chevrolet" },
-            { "value": "tilt-toptable", "displayValue": "tilt-toptable" },
-            { "value": "candlestand", "displayValue": "candlestand" },
-            { "value": "dressingtable", "displayValue": "dressingtable" },
-            { "value": "Windsorchair", "displayValue": "Windsorchair" },
-            { "value": "Morrischair", "displayValue": "Morrischair" },
-            { "value": "Brewsterchair", "displayValue": "Brewsterchair" },
-            { "value": "couch", "displayValue": "couch" },
-            { "value": "Barcelonachair", "displayValue": "Barcelonachair" },
-            { "value": "vargueno", "displayValue": "vargueno" },
-            { "value": "courtcupboard", "displayValue": "courtcupboard" },
-            { "value": "cellarette", "displayValue": "cellarette" },
-            { "value": "cradle", "displayValue": "cradle" },
-            { "value": "trundlebed", "displayValue": "trundlebed" },
-            { "value": "Turkishstyle", "displayValue": "Turkishstyle" },
-            { "value": "Missionstyle", "displayValue": "Missionstyle" },
-            { "value": "canefurniture", "displayValue": "canefurniture" },
+            {
+              "value": "rusticstyle",
+              "displayValue": "rusticstyle"
+            },
+            {
+              "value": "Shakerfurniture",
+              "displayValue": "Shakerfurniture"
+            },
+            {
+              "value": "Chevrolet",
+              "displayValue": "Chevrolet"
+            },
+            {
+              "value": "tilt-toptable",
+              "displayValue": "tilt-toptable"
+            },
+            {
+              "value": "candlestand",
+              "displayValue": "candlestand"
+            },
+            {
+              "value": "dressingtable",
+              "displayValue": "dressingtable"
+            },
+            {
+              "value": "Windsorchair",
+              "displayValue": "Windsorchair"
+            },
+            {
+              "value": "Morrischair",
+              "displayValue": "Morrischair"
+            },
+            {
+              "value": "Brewsterchair",
+              "displayValue": "Brewsterchair"
+            },
+            {
+              "value": "couch",
+              "displayValue": "couch"
+            },
+            {
+              "value": "Barcelonachair",
+              "displayValue": "Barcelonachair"
+            },
+            {
+              "value": "vargueno",
+              "displayValue": "vargueno"
+            },
+            {
+              "value": "courtcupboard",
+              "displayValue": "courtcupboard"
+            },
+            {
+              "value": "cellarette",
+              "displayValue": "cellarette"
+            },
+            {
+              "value": "cradle",
+              "displayValue": "cradle"
+            },
+            {
+              "value": "trundlebed",
+              "displayValue": "trundlebed"
+            },
+            {
+              "value": "Turkishstyle",
+              "displayValue": "Turkishstyle"
+            },
+            {
+              "value": "Missionstyle",
+              "displayValue": "Missionstyle"
+            },
+            {
+              "value": "canefurniture",
+              "displayValue": "canefurniture"
+            },
             {
               "value": "campaignfurniture",
               "displayValue": "campaignfurniture"
@@ -188,11 +427,26 @@
           "label": "Jewlery For Sale",
           "placeholder": "--select--",
           "options": [
-            { "value": "Gold", "displayValue": "Gold" },
-            { "value": "Diamond", "displayValue": "Diamond" },
-            { "value": "Silver", "displayValue": "Silver" },
-            { "value": "Antique", "displayValue": "Antique" },
-            { "value": "Other", "displayValue": "Other" }
+            {
+              "value": "Gold",
+              "displayValue": "Gold"
+            },
+            {
+              "value": "Diamond",
+              "displayValue": "Diamond"
+            },
+            {
+              "value": "Silver",
+              "displayValue": "Silver"
+            },
+            {
+              "value": "Antique",
+              "displayValue": "Antique"
+            },
+            {
+              "value": "Other",
+              "displayValue": "Other"
+            }
           ]
         }
       ]
@@ -208,16 +462,27 @@
           "label": "Electronics For Sale",
           "placeholder": "--select--",
           "options": [
-            { "value": "Mobiles", "displayValue": "Mobiles" },
-            { "value": "Laptops", "displayValue": "Laptops" },
-            { "value": "Tablets", "displayValue": "Tablets" },
-            { "value": "Other", "displayValue": "Other" }
+            {
+              "value": "Mobiles",
+              "displayValue": "Mobiles"
+            },
+            {
+              "value": "Laptops",
+              "displayValue": "Laptops"
+            },
+            {
+              "value": "Tablets",
+              "displayValue": "Tablets"
+            },
+            {
+              "value": "Other",
+              "displayValue": "Other"
+            }
           ]
         }
       ]
     }
   ],
-
   "brands": [
     {
       "label": "All Models",
@@ -245,6 +510,101 @@
         "S7",
         "S8",
         "others"
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Bike",
+      "models": [
+        "Atlas Honda",
+        "Metro Motor Bike",
+        "Yamaha Motors",
+        "Super Power Bike",
+        "Imperial Bike",
+        "Ravi Bike"
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Car",
+      "models": [
+        "Mazda",
+        "Nissan",
+        "Volvo",
+        "Tesla",
+        "Bentley",
+        "Buick",
+        "Cadillac",
+        "Chevrolet",
+        "Chrysler",
+        "Dodge",
+        "Fiat",
+        "Genesis",
+        "Ford",
+        "GMC",
+        "Alfa",
+        "Hyundai",
+        "Infiniti"   
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Truck",
+      "models": [
+        "Tesla",
+        "Mazda",
+        "Nissan",
+        "Volvo",
+        "Bentley",
+        "Buick",
+        "Cadillac",
+        "Chevrolet",
+        "Chrysler",
+        "Dodge",
+        "Fiat",
+        "Genesis",
+        "Ford",
+        "GMC",
+        "Alfa",
+        "Hyundai",
+        "Infiniti"   
+      ]
+    },
+    {
+      "label": "All Models",
+      "name": "Bus",
+      "models": [
+        "Audi",
+        "Bmw",
+        "Bentley",
+        "Buick",
+        "Cadillac",
+        "Chevrolet",
+        "Chrysler",
+        "Dodge",
+        "Fiat",
+        "Genesis",
+        "Ford",
+        "GMC",
+        "Alfa",
+        "Hyundai",
+        "Infiniti",
+        "Jaguar",
+        "Jeep",
+        "Kia",
+        "Land",
+        "Rover",
+        "Romeo",
+        "Lexus",
+        "Lincoln",
+        "Mazda",
+        "Mercedes-Benz",
+        "Mini",
+        "Mitsubishi",
+        "Nissan",
+        "Volvo",
+        "Suzuki",
+        "Tesla"
       ]
     },
     {
@@ -297,12 +657,16 @@
     {
       "label": "All Models",
       "name": "Buick",
-      "models": ["other"]
+      "models": [
+        "other"
+      ]
     },
     {
       "label": "All Models",
       "name": "Genesis",
-      "models": ["other"]
+      "models": [
+        "other"
+      ]
     },
     {
       "label": "All Models",
@@ -403,7 +767,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "bentwoodfurniture",
       "models": [
         "Dinning sets",
@@ -421,7 +785,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "bobbinfurniture",
       "models": [
         "Dressers",
@@ -439,7 +803,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "candlestand",
       "models": [
         "Wardrobes",
@@ -457,7 +821,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "Morrischair",
       "models": [
         "Wardrobes",
@@ -475,7 +839,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "Windsorchair",
       "models": [
         "Wardrobes",
@@ -493,7 +857,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "till-toptable",
       "models": [
         "Wardrobes",
@@ -511,7 +875,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "Barcelonachair",
       "models": [
         "Wardrobes",
@@ -529,7 +893,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "cough",
       "models": [
         "Wardrobes",
@@ -547,7 +911,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "dressingtable",
       "models": [
         "Beds and Sets",
@@ -565,7 +929,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "Shakerfurniture",
       "models": [
         "Cupboards",
@@ -583,7 +947,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "EarlyAmericanfurniture",
       "models": [
         "Tables & Consoles",
@@ -601,7 +965,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "cornerfurniture",
       "models": [
         "Chairs & Seats",
@@ -619,7 +983,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "countryfurniture",
       "models": [
         " Office Furniture",
@@ -637,7 +1001,7 @@
       ]
     },
     {
-      "label": "Furniture",
+      "label": "Brand",
       "name": "rusticstyle",
       "models": [
         "Kitchen Counters",
@@ -655,7 +1019,7 @@
       ]
     },
     {
-      "label": "Jewlery",
+      "label": "Gold Type",
       "name": "Gold",
       "models": [
         "Yellow Gold Alloys",
@@ -673,7 +1037,7 @@
       ]
     },
     {
-      "label": "Jewlery",
+      "label": "Diamond Type",
       "name": "Diamond",
       "models": [
         "White Diamonds",
@@ -688,7 +1052,7 @@
       ]
     },
     {
-      "label": "Jewlery",
+      "label": "Silver Type",
       "name": "Silver",
       "models": [
         "Quality Stamp ",
@@ -702,7 +1066,7 @@
       ]
     },
     {
-      "label": "Jewlery",
+      "label": "Antique",
       "name": "Antique",
       "models": [
         "Retro Jewelry ",
@@ -715,8 +1079,8 @@
       ]
     },
     {
-      "label": "Electronics",
-      "name": "Mobiles",
+      "label": "Company Name",
+      "name": "mobile",
       "models": [
         "ACER",
         "ALCATEL",
@@ -769,7 +1133,7 @@
       ]
     },
     {
-      "label": "Electronics",
+      "label": "Company Name",
       "name": "Laptops",
       "models": [
         "APPLE",
@@ -788,7 +1152,7 @@
       ]
     },
     {
-      "label": "Electronics",
+      "label": "Company Name",
       "name": "Tablets",
       "models": [
         "SAMSUNG",
@@ -811,17 +1175,34 @@
       ]
     }
   ],
-
   "form": [
     {
       "label": "Category",
       "options": [
-        { "value": "Electronics", "displayValue": "Electronics" },
-        { "value": "Property", "displayValue": "Property" },
-        { "value": "Jewelry", "displayValue": "Jewelry" },
-        { "value": "Furniture", "displayValue": "Furniture" },
-        { "value": "Vehicle", "displayValue": "Vehicle" },
-        { "value": "Other", "displayValue": "Other" }
+        {
+          "value": "Electronics",
+          "displayValue": "Electronics"
+        },
+        {
+          "value": "Property",
+          "displayValue": "Property"
+        },
+        {
+          "value": "Jewelry",
+          "displayValue": "Jewelry"
+        },
+        {
+          "value": "Furniture",
+          "displayValue": "Furniture"
+        },
+        {
+          "value": "Vehicle",
+          "displayValue": "Vehicle"
+        },
+        {
+          "value": "Other",
+          "displayValue": "Other"
+        }
       ]
     }
   ],
@@ -829,31 +1210,73 @@
     {
       "label": "Type",
       "name": "Electronics",
-      "values": [ "Mobiles", "Tablets","Laptops"]  
+      "values": [
+        "Mobiles",
+        "Tablets",
+        "Laptops"
+      ]
     },
     {
       "label": "Type",
-      "name": "Vehicles",
-      "values": [ "Car", "Bikes","Truck", "Other"]  
+      "name": "Vehicle",
+      "values": [
+        "Car",
+        "Bike",
+        "Truck",
+        "Other"
+      ]
     },
     {
       "label": "Type",
       "name": "Furniture",
-      "values": [ "Old", "New","Other"]  
+      "values": [
+        "bentwoodfurniture",
+        "bobbinfurniture",
+        "countryfurniture",
+        "cornerfurniture",
+        "EarlyAmericanfurniture",
+        "rusticstyle",
+        "Shakerfurniture",
+        "Chevrolet",
+        "bentwoodfurniture",
+        "candlestand",
+        "dressingtable",
+        "Windsorchair",
+        "Morrischair",
+        "couch",
+        "Barcelonachair",
+        "courtcupboard",
+        "vargueno",
+        "cellarette",
+        "cradle",
+        "trundlebed",
+        "Turkishstyle",
+        "Missionstyle",
+        "canefurniture",
+        "campaignfurniture"
+      ]
     },
     {
       "label": "Type",
       "name": "Property",
-      "values": [ "For Sale", "For Rent","Other"]  
-    }
-    ,
+      "values": [
+        "For Sale",
+        "For Rent",
+        "Other"
+      ]
+    },
     {
       "label": "Type",
       "name": "Jewelry",
-      "values": [ "Mobiles", "Tablets","Laptops"]  
+      "values": [
+        "Diamond",
+        "Gold",
+        "Silver",
+        "Antique",
+        "Other"
+      ]
     }
   ],
-
   "users": [
     {
       "id": 1,

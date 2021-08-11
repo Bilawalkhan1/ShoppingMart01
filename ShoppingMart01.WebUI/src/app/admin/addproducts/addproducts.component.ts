@@ -26,9 +26,11 @@ export class AddproductsComponent implements OnInit {
   urls = [];
   formData: any = [];
   modelData: any = []
+  model: any = []
   cities: any[] = []
-  CategoryId: number;
+  SubCategoryId: number;
   CategoryName: string;
+  SubCategoryName: string;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
     {},
@@ -39,26 +41,30 @@ export class AddproductsComponent implements OnInit {
     { name: 'gilgit', cities: ['', 'Diamer', 'Ghanche', 'Ghizer', 'Gilgit', '	Gojal Upper Hunza', '	Kharmang', 'Nagar', 'Astore', '	Skardu'] },
   ];
 
-  constructor (private sanitizer: DomSanitizer, private imageService: ImageserviceService,
+  constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private rs: RestserviceService,
     private productService: ProductService,
     private router: Router,
-    private route:ActivatedRoute) {
+    private route: ActivatedRoute) {
     this.checkoutForm = formBuilder.group({
       category: formBuilder.control('initial value', Validators.required)
     });
 
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.CategoryId = Number(params.get('id'));
       this.CategoryName = params.get('categ');
+      this.SubCategoryId = Number(params.get('id'));
+      this.SubCategoryName = params.get('subcateg');
     });
-    console.log( this.CategoryId ,  this.CategoryName)
+    console.log(this.CategoryName,this.SubCategoryId, this.SubCategoryName)
   }
 
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
+      categoryid:[''],
+      Category:[this.CategoryName],
+      CategoryType:[this.SubCategoryName],
       category: ['', Validators.required],
       type: ['', Validators.required],
       Product_Name: ['', Validators.required],
@@ -66,8 +72,18 @@ export class AddproductsComponent implements OnInit {
       city: ['', Validators.required],
       Product_Price: ['', Validators.required],
       Product_Description: ['', Validators.required],
-
+      model: ['', Validators.required],
+      enginecc: ['', Validators.required],
+      year: ['',Validators.required],
+      color: [''],
+      gear: [''],
     });
+
+    this.productService.getModelData(this.SubCategoryName).subscribe((filterData: any) => {
+      this.model = filterData;
+      console.log(this.model)
+    })
+
     this.productService.getFormData().subscribe(response => {
       this.formData = response
       console.log('response', response)
@@ -149,7 +165,9 @@ export class AddproductsComponent implements OnInit {
   changeProvince(count) {
     this.cities = this.provinceList.find(con => con.name == count).cities;
   }
-
+  onSubCategoryValueChanges(event) {
+   
+  }
 }
 
 
