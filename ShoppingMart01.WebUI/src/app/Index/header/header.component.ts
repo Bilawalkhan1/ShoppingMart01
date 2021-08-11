@@ -165,12 +165,12 @@ export class HeaderComponent implements OnInit {
 
   addProduct() {
     if (localStorage.getItem('token') !== null) {
-      this.router.navigateByUrl('/addproduct')
+      this.router.navigateByUrl('admin/addproduct')
 
     }
     else {
       this.modalService.open(LoginComponent)
-      this.authguard.returnUrl = 'addproduct'
+      this.authguard.returnUrl = 'admin/addproduct'
     }
   }
 

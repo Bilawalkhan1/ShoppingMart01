@@ -30,7 +30,7 @@ export class ProductSliderComponent implements OnInit {
     autoplaySpeed: 2000,
     autoplay: true,
     infinite: true,
-    arrows: true
+    arrows: false
   }
   slideConfig1 = {
     slidesToShow: 1,

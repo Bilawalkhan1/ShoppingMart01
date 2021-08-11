@@ -1,0 +1,34 @@
+
+.mobile,.car{
+    float: left;
+    margin-top: 5px;
+}
+.mobile{
+    margin-left: 10px;
+}
+.arrow{
+    float: right;
+    margin-top: 10px;
+}
+.text{
+    float: left;
+    padding-left: 20px;
+    font-weight: lighter;
+    margin-top: 13px;
+    font-size: 18px;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+  }
+tr:hover{
+    background-color: rgb(160, 230, 233);
+}

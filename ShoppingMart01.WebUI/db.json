@@ -812,6 +812,48 @@
     }
   ],
 
+  "form": [
+    {
+      "label": "Category",
+      "options": [
+        { "value": "Electronics", "displayValue": "Electronics" },
+        { "value": "Property", "displayValue": "Property" },
+        { "value": "Jewelry", "displayValue": "Jewelry" },
+        { "value": "Furniture", "displayValue": "Furniture" },
+        { "value": "Vehicle", "displayValue": "Vehicle" },
+        { "value": "Other", "displayValue": "Other" }
+      ]
+    }
+  ],
+  "categoryValue": [
+    {
+      "label": "Type",
+      "name": "Electronics",
+      "values": [ "Mobiles", "Tablets","Laptops"]  
+    },
+    {
+      "label": "Type",
+      "name": "Vehicles",
+      "values": [ "Car", "Bikes","Truck", "Other"]  
+    },
+    {
+      "label": "Type",
+      "name": "Furniture",
+      "values": [ "Old", "New","Other"]  
+    },
+    {
+      "label": "Type",
+      "name": "Property",
+      "values": [ "For Sale", "For Rent","Other"]  
+    }
+    ,
+    {
+      "label": "Type",
+      "name": "Jewelry",
+      "values": [ "Mobiles", "Tablets","Laptops"]  
+    }
+  ],
+
   "users": [
     {
       "id": 1,

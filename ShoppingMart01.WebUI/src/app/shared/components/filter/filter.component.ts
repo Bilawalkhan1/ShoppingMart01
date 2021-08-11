@@ -105,14 +105,6 @@ export class FilterComponent implements OnInit {
     })
   }
 
-  onStateChange(event) {
-    // this.productService.getProdByLocation(event).subscribe(products => {
-    //   this.products = products;
-    //   this.filteredProducts = this.products
-    //   console.log('productss', this.filteredProducts)
-    // });
-    // this.router.navigate([], { queryParams: { address: event } })
-  }
 
   onSubmit() {
 

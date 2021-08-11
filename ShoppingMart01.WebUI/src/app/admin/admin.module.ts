@@ -9,6 +9,7 @@ import { UserControlComponent } from './user-control/user-control.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SelectcategoryComponent } from './selectcategory/selectcategory.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AddproductsComponent,
     UserControlComponent,
     DashboardComponent,
+    SelectcategoryComponent,
   ],
   imports: [
 

@@ -1,0 +1,50 @@
+<h1 class="text-center mt-3">POST YOUR PRODUCT</h1>
+<hr>
+<h1 class="mt-3 ">CHOOSE A CATEGORY</h1>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 m-0 p-0">
+            <table>
+                <tr>
+                    <td (click)="displayValue()">
+                        <i class="fa fa-mobile mobile fa-3x"></i>
+                        <p class="text"> Mobiles</p>
+                        <i class="fa fa-chevron-right arrow"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td (click)="vehicles()">
+                        <i class="fa fa-car car fa-2x"></i>
+                        <p class="text"> Vehicles</p>
+                        <i class="fa fa-chevron-right arrow"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td (click)="furniture()">
+                        <i class="fa fa-bed car fa-2x"></i>
+                        <p class="text"> Furniture</p>
+                        <i class="fa fa-chevron-right arrow"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td (click)="property()">
+                        <i class="fa fa-home car fa-2x"></i>
+                        <p class="text"> Property</p>
+                        <i class="fa fa-chevron-right arrow"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-6 col-lg-6 m-0 p-0">
+            <table>
+                <tr *ngFor="let value of values">
+                    <td>
+                        <p class="text"> {{value}} </p>
+                        <i class="fa fa-chevron-right arrow"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

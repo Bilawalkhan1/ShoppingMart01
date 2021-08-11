@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RestserviceService } from '../../Services/restservice.service';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
   selector: 'app-addproducts',
@@ -20,25 +21,31 @@ export class AddproductsComponent implements OnInit {
   imgURL: any;
   public message: string;
   selectedFile: File
-
   images = []
-
-
-
   optionValue
   urls = [];
-
+  formData: any = [];
+  modelData: any = []
+  cities: any[] = []
   get f() { return this.checkoutForm.controls; }
+  provinceList: Array<any> = [
+    {},
+    { name: 'kpk', cities: ['', 'Abbottabad', 'Bannu', 'Battagram', 'Buner', 'Charsadda', 'Chitral', 'Dera Ismail Khan', 'Hangu', 'Haripur', 'Karak', 'Kohat', 'Charsadda', 'Lakki Marwat', 'Lower Dir'] },
+    { name: 'punjab', cities: ['', 'Attock', 'Bahawalnagar', 'Bahawalpur', 'Bhakkar', '	Chakwal', '	Chiniot', '	Dera Ghazi Khan', 'Faisalabad', '	Gujranwala', '	Gujrat', 'Hafizabad', 'Jhang', 'Jhelum', 'Kasur'] },
+    { name: 'sindh', cities: ['', 'Hyderabad', '	Karachi', 'Badin', '	Bandhi', '	Bhiria City', 'Bhirkan', 'Chak', '		Dadu', 'Daharki', '	Daulatpur', '		Digri', 'Gambat', 'Jungshahi', 'Islamkot'] },
+    { name: 'balochistan', cities: ['', 'Quetta', 'Turbat.', 'Khuzdar.', 'Hub, Balochistan', '	Chaman', '	Gwadar', '	Dera Allah Yar', 'Sibi', '	Nushki', '	Chitkan', 'Qilla Saifullah', '	Muslim Bagh', '	Qilla Abdullah', 'Washuk'] },
+    { name: 'gilgit', cities: ['', 'Diamer', 'Ghanche', 'Ghizer', 'Gilgit', '	Gojal Upper Hunza', '	Kharmang', 'Nagar', 'Astore', '	Skardu'] },
+  ];
 
   constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private rs: RestserviceService,
+    private productService: ProductService,
     private router: Router) {
     this.checkoutForm = formBuilder.group({
       category: formBuilder.control('initial value', Validators.required)
     })
-
   }
 
   ngOnInit() {
@@ -46,13 +53,17 @@ export class AddproductsComponent implements OnInit {
       category: ['', Validators.required],
       type: ['', Validators.required],
       Product_Name: ['', Validators.required],
-      //availability: ['', Validators.required],
-    //  Product_id: ['', Validators.required],
-      address: ['', Validators.required],
+      province: ['', Validators.required],
+      city: ['', Validators.required],
       Product_Price: ['', Validators.required],
       Product_Description: ['', Validators.required],
-      //extras: [''],
+
     });
+    this.productService.getFormData().subscribe(response => {
+      this.formData = response
+      console.log('response', response)
+    })
+
   }
 
   handleFileSelect(evt) {
@@ -79,21 +90,21 @@ export class AddproductsComponent implements OnInit {
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
-      this.urls.push(reader.result)  
+      this.urls.push(reader.result)
     }
   }
 
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
     this.base64textString = btoa(binaryString);
-    this.images.push({img:this.base64textString})
+    this.images.push({ img: this.base64textString })
     console.log('string', btoa(binaryString));
   }
 
   onSubmit(id): void {
     this.rs.createProduct(id, this.checkoutForm.value)
       .subscribe(
-        (response) => { 
+        (response) => {
         },
         error => console.error(error)
       )
@@ -103,7 +114,7 @@ export class AddproductsComponent implements OnInit {
 
   onUpload() {
     this.submitted = true;
-    
+
     if (this.checkoutForm.invalid) {
       return;
     }
@@ -117,7 +128,17 @@ export class AddproductsComponent implements OnInit {
       (err) => {
         console.error(err)
       })
+  }
+  onValueChange(event) {
+    this.productService.getSubCategory(event).subscribe((filterData: any) => {
+      this.modelData = filterData;
+      console.log('name', event)
+      console.log('value', filterData)
+    })
+  }
 
+  changeProvince(count) {
+    this.cities = this.provinceList.find(con => con.name == count).cities;
   }
 
 }
