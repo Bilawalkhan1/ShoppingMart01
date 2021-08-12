@@ -3,7 +3,7 @@
         <h2>Filters</h2>
     </div>
     <h2 class="sidebar-heading border-bottom">Location</h2>
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="myForm"  (ngSubmit)="onSubmit()">
         <div class="list-group list-group-flush">
             <label class="filterlabel">Province</label>
             <div>
@@ -33,12 +33,12 @@
                 <ng-container *ngFor="let companyName of item.filters">
                     <label class="filterlabel">{{companyName.label}}</label>
                     <div>
-                        <select class="form-select" formControlName="companyName"
+                        <select class="form-select"  formControlName="{{companyName.control}}"
                             (change)="onValueChange($event.target.value)">
                             <option hidden value="" disabled selected>--select-- </option>
-                            <option *ngFor="let a of companyName.options" [value]="a.displayValue">
+                            <option *ngFor="let a of companyName.options" [value]="a.value">
                                 {{a.displayValue}}
-                            </option>
+                            </option> 
                         </select>
                     </div>
                 </ng-container>
@@ -48,7 +48,7 @@
                 <div *ngFor="let item of modelData">
                     <label class="filterlabel">{{item.label}}</label>
                     <div>
-                        <select class="form-select" formControlName="model">
+                        <select class="form-select">
                             <option *ngFor="let a of item.models">
                                 {{a}}
                             </option>
@@ -74,3 +74,20 @@
     </form>
 
 </div>
+
+<!-- <form [formGroup]="myFormGroup" (ngSubmit)="checkInput()">
+    <div *ngFor="let item of filters">
+        <ng-container *ngFor="let companyName of item.filters">
+            <label class="filterlabel">{{companyName.label}}</label>
+            <div>
+                <select class="form-select" [formControlName]="companyName.value">
+                    <option hidden value="" disabled selected>--select-- </option>
+                    <option *ngFor="let a of companyName.options" [value]="a.displayValue">
+                        {{a.displayValue}}
+                    </option>
+                </select>
+            </div>
+        </ng-container>
+    </div>
+    <button type="submit">Submit</button>
+</form> -->

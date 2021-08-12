@@ -1,146 +1,115 @@
 {
   "categories": [
     {
-      "CategoryTilte": "Bike",
-      "categoryid": "10",
-      "subcategoryid": "1010",
+      "categoryTilte": "Bike",
+      "categoryid": "1010",
       "filters": [
         {
           "label": "Brand",
           "type": "select",
-          "value": "Select Brand",
-          "name": "brand",
+          "control": "brand",
           "options": [
-            {
-              "value": "Atlas Honda",
-              "displayValue": "Atlas Honda"
-            },
-            {
-              "value": "Metro Motor Bike",
-              "displayValue": "Metro Motor Bikes"
-            },
-            {
-              "value": "Yamaha Motors",
-              "displayValue": "Yamaha Motors"
-            },
-            {
-              "value": "Super Power Bike",
-              "displayValue": "Super Power Bike"
-            },
-            {
-              "value": "Imperial Bike",
-              "displayValue": "Imperial Bike"
-            },
-            {
-              "value": "Ravi Bike",
-              "displayValue": "Ravi Bike"
-            }
-          ],
-          "validators": {}
+            { "value": "Atlas_Honda", "displayValue": "Atlas Honda" },
+            { "value": "Metro_Motor Bike", "displayValue": "Metro Motor Bikes" },
+            { "value": "Yamaha_Motors", "displayValue": "Yamaha Motors" },
+            { "value": "Super_Power Bike", "displayValue": "Super Power Bike" },
+            { "value": "Imperial_Bike", "displayValue": "Imperial Bike" },
+            { "value": "Ravi_Bike", "displayValue": "Ravi Bike" }
+          ]
         },
         {
           "label": "Engine displacement(cc)",
           "type": "select",
-          "value": "Select Engine displacement",
+          "control": "enginecc",
           "options": [
-            {
-              "value": "70cc",
-              "displayValue": "70cc"
-            },
-            {
-              "value": "125cc",
-              "displayValue": "125cc"
-            },
-            {
-              "value": "100cc",
-              "displayValue": "100cc"
-            },
-            {
-              "value": "150cc",
-              "displayValue": "150cc"
-            },
-            {
-              "value": "250cc",
-              "displayValue": "250cc"
-            },
-            {
-              "value": "200cc",
-              "displayValue": "200cc"
-            }
-          ],
-          "validators": {}
+            { "value": "70cc", "displayValue": "70cc" },
+            { "value": "125cc", "displayValue": "125cc" },
+            { "value": "100cc", "displayValue": "100cc" },
+            { "value": "150cc", "displayValue": "150cc" },
+            { "value": "250cc", "displayValue": "250cc" },
+            { "value": "200cc", "displayValue": "200cc" }
+          ]
         },
         {
           "label": "Model Year",
           "type": "select",
-          "value": "Select Model Year",
+          "control": "model",
           "options": [
-            {
-              "value": "2021",
-              "displayValue": "2021"
-            },
-            {
-              "value": "2020",
-              "displayValue": "2020"
-            },
-            {
-              "value": "2019",
-              "displayValue": "2019"
-            },
-            {
-              "value": "2018",
-              "displayValue": "2018"
-            },
-            {
-              "value": "2017",
-              "displayValue": "2017"
-            },
-            {
-              "value": "2016",
-              "displayValue": "2016"
-            }
-          ],
-          "validators": {}
+            { "value": "2021", "displayValue": "2021" },
+            { "value": "2020", "displayValue": "2020" },
+            { "value": "2019", "displayValue": "2019" },
+            { "value": "2018", "displayValue": "2018" },
+            { "value": "2017", "displayValue": "2017" },
+            { "value": "2016", "displayValue": "2016" }
+          ]
         },
         {
           "label": "Color Family",
           "type": "select",
-          "value": "Select Color",
+          "control": "color",
           "options": [
-            {
-              "value": "Red",
-              "displayValue": "Red"
-            },
-            {
-              "value": "Black",
-              "displayValue": "Black"
-            },
-            {
-              "value": "White",
-              "displayValue": "White"
-            },
-            {
-              "value": "Blue",
-              "displayValue": "Blue"
-            }
-          ],
-          "validators": {}
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "White", "displayValue": "White" },
+            { "value": "Blue", "displayValue": "Blue" }
+          ]
         },
         {
           "label": "Number of Gears",
           "type": "select",
-          "value": "Select number of gears",
+          "control": "gears",
           "options": [
-            {
-              "value": "4",
-              "displayValue": "4"
-            },
-            {
-              "value": "5",
-              "displayValue": "5"
-            }
-          ],
-          "validators": {}
+            { "value": "4", "displayValue": "4" },
+            { "value": "5", "displayValue": "5" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1101,
+      "category": "Vehicle",
+      "categoryid": "1020",
+      "type": "car",
+      "filters": [
+        {
+          "type": "select",
+          "label": "Vehicles For Sale",
+          "control": "company",
+          "placeholder": "--select--",
+          "options": [
+            { "value": "Audi", "displayValue": "Audi" },
+            { "value": "Bmw", "displayValue": "BMW" },
+            { "value": "Bentley", "displayValue": "Bentley" },
+            { "value": "Buick", "displayValue": "Buick" },
+            { "value": "Cadillac", "displayValue": "Cadillac" },
+            { "value": "Chevrolet", "displayValue": "Chevrolet" },
+            { "value": "Chrysler", "displayValue": "Chrysler" },
+            { "value": "Dodge", "displayValue": "Dodge" },
+            { "value": "Fiat", "displayValue": "Fiat" },
+            { "value": "Genesis", "displayValue": "Genesis" },
+            { "value": "Ford", "displayValue": "Ford" },
+            { "value": "GMC", "displayValue": "GMC" },
+            { "value": "Alfa", "displayValue": "Alfa" },
+            { "value": "Honda", "displayValue": "Honda" },
+            { "value": "Hyundai", "displayValue": "Hyundai" },
+            { "value": "Infiniti", "displayValue": "Infiniti" },
+            { "value": "Jaguar", "displayValue": "Jaguar" },
+            { "value": "Jeep", "displayValue": "Jeep" },
+            { "value": "Kia", "displayValue": "Kia" },
+            { "value": "Land", "displayValue": "Land" },
+            { "value": "Rover", "displayValue": "Rover" },
+            { "value": "Romeo", "displayValue": "Romeo" },
+            { "value": "Lexus", "displayValue": "Lexus" },
+            { "value": "Lincoln", "displayValue": "Lincoln" },
+            { "value": "Mazda", "displayValue": "Mazda" },
+            { "value": "Mercedes-Benz", "displayValue": "Mercedes-Benz" },
+            { "value": "Mini", "displayValue": "Mini" },
+            { "value": "Mitsubishi", "displayValue": "Mitsubishi" },
+            { "value": "Nissan", "displayValue": "Nissan" },
+            { "value": "Volvo", "displayValue": "Volvo" },
+            { "value": "Suzuki", "displayValue": "Suzuki" },
+            { "value": "Tesla", "displayValue": "Tesla" }
+          ]
         }
       ]
     },
@@ -544,7 +513,7 @@
         "GMC",
         "Alfa",
         "Hyundai",
-        "Infiniti"   
+        "Infiniti"
       ]
     },
     {
@@ -567,7 +536,7 @@
         "GMC",
         "Alfa",
         "Hyundai",
-        "Infiniti"   
+        "Infiniti"
       ]
     },
     {
@@ -657,16 +626,12 @@
     {
       "label": "All Models",
       "name": "Buick",
-      "models": [
-        "other"
-      ]
+      "models": ["other"]
     },
     {
       "label": "All Models",
       "name": "Genesis",
-      "models": [
-        "other"
-      ]
+      "models": ["other"]
     },
     {
       "label": "All Models",
@@ -1210,21 +1175,12 @@
     {
       "label": "Type",
       "name": "Electronics",
-      "values": [
-        "Mobiles",
-        "Tablets",
-        "Laptops"
-      ]
+      "values": ["Mobiles", "Tablets", "Laptops"]
     },
     {
       "label": "Type",
       "name": "Vehicle",
-      "values": [
-        "Car",
-        "Bike",
-        "Truck",
-        "Other"
-      ]
+      "values": ["Car", "Bike", "Truck", "Other"]
     },
     {
       "label": "Type",
@@ -1259,22 +1215,12 @@
     {
       "label": "Type",
       "name": "Property",
-      "values": [
-        "For Sale",
-        "For Rent",
-        "Other"
-      ]
+      "values": ["For Sale", "For Rent", "Other"]
     },
     {
       "label": "Type",
       "name": "Jewelry",
-      "values": [
-        "Diamond",
-        "Gold",
-        "Silver",
-        "Antique",
-        "Other"
-      ]
+      "values": ["Diamond", "Gold", "Silver", "Antique", "Other"]
     }
   ],
   "users": [
@@ -1372,7 +1318,8 @@
       "city": "Abbottabad",
       "condition": "New",
       "model": "A2",
-      "companyName": "Audi",
+      "enginecc":"70cc",
+      "brand":"Atlas_Honda",
       "Product_Name": "Bike",
       "address": "Abbottabad",
       "Product_Price": "200000",

@@ -39,14 +39,15 @@ export class SearchComponent implements OnInit {
   }
 
   getHttpSearchResult() {
-    this.http.get<any>(this.url)
-      .pipe(
-        map(u => u.data)
-      )
+    this.http.get<any>(`http://localhost:3000/Product`)
+      // .pipe(
+      //   map(u => u.data)
+      // )
       .subscribe(data => {
-        // this.ResponseData = data.map(u => u.firstname)              
+        // this.ResponseData = data.map(u => u.firstname)       
+        console.log(data)       
         data.forEach(element => {
-          this.searchArray.push(element.firstname);
+          this.searchArray.push(element.Product_Name);
         });
       });
   }

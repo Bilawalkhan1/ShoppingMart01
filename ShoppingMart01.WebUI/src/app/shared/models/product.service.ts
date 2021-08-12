@@ -13,14 +13,10 @@ export class ProductService {
   private productsUrl = 'http://localhost:3000/Product';
   constructor(private http: HttpClient) { }
 
-  getFilterData(_categoryId, _subcategoryId?) {
-
+  getFilterData(_categoryId){
+    
     let params = new HttpParams()
     params = params.set("categoryid", _categoryId)
-
-    if (_subcategoryId) {
-      params = params.set("subcategoryid", _subcategoryId)
-    }
 
     return this.http.get<filter[]>(`http://localhost:3000/categories`, { params: params })
   }
