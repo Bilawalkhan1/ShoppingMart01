@@ -14,17 +14,6 @@ export class MainViewComponent implements OnInit {
   products: any[] = [];
   itemcart: any[] = [];
 
-  images = [
-    { img: '/assets/bikes.jfif' },
-    { img: '/assets/car.jfif' },
-    { img: '/assets/bike.jfif' },
-    { img: '/assets/fur.jfif' },
-    { img: '/assets/jewel.jfif' },
-    { img: '/assets/furn.jfif' },
-    { img: '/assets/jewelery.jfif' },
-    { img: '/assets/furniture.jfif' },
-    { img: '/assets/cars.jfif' },
-  ];
   slideConfig = {
     slidesToShow: 3,
     slidesToScroll: 1,

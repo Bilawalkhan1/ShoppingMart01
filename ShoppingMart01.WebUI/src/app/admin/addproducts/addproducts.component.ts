@@ -24,6 +24,7 @@ export class AddproductsComponent implements OnInit {
   images = []
   optionValue
   urls = [];
+  vehicle: boolean = false
   formData: any = [];
   modelData: any = []
   model: any = []
@@ -31,7 +32,7 @@ export class AddproductsComponent implements OnInit {
   SubCategoryId: number;
   CategoryName: string;
   SubCategoryName: string;
-  xx: any;
+  data: any;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
     {},
@@ -58,17 +59,24 @@ export class AddproductsComponent implements OnInit {
       this.SubCategoryId = Number(params.get('id'));
       this.SubCategoryName = params.get('subcateg');
     });
-    this.xx = this.capitalizeFirstLetter(this.SubCategoryName);
-    console.log(this.CategoryName,this.SubCategoryId, this.SubCategoryName)
+    this.data = this.capitalizeFirstLetter(this.SubCategoryName)
+    console.log(this.CategoryName, this.SubCategoryId, this.SubCategoryName)
+    if (this.CategoryName == 'vehicles') {
+      this.vehicle = true
+      console.log('vehicle', this.CategoryName)
+    }
+    else {
+      this.vehicle = false
+    }
   }
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  capitalizeFirstLetter(string){
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
-      categoryid:[''],
-      Category:[this.capitalizeFirstLetter(this.CategoryName)],
-      CategoryType:[this.capitalizeFirstLetter(this.SubCategoryName)],
+      categoryid: [''],
+      Category: [this.capitalizeFirstLetter(this.CategoryName)],
+      CategoryType: [this.capitalizeFirstLetter(this.SubCategoryName)],
       category: ['', Validators.required],
       type: ['', Validators.required],
       Product_Name: ['', Validators.required],
@@ -78,12 +86,12 @@ export class AddproductsComponent implements OnInit {
       Product_Description: ['', Validators.required],
       model: ['', Validators.required],
       enginecc: ['', Validators.required],
-      year: ['',Validators.required],
+      year: ['', Validators.required],
       color: [''],
       gear: [''],
     });
 
-    this.productService.getModelData(this.xx).subscribe((filterData: any) => {
+    this.productService.getModelData(this.data).subscribe((filterData: any) => {
       this.model = filterData;
       console.log(this.model)
     })
@@ -170,7 +178,7 @@ export class AddproductsComponent implements OnInit {
     this.cities = this.provinceList.find(con => con.name == count).cities;
   }
   onSubCategoryValueChanges(event) {
-   
+
   }
 }
 

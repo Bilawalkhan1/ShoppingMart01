@@ -436,12 +436,12 @@
               "displayValue": "Mobiles"
             },
             {
-              "value": "Laptops",
-              "displayValue": "Laptops"
+              "value": "Laptop",
+              "displayValue": "Laptop"
             },
             {
-              "value": "Tablets",
-              "displayValue": "Tablets"
+              "value": "Tablet",
+              "displayValue": "Tablet"
             },
             {
               "value": "Other",
@@ -495,7 +495,7 @@
     },
     {
       "label": "All Models",
-      "name": "Car",
+      "name": "Bus",
       "models": [
         "Mazda",
         "Nissan",
@@ -541,7 +541,7 @@
     },
     {
       "label": "All Models",
-      "name": "Bus",
+      "name": "Car",
       "models": [
         "Audi",
         "Bmw",
@@ -1099,7 +1099,7 @@
     },
     {
       "label": "Company Name",
-      "name": "Laptops",
+      "name": "Laptop",
       "models": [
         "APPLE",
         "ACER",
@@ -1118,7 +1118,7 @@
     },
     {
       "label": "Company Name",
-      "name": "Tablets",
+      "name": "Tablet",
       "models": [
         "SAMSUNG",
         "APPLE",
@@ -1175,7 +1175,11 @@
     {
       "label": "Type",
       "name": "Electronics",
-      "values": ["Mobiles", "Tablets", "Laptops"]
+      "values": [
+        "Mobiles",
+        "Tablet",
+        "Laptop"
+      ]
     },
     {
       "label": "Type",

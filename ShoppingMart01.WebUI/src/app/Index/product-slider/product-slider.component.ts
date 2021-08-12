@@ -39,5 +39,6 @@ export class ProductSliderComponent implements OnInit {
     autoplaySpeed: 1000,
     autoplay: true,
     infinite: true,
+    arrows: false
   }
 }

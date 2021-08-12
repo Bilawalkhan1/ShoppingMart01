@@ -35,8 +35,7 @@ export class FilterComponent implements OnInit {
   paramsObject: any
   myFormGroup: FormGroup;
 
-
-  constructor (
+  constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -97,7 +96,6 @@ export class FilterComponent implements OnInit {
       this.modelData = filterData;
     })
   }
-
 
   onSubmit() {
     // console.log(this.myForm.value)

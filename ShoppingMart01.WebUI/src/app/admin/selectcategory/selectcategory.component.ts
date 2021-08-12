@@ -25,7 +25,7 @@ export class SelectcategoryComponent implements OnInit {
   ];
   furnitures: Array<any> = [
     { id: "2010", name: 'Curtain', value: ['Curtain'], route: "curtain" },
-    { id: "2020", name: 'Wood furniture', value: ['Wood furniture'], route: "woodfurnitre" },
+    { id: "2020", name: 'Wood furniture', value: ['Wood furniture'], route: "woodfurniture" },
     { id: "2030", name: 'Sofa set', value: ['Sofa set'], route: "sofaset" },
     { id: "2040", name: 'Blinds', value: ['Blinds'], route: "blind" },
   ];
@@ -33,26 +33,38 @@ export class SelectcategoryComponent implements OnInit {
     { id: "4010", name: 'For Sale', value: ['For Sale'], route: "forsale" },
     { id: "4020", name: 'For Rent', value: ['For Rent'], route: "forrent" }
   ];
+  jewelery: Array<any> = [
+    { id: "5010", name: 'Gold', value: ['Gold'], route: "gold" },
+    { id: "5020", name: 'Diamond', value: ['Diamond'], route: "diamond" },
+    { id: "5030", name: 'Silver', value: ['Silver'], route: "silver" },
+    { id: "5040", name: 'Antique', value: ['Antique '], route: "antique" },
+    { id: "5050", name: 'Other', value: ['Other '], route: "other" }
+  ];
   ngOnInit(): void {
   }
   displayValue() {
     this.category = "electronics"
     this.values = this.subcategory
-    console.log('values',this.category, this.values)
+    console.log('values', this.category, this.values)
   }
   vehicles() {
     this.values = this.vehicle
-    this.category="vehicles"
+    this.category = "vehicles"
     console.log('values', this.values)
   }
   furniture() {
     this.values = this.furnitures
-    this.category="furniture"
+    this.category = "furniture"
     console.log('values', this.values)
   }
   property() {
     this.values = this.properties
-    this.category="property"
+    this.category = "property"
+    console.log('values', this.values)
+  }
+  jewelry() {
+    this.values = this.jewelery
+    this.category = "jewelry"
     console.log('values', this.values)
   }
 }

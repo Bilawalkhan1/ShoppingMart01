@@ -36,40 +36,15 @@
           <div class="row">
             <div class="col">
               <label for="">
-                Category : <input type="text" formControlName="Category"
-                 class="form-control" readonly></label>
+                Category : <input type="text" formControlName="Category" class="form-control" readonly></label>
             </div>
-           <div class="col">
-            <label for="">
-              Category Type : <input type="text" formControlName="CategoryType"
-               class="form-control" readonly></label>
-           </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col mb-3">
-              <div *ngFor="let item of formData">
-                <label>{{item.label}}</label>
-                <select (change)="onValueChange($event.target.value)" formControlName="category" class="form-select"
-                  [(ngModel)]="optionValue" [ngClass]="{ 'is-invalid': submitted && f.category.errors }">
-                  <option *ngFor="let category of item.options" value="{{category.value}}">{{category.displayValue}}
-                  </option>
-                </select>
-                <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
-                  <div *ngIf="f.category.errors.required">category is required</div>
-                </div>
-              </div>
+            <div class="col">
+              <label for="">
+                Category Type : <input type="text" formControlName="CategoryType" class="form-control" readonly></label>
             </div>
           </div>
 
-          <div class="form-row " *ngFor="let item of modelData">
-            <label for="">{{item.label}}</label>
-            <select (change)="onSubCategoryValueChanges($event.target.value)" formControlName="type" class="form-select" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
-              <option *ngFor="let a of item.values">{{a}}</option>
-            </select>
-          </div>
-
-          <ng-container >
+          <ng-container>
             <div *ngFor="let item of model">
               <label class="filterlabel">{{item.label}}</label>
               <div>
@@ -97,17 +72,23 @@
             </select>
           </div>
 
-          <div class="row mt-3">
-            <div class="col-md-6">
+          <div class="row mt-3" *ngIf="vehicle">
+            <div class="row">
               <label for="">
-                Engine CC : <input  class="form-control" formControlName="enginecc" placeholder="Engine Capacity"
+                Engine CC : <input class="form-control" formControlName="enginecc" placeholder="Engine Capacity"
                   type="text">
               </label>
             </div>
 
-            <div class="col-md-6">
+            <div class="row">
               <label for="">
                 Model Year : <input class="form-control" formControlName="year" placeholder="Manufactoring Year"
+                  type="number">
+              </label>
+            </div>
+            <div class="row">
+              <label for="">
+                Number Of Gears : <input class="form-control" formControlName="gear" placeholder="Enter Number Of Gears"
                   type="number">
               </label>
             </div>
@@ -116,17 +97,11 @@
           <div class="row">
             <div class="col-md-6">
               <label for="">
-                Color : <input  class="form-control" formControlName="color" placeholder=""
-                  type="text">
+                Color : <input class="form-control" formControlName="color" placeholder="" type="text">
               </label>
             </div>
 
-            <div class="col-md-6">
-              <label for="">
-                Number Of Gears : <input class="form-control" formControlName="gear" placeholder="Enter Number Of Gears"
-                  type="number">
-              </label>
-            </div>
+
           </div>
 
 
