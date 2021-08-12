@@ -108,7 +108,7 @@ export class AddproductsComponent implements OnInit {
     var file = files[0];
 
     if (files && file) {
-      var reader = new FileReader();
+      var reader = new FileReader()
       reader.onload = this._handleReaderLoaded.bind(this);
       reader.readAsBinaryString(file);
 

@@ -8,6 +8,11 @@ export class product {
     address: string
     category: string
     type: string
+    color: string
+    gears: number
+    brand: string
+    model: number
+    enginecc: number
 
     constructor(type: string, id: number, category: string, name: string, price: string, blogimg: string, desp: string, availabilty: string, address: string) {
         this.Product_id = id
