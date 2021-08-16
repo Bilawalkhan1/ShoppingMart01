@@ -1,0 +1,73 @@
+{
+    "label":"Bike",
+    "categoryid":"1010",
+    "controls": [
+      {
+        "name": "Brand",
+        "label": "Brand:",
+        "value": "Atlas Honda",
+        "type": "select",
+        "options":[
+          { "value": "Atlas Honda", "displayValue": "Atlas Honda" },
+          { "value": "Metro Motor Bike", "displayValue": "Metro Motor Bikes" },
+          { "value": "Yamaha Motors", "displayValue": "Yamaha Motors" },
+          { "value": "Super Power Bike", "displayValue": "Super Power Bike" },
+          { "value": "Imperial Bike", "displayValue": "Imperial Bike" },
+          { "value": "Ravi Bike", "displayValue": "Ravi Bike" }
+        ],
+        "validators": {
+          "required": true,
+          "minLength": 10
+        }
+      },
+      {
+        "name": "Engine Displacement",
+        "label": "Engine Displacement:",
+        "value": "70cc",
+        "type": "select",
+        "options": [
+          { "value": "70cc", "displayValue": "70cc" },
+          { "value": "125cc", "displayValue": "125cc" },
+          { "value": "100cc", "displayValue": "100cc" },
+          { "value": "150cc", "displayValue": "150cc" },
+          { "value": "250cc", "displayValue": "250cc" },
+          { "value": "200cc", "displayValue": "200cc" }
+        ],
+        "validators": {}
+      },
+      {
+        "name": "Model Year",
+        "label": "Model Year",
+        "value": "2021",
+        "type": "select",
+        "options": [
+          { "value": "2021", "displayValue": "2021" },
+          { "value": "2020", "displayValue": "2020" },
+          { "value": "2019", "displayValue": "2019" },
+          { "value": "2018", "displayValue": "2018" },
+          { "value": "2017", "displayValue": "2017" },
+          { "value": "2016", "displayValue": "2016" }
+        ],
+        "validators": {}
+      },
+      {
+        "name": "No of Gears",
+        "label": "No of Gears",
+        "value": "4",
+        "type": "select",
+        "options": [
+          { "value": "4", "displayValue": "4" },
+          { "value": "5", "displayValue": "5" }        
+        ],
+        "validators": {}
+      },
+      {
+        "name": "Price",
+        "label": "Price",
+        "value": "",
+        "type": "text",      
+        "validators": {}
+      }     
+    ]
+  }
+  
