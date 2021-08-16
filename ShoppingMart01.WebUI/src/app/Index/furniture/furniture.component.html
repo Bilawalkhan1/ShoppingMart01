@@ -3,7 +3,7 @@
         <div class="cardx card-blockx ">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig1">
                 <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
-                    <a [routerLink]="['/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
+                    <a [routerLink]="['ProductBrowsing/product', blog.Product_Name]" (click)="sendProductDetails(blog)">
                         <img class=" imgstyle1 img-fluid" src="{{covertPhotoUrl(i.img)}}">
                         <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid"
                             src="{{covertPhotoUrl(i.img)}}">

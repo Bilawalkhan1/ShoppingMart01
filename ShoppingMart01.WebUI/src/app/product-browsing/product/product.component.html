@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"  *ngFor="let blog of product">
       <div class="col-md-4 col-sm-12 col-lg-5 ">
         <div class="container-fluid">
-          <div class="card" *ngFor="let blog of product">
+          <div class="card">
           
               <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
         
@@ -50,7 +50,7 @@
         <div class=" mid-div ">
           <div class="card">
             <div class="card-header">
-              <h1 class="product-title"><span>
+              <h1 class="product-title"><span> {{ blog.Product_Description}}
                   SteelSeries Rival 3 Wireless Gaming Mouse - 400+ Hour Battery Life - Dual Wireless 2.4 GHz and
                   Bluetooth 5.0-60 Million Clicks - 18,000 CPI TrueMove Air Optical Sensor (62521)
                 </span></h1>
@@ -91,7 +91,7 @@
             <div class="card-header">
               <h2> Price
                 <span style="color: rgb(163, 7, 7);">
-                  $45.34
+                {{blog.Product_Price}}
                 </span>
               </h2>
             </div>
