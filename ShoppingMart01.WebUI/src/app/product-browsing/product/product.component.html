@@ -1,134 +1,93 @@
 <div class="container-fluid">
-  <div class="row"  *ngFor="let blog of product">
-      <div class="col-md-4 col-sm-12 col-lg-5 ">
-        <div class="container-fluid">
-          <div class="card">
-          
-              <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
-        
-                <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
-                    <img class="img-fluid size-img" src="{{covertPhotoUrl(i['img'])}}">
-                </div>
-        
-              </ngx-slick-carousel>
-              
-          <!-- <div class="row ">
-            <div class="d-flex"> 
-              <div class="card">
-                <div class="d-flex flex-column thumbnails">
-                  <div id="f1" class="tb tb-active"> <img class="thumbnail-img fit-image"
-                      src="https://i.imgur.com/wL1uRBk.jpg"> </div>
-                  <div id="f2" class="tb"> <img class="thumbnail-img fit-image" src="https://i.imgur.com/3NusNP2.jpg">
-                  </div>
-                  <div id="f3" class="tb"> <img class="thumbnail-img fit-image" src="https://i.imgur.com/pXUPOVR.jpg">
-                  </div>
-                  <div id="f4" class="tb"> <img class="thumbnail-img fit-image" src="https://i.imgur.com/xX5Qmsa.jpg">
-                  </div>
-                </div>
-                <div class="page" id="page3">
-                <fieldset id="f11" class="active"> 
-                  <div class="product-pic" id="PS4"> <img class="pic0" src="https://i.imgur.com/wL1uRBk.jpg"> </div>
-                </fieldset>
-                <fieldset id="f21" class="">
-                  <div class="product-pic" id="PS4"> <img class="pic0" src="https://i.imgur.com/3NusNP2.jpg"> </div>
-                </fieldset>
-                <fieldset id="f31" class="">
-                  <div class="product-pic" id="PS4"> <img class="pic0" src="https://i.imgur.com/pXUPOVR.jpg"> </div>
-                </fieldset>
-                <fieldset id="f41" class="">
-                  <div class="product-pic" id="PS4"> <img class="pic0" src="https://i.imgur.com/xX5Qmsa.jpg"> </div>
-                </fieldset>
-              </div>
-              </div>
+  <div class="row" *ngFor="let blog of product">
+    <div class="col-md-4 col-sm-12 col-lg-5 ">
+      <div class="container-fluid">
+        <div class="card">
+
+          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+            <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+              <img class="img-fluid size-img" src="{{covertPhotoUrl(i['img'])}}">
             </div>
-          </div> -->
+
+          </ngx-slick-carousel>
         </div>
       </div>
+    </div>
+
+    <div class="col-md-3 col-sm-12 col-lg-4 ">
+      <div class=" mid-div ">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="product-title"><span> {{ blog.Product_Description}}
+              </span></h1>
+          </div>
+          <div class="card-body mt-3">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="td-span">
+                    <h1>{{blog.Product_Name}}</h1>
+                  </td>
+                </tr>
+                <tr>
+                  <h1 class="td-span">Location</h1>
+                  <td class="td-span">
+                    <h2>{{blog.city}}</h2>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <!--  -->
-      <div class="col-md-3 col-sm-12 col-lg-4 ">
-        <div class=" mid-div ">
-          <div class="card">
-            <div class="card-header">
-              <h1 class="product-title"><span> {{ blog.Product_Description}}
-                  SteelSeries Rival 3 Wireless Gaming Mouse - 400+ Hour Battery Life - Dual Wireless 2.4 GHz and
-                  Bluetooth 5.0-60 Million Clicks - 18,000 CPI TrueMove Air Optical Sensor (62521)
-                </span></h1>
-            </div>
-            <div class="card-body">
-              <table>
-                <tbody>
-                  <tr>
-                    <td> <span class="a-size-base a-text-bold"> Brand </span> </td>
-                    <td class="td-span"> <span class="a-size-base"> SteelSeries </span> </td>
-                  </tr>
-                  <tr>
-                    <td> <span class="a-size-base a-text-bold"> Item Weight </span> </td>
-                    <td class="td-span"> <span class="a-size-base"> 0.24 Pounds </span> </td>
-                  </tr>
-                  <tr>
-                    <td> <span class="a-size-base a-text-bold"> Style </span> </td>
-                    <td class="td-span"> <span class="a-size-base"> Rival 3 </span> </td>
-                  </tr>
-                </tbody>
-              </table>  
-            </div>
-            <div class="card-footer"> 
-              <p  class="a-size-base p-about">About this item</p>
-              <ul>
-                <li> <span class="a-size-base a-list-item"> Year-long battery life for over 400+ hours of uninterrupted use with revolutionary power-efficient technology</span> </li>
-                <li> <span class="a-size-base a-list-item"> Optimized for ultra-low latency wired-like performance with the flexibility of two types of connectivity: 2.4 GHz and Bluetooth </span> </li>
-              </ul>
-             </div>
-          </div>
-        </div>        
-        <!--  -->
 
-      </div>
-      <div class="col-md-3 col-sm-12 col-lg-3 ">
-        <div class="container">
-          <div class="card">
-            <div class="card-header">
-              <h2> Price
-                <span style="color: rgb(163, 7, 7);">
+    </div>
+    <div class="col-md-3 col-sm-12 col-lg-3 ">
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            <h2> Price
+              <span style="color: rgb(163, 7, 7);">
                 {{blog.Product_Price}}
-                </span>
-              </h2>
-            </div>
-            <div class="card-header">
-              <p class="a-size-base"> Availabilty &nbsp; <span style="color: green;"> In Stock</span> </p>              
-            </div>
-            <div class="card-body">
-              <select class="s-quantity form-select my-2" name="" id="">
-                <option value=""> Select Quantity</option>
-                <option value=""> 1 </option>
-                <option value=""> 2 </option>
-                <option value=""> 3 </option>
-                <option value=""> 4 </option>
-                <option value=""> 5 </option>
-              </select>
-            </div> 
-            <div class="card-footer">
-              <div class="input-group form-group">
-                <span class="fa fa-shopping-cart form-control-icon"></span>
-                <div class="row justify-content-center">
-                  <button type="button" class="blockBtn" > <span style="padding-left: 10px;">Add to cart</span></button>
-                </div>
+              </span>
+            </h2>
+          </div>
+          <div class="card-header">
+            <p class="a-size-base"> Availabilty &nbsp; <span style="color: green;"> In Stock</span> </p>
+          </div>
+          <div class="card-body">
+            <select class="s-quantity form-select my-2" name="" id="">
+              <option value=""> Select Quantity</option>
+              <option value=""> 1 </option>
+              <option value=""> 2 </option>
+              <option value=""> 3 </option>
+              <option value=""> 4 </option>
+              <option value=""> 5 </option>
+            </select>
+          </div>
+          <div class="card-footer">
+            <div class="input-group form-group">
+              <span class="fa fa-shopping-cart form-control-icon"></span>
+              <div class="row justify-content-center">
+                <button type="button" class="blockBtn"> <span style="padding-left: 10px;">Add to cart</span></button>
               </div>
-              <div class="input-group  form-group" style="margin-top: -10px;">
-                <span class="fa fa-cart-plus form-control-icon"></span>
-                <div class="row justify-content-center">
-                  <button type="button" class="blockBtn" style="padding:10px 80px;"> <span style=" padding-left: 10px;">Buy</span></button>
-                </div>
+            </div>
+            <div class="input-group  form-group" style="margin-top: -10px;">
+              <span class="fa fa-cart-plus form-control-icon"></span>
+              <div class="row justify-content-center">
+                <button type="button" class="blockBtn" style="padding:10px 80px;"> <span
+                    style=" padding-left: 10px;">Buy</span></button>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
+
+    </div>
 
   </div>
 </div>
- <!-- Carousel -->
- <app-product-related-carousel [productX]="products"></app-product-related-carousel>
- 
+<!-- Carousel -->
+<app-product-related-carousel [productX]="products"></app-product-related-carousel>

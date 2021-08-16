@@ -29,6 +29,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .navbargrey {
   background-color: slategray;
 }
+.search_box .navbar .navbar-toggler {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .slick-prev { 
     margin-left: -10px;

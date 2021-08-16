@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit {
     slidesToScroll: 1,
     dots: true,
     infinite: true,
+    arrows: false
   }
 
   addcount() {
@@ -35,9 +36,8 @@ export class ProductComponent implements OnInit {
     return this.count
   }
 
-  constructor (
-    private productService: ProductService,  private router: Router) 
-    {
+  constructor(
+    private productService: ProductService, private router: Router) {
     this.subscription = this.productService.getProduct().subscribe(prod => {
       if (prod) {
         this.product.push(prod);
