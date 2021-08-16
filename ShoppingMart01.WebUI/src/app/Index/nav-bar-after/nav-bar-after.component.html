@@ -1,0 +1,41 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
+    <div ngbDropdown #myDrop2="ngbDropdown" *ngFor="let menu of allItems">
+        <h1 class=" heading1" id="dropdownManual" ngbDropdownAnchor>
+            {{ menu.displayName}}
+        </h1>
+
+        <div *ngIf="menu.children" class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+            <div class="row">
+                <div class="col">
+                    <button *ngFor="let child of menu.children" ngbDropdownItem [routerLink]="[child.route,child.id]">
+                        {{ child.displayName}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <links>
+        <ul class="navbar-nav ml-auto search_box">
+            <li>
+                <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown" *ngFor="let menu of navItem">
+
+                    <button class="btn ml-5 mt-2 headg head4" id="dropdownManual" ngbDropdownAnchor
+                        [routerLink]="[menu.route,menu.id]">
+                        {{ menu.displayName}}
+                    </button>
+
+                    <div *ngIf="menu.children" class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <div class="row">
+                            <div class="col">
+                                <button *ngFor="let child of menu.children" ngbDropdownItem
+                                    [routerLink]="[menu.route,menu.id,child.route,child.id]">
+                                    {{ child.displayName}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SelectcategoryComponent implements OnInit {
   values: any[] = []
   category: string
+  categoryid: string;
 
   constructor() { }
 
@@ -43,26 +44,31 @@ export class SelectcategoryComponent implements OnInit {
   ngOnInit(): void {
   }
   displayValue() {
+    this.categoryid = "30"
     this.category = "electronics"
     this.values = this.subcategory
     console.log('values', this.category, this.values)
   }
   vehicles() {
     this.values = this.vehicle
+    this.categoryid = "10"
     this.category = "vehicles"
     console.log('values', this.values)
   }
   furniture() {
     this.values = this.furnitures
+    this.categoryid = "20"
     this.category = "furniture"
     console.log('values', this.values)
   }
   property() {
     this.values = this.properties
+    this.categoryid = "40"
     this.category = "property"
     console.log('values', this.values)
   }
   jewelry() {
+    this.categoryid = "50"
     this.values = this.jewelery
     this.category = "jewelry"
     console.log('values', this.values)

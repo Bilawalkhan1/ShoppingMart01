@@ -40,13 +40,13 @@
               <div class="col-lg-6 col-md-6">
                 <label for="">
                   <h2 class="mt-0 mb-0"> Category</h2>
-                </label><input type="text" formControlName="Category" class="form-control" readonly>
+                </label><input type="text" formControlName="category" class="form-control" readonly>
               </div>
               <div class="col-lg-6 col-md-6">
                 <label for="">
                   <h2 class="mt-0 mb-0">Category Type</h2>
                 </label>
-                <input type="text" formControlName="CategoryType" class="form-control" readonly>
+                <input type="text" formControlName="type" class="form-control" readonly>
               </div>
             </div>
 
@@ -64,25 +64,6 @@
                 </div>
               </div>
             </ng-container>
-
-            <div class="form-row">
-              <label class="filterlabel">
-                <h2 class="mt-0 mb-0">Province</h2>
-              </label>
-              <select class="form-select" placeholder="Select Province" formControlName="province"
-                (change)="changeProvince($event.target.value)">
-                <option *ngFor="let count of provinceList">{{count.name}} </option>
-              </select>
-            </div>
-
-            <div *ngIf="cities.length>0">
-              <label class="filterlabel">
-                <h2 class="mt-0 mb-0"></h2>City
-              </label>
-              <select class="form-select" formControlName="city" placeholder="Anycity">
-                <option *ngFor="let city of cities">{{city}} </option>
-              </select>
-            </div>
 
             <div class="form-row mt-3" *ngIf="vehicle">
               <div class="form-row">
@@ -117,6 +98,26 @@
                   <h2 class="mt-0 mb-0">Price</h2>
                 </label>
                 <input class="form-control " formControlName="Product_Price" placeholder="Enter Price" type="number">
+              </div>
+
+
+              <div class="form-row">
+                <label class="filterlabel">
+                  <h2 class="mt-0 mb-0">Province</h2>
+                </label>
+                <select class="form-select" placeholder="Select Province" formControlName="province"
+                  (change)="changeProvince($event.target.value)">
+                  <option *ngFor="let count of provinceList">{{count.name}} </option>
+                </select>
+              </div>
+
+              <div *ngIf="cities.length>0">
+                <label class="filterlabel">
+                  <h2 class="mt-0 mb-0"></h2>City
+                </label>
+                <select class="form-select" formControlName="city" placeholder="Anycity">
+                  <option *ngFor="let city of cities">{{city}} </option>
+                </select>
               </div>
             </div>
             <br>

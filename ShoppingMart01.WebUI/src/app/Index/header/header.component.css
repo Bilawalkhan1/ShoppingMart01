@@ -6,14 +6,31 @@
     margin-left: 25px;
     margin-top: 10px !important;
     margin-bottom: 10px;
-    margin-right: 25px;
+    margin-right: 40px;
+    cursor: pointer;
 }
 .dropdown-toggle::after {
     display: none;
 }
-.search_box{
-    margin-left: 140px;
+.has-search .form-control {
+    padding-left: 2.1rem;
+    border-radius: 4px;
+    margin-top: 5px;
+    width: 760px !important;
 }
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
 .icons{
     margin-left: 110px;
 }
@@ -62,14 +79,24 @@ button:hover {
 .sellbtn{
     border: none;
     border-radius: 20px;
-    margin-top: 26px;
     background-color: white;
     color: black;
     margin-top: 18px;
+    margin-right: 25px;
     
 }
 .plus{
     margin: 5px
+}
+.account{
+margin-top: 7px;
+
+}
+.shopping_icon{
+    margin-top: -9px;
+}
+.Shopping{
+    color: white;
 }
 .account{
 margin-top: 20px;
@@ -82,31 +109,13 @@ margin-top: 20px;
 }
 
 .btn1{
-    margin-top: -9px;
+    margin-top: -11px;
     color: blue;
     border: none;
     width: 39px;
     cursor: pointer;
+    margin-left: 20px;
 }
-
-.has-search .form-control {
-    padding-left: 2.1rem;
-    border-radius: 15px;
-    margin-top: 10px
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-}
-
 .cartvalue{
     font-weight: 400;
 }
@@ -118,6 +127,9 @@ margin-top: 20px;
         margin-left: 0px;
     }
     .icons{
+        margin-left: 0px;
+    }
+    .btn1{
         margin-left: 0px;
     }
 }

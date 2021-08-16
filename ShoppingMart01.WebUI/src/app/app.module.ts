@@ -20,6 +20,7 @@ import { ProductSliderComponent } from './Index/product-slider/product-slider.co
 import { ProductBrowsingModule } from './product-browsing/product-browsing.module';
 import { VehiclesComponent } from './Index/vehicle/vehicle.component';
 import { FurnituresComponent } from './Index/furniture/furniture.component';
+import { NavBarAfterComponent } from './Index/nav-bar-after/nav-bar-after.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FurnituresComponent } from './Index/furniture/furniture.component';
     HomePageSliderComponent,
     VehiclesComponent,
     FurnituresComponent,
-    ProductSliderComponent
+    ProductSliderComponent,
+    NavBarAfterComponent
   ],
   imports: [
     AppRoutingModule,

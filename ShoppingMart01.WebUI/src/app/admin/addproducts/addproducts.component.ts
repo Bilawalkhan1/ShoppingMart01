@@ -30,9 +30,11 @@ export class AddproductsComponent implements OnInit {
   model: any = []
   cities: any[] = []
   SubCategoryId: number;
+  categoryid: number
   CategoryName: string;
   SubCategoryName: string;
   data: any;
+  value: FormGroup;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
     {},
@@ -58,6 +60,7 @@ export class AddproductsComponent implements OnInit {
       this.CategoryName = params.get('categ');
       this.SubCategoryId = Number(params.get('id'));
       this.SubCategoryName = params.get('subcateg');
+      this.categoryid = Number(params.get('categid'));
     });
     this.data = this.capitalizeFirstLetter(this.SubCategoryName)
     console.log(this.CategoryName, this.SubCategoryId, this.SubCategoryName)
@@ -69,16 +72,13 @@ export class AddproductsComponent implements OnInit {
       this.vehicle = false
     }
   }
-  capitalizeFirstLetter(string){
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
-      categoryid: [''],
-      Category: [this.capitalizeFirstLetter(this.CategoryName)],
-      CategoryType: [this.capitalizeFirstLetter(this.SubCategoryName)],
-      category: ['', Validators.required],
-      type: ['', Validators.required],
+      categoryid: [this.categoryid],
+      subcategoryid: [this.SubCategoryId],
+      category: [this.capitalizeFirstLetter(this.CategoryName)],
+      type: [this.SubCategoryName],
       Product_Name: ['', Validators.required],
       province: ['', Validators.required],
       city: ['', Validators.required],
@@ -88,7 +88,7 @@ export class AddproductsComponent implements OnInit {
       enginecc: ['', Validators.required],
       year: ['', Validators.required],
       color: [''],
-      gear: [''],
+      gears: [''],
     });
 
     this.productService.getModelData(this.data).subscribe((filterData: any) => {
@@ -100,29 +100,27 @@ export class AddproductsComponent implements OnInit {
       this.formData = response
       console.log('response', response)
     })
+  }
 
+  capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   handleFileSelect(evt) {
     var files = evt.target.files;
     var file = files[0];
-
     if (files && file) {
       var reader = new FileReader()
       reader.onload = this._handleReaderLoaded.bind(this);
       reader.readAsBinaryString(file);
-
     }
-
     if (files.length === 0)
       return;
-
     var mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       this.message = "Only images are supported.";
       return;
     }
-
     var reader = new FileReader();
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
@@ -151,9 +149,8 @@ export class AddproductsComponent implements OnInit {
 
   onUpload() {
     this.submitted = true;
-
     if (this.checkoutForm.invalid) {
-      return;
+      return
     }
     const image = {
       Product_Image: this.images
@@ -166,6 +163,7 @@ export class AddproductsComponent implements OnInit {
         console.error(err)
       })
   }
+  
   onValueChange(event) {
     this.productService.getSubCategory(event).subscribe((filterData: any) => {
       this.modelData = filterData;

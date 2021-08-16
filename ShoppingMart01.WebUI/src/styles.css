@@ -18,7 +18,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .slick-prev {
   z-index: 9999 !important;
 }
-
+.navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.navbargrey {
+  background-color: slategray;
+}
 @media only screen and (max-width: 600px) {
   .slick-prev { 
     margin-left: -10px;

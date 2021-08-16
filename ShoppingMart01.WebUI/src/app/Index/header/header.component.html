@@ -1,38 +1,13 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-info " [containerInside]="false">
-
-    <!-- Navbar brand -->
+<mdb-navbar SideClass="navbar navbargrey navbar-expand-lg navbar-dark " [containerInside]="false">
     <h4 class=" heading1 mt-1 mr-5" [routerLink]="['']">Shopping Mart</h4>
 
-    <!-- Collapsible content -->
     <links>
-        <ul class="navbar-nav ml-5 mr-auto mt-1">
-            <li class="nav-item">
-                <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown" *ngFor="let menu of navItem">
-
-                    <button class="btn ml-2 headg head4" id="dropdownManual" ngbDropdownAnchor
-                        [routerLink]="[menu.route,menu.id]">
-                        {{ menu.displayName}}
-                    </button>
-
-                    <span *ngIf="menu.children">
-                        <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
-                            <button *ngFor="let child of menu.children" ngbDropdownItem
-                                [routerLink]="[menu.route,menu.id,child.route,child.id]">
-                                {{ child.displayName}}
-                            </button>
-                        </div>
-                    </span>
-
-                </div>
-            </li>
-        </ul>
 
         <ul class="navbar-nav ml-auto search_box">
             <li>
                 <div class="form-group searchbar has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" placeholder="Search">
+                    <input type="search" class="form-control" placeholder="What are you looking for?">
                 </div>
             </li>
         </ul>
@@ -75,7 +50,4 @@
             </li>
         </ul>
     </links>
-    <!-- Collapsible content -->
-
 </mdb-navbar>
-<!--/.Navbar-->

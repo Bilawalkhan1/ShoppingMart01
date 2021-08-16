@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SocialAuthService } from 'angularx-social-login';
+import { LoginComponent } from 'src/app/accounts/login/login.component';
+import { Users } from 'src/app/accounts/signup-form/users';
+import { AuthService } from 'src/app/Services/auth.service';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { AuthguardService } from 'src/app/Services/authguard.service';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -6,10 +14,79 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav-bar.component.css']
 })
 export class TopNavBarComponent implements OnInit {
+  userLoggedIn = Users
+  user: any;
+  userdata;
+  searchText = '';
+  collapsed = true
+  constructor (private auth: AuthService,
+    private router: Router,
+    private authenticatinservice: AuthenticationService,
+    private modalService: NgbModal,
+    private socialAuthService: SocialAuthService,
+    private authguard: AuthguardService) {
+    this.auth.cartSubject.subscribe((data) => {
+      this.cartitem = data
+    })
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.cartItem()
+  }
+  cartitem: number = 0;
+  cartItem() {
+    if (localStorage.getItem('localcart') !== null) {
+      var cartcount = JSON.parse(localStorage.getItem('localcart') || '{}')
+      this.cartitem = cartcount.length;
+    }
+}
+
+
+openModel() {
+  this.modalService.open(LoginComponent)
+}
+
+cartComponent() {
+  let result;
+  if (localStorage.getItem('localcart') == null)
+    result = alert('Please add products ist')
+  else {
+    if (localStorage.getItem('token') !== null)
+      result = this.router.navigateByUrl('/cart');
+    else
+      result = this.modalService.open(LoginComponent)
+    result = this.authguard.returnUrl = 'cart'
+  }
+
+}
+addProduct() {
+  if (localStorage.getItem('token') !== null) {
+    this.router.navigateByUrl('admin/sellproducts')
+
+  }
+  else {
+    this.modalService.open(LoginComponent)
+    this.authguard.returnUrl = 'admin/sellproducts'
+  }
+}
+
+getUserData() {
+  if (localStorage.getItem('token') !== null) {
+    let user = localStorage.getItem('user')
+    if (user !== null) {
+      user = JSON.parse(user)
+      this.userdata = user
+    }
+  }
+  else {
+    this.modalService.open(LoginComponent)
+  }
+}
+
+logout() {
+  this.authenticatinservice.userLogout();
+  this.socialAuthService.signOut();
+  return this.router.navigateByUrl('')
+}
 }

@@ -1,3 +1,8 @@
+.image{
+  width: 100% !important;
+  height: 50px !important;
+  margin-left: 0px!important;
+}
 .vehiclecard{
   width: 98%;
 }

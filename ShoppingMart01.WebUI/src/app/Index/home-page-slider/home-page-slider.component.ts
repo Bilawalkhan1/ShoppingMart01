@@ -12,7 +12,8 @@ export class HomePageSliderComponent implements OnInit {
   ngOnInit(): void {
   }
   images = [
-    { img: 'https://source.unsplash.com/LAaSoL0LrYs/1920x1080' },
+    { img: 'assets/photo.jpg'},
+    { img: 'assets/carr.jpg'},
     { img: 'https://source.unsplash.com/bF2vsubyHcQ/1920x1080' },
     { img: 'https://source.unsplash.com/szFUQoyvrxM/1920x1080' }
   ];
@@ -23,6 +24,6 @@ export class HomePageSliderComponent implements OnInit {
     autoplaySpeed: 5000,
     autoplay: true,
     infinite: true,
-    arrows: true
+    arrows: false
   }
 }

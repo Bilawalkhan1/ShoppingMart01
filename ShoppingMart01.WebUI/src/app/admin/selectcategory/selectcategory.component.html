@@ -20,7 +20,7 @@
                 <tr>
                     <td (click)="vehicles()">
                         <i class="fa fa-car car fa-2x"></i>
-                        <p class="text"> Vehicles</p>
+                        <p class="text"> Vehicle</p>
                         <i class="fa fa-chevron-right arrow"></i>
                     </td>
                 </tr>
@@ -50,7 +50,8 @@
 
         <div class="col-md-6 col-lg-6 m-0 p-0">
             <table>
-                <tr *ngFor="let value of values" [routerLink]="['/admin/addproduct',category, value.route, value.id ]">
+                <tr *ngFor="let value of values"
+                    [routerLink]="['/admin/addproduct',category,categoryid, value.route, value.id ]">
                     <td>
                         <p class="text"> {{value.name}} </p>
                         <i class="fa fa-chevron-right arrow"></i>

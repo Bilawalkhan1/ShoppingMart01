@@ -13,12 +13,16 @@ import { ProductService } from '../../models/product.service';
 export class FilterComponent implements OnInit {
   @Input() CategoryId: string
   @Input() SubCategoryId?: number
-
   modelData: any[] = []
   products: product[] = [];
   filters: any[] = [];
   cities: any[] = []
-
+  GetCategoryId: number;
+  public myForm: FormGroup
+  data: ArrayBuffer;
+  filteredProducts: product[];
+  paramsObject: any
+  myFormGroup: FormGroup;
   provinceList: Array<any> = [
     {},
     { name: 'kpk', cities: ['', 'Abbottabad', 'Bannu', 'Battagram', 'Buner', 'Charsadda', 'Chitral', 'Dera Ismail Khan', 'Hangu', 'Haripur', 'Karak', 'Kohat', 'Charsadda', 'Lakki Marwat', 'Lower Dir'] },
@@ -27,13 +31,6 @@ export class FilterComponent implements OnInit {
     { name: 'balochistan', cities: ['', 'Quetta', 'Turbat.', 'Khuzdar.', 'Hub, Balochistan', '	Chaman', '	Gwadar', '	Dera Allah Yar', 'Sibi', '	Nushki', '	Chitkan', 'Qilla Saifullah', '	Muslim Bagh', '	Qilla Abdullah', 'Washuk'] },
     { name: 'gilgit', cities: ['', 'Diamer', 'Ghanche', 'Ghizer', 'Gilgit', '	Gojal Upper Hunza', '	Kharmang', 'Nagar', 'Astore', '	Skardu'] },
   ];
-  GetCategoryId: number;
-
-  public myForm: FormGroup
-  data: ArrayBuffer;
-  filteredProducts: product[];
-  paramsObject: any
-  myFormGroup: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -45,29 +42,26 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.myForm = this.fb.group({
       minprice: ['', Validators.required],
       maxprice: ['', Validators.required],
       condition: ['', Validators.required],
       city: ['', Validators.required],
-      company:['',Validators.required],
+      company: ['', Validators.required],
       province: ['', Validators.required],
       model: ['', Validators.required],
       enginecc: ['', Validators.required],
       color: ['', Validators.required],
       gears: ['', Validators.required],
-      brand: ['', Validators.required]
+      brand: ['', Validators.required],
+      year: ['', Validators.required],
     })
 
-    // get category id
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.GetCategoryId = Number(params.get('id'));
       this.SubCategoryId = Number(params.get('sid'));
     });
     const FilterId = this.GetId(this.GetCategoryId, this.SubCategoryId);
-    // console.log("id", FilterId)
-    // get filter options
     this.getFilters(FilterId)
 
     let group = {}
@@ -81,11 +75,8 @@ export class FilterComponent implements OnInit {
     this.productService.getFilterData(FilterId)
       .subscribe(xx => {
         this.filters = xx;
-        // console.log(xx)
       });
   }
-
-
 
   changeProvince(count) {
     this.cities = this.provinceList.find(con => con.name == count).cities;
@@ -98,7 +89,6 @@ export class FilterComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.myForm.value)
     let routePath: any = {}
     if (this.myForm.value.province.length > 0) {
       routePath['province'] = this.myForm.value.province
@@ -130,6 +120,9 @@ export class FilterComponent implements OnInit {
     if (this.myForm.value.maxprice.length > 0) {
       routePath['maxprice'] = this.myForm.value.maxprice
     }
+    if (this.myForm.value.year.length > 0) {
+      routePath['year'] = this.myForm.value.year
+    }
     this.router.navigate([], { queryParams: routePath })
   }
 
@@ -146,14 +139,5 @@ export class FilterComponent implements OnInit {
   checkInput() {
     console.log(this.myFormGroup.value)
   }
-  // get filter options from route to set
-  // if(this.router.url.includes('?')) {
-  // this.route.queryParamMap
-  //   .subscribe((params) => {
-  //     this.paramsObject = { ...params };
-  //     console.log(this.paramsObject.params);
-  //   }
-  //   )
-  // }
 }
 
