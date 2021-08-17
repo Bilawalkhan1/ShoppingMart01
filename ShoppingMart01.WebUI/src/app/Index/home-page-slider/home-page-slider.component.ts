@@ -12,16 +12,18 @@ export class HomePageSliderComponent implements OnInit {
   ngOnInit(): void {
   }
   images = [
-    { img: 'assets/photo.jpg'},
-    { img: 'assets/carr.jpg'},
-    { img: 'https://source.unsplash.com/bF2vsubyHcQ/1920x1080' },
-    { img: 'https://source.unsplash.com/szFUQoyvrxM/1920x1080' }
-  ];
+    { img: 'assets/slider-home/car_slider_01.png'},
+    { img: 'assets/slider-home/mobile_slider-01.png'},
+    { img: 'assets/slider-home/furniture-01.png'},
+    { img: 'assets/slider-home/kitchen_01.gif'},
+    { img: 'assets/slider-home/mobile_slider-02.gif'},
+    { img: 'assets/slider-home/kitchen_02.png'}
+  ]; 
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     autoplay: true,
     infinite: true,
     arrows: false

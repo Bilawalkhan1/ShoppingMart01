@@ -19,7 +19,7 @@ export class VehiclesComponent implements OnInit {
   slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     'responsive': [
       {
         breakpoint: 1024,
@@ -30,7 +30,7 @@ export class VehiclesComponent implements OnInit {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 1
         }
       },
       {

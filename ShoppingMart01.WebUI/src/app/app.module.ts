@@ -21,6 +21,7 @@ import { ProductBrowsingModule } from './product-browsing/product-browsing.modul
 import { VehiclesComponent } from './Index/vehicle/vehicle.component';
 import { FurnituresComponent } from './Index/furniture/furniture.component';
 import { NavBarAfterComponent } from './Index/nav-bar-after/nav-bar-after.component';
+import { JewelryComponent } from './Index/jewelry/jewelry.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NavBarAfterComponent } from './Index/nav-bar-after/nav-bar-after.compon
     VehiclesComponent,
     FurnituresComponent,
     ProductSliderComponent,
-    NavBarAfterComponent
+    NavBarAfterComponent,
+    JewelryComponent
   ],
   imports: [
     AppRoutingModule,

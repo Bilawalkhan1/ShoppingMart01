@@ -9,18 +9,16 @@ import { ProductService } from 'src/app/shared/models/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() getProductList : product[] = []
+  @Input() getProductList: product[] = []
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }
-  public sendProductDetails(blog: object) {
-    this.productService.sendProduct(blog);
-  }
+  
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
   }
-  
+
   slideConfig2 = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -28,5 +26,8 @@ export class ProductListComponent implements OnInit {
     infinite: true,
     arrows: false
   };
-  
+  public sendProductDetails(product: object) {
+    this.productService.sendProduct(product);
+  }
+
 }

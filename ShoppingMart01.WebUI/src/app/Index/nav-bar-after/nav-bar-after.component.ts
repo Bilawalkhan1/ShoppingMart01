@@ -231,29 +231,6 @@ export class NavBarAfterComponent implements OnInit {
         }
       ]
 
-    },
-    {
-      id: "80",
-      displayName: "Home Wear",
-      route: "/property",
-      children: [
-        {
-          id: "8010",
-          displayName: "Apartment",
-          route: "apartment"
-        },
-        {
-          id: "8020",
-          displayName: "Commercial",
-          route: "commercial"
-        },
-        {
-          id: "8030",
-          displayName: "Land",
-          route: "land"
-        }
-      ]
-
     }
     ,
     {
@@ -277,55 +254,6 @@ export class NavBarAfterComponent implements OnInit {
           route: "land"
         }
       ]
-
-    }
-    ,
-    {
-      id: "80",
-      displayName: "Child Wear",
-      route: "/property",
-      children: [
-        {
-          id: "8010",
-          displayName: "Apartment",
-          route: "apartment"
-        },
-        {
-          id: "8020",
-          displayName: "Commercial",
-          route: "commercial"
-        },
-        {
-          id: "8030",
-          displayName: "Land",
-          route: "land"
-        }
-      ]
-
-    }
-    ,
-    {
-      id: "80",
-      displayName: "Men Wear",
-      route: "/property",
-      children: [
-        {
-          id: "8010",
-          displayName: "Apartment",
-          route: "apartment"
-        },
-        {
-          id: "8020",
-          displayName: "Commercial",
-          route: "commercial"
-        },
-        {
-          id: "8030",
-          displayName: "Land",
-          route: "land"
-        }
-      ]
-
     }
   ]
   constructor() { }

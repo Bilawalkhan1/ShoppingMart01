@@ -32,6 +32,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .search_box .navbar .navbar-toggler {
   display: none;
 }
+
 @media only screen and (max-width: 600px) {
   .slick-prev { 
     margin-left: -10px;
@@ -40,3 +41,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-right: -37px;
   } 
 }
+ 
+@media only screen and (max-width: 1200px) {
+  .slick-prev:before { 
+    margin-left: 30px;
+  } 
+  .slick-next:before {
+    margin-left: -95px;
+  } 
+}
+ 

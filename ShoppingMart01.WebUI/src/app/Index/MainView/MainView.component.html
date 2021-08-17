@@ -11,14 +11,18 @@
 </div>
 
 <!-- productsCategory wise data -->
-
+<div class="container-fluid vehiclecard mb-5">
+  <app-furnitures></app-furnitures>
+</div>
 <div class="container-fluid vehiclecard mb-5">
   <app-vehicles></app-vehicles>
 </div>
-<div class="container-fluid vehiclecard">
-  <app-furnitures></app-furnitures>
+<div class="container-fluid vehiclecard mb-5">
+  <app-jewelry></app-jewelry>
 </div>
 
+
+<!-- 
 
 <div class="layout_buttons">
   <button class="btn btn-white mb-5" type="button" (click)="onDisplayModeChange(1)"
@@ -30,8 +34,6 @@
     <i class="fa fa-list"></i>
   </button>
 </div>
-<!-- grid -->
-<!-- grid2 -->
 
 <div *ngIf="displayMode === 1">
   <div class="container">
@@ -58,7 +60,6 @@
   </div>
 </div>
 
-<!-- List -->
 <div class="container" *ngIf="displayMode === 2">
   <div class="row" *ngFor="let blog of products">
     <div class="mt-5 col-lg-6 col-md-6 col-sm-12 p-2 image">
@@ -83,7 +84,7 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Category List View  -->
 <h2 class="title text-center mt-5"> CATEGORIES</h2>
 

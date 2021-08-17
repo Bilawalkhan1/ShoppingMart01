@@ -149,9 +149,7 @@ export class AddproductsComponent implements OnInit {
 
   onUpload() {
     this.submitted = true;
-    if (this.checkoutForm.invalid) {
-      return
-    }
+  
     const image = {
       Product_Image: this.images
     }

@@ -6,12 +6,11 @@ import { CartService } from 'src/app/Services/cart.service';
 import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
-  selector: 'app-furnitures',
-  templateUrl: './furniture.component.html',
-  styleUrls: ['./furniture.component.css']
+  selector: 'app-jewelry',
+  templateUrl: './jewelry.component.html',
+  styleUrls: ['./jewelry.component.css']
 })
-export class FurnituresComponent implements OnInit {
-
+export class JewelryComponent implements OnInit {
   products: any[] = [];
   itemcart: any[] = [];
   category: any
@@ -30,7 +29,7 @@ export class FurnituresComponent implements OnInit {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2
+          slidesToShow: 1
         }
       },
       {
@@ -67,7 +66,7 @@ export class FurnituresComponent implements OnInit {
   }
 
   private getProducts() {
-    this.productService.getVehicleData(this.category).subscribe(products => this.products = products);
+    this.productService.getJewelryData(this.category).subscribe(products => this.products = products);
     this.filteredProducts = this.products.filter(p => p.type = this.category)
   }
 
@@ -96,4 +95,3 @@ export class FurnituresComponent implements OnInit {
     this.auth.cartSubject.next(this.cartNumber);
   }
 }
-

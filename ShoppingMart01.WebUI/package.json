@@ -38,6 +38,7 @@
     "jsonwebtoken": "^8.5.1",
     "jzoom": "^1.1.7",
     "mdb-angular-ui-kit": "^1.0.0-beta7",
+    "ngx-device-detector": "^2.1.1",
     "ngx-modal": "0.0.29",
     "ngx-model": "^6.0.2",
     "ngx-slick-carousel": "^0.5.1",
