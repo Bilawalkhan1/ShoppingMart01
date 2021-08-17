@@ -164,7 +164,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^11.0.0", "@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@^12.1.1", "@angular/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@>=12.0.0", "@angular/common@>=2.0.0 <7.0.0", "@angular/common@>=9.0.0", "@angular/common@12.1.1":
+"@angular/common@^11.0.0", "@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@^12.1.1", "@angular/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@>=12.0.0", "@angular/common@>=2.0.0 <7.0.0", "@angular/common@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/common@>=9.0.0", "@angular/common@12.1.1":
   "integrity" "sha512-NnRwGMatzjthvDQ4+8tm09Ak5i27Qga8x4BdzINN1RjLmzQ0zW00Mn2AUGYEDZHt9HXVHff5stsZGqj+Ne4QJw=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-12.1.1.tgz"
   "version" "12.1.1"
@@ -198,7 +198,7 @@
   dependencies:
     "tslib" "^2.2.0"
 
-"@angular/core@^11.0.0", "@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@^12.1.1", "@angular/core@^2.0.0", "@angular/core@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@>=12.0.0", "@angular/core@>=2.0.0 <7.0.0", "@angular/core@>=6.0.0", "@angular/core@12.1.1":
+"@angular/core@^11.0.0", "@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@^12.1.1", "@angular/core@^2.0.0", "@angular/core@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@>=12.0.0", "@angular/core@>=2.0.0 <7.0.0", "@angular/core@>=6.0.0", "@angular/core@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/core@12.1.1":
   "integrity" "sha512-7Q4na8zCXi4ITBG8kgbS+vnnVK0GDU2WXU80/il096+8YPFKfj6MyDWZH79KA3jrIg9/yhLwSQx8x8wnj8dqBA=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-12.1.1.tgz"
   "version" "12.1.1"
@@ -5765,6 +5765,13 @@
   "integrity" "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw=="
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
+
+"ngx-device-detector@^2.1.1":
+  "integrity" "sha512-eTuQLAmc2XRRbxDnO9h1QVV0piSyPjstXT5G8fo1rvXy7Ly3MAiniEM2WvTiN7FjtY/VdhEeuBmu/ErSm5cLJg=="
+  "resolved" "https://registry.npmjs.org/ngx-device-detector/-/ngx-device-detector-2.1.1.tgz"
+  "version" "2.1.1"
+  dependencies:
+    "tslib" "^2.0.0"
 
 "ngx-modal@0.0.29":
   "integrity" "sha1-aYqiUqeTI6DKR61N3umU1iCubxU="

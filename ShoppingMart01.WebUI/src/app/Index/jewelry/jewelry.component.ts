@@ -5,13 +5,12 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { CartService } from 'src/app/Services/cart.service';
 import { ProductService } from 'src/app/shared/models/product.service';
 
-
 @Component({
-  selector: 'app-vehicles',
-  templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css']
+  selector: 'app-jewelry',
+  templateUrl: './jewelry.component.html',
+  styleUrls: ['./jewelry.component.css']
 })
-export class VehiclesComponent implements OnInit {
+export class JewelryComponent implements OnInit {
   products: any[] = [];
   itemcart: any[] = [];
   category: any
@@ -62,13 +61,12 @@ export class VehiclesComponent implements OnInit {
     this.getProducts()
   }
 
-
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
   }
 
   private getProducts() {
-    this.productService.getProdByCategoryData(this.category).subscribe(products => this.products = products);
+    this.productService.getJewelryData(this.category).subscribe(products => this.products = products);
     this.filteredProducts = this.products.filter(p => p.type = this.category)
   }
 

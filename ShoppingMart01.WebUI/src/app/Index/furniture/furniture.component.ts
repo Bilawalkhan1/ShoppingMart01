@@ -12,7 +12,6 @@ import { ProductService } from 'src/app/shared/models/product.service';
 })
 export class FurnituresComponent implements OnInit {
 
-  displayMode: number;
   products: any[] = [];
   itemcart: any[] = [];
   category: any
@@ -61,15 +60,10 @@ export class FurnituresComponent implements OnInit {
   ngOnInit(): void {
     this.category = this.route.snapshot.paramMap.get('category')
     this.getProducts()
-    this.onDisplayModeChange(1)
   }
-
 
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`
-  }
-  public onDisplayModeChange(mode: number): void {
-    this.displayMode = mode;
   }
 
   private getProducts() {

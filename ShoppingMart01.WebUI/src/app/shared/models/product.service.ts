@@ -56,6 +56,9 @@ export class ProductService {
   getVehicleData(category) {
     return this.http.get<product[]>(`http://localhost:3000/Product?category=Furniture`)
   }
+  getJewelryData(category) {
+    return this.http.get<product[]>(`http://localhost:3000/Product?category=Jewelry`)
+  }
 
   getProdByLocation(address) {
     return this.http.get<product[]>(`http://localhost:3000/Product?address=${address}`)

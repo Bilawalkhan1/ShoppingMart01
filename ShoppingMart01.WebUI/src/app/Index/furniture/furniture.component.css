@@ -1,9 +1,7 @@
-
-  .imgstyle1{
+.imgstyle1{
     height: 17vw;
 }  
 
-/*  */
 img{
   height:150px;
   width:100%;
@@ -101,27 +99,13 @@ width: 100%;
 display: none;
 }
 .cardx{
-  margin-left: 10px;
-  width: 300px;
+  margin-left: 0px;
+  width: 100%;
 }
-}
-@media screen and (max-width: 576px) {
-.imgstyle1{
-  display: none;
-} 
-.cardx{
-  width: 300px;
-  margin-left: 10px;
 }
 
-}
 @media screen and (max-width: 768px) {
 .imgstyle1{
   display: none;
 }
-.cardx{
-  width: 300px;
-  margin-left: 10px;
-}
-
 } 

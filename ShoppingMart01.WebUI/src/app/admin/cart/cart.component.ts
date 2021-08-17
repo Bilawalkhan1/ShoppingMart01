@@ -38,7 +38,11 @@ export class CartComponent implements OnInit {
    removeitem(){
      localStorage.removeItem('localcart')
      this.getcartdetails = []  
-     this.cartservice.emitEvent(true);  
+     this.cartservice.emitEvent(true); 
+     if(this.getcartdetails.length === 0){
+      this.router.navigateByUrl('home')
+      localStorage.removeItem('localcart')
+    } 
    }
 
    removesingleitem(getcartdetails){

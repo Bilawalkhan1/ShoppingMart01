@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/Services/auth.service';
 import { ProductService } from 'src/app/shared/models/product.service';
 import { product } from '../../Classes/product';
 declare var $: any;
@@ -25,6 +26,7 @@ export class ProductComponent implements OnInit {
     infinite: true,
     arrows: false
   }
+  itemcart: any;
 
   addcount() {
     return this.count += 1
@@ -37,7 +39,9 @@ export class ProductComponent implements OnInit {
   }
 
   constructor(
-    private productService: ProductService, private router: Router) {
+    private auth: AuthService,
+    private productService: ProductService,
+    private router: Router) {
     this.subscription = this.productService.getProduct().subscribe(prod => {
       if (prod) {
         this.product.push(prod);
@@ -57,38 +61,6 @@ export class ProductComponent implements OnInit {
     this.getRelatedProd(this.Productcategory, this.productId);
   }
 
-  ngAfterViewInit(): void {
-    $(document).ready(function () {
-
-      $(".tb").hover(function () {
-
-        $(".tb").removeClass("tb-active");
-        $(this).addClass("tb-active");
-
-        const current_fs = $(".active");
-
-        let next_fs = $(this).attr('id');
-        next_fs = "#" + next_fs + "1";
-
-        $("fieldset").removeClass("active");
-        $(next_fs).addClass("active");
-
-        current_fs.animate({}, {
-          step: function () {
-            current_fs.css({
-              'display': 'none',
-              'position': 'relative'
-            });
-            next_fs.css({
-              'display': 'block'
-            });
-          }
-        });
-      });
-    });
-    $('#PS4').jzoom();
-  }
-
   getRelatedProd(prodCategory, prodId) {
     this.subscription = this.productService.getProdByCategory(prodCategory)
       .subscribe(prod => {
@@ -103,7 +75,26 @@ export class ProductComponent implements OnInit {
         this.products.splice(index, 1);
     });
   }
+  public addtocart(category: any) {
+    let cartdatanull = localStorage.getItem('localcart');
+    if (cartdatanull == null) {
+      this.itemcart.push(category);
+      localStorage.setItem('localcart', JSON.stringify(this.itemcart));
+    } else {
 
+      this.itemcart = JSON.parse(cartdatanull);
+      this.itemcart.push(category);
+      localStorage.setItem('localcart', JSON.stringify(this.itemcart));
+    }
+    this.cartNumberfun();
+  }
+  cartNumber: number = 0;
+
+  cartNumberfun() {
+    var cartvalue = JSON.parse(localStorage.getItem('localcart')!);
+    this.cartNumber = cartvalue.length;
+    this.auth.cartSubject.next(this.cartNumber);
+  }
   buyNow() {
     this.router.navigateByUrl('/login')
   }
@@ -111,4 +102,5 @@ export class ProductComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
 }
