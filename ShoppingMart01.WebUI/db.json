@@ -137,153 +137,502 @@
         }
       ]
     },
-    
     {
-      "id": 1101,
-      "category": "Vehicles",
+      "categoryTilte": "Car",
       "categoryid": "1020",
-      "type": "car",
       "filters": [
         {
+          "label": "Brand",
           "type": "select",
-          "label": "Vehicles For Sale",
-          "control": "company",
-          "placeholder": "--select--",
+          "control": "brand",
           "options": [
-            {
-              "value": "Audi",
-              "displayValue": "Audi"
-            },
-            {
-              "value": "Bmw",
-              "displayValue": "BMW"
-            },
-            {
-              "value": "Bentley",
-              "displayValue": "Bentley"
-            },
-            {
-              "value": "Buick",
-              "displayValue": "Buick"
-            },
-            {
-              "value": "Cadillac",
-              "displayValue": "Cadillac"
-            },
-            {
-              "value": "Chevrolet",
-              "displayValue": "Chevrolet"
-            },
-            {
-              "value": "Chrysler",
-              "displayValue": "Chrysler"
-            },
-            {
-              "value": "Dodge",
-              "displayValue": "Dodge"
-            },
-            {
-              "value": "Fiat",
-              "displayValue": "Fiat"
-            },
-            {
-              "value": "Genesis",
-              "displayValue": "Genesis"
-            },
-            {
-              "value": "Ford",
-              "displayValue": "Ford"
-            },
-            {
-              "value": "GMC",
-              "displayValue": "GMC"
-            },
-            {
-              "value": "Alfa",
-              "displayValue": "Alfa"
-            },
-            {
-              "value": "Honda",
-              "displayValue": "Honda"
-            },
-            {
-              "value": "Hyundai",
-              "displayValue": "Hyundai"
-            },
-            {
-              "value": "Infiniti",
-              "displayValue": "Infiniti"
-            },
-            {
-              "value": "Jaguar",
-              "displayValue": "Jaguar"
-            },
-            {
-              "value": "Jeep",
-              "displayValue": "Jeep"
-            },
-            {
-              "value": "Kia",
-              "displayValue": "Kia"
-            },
-            {
-              "value": "Land",
-              "displayValue": "Land"
-            },
-            {
-              "value": "Rover",
-              "displayValue": "Rover"
-            },
-            {
-              "value": "Romeo",
-              "displayValue": "Romeo"
-            },
-            {
-              "value": "Lexus",
-              "displayValue": "Lexus"
-            },
-            {
-              "value": "Lincoln",
-              "displayValue": "Lincoln"
-            },
-            {
-              "value": "Mazda",
-              "displayValue": "Mazda"
-            },
-            {
-              "value": "Mercedes-Benz",
-              "displayValue": "Mercedes-Benz"
-            },
-            {
-              "value": "Mini",
-              "displayValue": "Mini"
-            },
-            {
-              "value": "Mitsubishi",
-              "displayValue": "Mitsubishi"
-            },
-            {
-              "value": "Nissan",
-              "displayValue": "Nissan"
-            },
-            {
-              "value": "Volvo",
-              "displayValue": "Volvo"
-            },
-            {
-              "value": "Suzuki",
-              "displayValue": "Suzuki"
-            },
-            {
-              "value": "Tesla",
-              "displayValue": "Tesla"
-            }
+            { "value": "Audi", "displayValue": "Audi" },
+            { "value": "Bmw", "displayValue": "BMW" },
+            { "value": "Bentley", "displayValue": "Bentley" },
+            { "value": "Rover", "displayValue": "Rover" },
+            { "value": "Romeo", "displayValue": "Romeo" },
+            { "value": "Mitsubishi", "displayValue": "Mitsubishi" },
+            { "value": "Suzuki", "displayValue": "Suzuki" },
+            { "value": "Tesla", "displayValue": "Tesla" },
+            { "value": "Buick", "displayValue": "Buick" },
+            { "value": "Cadillac", "displayValue": "Cadillac" },
+            { "value": "Chevrolet", "displayValue": "Chevrolet" },
+            { "value": "Chrysler", "displayValue": "Chrysler" },
+            { "value": "Dodge", "displayValue": "Dodge" },
+            { "value": "Fiat", "displayValue": "Fiat" },
+            { "value": "Genesis", "displayValue": "Genesis" },
+            { "value": "Ford", "displayValue": "Ford" },
+            { "value": "GMC", "displayValue": "GMC" },
+            { "value": "Alfa", "displayValue": "Alfa" },
+            { "value": "Honda", "displayValue": "Honda" },
+            { "value": "Hyundai", "displayValue": "Hyundai" },
+            { "value": "Infiniti", "displayValue": "Infiniti" },
+            { "value": "Jaguar", "displayValue": "Jaguar" },
+            { "value": "Jeep", "displayValue": "Jeep" },
+            { "value": "Kia", "displayValue": "Kia" },
+            { "value": "Land", "displayValue": "Land" }
+          ]
+        },
+        {
+          "label": "Body Type",
+          "type": "select",
+          "control": "body",
+          "options": [
+            { "value": "Hatchback", "displayValue": "Hatchback" },
+            { "value": "Sedan", "displayValue": "Sedan" },
+            { "value": "SUV", "displayValue": "SUV" },
+            { "value": "Pickup", "displayValue": "Pickup" },
+            { "value": "Van", "displayValue": "Van" },
+            { "value": "Commercial", "displayValue": "Commercial" },
+            { "value": "Ceramic", "displayValue": "Ceramic" }
+          ]
+        },
+        {
+          "label": "Fuel Type",
+          "type": "select",
+          "control": "fuel",
+          "options": [
+            { "value": "Petrol", "displayValue": "Petrol" },
+            { "value": "Deisel", "displayValue": "Deisel" },
+            { "value": "Hybrid", "displayValue": "Hybrid" }
+          ]
+        },
+        {
+          "label": "Model Year",
+          "type": "select",
+          "control": "modelYear",
+          "options": [
+            { "value": "2020", "displayValue": "2020" },
+            { "value": "2019", "displayValue": "2019" },
+            { "value": "2018", "displayValue": "2018" },
+            { "value": "2017", "displayValue": "2017" },
+            { "value": "2016", "displayValue": "2016" },
+            { "value": "2015", "displayValue": "2015" },
+            { "value": "2014", "displayValue": "2014" },
+            { "value": "2013", "displayValue": "2013" },
+            { "value": "2012", "displayValue": "2012" }
           ]
         }
       ]
     },
     {
-      "id": 1101,
+      "categoryTilte": "Bike Accessories",
+      "categoryid": "1030",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "BOSCH", "displayValue": "BOSCH" },
+            { "value": "SMA", "displayValue": "SMA" },
+            { "value": "OUTAD", "displayValue": "OUTAD" },
+            { "value": "Generic", "displayValue": "Generic" },
+            { "value": "ATCA", "displayValue": "ATCA" },
+            { "value": "BSDDP", "displayValue": "BSDDP" },
+            { "value": "LESHP", "displayValue": "LESHP" },
+            { "value": "SUPER", "displayValue": "SUPER" }
+          ]
+        },
+        {
+          "label": "Material",
+          "type": "select",
+          "control": "material",
+          "options": [
+            { "value": "ABS", "displayValue": "ABS" },
+            { "value": "Aluminium", "displayValue": "Aluminium" },
+            { "value": "Rubber", "displayValue": "Rubber" },
+            { "value": "Metal", "displayValue": "Metal" },
+            { "value": "Plastic", "displayValue": "Plastic" },
+            { "value": "PVC", "displayValue": "PVC" },
+            { "value": "Alloy", "displayValue": "Alloy" },
+            { "value": "Leather", "displayValue": "Leather" }
+          ]
+        },
+        {
+          "label": "Color",
+          "type": "select",
+          "control": "color",
+          "options": [
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Blue", "displayValue": "Blue" },
+            { "value": "Green", "displayValue": "Green" },
+            { "value": "Multicolor", "displayValue": "Multicolor" },
+            { "value": "Orange", "displayValue": "Orange" },
+            { "value": "Silver", "displayValue": "Silver" },
+            { "value": "White", "displayValue": "White" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Car Accessories",
+      "categoryid": "1040",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "BOSCH", "displayValue": "BOSCH" },
+            { "value": "Black-Decker", "displayValue": "Black-Decker" },
+            { "value": "Eworld", "displayValue": "Eworld" },
+            { "value": "Generic", "displayValue": "Generic" },
+            { "value": "MOMO", "displayValue": "MOMO" },
+            { "value": "XCESSORIES", "displayValue": "XCESSORIES" },
+            { "value": "kENCO", "displayValue": "kENCO" },
+            { "value": "OUTAD", "displayValue": "OUTAD" },
+            { "value": "Areon", "displayValue": "Areon" },
+            { "value": "Sparco", "displayValue": "Sparco" },
+            { "value": "AGFT", "displayValue": "AGFT" },
+            { "value": "UPBRIGHT", "displayValue": "UPBRIGHT" }
+          ]
+        },
+        {
+          "label": "Color",
+          "type": "select",
+          "control": "color",
+          "options": [
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Silver", "displayValue": "Silver" },
+            { "value": "Blue", "displayValue": "Blue" },
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Green", "displayValue": "Green" },
+            { "value": "White", "displayValue": "White" },
+            { "value": "Brown", "displayValue": "Brown" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Curtains",
+      "categoryid": "2010",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Beddy's Studio", "displayValue": "Beddy's Studio" },
+            { "value": "SR Industries", "displayValue": "SR Industries" },
+            { "value": "Utopia", "displayValue": "Utopia" },
+            { "value": "Dockyard", "displayValue": "Dockyard" },
+            { "value": "FVGojra", "displayValue": "FVGojra" },
+            { "value": "EQC", "displayValue": "EQC" },
+            { "value": "Clarissa", "displayValue": "Clarissa" },
+            { "value": "Tesla", "displayValue": "Tesla" },
+            { "value": "Glow and Go", "displayValue": "Glow and Go" },
+            { "value": "Ikea", "displayValue": "Ikea" },
+            { "value": "Ewazaan", "displayValue": "Ewazaan" },
+            { "value": "Fashion City", "displayValue": "Fashion City" }
+          ]
+        },
+        {
+          "label": "Color",
+          "type": "select",
+          "control": "color",
+          "options": [
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Green", "displayValue": "Green" },
+            { "value": "Golden", "displayValue": "Golden" },
+            { "value": "Grey", "displayValue": "Grey" },
+            { "value": "White", "displayValue": "White" },
+            { "value": "Blue", "displayValue": "Blue" },
+            { "value": "Navy Blue", "displayValue": "Navy Blue" },
+            { "value": "Brown", "displayValue": "Brown" },
+            { "value": "Beige", "displayValue": "Beige" },
+            { "value": "Yellow", "displayValue": "Yellow" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Dark Grey", "displayValue": "Dark Grey" },
+            { "value": "Pink", "displayValue": "Pink" },
+            { "value": "Purple", "displayValue": "Purple" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Cream", "displayValue": "Cream" }
+          ]
+        },
+        {
+          "label": "Curtain Feature",
+          "type": "select",
+          "control": "feature",
+          "options": [
+            { "value": "Hooks Included", "displayValue": "Hooks Included" },
+            { "value": "Sheer", "displayValue": "Sheer" },
+            { "value": "Noise Reducing", "displayValue": "Noise Reducing" },
+            {
+              "value": "Thermal Insulation",
+              "displayValue": "Thermal Insulation"
+            },
+            { "value": "Liner", "displayValue": "Liner" },
+            { "value": "Semi-opaque", "displayValue": "Semi-opaque" },
+            { "value": "Outdoor", "displayValue": "Outdoor" },
+            { "value": "Weighted Hem", "displayValue": "Weighted Hem" }
+          ]
+        },
+        {
+          "label": "Material",
+          "type": "select",
+          "control": "material",
+          "options": [
+            { "value": "Cotton Blend", "displayValue": "Cotton Blend" },
+            { "value": "Polyster", "displayValue": "Polyster" },
+            { "value": "Jacquard", "displayValue": "Jacquard" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Rugs & Carpets",
+      "categoryid": "2020",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Beddy's Studio", "displayValue": "Beddy's Studio" },
+            { "value": "Gaba Orientals", "displayValue": "Gaba Orientals" },
+            { "value": "QS Bedding", "displayValue": "QS Bedding" },
+            { "value": "Ibne Zafar", "displayValue": "Ibne Zafar" },
+            { "value": "Relaxsit", "displayValue": "Relaxsit" },
+            { "value": "deals112", "displayValue": "deals112" },
+            { "value": "Plushmink", "displayValue": "Plushmink" },
+            { "value": "HomeDiArt", "displayValue": "HomeDiArt" },
+            { "value": "The Knots", "displayValue": "The Knots" },
+            { "value": "Poundhill", "displayValue": "Poundhill" },
+            { "value": "Home Galleria", "displayValue": "Home Galleria" },
+            { "value": "The 361", "displayValue": "The 361" }
+          ]
+        },
+        {
+          "label": "Rug Pile",
+          "type": "select",
+          "control": "pile",
+          "options": [
+            { "value": "Thick", "displayValue": "Thick" },
+            { "value": "Thin", "displayValue": "Thin" },
+            { "value": "Medium", "displayValue": "Medium" },
+            { "value": "Flat", "displayValue": "Flat" }
+          ]
+        },
+        {
+          "label": "Rug Shape",
+          "type": "select",
+          "control": "shape",
+          "options": [
+            { "value": "Square", "displayValue": "Square" },
+            { "value": "Circle", "displayValue": "Circle" },
+            { "value": "Rectangle", "displayValue": "Rectangle" },
+            { "value": "Slice", "displayValue": "Slice" }
+          ]
+        },
+        {
+          "label": "Rug Pattern",
+          "type": "select",
+          "control": "pattern",
+          "options": [
+            { "value": "Stone", "displayValue": "Stone" },
+            { "value": "Plain", "displayValue": "Plain" },
+            { "value": "Traditional", "displayValue": "Traditional" },
+            { "value": "Printed", "displayValue": "Printed" },
+            { "value": "Colorful", "displayValue": "Colorful" }
+          ]
+        },
+        {
+          "label": "Color",
+          "type": "select",
+          "control": "color",
+          "options": [
+            { "value": "Red", "displayValue": "Red" },
+            { "value": "Green", "displayValue": "Green" },
+            { "value": "Golden", "displayValue": "Golden" },
+            { "value": "Grey", "displayValue": "Grey" },
+            { "value": "White", "displayValue": "White" },
+            { "value": "Blue", "displayValue": "Blue" },
+            { "value": "Navy Blue", "displayValue": "Navy Blue" },
+            { "value": "Brown", "displayValue": "Brown" },
+            { "value": "Beige", "displayValue": "Beige" },
+            { "value": "Yellow", "displayValue": "Yellow" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Dark Grey", "displayValue": "Dark Grey" },
+            { "value": "Pink", "displayValue": "Pink" },
+            { "value": "Purple", "displayValue": "Purple" },
+            { "value": "Black", "displayValue": "Black" },
+            { "value": "Cream", "displayValue": "Cream" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Mirros",
+      "categoryid": "2030",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Delta Decor", "displayValue": "Delta Decor" },
+            { "value": "IKEA", "displayValue": "IKEA" },
+            { "value": "GNC", "displayValue": "GNC" },
+            { "value": "Marvellous", "displayValue": "Marvellous" },
+            { "value": "Muggizz", "displayValue": "Muggizz" },
+            { "value": "Luxor", "displayValue": "Luxor" },
+            { "value": "HashTag", "displayValue": "HashTag" },
+            { "value": "Techmanistan", "displayValue": "Techmanistan" },
+            { "value": "M.I.C", "displayValue": "M.I.C" }
+          ]
+        },
+        {
+          "label": "Mirror Features",
+          "type": "select",
+          "control": "feature",
+          "options": [
+            { "value": "Frameless", "displayValue": "Frameless" },
+            { "value": "Lighted", "displayValue": "Lighted" },
+            { "value": "Shelves", "displayValue": "Shelves" },
+            { "value": "Double Sided", "displayValue": "Double Sided" },
+            { "value": "Round", "displayValue": "Round" },
+            { "value": "Wall Mounted", "displayValue": "Wall Mounted" },
+            { "value": "Beveled Glass", "displayValue": "Beveled Glass" }
+          ]
+        },
+        {
+          "label": "Frame Material",
+          "type": "select",
+          "control": "material",
+          "options": [
+            { "value": "Metal", "displayValue": "Metal" },
+            { "value": "Wood", "displayValue": "Wood" },
+            { "value": "Laminate", "displayValue": "Laminate" },
+            { "value": "Glass", "displayValue": "Glass" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Bedroom Furniture",
+      "categoryid": "2040",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Habitt", "displayValue": "Habitt" },
+            { "value": "Intex", "displayValue": "Intex" },
+            { "value": "Smart Wood", "displayValue": "Smart Wood" },
+            { "value": "Marvellous", "displayValue": "Marvellous" },
+            { "value": "Master Celeste", "displayValue": "Master Celeste" },
+            { "value": "DuraFoam", "displayValue": "DuraFoam" },
+            { "value": "MoltyFoam", "displayValue": "MoltyFoam" },
+            { "value": "i-Foam", "displayValue": "i-Foam" },
+            { "value": "Interwood", "displayValue": "Interwood" },
+            { "value": "Kiddies", "displayValue": "Kiddies" },
+            { "value": "Mygiftland", "displayValue": "Mygiftland" },
+            { "value": "Revival Home", "displayValue": "Revival Home" }
+          ]
+        },
+        {
+          "label": "Furniture Type",
+          "type": "select",
+          "control": "type",
+          "options": [
+            { "value": "Bed", "displayValue": "Bed" },
+            { "value": "Sofa", "displayValue": "Sofa" },
+            { "value": "Table", "displayValue": "Table" },
+            { "value": "Dressing Table", "displayValue": "Dressing Table" },
+            { "value": "Study Table", "displayValue": "Study Table" },
+            { "value": "Cupboard", "displayValue": "Cupboard" },
+            {
+              "value": "Portable cupboard",
+              "displayValue": "Portable cupboard"
+            }
+          ]
+        },
+        {
+          "label": "Furniture Material",
+          "type": "select",
+          "control": "material",
+          "options": [
+            { "value": "Wood", "displayValue": "Wood" },
+            { "value": "Metal", "displayValue": "Metal" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Gaming Furniture",
+      "categoryid": "2050",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "HQX Furnitures", "displayValue": "HQX Furnitures" },
+            { "value": "Gatron", "displayValue": "Gatron" },
+            { "value": "Lunar Furniture", "displayValue": "Lunar Furniture" },
+            { "value": "Workstations", "displayValue": "Workstations" },
+            { "value": "MAF Bags", "displayValue": "MAF Bags" },
+            { "value": "GS Furnishers", "displayValue": "GS Furnishers" },
+            { "value": "HomeDesign", "displayValue": "HomeDesign" },
+            { "value": "1st Player", "displayValue": "1st Player" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Kitchen Furniture",
+      "categoryid": "2060",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            {
+              "value": "Galaxy Furnitures",
+              "displayValue": "Galaxy Furnitures"
+            },
+            { "value": "Woodpecker", "displayValue": "Woodpecker" },
+            { "value": "Habitt", "displayValue": "Habitt" },
+            { "value": "IKEA", "displayValue": "IKEA" },
+            { "value": "Meeshan", "displayValue": "Meeshan" },
+            { "value": "Mygiftland", "displayValue": "Mygiftland" },
+            { "value": "Shizi Interiors", "displayValue": "Shizi Interiors" },
+            { "value": "Mod studio", "displayValue": "Mod studio" },
+            { "value": "Wood Lab", "displayValue": "Wood Lab" },
+            { "value": "Appollo", "displayValue": "Appollo" },
+            { "value": "Workstations", "displayValue": "Workstations" },
+            { "value": "KAF", "displayValue": "KAF" },
+            { "value": "Home N Style", "displayValue": "Home N Style" }
+          ]
+        },
+        {
+          "label": "Style",
+          "type": "select",
+          "control": "style",
+          "options": [
+            { "value": "Tradional", "displayValue": "Tradional" },
+            { "value": "Vintage", "displayValue": "Vintage" },
+            { "value": "Contemporary", "displayValue": "Contemporary" },
+            { "value": "Modern", "displayValue": "Modern" },
+            { "value": "Elegant", "displayValue": "Elegant" },
+            { "value": "Rustic", "displayValue": "Rustic" },
+            { "value": "Country", "displayValue": "Country" },
+            { "value": "Fashion", "displayValue": "Fashion" },
+            { "value": "Natural", "displayValue": "Natural" },
+            { "value": "Antique", "displayValue": "Antique" },
+            { "value": "Oriental", "displayValue": "Oriental" },
+            { "value": "Industrial", "displayValue": "Industrial" },
+            { "value": "Mini", "displayValue": "Mini" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
       "category": "Vehicles",
       "categoryid": "10",
       "type": "car",
@@ -427,7 +776,7 @@
       ]
     },
     {
-      "id": 1102,
+      "id": 20,
       "category": "Furniture",
       "categoryid": "20",
       "filters": [
@@ -555,7 +904,7 @@
       ]
     },
     {
-      "id": 1103,
+      "id": 30,
       "category": "Jewlery",
       "categoryid": "50",
       "type": "gold",
@@ -590,32 +939,129 @@
       ]
     },
     {
-      "id": 1104,
-      "category": "Electronics",
-      "type": "mobile",
-      "categoryid": "30",
+      "categoryTilte": "Mobiles",
+      "categoryid": "3010",
       "filters": [
         {
+          "label": "Brand",
           "type": "select",
-          "label": "Electronics For Sale",
-          "placeholder": "--select--",
+          "control": "brand",
           "options": [
-            {
-              "value": "Mobiles",
-              "displayValue": "Mobiles"
-            },
-            {
-              "value": "Laptop",
-              "displayValue": "Laptop"
-            },
-            {
-              "value": "Tablet",
-              "displayValue": "Tablet"
-            },
-            {
-              "value": "Other",
-              "displayValue": "Other"
-            }
+            { "value": "Samsung", "displayValue": "Samsung" },
+            { "value": "Nokia", "displayValue": "Nokia" },
+            { "value": "Infinix", "displayValue": "Infinix" },
+            { "value": "Apple", "displayValue": "Apple" },
+            { "value": "Realme", "displayValue": "Realme" },
+            { "value": "Sony", "displayValue": "Sony" },
+            { "value": "Huawei", "displayValue": "Huawei" },
+            { "value": "Oneplus", "displayValue": "Oneplus" }
+          ]
+        },
+        {
+          "label": "Storage Capacity",
+          "type": "select",
+          "control": "capacity",
+          "options": [
+            { "value": "256GB", "displayValue": "256GB" },
+            { "value": "128GB", "displayValue": "128GB" },
+            { "value": "64GB", "displayValue": "64GB" },
+            { "value": "32GB", "displayValue": "32GB" },
+            { "value": "16GB", "displayValue": "16GB" },
+            { "value": "8GB", "displayValue": "8GB" },
+            { "value": "4GB", "displayValue": "4GB" },
+            { "value": "2GB", "displayValue": "2GB" }
+          ]
+        },
+        {
+          "label": "Phone Features",
+          "type": "select",
+          "control": "feature",
+          "options": [
+            { "value": "Touchscreen", "displayValue": "Touchscreen" },
+            { "value": "Fingerprint", "displayValue": "Fingerprint" },
+            { "value": "Face Recongnition", "displayValue": "Face Recongnition" },
+            { "value": "GPS", "displayValue": "GPS" },
+            { "value": "Bluetooth", "displayValue": "Bluetooth" },
+            { "value": "WiFi", "displayValue": "WiFi" },
+            { "value": "Compass", "displayValue": "Compass" },
+            { "value": "Waterproof", "displayValue": "Waterproof" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Laptops",
+      "categoryid": "3020",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Lenovo", "displayValue": "Lenovo" },
+            { "value": "Hp", "displayValue": "Hp" },
+            { "value": "Dell", "displayValue": "Dell" },
+            { "value": "Apple", "displayValue": "Apple" },
+            { "value": "Acer", "displayValue": "Acer" },
+            { "value": "Toshiba", "displayValue": "Toshiba" },
+            { "value": "Huawei", "displayValue": "Huawei" },
+            { "value": "Oneplus", "displayValue": "Oneplus" }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryTilte": "Televisions",
+      "categoryid": "3050",
+      "filters": [
+        {
+          "label": "Brand",
+          "type": "select",
+          "control": "brand",
+          "options": [
+            { "value": "Samsung", "displayValue": "Samsung" },
+            { "value": "LG", "displayValue": "LG" },
+            { "value": "Sony", "displayValue": "Sony" },
+            { "value": "Philips", "displayValue": "Philips" },
+            { "value": "Xiaomi", "displayValue": "Xiaomi" },
+            { "value": "Toshiba", "displayValue": "Toshiba" },
+            { "value": "Hp", "displayValue": "Hp" }
+          ]
+        },
+        {
+          "label": "Display Type",
+          "type": "select",
+          "control": "type",
+          "options": [
+            { "value": "LED", "displayValue": "LED" },
+            { "value": "QLED", "displayValue": "QLED" },
+            { "value": "LCD", "displayValue": "LCD" },
+            { "value": "OLED", "displayValue": "OLED" }
+          ]
+        },
+        {
+          "label": "Video Format",
+          "type": "select",
+          "control": "format",
+          "options": [
+            { "value": "4k", "displayValue": "4k" },
+            { "value": "8k", "displayValue": "8k" },
+            { "value": "1080p", "displayValue": "1080p" },
+            { "value": "720p", "displayValue": "720p" }
+          ]
+        },
+        {
+          "label": "TV Screen Size",
+          "type": "select",
+          "control": "size",
+          "options": [
+            { "value": "24 inchs", "displayValue": "24 inchs" },
+            { "value": "32 inchs", "displayValue": "32 inchs" },
+            { "value": "40 inchs", "displayValue": "40 inchs" },
+            { "value": "54 inchs", "displayValue": "54 inchs" },
+            { "value": "60 inchs", "displayValue": "60 inchs" },
+            { "value": "64 inchs", "displayValue": "64 inchs" },
+            { "value": "70 inchs", "displayValue": "70 inchs" }
           ]
         }
       ]
@@ -623,17 +1069,20 @@
   ],
   "dynamicForm": [
     {
-      "label":"Bike",
-      "categoryid":"1010",
+      "label": "Bike",
+      "categoryid": "1010",
       "controls": [
         {
           "name": "Brand",
           "label": "Brand:",
           "value": "Atlas Honda",
           "type": "select",
-          "options":[
+          "options": [
             { "value": "Atlas Honda", "displayValue": "Atlas Honda" },
-            { "value": "Metro Motor Bike", "displayValue": "Metro Motor Bikes" },
+            {
+              "value": "Metro Motor Bike",
+              "displayValue": "Metro Motor Bikes"
+            },
             { "value": "Yamaha Motors", "displayValue": "Yamaha Motors" },
             { "value": "Super Power Bike", "displayValue": "Super Power Bike" },
             { "value": "Imperial Bike", "displayValue": "Imperial Bike" },
@@ -681,7 +1130,7 @@
           "type": "select",
           "options": [
             { "value": "4", "displayValue": "4" },
-            { "value": "5", "displayValue": "5" }        
+            { "value": "5", "displayValue": "5" }
           ],
           "validators": {}
         },
@@ -689,14 +1138,14 @@
           "name": "Price",
           "label": "Price",
           "value": "",
-          "type": "text",      
+          "type": "text",
           "validators": {}
-        }     
+        }
       ]
     },
     {
-      "label":"Car",
-      "categoryid":"1020"
+      "label": "Car",
+      "categoryid": "1020"
     }
   ],
   "brands": [

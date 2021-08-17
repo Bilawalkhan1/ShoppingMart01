@@ -24,9 +24,9 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
 
-  { path: 'vehicle/:id', loadChildren: () => import('./Categories/vehicle/vehicle.module').then(m => m.VehicleModule) },
+  { path: 'automotive/:id', loadChildren: () => import('./Categories/vehicle/vehicle.module').then(m => m.VehicleModule) },
 
-  { path: 'vehicle/:id/:subc/:sid', loadChildren: () => import('./Categories/vehicle/vehicle.module').then(m => m.VehicleModule) },
+  { path: 'automotive/:id/:subc/:sid', loadChildren: () => import('./Categories/vehicle/vehicle.module').then(m => m.VehicleModule) },
 
   { path: 'furniture/:id', loadChildren: () => import('./Categories/furniture/furniture.module').then(m => m.FurnitureModule) },
 

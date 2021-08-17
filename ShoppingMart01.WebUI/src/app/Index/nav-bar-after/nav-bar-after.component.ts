@@ -50,8 +50,8 @@ export class NavBarAfterComponent implements OnInit {
   navItem: Array<any> = [
     {
       id: "10",
-      displayName: "Vehicle",
-      route: "/vehicle",
+      displayName: "Automotive",
+      route: "/automotive",
       children: [
         {
           id: "1010",
@@ -65,41 +65,56 @@ export class NavBarAfterComponent implements OnInit {
         },
         {
           id: "1030",
-          displayName: "Bus",
-          route: "bus"
+          displayName: "Bike Accessories",
+          route: "bike-accessories"
+        },
+        {
+          id: "1040",
+          displayName: "Car Accessories",
+          route: "car-accessories"
         }
       ]
     },
     {
       id: "20",
-      displayName: "Furniture",
+      displayName: "Home & Decor",
       route: "/furniture",
       children: [
         {
           id: "2010",
-          displayName: "Curtain",
-          route: "curtain"
+          displayName: "Curtains",
+          route: "curtains"
         },
         {
           id: "2020",
-          displayName: "brand new",
-          route: "brand new"
+          displayName: "Rugs & Carpets",
+          route: "rugs-carpets"
         },
         {
           id: "2030",
-          displayName: "Wood Furniture",
-          route: "wood-furniture"
+          displayName: "Mirrors",
+          route: "mirror"
         },
         {
           id: "2040",
-          displayName: "old",
-          route: "old"
-        }
+          displayName: "Bedroom Furniture",
+          route: "bedroom-furniture"
+        },
+        {
+          id: "2050",
+          displayName: "Gaming Furniture",
+          route: "gaming-furniture"
+        },
+        {
+          id: "2060",
+          displayName: "Kitchen Furniture",
+          route: "kitchen-furniture"
+        }        
       ]
     },
     {
       id: "30",
-      displayName: "Electronic",
+      displayName: "Electronics",
       route: "/electronic",
       children: [
         {
@@ -114,8 +129,38 @@ export class NavBarAfterComponent implements OnInit {
         },
         {
           id: "3030",
-          displayName: "Tablet",
-          route: "tablet"
+          displayName: "Mobile Accessories",
+          route: "mobile-accessories"
+        },
+        {
+          id: "3040",
+          displayName: "Laptop Accessories",
+          route: "laptop-accessories"
+        },
+        {
+          id: "3050",
+          displayName: "Televsions",
+          route: "television"
+        },
+        {
+          id: "3060",
+          displayName: "Speakers",
+          route: "speakers"
+        },
+        {
+          id: "3070",
+          displayName: "Headphones",
+          route: "headphones"
+        },
+        {
+          id: "3080",
+          displayName: "Power Banks",
+          route: "powerbanks"
+        },
+        {
+          id: "3090",
+          displayName: "Cameras",
+          route: "cameras"
         }
       ]
     },
