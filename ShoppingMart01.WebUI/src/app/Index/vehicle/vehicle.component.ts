@@ -19,7 +19,8 @@ export class VehiclesComponent implements OnInit {
   slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    infinite: false,
     'responsive': [
       {
         breakpoint: 1024,

@@ -40,7 +40,8 @@ export class SearchComponent implements OnInit {
 
   getHttpSearchResult() {
     this.http.get<any>(`http://localhost:3000/Product`)
-      .subscribe(data => {          
+      .subscribe(data => { 
+        console.log("test",data)         
         data.forEach(element => {
           this.searchArray.push(element.Product_Name);
         });

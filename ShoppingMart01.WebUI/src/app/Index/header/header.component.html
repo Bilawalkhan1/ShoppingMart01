@@ -5,9 +5,28 @@
 
         <ul class="navbar-nav ml-auto search_box">
             <li>
-                <div class="form-group searchbar has-search">
+                <!-- <div class="form-group searchbar has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" placeholder="What are you looking for?">
+                    <input type="search" class="form-control" placeholder="What are you looking for?"
+                        (keypress)="onSearchChange($event.target.value)" [formControl]="searchField"
+                        [(ngModel)]="searchText">
+                </div> -->
+                <div ngbDropdown class="form-group searchbar has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="search" class="form-control" ngbDropdownToggle placeholder="What are you looking for?"
+                        (keypress)="onSearchChange($event.target.value)" [formControl]="searchField"
+                        [(ngModel)]="searchText">
+                    <div *ngIf="showSearchContainer" (ClickOutside)="toggleSearchContainer()" ngbDropdownMenu
+                        aria-labelledby="dropdownBasic1">
+                        <div ngbDropdownItem class="search-result" (click)="selectValue(data)"
+                            *ngFor="let data of searchArray | filterResult:searchText">
+                            {{ data }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-container">
+
                 </div>
             </li>
         </ul>
@@ -40,7 +59,8 @@
                     <div ngbDropdown class="d-inline-block account">
                         <img class="btn1" id="dropdownBasic1" (click)="getUserData()" ngbDropdownToggle
                             src="assets/profile.png" width="39px">
-                        <div *ngFor="let user of userdata" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <div *ngFor="let user of userdata" ngbDropdownMenu placement="bottom-left" display="dynamic"
+                            aria-labelledby="dropdownBasic1">
                             <h3 ngbDropdownItem>{{user.firstName}}</h3>
                             <h3 ngbDropdownItem>{{user.email}}</h3>
                             <button (click)="logout()" ngbDropdownItem><b>Logout</b></button>
@@ -51,3 +71,11 @@
         </ul>
     </links>
 </mdb-navbar>
+<!-- <div class="container ml-5">
+    <div *ngIf="showSearchContainer" (ClickOutside)="toggleSearchContainer()" class="search-container">
+        <div class="search-result" (click)="selectValue(data)"
+            *ngFor="let data of searchArray | filterResult:searchText">
+            {{ data }}
+        </div>
+    </div>
+</div> -->

@@ -36,6 +36,29 @@
                     </div>
                 </div>
             </li>
+
+ 
+            <li>
+                <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+
+                    <button (mouseover)="changeText=true" (mouseout)="changeText=false" class="btn ml-5 mt-2 headg head4" id="dropdownManual" ngbDropdownAnchor>
+                        dropdown
+                        <i *ngIf="changeText" class="fa fa-angle-right arrow"></i>
+                    </button>
+
+                    <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        <div class="row">
+                            <div class="col">
+                                <button  ngbDropdownItem> content </button><hr>
+                                <button  ngbDropdownItem> content </button><hr>
+                                <button  ngbDropdownItem> content </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
         </ul>
     </links>
 </mdb-navbar>

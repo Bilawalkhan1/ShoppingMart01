@@ -43,7 +43,7 @@ export class ProductService {
 
 
   getModelData(name) {
-    return this.http.get(`http://localhost:3000/brands?name=${name}`)
+    return this.http.get<any[]>(`http://localhost:3000/brands?name=${name}`)
   }
 
   getList(name) {

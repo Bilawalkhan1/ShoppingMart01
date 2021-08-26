@@ -20,6 +20,7 @@ export class FurnituresComponent implements OnInit {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
+    infinite: false,
     'responsive': [
       {
         breakpoint: 1024,

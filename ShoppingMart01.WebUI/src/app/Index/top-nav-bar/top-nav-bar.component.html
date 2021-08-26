@@ -1,48 +1,134 @@
-<div class="containerfluid header p-2">
-    <div class="row topheader">
-        <div class="col-md-2 col-lg-2 col-sm-3">
-            <h4 class=" heading1 mt-1" [routerLink]="['']">Shopping Mart</h4>
-        </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
 
-        <div class="col-lg-7 col-md-7 search_bar">
-            <div class="form-group searchbar has-search">
-                <span class="fa fa-search form-control-feedback"></span>
-                <input type="search" class="form-control" placeholder="What are you looking for?">
-            </div>
-        </div>
-
-        <div class="col-md-1 col-lg-1">
-            
-        </div>
-
-        <div class="col-md-2 col-lg-2 col-sm-9 d-flex">
-            <div class="icons">
-                <button (click)="addProduct()" class="sellbtn">
-                    <i class="fa fa-plus plus"></i>
-                    <b>SELL</b>
+                <button (mouseover)="changeText=true" (mouseout)="changeText=false" class="btn ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Fashion
+                    <i *ngIf="changeText" class="fa fa-angle-right arrow"></i>
                 </button>
-            </div>
-            <div class="cart">
-                <div class="Shopping">
-                    <div class="cartvalue">
-                        <b> {{cartitem}} </b>
-                    </div>
-                    <div class="carticon">
-                        <i (click)="cartComponent()" class="fa fa-shopping-cart fa-2x shopping_icon"
-                            aria-hidden='true'></i>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="ml-3">
+        </div>
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
 
+                <button (mouseover)="changeText1=true" (mouseout)="changeText1=false" class="btn ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Entertainment
+                    <i *ngIf="changeText1" class="fa fa-angle-right arrow1"></i>
+                </button>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div ngbDropdown class="d-inline-block account">
-                <img class="btn1" id="dropdownBasic1" (click)="getUserData()" ngbDropdownToggle src="assets/profile.png"
-                    width="39px">
-                <div *ngFor="let user of userdata" ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <h3 ngbDropdownItem>{{user.firstName}}</h3>
-                    <h3 ngbDropdownItem>{{user.email}}</h3>
-                    <button (click)="logout()" ngbDropdownItem><b>Logout</b></button>
+        </div>
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+
+                <button (mouseover)="changeText2=true" (mouseout)="changeText2=false" class="btn ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Technology
+                    <i *ngIf="changeText2" class="fa fa-angle-right arrow2"></i>
+                </button>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+
+                <button (mouseover)="changeText3=true" (mouseout)="changeText3=false" class="btn ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Travel
+                    <i *ngIf="changeText3" class="fa fa-angle-right arrow3"></i>
+                </button>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+
+                <button (mouseover)="changeText4=true" (mouseout)="changeText4=false" class="btn ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Health
+                    <i *ngIf="changeText4" class="fa fa-angle-right arrow4"></i>
+                </button>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="d-inline-block" ngbDropdown #myDrop2="ngbDropdown">
+
+                <button (mouseover)="changeText5=true" (mouseout)="changeText5=false" class="btn arr ml-5 mt-2 headg head4"
+                    id="dropdownManual" ngbDropdownAnchor>
+                    Sport
+                    <i *ngIf="changeText5" class="fa fa-angle-right arrow5"></i>
+                </button>
+
+                <div class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                    <div class="row">
+                        <div class="col">
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                            <hr>
+                            <button ngbDropdownItem> content </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

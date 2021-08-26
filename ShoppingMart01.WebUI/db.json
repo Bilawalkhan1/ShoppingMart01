@@ -1148,6 +1148,7 @@
       "categoryid": "1020"
     }
   ],
+
   "brands": [
     {
       "label": "All Models",
@@ -2132,7 +2133,7 @@
       "type": "car",
       "province": "sindh",
       "address": "Multan",
-      "Product_Name": "mehran",
+      "Product_Name": "Audi",
       "Product_id": "",
       "Product_Price": "290000",
       "Product_Description": "The 2010 Honda Civic is a fine pick if you're shopping for a used compact car. Available as a two-door coupe or four-door sedan"

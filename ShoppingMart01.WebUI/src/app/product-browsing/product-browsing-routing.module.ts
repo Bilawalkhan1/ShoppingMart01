@@ -11,10 +11,12 @@ const routes: Routes = [
   { path: '', component: ProductBrowsingComponent,
     children:[
       { path: "productList", component: ProductListComponent },
+      { path: "getcategory" , component: CategoryComponent },
       { path: "product/:name" , component: ProductComponent},
       { path: "ProductRelated-Carousel", component:ProductRelatedCarouselComponent  },
       { path: "categoryListView", component: CategoriesListViewComponent },
-      { path: "getcategory/:category/:subcategory" , component: CategoryComponent },
+      // { path: "getcategory/:category/:subcategory" , component: CategoryComponent },
+
     ]
   }
 ];

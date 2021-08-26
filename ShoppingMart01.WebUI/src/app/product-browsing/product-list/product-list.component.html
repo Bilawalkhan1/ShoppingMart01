@@ -3,7 +3,6 @@
         <div class="col" *ngFor="let product of getProductList ; let i = index">
             <div class="card h-100 shadow-sm">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
-
                     <div ngxSlickItem *ngFor="let i of product.Product_Image" class="slide">
                         <img class="size-img" src="{{covertPhotoUrl(i['img'])}}">
                     </div>

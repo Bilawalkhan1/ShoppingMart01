@@ -43,11 +43,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
  
 @media only screen and (max-width: 1200px) {
-  .slick-prev:before { 
+  /* .slick-prev:before { 
     margin-left: 30px;
   } 
   .slick-next:before {
     margin-left: -95px;
-  } 
+  }  */
 }
  

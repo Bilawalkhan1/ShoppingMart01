@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar-after.component.css']
 })
 export class NavBarAfterComponent implements OnInit {
-
+changeText
   allItems: Array<any> = [
     {
       id: "1",
@@ -14,8 +14,8 @@ export class NavBarAfterComponent implements OnInit {
       children: [
         {
           id: "10",
-          displayName: "Vehicle",
-          route: "/vehicle",
+          displayName: "Automotive",
+          route: "/automotive",
         },
         {
           id: "20",
@@ -23,24 +23,34 @@ export class NavBarAfterComponent implements OnInit {
           route: "/furniture",
         },
         {
-          id: "50",
+          id: "30",
+          displayName: "Electronics",
+          route: "/electronic",
+        },
+        {
+          id: "40",
           displayName: "Jewelry",
           route: "/jewelry",
         },
         {
+          id: "50",
+          displayName: "Food",
+          route: "/food",
+        },
+        {
           id: "60",
-      displayName: "Food",
-      route: "/food",
+          displayName: "Property",
+          route: "/property",
         },
         {
           id: "70",
-      displayName: "Grossery",
-      route: "/grossery",
+          displayName: "Grossery",
+          route: "/grossery",
         },
         {
           id: "80",
-      displayName: "Home Wear",
-      route: "/homewear",
+          displayName: "Home Wear",
+          route: "/homewear",
         },
 
       ]
@@ -171,64 +181,82 @@ export class NavBarAfterComponent implements OnInit {
       children: [
         {
           id: "5010",
-          displayName: "Jewelry",
-          route: "jewelry"
+          displayName: "Diamond",
+          route: "Diamound"
         },
         {
           id: "5020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Gold",
+          route: "gold"
         },
         {
           id: "5030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Silver",
+          route: "silver"
+        }
+        ,
+        {
+          id: "5030",
+          displayName: "Other",
+          route: "other"
         }
       ]
     },
     {
       id: "60",
       displayName: "Food",
-      route: "/property",
+      route: "/food",
       children: [
         {
           id: "6010",
-          displayName: "Apartment",
-          route: "apartment"
+          displayName: "FastFood",
+          route: "fastfood"
         },
         {
           id: "6020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Vegetable",
+          route: "vegetable"
         },
         {
           id: "6030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Rice",
+          route: "rice"
+        }
+        ,
+        {
+          id: "6020",
+          displayName: "Chicken",
+          route: "chicken"
+        },
+        {
+          id: "6030",
+          displayName: "Eggs",
+          route: "eggs"
         }
       ]
 
     },
     {
       id: "70",
-      displayName: "Grossery",
+      displayName: "Property",
       route: "/property",
       children: [
         {
           id: "7010",
-          displayName: "Apartment",
-          route: "apartment"
+          displayName: "Land",
+          route: "land"
         },
         {
           id: "7020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Houses",
+          route: "houses"
         },
         {
           id: "7030",
-          displayName: "Land",
-          route: "land"
-        }
+          displayName: "Plots",
+          route: "plots"
+        },
+
       ]
 
     }
@@ -236,22 +264,28 @@ export class NavBarAfterComponent implements OnInit {
     {
       id: "80",
       displayName: "Sports",
-      route: "/property",
+      route: "/sports",
       children: [
         {
           id: "8010",
-          displayName: "Apartment",
+          displayName: "Cricket",
           route: "apartment"
         },
         {
           id: "8020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Football",
+          route: "football"
         },
         {
           id: "8030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Hockey",
+          route: "hockey"
+        }
+        ,
+        {
+          id: "8040",
+          displayName: "BasketBall",
+          route: "basketball"
         }
       ]
     }

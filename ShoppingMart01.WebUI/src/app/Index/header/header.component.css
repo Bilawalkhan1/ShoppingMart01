@@ -63,6 +63,11 @@ button:hover {
     text-decoration: none;
     display: block;
   }
+  .dropdown-menu {
+    position: absolute;
+    width: 761px;
+  }
+
   .dropdown:hover .dropdowncontent {display: block;}
 
    li:before {
@@ -118,6 +123,9 @@ margin-top: 20px;
 }
 .cartvalue{
     font-weight: 400;
+}
+.search-result{
+    cursor: pointer;
 }
 @media screen and (max-width:576px){
     .search_box{
