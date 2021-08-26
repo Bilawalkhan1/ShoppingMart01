@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-nav-bar-after',
@@ -83,6 +84,14 @@ changeText
           displayName: "Car Accessories",
           route: "car-accessories"
         }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/vehicle-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/vehicle-2.jpg'
+        }
       ]
     },
     {
@@ -92,8 +101,8 @@ changeText
       children: [
         {
           id: "2010",
-          displayName: "Curtains",
-          route: "curtains"
+          displayName: "Curtains & Blinds",
+          route: "curtains-blinds"
         },
         {
           id: "2020",
@@ -120,6 +129,17 @@ changeText
           displayName: "Kitchen Furniture",
           route: "kitchen-furniture"
         }        
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/home-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/home-2.jpg'
+        },
+        // {
+        //   img:'assets/navbar-images/home-3.png'
+        // }
       ]
     },
     {
@@ -161,16 +181,55 @@ changeText
           id: "3070",
           displayName: "Headphones",
           route: "headphones"
+        }
+        // {
+        //   id: "3080",
+        //   displayName: "Cameras",
+        //   route: "cameras"
+        // }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/electronics-1.jpg'
         },
         {
-          id: "3080",
-          displayName: "Power Banks",
-          route: "powerbanks"
+          img:'assets/navbar-images/electronics-2.jpg'
         },
         {
-          id: "3090",
-          displayName: "Cameras",
-          route: "cameras"
+          img:'assets/navbar-images/electronics-3.jpg'
+        }
+      ]
+    },    
+    {
+      id: "40",
+      displayName: "Watches",
+      route: "/watches",
+      children: [
+        {
+          id: "4010",
+          displayName: "Men's Watches",
+          route: "men's-watches"
+        },
+        {
+          id: "4020",
+          displayName: "Women's Watches",
+          route: "women's-Watches"
+        },
+        {
+          id: "4030",
+          displayName: "Smart Watches",
+          route: "smart-watches"
+        }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/watch-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/watch-2.jpg'
+        },
+        {
+          img:'assets/navbar-images/watch-3.jpg'
         }
       ]
     },
@@ -181,116 +240,149 @@ changeText
       children: [
         {
           id: "5010",
-          displayName: "Diamond",
-          route: "Diamound"
+          displayName: "Earrings",
+          route: "earrings"
         },
         {
           id: "5020",
-          displayName: "Gold",
-          route: "gold"
+          displayName: "Necklaces",
+          route: "necklaces"
         },
         {
           id: "5030",
-          displayName: "Silver",
-          route: "silver"
-        }
-        ,
+          displayName: "Rings",
+          route: "rings"
+        },
         {
-          id: "5030",
-          displayName: "Other",
-          route: "other"
+          id: "5040",
+          displayName: "Bracelets",
+          route: "bracelets"
+        },
+        {
+          id: "5050",
+          displayName: "Pearls",
+          route: "pearls"
+        }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/jew-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/jewe-2.jpg'
+        },
+        {
+          img:'assets/navbar-images/jewe-3.jpg'
         }
       ]
     },
     {
       id: "60",
-      displayName: "Food",
-      route: "/food",
+      displayName: "Grossery",
+      route: "/grossery",
       children: [
         {
           id: "6010",
-          displayName: "FastFood",
-          route: "fastfood"
+          displayName: "Beverages",
+          route: "beverages"
         },
         {
           id: "6020",
-          displayName: "Vegetable",
-          route: "vegetable"
+          displayName: "Packed Food",
+          route: "packed-food"
         },
         {
           id: "6030",
-          displayName: "Rice",
-          route: "rice"
+          displayName: "Snack Food",
+          route: "snack-food"
+        },
+        {
+          id: "6040",
+          displayName: "Choclates",
+          route: "Choclates"
+        },
+        {
+          id: "6050",
+          displayName: "Cooking Essentials",
+          route: "cookin-essentials"
+        },
+        {
+          id: "6060",
+          displayName: "Pet Essentials",
+          route: "pet-essentials"
         }
-        ,
+      ],
+      images:[
         {
-          id: "6020",
-          displayName: "Chicken",
-          route: "chicken"
+          img:'assets/navbar-images/grocery-1.jfif'
         },
         {
-          id: "6030",
-          displayName: "Eggs",
-          route: "eggs"
+          img:'assets/navbar-images/grocery-3.jfif'
+        },
+        {
+          img:'assets/navbar-images/grocery-2.jfif'
         }
       ]
-
     },
     {
       id: "70",
-      displayName: "Property",
-      route: "/property",
-      children: [
-        {
-          id: "7010",
-          displayName: "Land",
-          route: "land"
-        },
-        {
-          id: "7020",
-          displayName: "Houses",
-          route: "houses"
-        },
-        {
-          id: "7030",
-          displayName: "Plots",
-          route: "plots"
-        },
-
-      ]
-
-    }
-    ,
-    {
-      id: "80",
       displayName: "Sports",
       route: "/sports",
       children: [
         {
-          id: "8010",
-          displayName: "Cricket",
-          route: "apartment"
+          id: "7010",
+          displayName: "Camping & Hiking",
+          route: "camping-hiking"
         },
         {
-          id: "8020",
-          displayName: "Football",
-          route: "football"
+          id: "7020",
+          displayName: "Team Sports",
+          route: "team-sports"
         },
         {
-          id: "8030",
-          displayName: "Hockey",
-          route: "hockey"
+          id: "7030",
+          displayName: "Racquet Sports",
+          route: "racquet-sports"
+        },
+        {
+          id: "7040",
+          displayName: "Cardio Training",
+          route: "cardio-training"
+        },
+        {
+          id: "7050",
+          displayName: "Sport Nutritions",
+          route: "sport-nutritions"
         }
-        ,
+      ],
+      images:[
         {
-          id: "8040",
-          displayName: "BasketBall",
-          route: "basketball"
+          img:'assets/navbar-images/sports-1.png'
+        },
+        {
+          img:'assets/navbar-images/sports-2.png'
+        },
+        {
+          img:'assets/navbar-images/sports-3.png'
         }
       ]
     }
   ]
   constructor() { }
+
+  ngAfterViewInit() {
+            $('nav .dropdown').hover(function(){
+              var $this = $(this);
+              $this.addClass('show');
+              $this.find('> a').attr('aria-expanded', true);
+              $this.find('.dropdown-menu').addClass('show');
+            }, function(){
+              var $this = $(this);
+                $this.removeClass('show');
+                $this.find('> a').attr('aria-expanded', false);
+                $this.find('.dropdown-menu').removeClass('show');
+            });
+  }
 
   ngOnInit(): void {
   }

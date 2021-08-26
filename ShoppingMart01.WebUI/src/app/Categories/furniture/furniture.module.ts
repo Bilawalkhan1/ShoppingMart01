@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FurnitureRoutingModule } from './furniture-routing.module';
 import { FurnitureComponent } from './furniture.component';
 import { ListComponent } from './list/list.component';
-import { DetailComponent } from './detail/detail.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProductBrowsingModule } from 'src/app/product-browsing/product-browsing.module';
 
@@ -12,8 +11,7 @@ import { ProductBrowsingModule } from 'src/app/product-browsing/product-browsing
 @NgModule({
   declarations: [
     FurnitureComponent,
-    ListComponent,
-    DetailComponent
+    ListComponent
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,7 @@ export class RestserviceService {
 
   constructor(private http: HttpClient) { }
 
-  createProduct(id,checkoutForm) {
-    return this.http.patch(`http://localhost:3000/Product/${id}` , checkoutForm)
+  createProduct(id,formData) {
+    return this.http.patch(`http://localhost:3000/Product/${id}` , formData)
   }
 }

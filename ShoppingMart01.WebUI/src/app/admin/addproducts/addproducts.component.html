@@ -1,3 +1,20 @@
+<!-- {{dynamicFormGroup.value| json}}
+<form [formGroup]="dynamicFormGroup">
+  <div class="col-md-12" *ngFor="let control of dynamicFormArray">
+    <span *ngFor="let item of control">
+      <div>
+        <label> {{ item.label}} </label>
+        <select [formControlName]="item.id">
+          <option *ngFor="let val of item.value.split(',')" value="{{val}}">
+            {{val}}
+          </option>
+        </select>
+      </div>
+    </span>
+  </div>
+</form> -->
+
+
 <div class="container">
   <div class="row mt-3">
     <div class="card">
@@ -49,58 +66,34 @@
                 <input type="text" formControlName="type" class="form-control" readonly>
               </div>
             </div>
-
-            <ng-container>
-              <div *ngFor="let item of model">
-                <label class="filterlabel">
-                  <h2 class="mt-0 mb-0">{{item.label}}</h2>
-                </label>
-                <div>
-                  <select class="form-select" formControlName="model">
-                    <option *ngFor="let a of item.models">
-                      {{a}}
-                    </option>
-                  </select>
-                </div>
+            
+            <form [formGroup]="dynamicFormGroup">
+              <div class="col-md-12" *ngFor="let control of dynamicFormArray">
+                <span *ngFor="let item of control">
+                  <div class="form-row">
+                  <label for="">
+                    <h2 class="mt-0 mb-0"> {{ item.label}}</h2>
+                  </label>
+               
+                    <select class="form-select" [formControlName]="item.id">
+                      <option *ngFor="let val of item.value.split(',')" value="{{val}}">
+                        {{val}}
+                      </option>
+                    </select>
+                  </div>
+                </span>
               </div>
-            </ng-container>
-
-            <div class="form-row mt-3" *ngIf="vehicle">
-              <div class="form-row">
-                <label for="">
-                  <h2 class="mt-0 mb-0">Engine CC</h2>
+            </form>            
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label>
+                  <h2 class="mt-3 mb-0 ml-2">Price</h2>
                 </label>
-                <input class="form-control" formControlName="enginecc" placeholder="Engine Capacity" type="text">
-              </div>
-              <div class="form-row">
-                <label for="">
-                  <h2 class="mt-0 mb-0">Model Year</h2>
-                </label>
-                <input class="form-control" formControlName="year" placeholder="Manufactoring Year" type="number">
-              </div>
-              <div class="form-row">
-                <label for="">
-                  <h2 class="mt-0 mb-0">Number Of Gears</h2>
-                </label>
-                <input class="form-control" formControlName="gear" placeholder="Enter Number Of Gears" type="number">
+                <input class="form-control " formControlName="Product_Price" placeholder="Enter Price" type="number">            
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label for="">
-                  <h2 class="mt-0 mb-0">Color</h2>
-                </label>
-                <input class="form-control" formControlName="color" placeholder="" type="text">
-              </div>
-              <div class="col-md-6 ">
-                <label for="">
-                  <h2 class="mt-0 mb-0">Price</h2>
-                </label>
-                <input class="form-control " formControlName="Product_Price" placeholder="Enter Price" type="number">
-              </div>
-
-
+          
               <div class="form-row">
                 <label class="filterlabel">
                   <h2 class="mt-0 mb-0">Province</h2>
@@ -119,7 +112,6 @@
                   <option *ngFor="let city of cities">{{city}} </option>
                 </select>
               </div>
-            </div>
             <br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button class="btn btn-primary btn-style" type="submit" (click)="onUpload()"> Post Now </button>

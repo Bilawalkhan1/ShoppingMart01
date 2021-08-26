@@ -1,0 +1,16 @@
+<div class="d-flex" id="wrapper" style="background-color: #eee">
+    <div class="list-group list-group-flush">
+        <div class="filterList">
+            <span *ngIf="!SubCategoryId">
+                <app-filter [CategoryId]=GetCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"></app-filter>
+            </span>
+            <span *ngIf="SubCategoryId">
+                <app-filter [SubCategoryId]=SubCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"> </app-filter>
+            </span>
+        </div>
+    </div>
+    <div class="container">
+        <app-product-list [getProductList]=List> </app-product-list>
+    </div>
+</div>
+<!-- <app-categories-list-view> </app-categories-list-view> -->

@@ -18,7 +18,7 @@ export class ProductService {
     let params = new HttpParams()
     params = params.set("categoryid", _categoryId)
 
-    return this.http.get<filter[]>(`http://localhost:3000/categories`, { params: params })
+    return this.http.get<filter[]>(`http://localhost:3000/DynamicFormFields`, { params: params })
   }
 
   getFormData() {

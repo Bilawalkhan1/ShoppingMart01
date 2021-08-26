@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
+<!-- <mdb-navbar SideClass="navbar navbar-expand-lg" [containerInside]="false">
     <div ngbDropdown #myDrop2="ngbDropdown" *ngFor="let menu of allItems">
         <h1 class=" heading1" id="dropdownManual" ngbDropdownAnchor>
             {{ menu.displayName}}
@@ -25,6 +25,7 @@
                     </button>
 
                     <div *ngIf="menu.children" class="dropdowncontent" ngbDropdownMenu aria-labelledby="dropdownManual">
+                        
                         <div class="row">
                             <div class="col">
                                 <button *ngFor="let child of menu.children" ngbDropdownItem
@@ -61,4 +62,42 @@
 
         </ul>
     </links>
-</mdb-navbar>
+</mdb-navbar> -->
+<!-- 
+
+ -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg ftco_navbar ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" >ALL CATEGORIES</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span> Menu
+          </button>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">                      
+                <li class="nav-item dropdown position-static" *ngFor="let menu of navItem">
+              <a class="nav-link dropdown-toggle" [routerLink]="[menu.route,menu.id]" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ menu.displayName}}</a>
+              <div class="dropdown-menu p-4" aria-labelledby="dropdown04" *ngIf="menu.children">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <span *ngFor="let child of menu.children">
+                            <a class="dropdown-item"  [routerLink]="[menu.route,menu.id,child.route,child.id]">>   {{ child.displayName}} </a>
+                          </span>                     
+                      </div>
+                      <div class="col-md-3 d-none d-md-block" *ngFor="let image of menu.images">
+                          <span >
+                        <a  [routerLink]="[]" >  <img src="{{ image.img }}" class="img"> </a>                           
+                          </span>                         
+                      </div>                     
+                      <!-- <div class="col-md-3 d-none d-md-block">
+                         
+                      </div> -->
+                  </div>
+              </div>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- END nav -->
+</div>
