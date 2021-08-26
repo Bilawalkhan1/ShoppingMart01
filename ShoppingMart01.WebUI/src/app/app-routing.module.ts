@@ -39,7 +39,19 @@ const routes: Routes = [
   { path: 'property/:id', loadChildren: () => import('./Categories/property/property.module').then(m => m.PropertyModule) },
  
   { path: 'property/:id/:subc/:sid', loadChildren: () => import('./Categories/property/property.module').then(m => m.PropertyModule) },
-  
+
+  { path: 'watches/:id', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
+  { path: 'watches/:id/:subc/:sid', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
+
+  { path: 'jewelry/:id', loadChildren: () => import('./Categories/jewelry/jewelry.module').then(m => m.JewelryModule) },
+  { path: 'jewelry/:id/:subc/:sid', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
+
+  { path: 'grossery/:id', loadChildren: () => import('./Categories/grossery/grossery.module').then(m => m.GrosseryModule) },
+  { path: 'grossery/:id/:subc/:sid', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
+
+  { path: 'sports/:id', loadChildren: () => import('./Categories/sports/sports.module').then(m => m.SportsModule) },
+  { path: 'sports/:id/:subc/:sid', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
+
   {
     path: '**', redirectTo: '/', pathMatch: 'full'
   }

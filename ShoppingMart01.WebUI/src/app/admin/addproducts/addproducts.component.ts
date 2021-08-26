@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ImageserviceService } from '../../Services/imageservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { RestserviceService } from '../../Services/restservice.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductService } from 'src/app/shared/models/product.service';
@@ -13,8 +13,11 @@ import { ProductService } from 'src/app/shared/models/product.service';
   styleUrls: ['./addproducts.component.css']
 })
 export class AddproductsComponent implements OnInit {
+  dynamicFormArray: any;
+  dynamicFormGroup: FormGroup;
+  finalData = [];
+
   base64textString: string;
-  products: any[];
   submitted = false;
   checkoutForm: FormGroup
   public imagePath;
@@ -22,10 +25,9 @@ export class AddproductsComponent implements OnInit {
   public message: string;
   selectedFile: File
   images = []
-  optionValue
+  
   urls = [];
-  vehicle: boolean = false
-  formData: any = [];
+  
   modelData: any = []
   model: any = []
   cities: any[] = []
@@ -33,7 +35,7 @@ export class AddproductsComponent implements OnInit {
   categoryid: number
   CategoryName: string;
   SubCategoryName: string;
-  data: any;
+
   value: FormGroup;
   get f() { return this.checkoutForm.controls; }
   provinceList: Array<any> = [
@@ -45,7 +47,7 @@ export class AddproductsComponent implements OnInit {
     { name: 'gilgit', cities: ['', 'Diamer', 'Ghanche', 'Ghizer', 'Gilgit', '	Gojal Upper Hunza', '	Kharmang', 'Nagar', 'Astore', '	Skardu'] },
   ];
 
-  constructor(private sanitizer: DomSanitizer, private imageService: ImageserviceService,
+  constructor (private sanitizer: DomSanitizer, private imageService: ImageserviceService,
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private rs: RestserviceService,
@@ -62,46 +64,43 @@ export class AddproductsComponent implements OnInit {
       this.SubCategoryName = params.get('subcateg');
       this.categoryid = Number(params.get('categid'));
     });
-    this.data = this.capitalizeFirstLetter(this.SubCategoryName)
-    console.log(this.CategoryName, this.SubCategoryId, this.SubCategoryName)
-    if (this.CategoryName == 'vehicles') {
-      this.vehicle = true
-      console.log('vehicle', this.CategoryName)
-    }
-    else {
-      this.vehicle = false
-    }
+  
   }
 
   ngOnInit() {
     this.checkoutForm = this.formBuilder.group({
       categoryid: [this.categoryid],
       subcategoryid: [this.SubCategoryId],
-      category: [this.capitalizeFirstLetter(this.CategoryName)],
-      type: [this.SubCategoryName],
       Product_Name: ['', Validators.required],
-      province: ['', Validators.required],
-      city: ['', Validators.required],
-      Product_Price: ['', Validators.required],
       Product_Description: ['', Validators.required],
-      model: ['', Validators.required],
-      enginecc: ['', Validators.required],
-      year: ['', Validators.required],
-      color: [''],
-      gears: [''],
+      category: [this.capitalizeFirstLetter(this.CategoryName)],
+      type: [this.capitalizeFirstLetter(this.SubCategoryName)],
+      Product_Price: ['', Validators.required],
+      province: ['', Validators.required],
+      city: ['', Validators.required],     
     });
 
-    this.productService.getModelData(this.data).subscribe((filterData: any) => {
-      this.model = filterData;
-      console.log(this.model)
-    })
+    // 
+    this.dynamicFormGroup= this.formBuilder.group({});
 
-    this.productService.getFormData().subscribe(response => {
-      this.formData = response
-      console.log('response', response)
-    })
+    this.http.get(`http://localhost:3000/DynamicFormFields?categoryid=` +  this.SubCategoryId)
+      .subscribe((x: any) => {
+        this.dynamicFormArray = x.map(u => u.controls)
+        console.log("from::", this.dynamicFormArray)
+        this.createDynamicFormControl();
+      });   
   }
 
+  // 
+  createDynamicFormControl(){
+      this.dynamicFormArray.forEach(element => {
+        element.forEach(x => {
+          this.dynamicFormGroup.addControl(x.id, new FormControl(''));
+        });       
+      });
+      console.log(this.dynamicFormGroup)
+  }
+  // 
   capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
@@ -137,19 +136,27 @@ export class AddproductsComponent implements OnInit {
   }
 
   onSubmit(id): void {
-    this.rs.createProduct(id, this.checkoutForm.value)
+    this.rs.createProduct(id, this.finalData[0])
       .subscribe(
         (response) => {
+          console.log("response",response)
         },
         error => console.error(error)
       )
     this.checkoutForm.reset();
     this.router.navigateByUrl('/home')
   }
-
+ 
   onUpload() {
+    console.log("statiic form",this.checkoutForm.value)
+    console.log("dynamic form",this.dynamicFormGroup.value)
+    this.finalData.push({
+      ...this.checkoutForm.value,
+      ...this.dynamicFormGroup.value
+    });
+    console.log(this.finalData[0])
     this.submitted = true;
-  
+
     const image = {
       Product_Image: this.images
     }
@@ -161,7 +168,7 @@ export class AddproductsComponent implements OnInit {
         console.error(err)
       })
   }
-  
+
   onValueChange(event) {
     this.productService.getSubCategory(event).subscribe((filterData: any) => {
       this.modelData = filterData;

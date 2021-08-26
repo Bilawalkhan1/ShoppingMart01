@@ -19,57 +19,33 @@
                 </select>
             </div>
 
+            <form [formGroup]="dynamicFormGroup">
+                <div *ngFor="let control of dynamicFormArray">
+                    <span *ngFor="let item of control">
+                        <div>
+                            <label class="filterlabel"> {{ item.label}} </label>
+                            <select class="form-select" [formControlName]="item.id">
+                                <option *ngFor="let val of item.value.split(',')" value="{{val}}">
+                                    {{val}}
+                                </option>
+                            </select>
+                        </div>
+                    </span>
+                </div>
+            </form>
             <div>
+                <button class="btn-search mt-3 form-control" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+            <!-- <div>
                 <label class="filterlabel">Condition</label>
                 <select class="form-select" formControlName="condition">
                     <option>--select--</option>
                     <option>Old</option>
                     <option>New</option>
                 </select>
-            </div>
-
-            <div *ngFor="let item of filters">
-                <ng-container *ngFor="let companyName of item.filters">
-                    <label class="filterlabel">{{companyName.label}}</label>
-                    <div>
-                        <select class="form-select" formControlName="{{companyName.control}}"
-                            (change)="onValueChange($event.target.value)">
-                            <option hidden value="" disabled selected>--select-- </option>
-                            <option *ngFor="let a of companyName.options" [value]="a.value">
-                                {{a.displayValue}}
-                            </option>
-                        </select>
-                    </div>
-                </ng-container>
-            </div>
-
-            <ng-container *ngIf="modelData.length>0">
-                <div *ngFor="let item of modelData">
-                    <label class="filterlabel">{{item.label}}</label>
-                    <div>
-                        <select class="form-select">
-                            <option *ngFor="let a of item.models">
-                                {{a}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </ng-container>
-
-            <div class="row">
-                <label class="filterlabel" for="">Price(RS)</label>
-                <div class="col-6 m-0 p-0 minprice">
-                    <input type="number" class="form-control" formControlName="minprice" placeholder="Min Price">
-                </div>
-                <div class="col-6 m-0 p-0 maxprice">
-                    <input type="number" class="form-control" formControlName="maxprice" placeholder="Max Price">
-                </div>
-
-            </div>
-            <div>
-                <button class="btn-search mt-3 form-control" type="submit">Search</button>
-            </div>
-        </div>
-    </form>
-
-</div>
+            </div> -->

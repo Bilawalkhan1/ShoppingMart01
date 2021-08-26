@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-nav-bar-after',
   templateUrl: './nav-bar-after.component.html',
   styleUrls: ['./nav-bar-after.component.css']
 })
-export class NavBarAfterComponent implements OnInit {
+export class NavBarAfterComponent implements OnInit,AfterViewInit {
 
   allItems: Array<any> = [
     {
@@ -73,6 +74,14 @@ export class NavBarAfterComponent implements OnInit {
           displayName: "Car Accessories",
           route: "car-accessories"
         }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/vehicle-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/vehicle-2.jpg'
+        }
       ]
     },
     {
@@ -82,8 +91,8 @@ export class NavBarAfterComponent implements OnInit {
       children: [
         {
           id: "2010",
-          displayName: "Curtains",
-          route: "curtains"
+          displayName: "Curtains & Blinds",
+          route: "curtains-blinds"
         },
         {
           id: "2020",
@@ -110,6 +119,17 @@ export class NavBarAfterComponent implements OnInit {
           displayName: "Kitchen Furniture",
           route: "kitchen-furniture"
         }        
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/home-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/home-2.jpg'
+        },
+        // {
+        //   img:'assets/navbar-images/home-3.png'
+        // }
       ]
     },
     {
@@ -151,16 +171,55 @@ export class NavBarAfterComponent implements OnInit {
           id: "3070",
           displayName: "Headphones",
           route: "headphones"
+        }
+        // {
+        //   id: "3080",
+        //   displayName: "Cameras",
+        //   route: "cameras"
+        // }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/electronics-1.jpg'
         },
         {
-          id: "3080",
-          displayName: "Power Banks",
-          route: "powerbanks"
+          img:'assets/navbar-images/electronics-2.jpg'
         },
         {
-          id: "3090",
-          displayName: "Cameras",
-          route: "cameras"
+          img:'assets/navbar-images/electronics-3.jpg'
+        }
+      ]
+    },    
+    {
+      id: "40",
+      displayName: "Watches",
+      route: "/watches",
+      children: [
+        {
+          id: "4010",
+          displayName: "Men's Watches",
+          route: "men's-watches"
+        },
+        {
+          id: "4020",
+          displayName: "Women's Watches",
+          route: "women's-Watches"
+        },
+        {
+          id: "4030",
+          displayName: "Smart Watches",
+          route: "smart-watches"
+        }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/watch-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/watch-2.jpg'
+        },
+        {
+          img:'assets/navbar-images/watch-3.jpg'
         }
       ]
     },
@@ -171,92 +230,149 @@ export class NavBarAfterComponent implements OnInit {
       children: [
         {
           id: "5010",
-          displayName: "Jewelry",
-          route: "jewelry"
+          displayName: "Earrings",
+          route: "earrings"
         },
         {
           id: "5020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Necklaces",
+          route: "necklaces"
         },
         {
           id: "5030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Rings",
+          route: "rings"
+        },
+        {
+          id: "5040",
+          displayName: "Bracelets",
+          route: "bracelets"
+        },
+        {
+          id: "5050",
+          displayName: "Pearls",
+          route: "pearls"
+        }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/jew-1.jpg'
+        },
+        {
+          img:'assets/navbar-images/jewe-2.jpg'
+        },
+        {
+          img:'assets/navbar-images/jewe-3.jpg'
         }
       ]
     },
     {
       id: "60",
-      displayName: "Food",
-      route: "/property",
+      displayName: "Grossery",
+      route: "/grossery",
       children: [
         {
           id: "6010",
-          displayName: "Apartment",
-          route: "apartment"
+          displayName: "Beverages",
+          route: "beverages"
         },
         {
           id: "6020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Packed Food",
+          route: "packed-food"
         },
         {
           id: "6030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Snack Food",
+          route: "snack-food"
+        },
+        {
+          id: "6040",
+          displayName: "Choclates",
+          route: "Choclates"
+        },
+        {
+          id: "6050",
+          displayName: "Cooking Essentials",
+          route: "cookin-essentials"
+        },
+        {
+          id: "6060",
+          displayName: "Pet Essentials",
+          route: "pet-essentials"
+        }
+      ],
+      images:[
+        {
+          img:'assets/navbar-images/grocery-1.jfif'
+        },
+        {
+          img:'assets/navbar-images/grocery-3.jfif'
+        },
+        {
+          img:'assets/navbar-images/grocery-2.jfif'
         }
       ]
-
     },
     {
       id: "70",
-      displayName: "Grossery",
-      route: "/property",
+      displayName: "Sports",
+      route: "/sports",
       children: [
         {
           id: "7010",
-          displayName: "Apartment",
-          route: "apartment"
+          displayName: "Camping & Hiking",
+          route: "camping-hiking"
         },
         {
           id: "7020",
-          displayName: "Commercial",
-          route: "commercial"
+          displayName: "Team Sports",
+          route: "team-sports"
         },
         {
           id: "7030",
-          displayName: "Land",
-          route: "land"
+          displayName: "Racquet Sports",
+          route: "racquet-sports"
+        },
+        {
+          id: "7040",
+          displayName: "Cardio Training",
+          route: "cardio-training"
+        },
+        {
+          id: "7050",
+          displayName: "Sport Nutritions",
+          route: "sport-nutritions"
         }
-      ]
-
-    }
-    ,
-    {
-      id: "80",
-      displayName: "Sports",
-      route: "/property",
-      children: [
+      ],
+      images:[
         {
-          id: "8010",
-          displayName: "Apartment",
-          route: "apartment"
+          img:'assets/navbar-images/sports-1.png'
         },
         {
-          id: "8020",
-          displayName: "Commercial",
-          route: "commercial"
+          img:'assets/navbar-images/sports-2.png'
         },
         {
-          id: "8030",
-          displayName: "Land",
-          route: "land"
+          img:'assets/navbar-images/sports-3.png'
         }
       ]
     }
   ]
   constructor() { }
+
+  ngAfterViewInit() {
+            $('nav .dropdown').hover(function(){
+              var $this = $(this);
+              $this.addClass('show');
+              $this.find('> a').attr('aria-expanded', true);
+              $this.find('.dropdown-menu').addClass('show');
+            }, function(){
+              var $this = $(this);
+                $this.removeClass('show');
+                $this.find('> a').attr('aria-expanded', false);
+                $this.find('.dropdown-menu').removeClass('show');
+            });
+  }
 
   ngOnInit(): void {
   }

@@ -16,7 +16,7 @@ export class HomePageSliderComponent implements OnInit {
     { img: 'assets/slider-home/mobile_slider-01.png'},
     { img: 'assets/slider-home/furniture-01.png'},
     { img: 'assets/slider-home/kitchen_01.gif'},
-    { img: 'assets/slider-home/mobile_slider-02.gif'},
+    // { img: 'assets/slider-home/mobile_slider-02.gif'},
     { img: 'assets/slider-home/kitchen_02.png'}
   ]; 
   slideConfig = {

@@ -1,73 +1,38 @@
-{
-    "label":"Bike",
-    "categoryid":"1010",
+[
+  {
+    "label": "Bike",
+    "categoryid": "1010",
     "controls": [
       {
-        "name": "Brand",
+        "id": "Brand",
         "label": "Brand:",
-        "value": "Atlas Honda",
         "type": "select",
-        "options":[
-          { "value": "Atlas Honda", "displayValue": "Atlas Honda" },
-          { "value": "Metro Motor Bike", "displayValue": "Metro Motor Bikes" },
-          { "value": "Yamaha Motors", "displayValue": "Yamaha Motors" },
-          { "value": "Super Power Bike", "displayValue": "Super Power Bike" },
-          { "value": "Imperial Bike", "displayValue": "Imperial Bike" },
-          { "value": "Ravi Bike", "displayValue": "Ravi Bike" }
-        ],
-        "validators": {
-          "required": true,
-          "minLength": 10
-        }
+        "value": "Atlas Honda,Metro Motor Bik,Yamaha Motors,Super Power Bike,Imperial Bike,Ravi Bike"
       },
       {
-        "name": "Engine Displacement",
-        "label": "Engine Displacement:",
-        "value": "70cc",
+        "id": "Engine Displacement",
+        "label": "Engine Displacement",
         "type": "select",
-        "options": [
-          { "value": "70cc", "displayValue": "70cc" },
-          { "value": "125cc", "displayValue": "125cc" },
-          { "value": "100cc", "displayValue": "100cc" },
-          { "value": "150cc", "displayValue": "150cc" },
-          { "value": "250cc", "displayValue": "250cc" },
-          { "value": "200cc", "displayValue": "200cc" }
-        ],
-        "validators": {}
+        "value": "70cc,125cc,100cc,150cc,250cc,200cc"
+      }
+    ]
+  },
+  {
+    "label": "car",
+    "categoryid": "1020",
+    "controls": [
+      {
+        "id": "Brand",
+        "label": "Brand:",
+        "type": "select",
+        "value": "x,y,z"
       },
       {
-        "name": "Model Year",
-        "label": "Model Year",
-        "value": "2021",
+        "id": "Engine Displacement",
+        "label": "Engine Displacement",
         "type": "select",
-        "options": [
-          { "value": "2021", "displayValue": "2021" },
-          { "value": "2020", "displayValue": "2020" },
-          { "value": "2019", "displayValue": "2019" },
-          { "value": "2018", "displayValue": "2018" },
-          { "value": "2017", "displayValue": "2017" },
-          { "value": "2016", "displayValue": "2016" }
-        ],
-        "validators": {}
-      },
-      {
-        "name": "No of Gears",
-        "label": "No of Gears",
-        "value": "4",
-        "type": "select",
-        "options": [
-          { "value": "4", "displayValue": "4" },
-          { "value": "5", "displayValue": "5" }        
-        ],
-        "validators": {}
-      },
-      {
-        "name": "Price",
-        "label": "Price",
-        "value": "",
-        "type": "text",      
-        "validators": {}
-      }     
+        "value": "a,b,c"
+      }
     ]
   }
-  
+]
