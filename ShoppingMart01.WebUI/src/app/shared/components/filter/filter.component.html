@@ -12,10 +12,10 @@
                 </select>
             </div>
 
-            <div *ngIf="cities.length>0">
+            <div >
                 <label class="filterlabel">City</label>
-                <select class="form-select" formControlName="city" placeholder="Anycity">
-                    <option *ngFor="let city of cities">{{city}} </option>
+                <select class="form-select" formControlName="city" placeholder="Anycity" [attr.disabled]="istrue ? '' : null">
+                    <option *ngFor="let city of cities" >{{city}} </option>
                 </select>
             </div>
 

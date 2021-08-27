@@ -401,6 +401,234 @@
           "value": "Silver,Gold,Black,Brown,White,Blue,Grey,Beige,Pink"
         }
       ]
+    },
+    {
+      "label": "Curtains and Blinds",
+      "categoryid": "2010",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "Dockyard,Voberry,Bluelands,IKEA,EQC,SR.industries,Homebox"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Curtain,Blind,Accessory"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream,Purple,Orange,Green"
+        },
+        {
+          "id": "features",
+          "label": "Features",
+          "type": "select",
+          "value": "Noise Reducing,Hooks included,Thermal Insulation,Semi-Opaque,Outdoor,Sheer"
+        }        
+      ]
+    },
+    {
+      "label": "Rugs and Carpets",
+      "categoryid": "2020",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "Merinos,Heritage Group,Toeon,Homes R,Angel City,Sharpdo"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Carpets,Prayer Mats,Chair Mats,Machine Made Rugs,Hand Knotted Rugs"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream,Purple,Orange,Green"
+        },
+        {
+          "id": "Material",
+          "label": "Material",
+          "type": "select",
+          "value": "Synthetic Fibre,Polyester,Wool,Cotton,Acrylic,Polypropylene"
+        }        
+      ]
+    },
+    {
+      "label": "Mirros",
+      "categoryid": "2030",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "Homes R Us,HOMEBOX,Allied Brass,Darice,Jerdon,2XL Home,East Lady,euroglass"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Floor Standing Mirror,Vanity Mirror,Mirrored wall,Mounted Mirror,Full-lenght Mirror,Tabletops Mirror,Framed Mirror "
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream"
+        },
+        {
+          "id": "shape",
+          "label": "Shape",
+          "type": "select",
+          "value": "Round,Square,Rectangle,Oval"
+        }        
+      ]
+    },
+    {
+      "label": "BedRoom Furniture",
+      "categoryid": "2040",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "Homes R Us,HOMEBOX,Bestway,A ToZ Furniture,Galaxy Design,MoltyFoam,DuraFoam"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Beds,Bed Frames,Mattresses,Dressers,Wardrobes,Armoires,"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream,Purple,Orange,Green,Beige"
+        },
+        {
+          "id": "material",
+          "label": "Material",
+          "type": "select",
+          "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
+        }        
+      ]
+    },
+    {
+      "label": "Kitchen Furniture",
+      "categoryid": "2060",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "IKEA,Woodpecker,Homes R Us,HOMEBOX,Intex,JYSK,Switch"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Chairs,Tables,Cabinets,Carts,Sideboards"
+        },
+         {
+          "id": "style",
+          "label": "style",
+          "type": "select",
+          "value": "Modern,Traditional,Vintage,Rustic,Elegant,Natural,Antique,Oriental"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream,Purple,Orange,Green,Beige"
+        },
+        {
+          "id": "material",
+          "label": "Material",
+          "type": "select",
+          "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
+        }        
+      ]
+    },
+    {
+      "label": "Gaming Furniture",
+      "categoryid": "2050",
+      "controls": [
+        {
+          "id": "brand",
+          "label": "Brand",
+          "type": "select",
+          "value": "HQX Furniture,1st Player,GS Furnisher,Lunar Furniture"
+        },
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Gaming Chairs,Gaming Tables,Sofas"
+        },
+         {
+          "id": "style",
+          "label": "style",
+          "type": "select",
+          "value": "Modern,Traditional,Vintage,Rustic,Elegant,Natural,Antique,Oriental"
+        },
+        {
+          "id": "color",
+          "label": "Color",
+          "type": "select",
+          "value": "Red,Blue,Black,Silver,White,Pink,Brown,Gold,Yellow,Navy Blue,Grey,Multicolor,Cream,Purple,Orange,Green,Beige"
+        },
+        {
+          "id": "material",
+          "label": "Material",
+          "type": "select",
+          "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
+        }        
+      ]
+    },
+    {
+      "label": "Earrings",
+      "categoryid": "5010",
+      "controls": [       
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Drop & Dangle,Stud,Hoop,Clip-Ons,Cuffs & Wraps"
+        }     
+      ]
+    },
+    {
+      "label": "Necklaces",
+      "categoryid": "5020",
+      "controls": [       
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Pendants,Chokers"
+        }     
+      ]
+    },
+    {
+      "label": "Bracelets",
+      "categoryid": "5040",
+      "controls": [       
+        {
+          "id": "type",
+          "label": "Type",
+          "type": "select",
+          "value":"Bangles,Bracelets"
+        }     
+      ]
     }
   ],
   "categories": [

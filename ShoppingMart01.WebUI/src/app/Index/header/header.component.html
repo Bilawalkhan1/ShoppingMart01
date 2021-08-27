@@ -1,48 +1,11 @@
 <mdb-navbar SideClass="navbar navbargrey navbar-expand-lg navbar-dark " [containerInside]="false">
-    <h4 class=" heading1 mt-1 mr-5" [routerLink]="['']">Shopping Mart</h4>
+    <h4 class=" heading1 mainheading mt-1" [routerLink]="['']">SHOPPING MART</h4>
 
-    <links>
-
-        <ul class="navbar-nav ml-auto search_box">
-            <li>
-                <!-- <div class="form-group searchbar has-search">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" placeholder="What are you looking for?"
-                        (keypress)="onSearchChange($event.target.value)" [formControl]="searchField"
-                        [(ngModel)]="searchText">
-                </div> -->
-                <div ngbDropdown class="form-group searchbar has-search">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="search" class="form-control" ngbDropdownToggle placeholder="What are you looking for?"
-                        (keypress)="onSearchChange($event.target.value)" [formControl]="searchField"
-                        [(ngModel)]="searchText">
-                    <div *ngIf="showSearchContainer" (ClickOutside)="toggleSearchContainer()" ngbDropdownMenu
-                        aria-labelledby="dropdownBasic1">
-                        <div ngbDropdownItem class="search-result" (click)="selectValue(data)"
-                            *ngFor="let data of searchArray | filterResult:searchText">
-                            {{ data }}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="search-container">
-
-                </div>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav icons">
+    <links class="link">
+        <ul class="navbar-nav icons try">           
             <li class="nav-item">
-                <a class="nav-link">
-                    <button (click)="addProduct()" class="sellbtn">
-                        <i class="fa fa-plus plus"></i>
-                        <b>SELL</b>
-                    </button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cart">
-                    <div class="Shopping">
+                <a class="nav-link ">
+                    <!-- <div class="Shopping">
                         <div class="cartvalue">
                             <b> {{cartitem}} </b>
                         </div>
@@ -50,12 +13,18 @@
                             <i (click)="cartComponent()" class="fa fa-shopping-cart fa-2x shopping_icon"
                                 aria-hidden='true'></i>
                         </div>
-
-                    </div>
+                    </div>    -->
+                    <span class="logcss" (click)="cartComponent()" >
+                        Cart
+                        <i class="fa fa-shopping-cart ps-2"></i>    
+                        <span class="px-1">  <b> {{cartitem}} </b></span>                 
+                    </span>                  
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link">
+                    <!-- <span class="logcss" (click)="getUserData()">Sign in  <i class="fa fa-user ps-2"></i></span> -->
+                   
                     <div ngbDropdown class="d-inline-block account">
                         <img class="btn1" id="dropdownBasic1" (click)="getUserData()" ngbDropdownToggle
                             src="assets/profile.png" width="39px">
@@ -68,14 +37,14 @@
                     </div>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link">
+                    <button class="newButton"  (click)="addProduct()" >
+                        <i class="fa fa-plus plus"></i>
+                        Post Product
+                    </button>                   
+                </a>
+            </li>
         </ul>
     </links>
 </mdb-navbar>
-<!-- <div class="container ml-5">
-    <div *ngIf="showSearchContainer" (ClickOutside)="toggleSearchContainer()" class="search-container">
-        <div class="search-result" (click)="selectValue(data)"
-            *ngFor="let data of searchArray | filterResult:searchText">
-            {{ data }}
-        </div>
-    </div>
-</div> -->

@@ -6,8 +6,8 @@ declare var $: any;
   templateUrl: './nav-bar-after.component.html',
   styleUrls: ['./nav-bar-after.component.css']
 })
-export class NavBarAfterComponent implements OnInit {
-changeText
+export class NavBarAfterComponent implements OnInit, AfterViewInit {
+
   allItems: Array<any> = [
     {
       id: "1",
@@ -15,8 +15,8 @@ changeText
       children: [
         {
           id: "10",
-          displayName: "Automotive",
-          route: "/automotive",
+          displayName: "Vehicle",
+          route: "/vehicle",
         },
         {
           id: "20",
@@ -24,24 +24,14 @@ changeText
           route: "/furniture",
         },
         {
-          id: "30",
-          displayName: "Electronics",
-          route: "/electronic",
-        },
-        {
-          id: "40",
+          id: "50",
           displayName: "Jewelry",
           route: "/jewelry",
         },
         {
-          id: "50",
+          id: "60",
           displayName: "Food",
           route: "/food",
-        },
-        {
-          id: "60",
-          displayName: "Property",
-          route: "/property",
         },
         {
           id: "70",
@@ -85,12 +75,12 @@ changeText
           route: "car-accessories"
         }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/vehicle-1.jpg'
+          img: 'assets/navbar-images/vehicle-1.jpg'
         },
         {
-          img:'assets/navbar-images/vehicle-2.jpg'
+          img: 'assets/navbar-images/vehicle-2.jpg'
         }
       ]
     },
@@ -128,14 +118,14 @@ changeText
           id: "2060",
           displayName: "Kitchen Furniture",
           route: "kitchen-furniture"
-        }        
+        }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/home-1.jpg'
+          img: 'assets/navbar-images/home-1.jpg'
         },
         {
-          img:'assets/navbar-images/home-2.jpg'
+          img: 'assets/navbar-images/home-2.jpg'
         },
         // {
         //   img:'assets/navbar-images/home-3.png'
@@ -188,18 +178,18 @@ changeText
         //   route: "cameras"
         // }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/electronics-1.jpg'
+          img: 'assets/navbar-images/electronics-1.jpg'
         },
         {
-          img:'assets/navbar-images/electronics-2.jpg'
+          img: 'assets/navbar-images/electronics-2.jpg'
         },
         {
-          img:'assets/navbar-images/electronics-3.jpg'
+          img: 'assets/navbar-images/electronics-3.jpg'
         }
       ]
-    },    
+    },
     {
       id: "40",
       displayName: "Watches",
@@ -221,15 +211,15 @@ changeText
           route: "smart-watches"
         }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/watch-1.jpg'
+          img: 'assets/navbar-images/watch-1.jpg'
         },
         {
-          img:'assets/navbar-images/watch-2.jpg'
+          img: 'assets/navbar-images/watch-2.jpg'
         },
         {
-          img:'assets/navbar-images/watch-3.jpg'
+          img: 'assets/navbar-images/watch-3.jpg'
         }
       ]
     },
@@ -264,15 +254,15 @@ changeText
           route: "pearls"
         }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/jew-1.jpg'
+          img: 'assets/navbar-images/jew-1.jpg'
         },
         {
-          img:'assets/navbar-images/jewe-2.jpg'
+          img: 'assets/navbar-images/jewe-2.jpg'
         },
         {
-          img:'assets/navbar-images/jewe-3.jpg'
+          img: 'assets/navbar-images/jewe-3.jpg'
         }
       ]
     },
@@ -312,15 +302,15 @@ changeText
           route: "pet-essentials"
         }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/grocery-1.jfif'
+          img: 'assets/navbar-images/grocery-1.jfif'
         },
         {
-          img:'assets/navbar-images/grocery-3.jfif'
+          img: 'assets/navbar-images/grocery-3.jfif'
         },
         {
-          img:'assets/navbar-images/grocery-2.jfif'
+          img: 'assets/navbar-images/grocery-2.jfif'
         }
       ]
     },
@@ -355,33 +345,52 @@ changeText
           route: "sport-nutritions"
         }
       ],
-      images:[
+      images: [
         {
-          img:'assets/navbar-images/sports-1.png'
+          img: 'assets/navbar-images/sports-1.png'
         },
         {
-          img:'assets/navbar-images/sports-2.png'
+          img: 'assets/navbar-images/sports-2.png'
         },
         {
-          img:'assets/navbar-images/sports-3.png'
+          img: 'assets/navbar-images/sports-3.png'
         }
       ]
     }
   ]
-  constructor() { }
+  constructor () { }
 
   ngAfterViewInit() {
-            $('nav .dropdown').hover(function(){
-              var $this = $(this);
-              $this.addClass('show');
-              $this.find('> a').attr('aria-expanded', true);
-              $this.find('.dropdown-menu').addClass('show');
-            }, function(){
-              var $this = $(this);
-                $this.removeClass('show');
-                $this.find('> a').attr('aria-expanded', false);
-                $this.find('.dropdown-menu').removeClass('show');
-            });
+    $('nav .dropdown').hover(function () {
+      var $this = $(this);
+      $this.addClass('show');
+      $this.find('> a').attr('aria-expanded', true);
+      $this.find('.dropdown-menu').addClass('show');
+    }, function () {
+      var $this = $(this);
+      $this.removeClass('show');
+      $this.find('> a').attr('aria-expanded', false);
+      $this.find('.dropdown-menu').removeClass('show');
+    });
+
+    $('nav .dropdown').hover(
+      function () {
+        $('.back-drop').css('display', 'block');
+      },
+      function () {
+        $('.back-drop').css('display', 'none');
+
+      }
+    );
+
+    $('.navbar-menu').on('click', function(){
+      $('.dropdown-menu').removeClass('show');
+      $('.back-drop').css('display', 'none');
+    })
+
+    $('.dropdown-item').on('click', function(){
+      $('.dropdown-menu').removeClass('show');
+    })
   }
 
   ngOnInit(): void {
