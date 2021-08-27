@@ -32,6 +32,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .search_box .navbar .navbar-toggler {
   display: none;
 }
+.autocomplete-container .suggestions-container ul li a {
+  text-align: left;
+}
+.autocomplete-container .suggestions-container ul li a:hover {
+  color: black;
+}
+.autocomplete-container .input-container input {
+  border-radius: 5px;
+}
 
 @media only screen and (max-width: 600px) {
   .slick-prev { 
@@ -40,6 +49,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .slick-next {
     margin-right: -37px;
   } 
+  .navbar-toggler{
+    display: block;
+  }
 }
  
 @media only screen and (max-width: 1200px) {

@@ -164,7 +164,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^11.0.0", "@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@^12.1.1", "@angular/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@>=12.0.0", "@angular/common@>=2.0.0 <7.0.0", "@angular/common@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/common@>=9.0.0", "@angular/common@12.1.1":
+"@angular/common@*", "@angular/common@^11.0.0", "@angular/common@^12.0.0", "@angular/common@^12.0.0 || ^13.0.0-0", "@angular/common@^12.1.1", "@angular/common@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/common@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/common@>=12.0.0", "@angular/common@>=2.0.0 <7.0.0", "@angular/common@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/common@>=9.0.0", "@angular/common@12.1.1":
   "integrity" "sha512-NnRwGMatzjthvDQ4+8tm09Ak5i27Qga8x4BdzINN1RjLmzQ0zW00Mn2AUGYEDZHt9HXVHff5stsZGqj+Ne4QJw=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-12.1.1.tgz"
   "version" "12.1.1"
@@ -198,7 +198,7 @@
   dependencies:
     "tslib" "^2.2.0"
 
-"@angular/core@^11.0.0", "@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@^12.1.1", "@angular/core@^2.0.0", "@angular/core@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@>=12.0.0", "@angular/core@>=2.0.0 <7.0.0", "@angular/core@>=6.0.0", "@angular/core@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/core@12.1.1":
+"@angular/core@*", "@angular/core@^11.0.0", "@angular/core@^12.0.0", "@angular/core@^12.0.0 || ^13.0.0-0", "@angular/core@^12.1.1", "@angular/core@^2.0.0", "@angular/core@^7.0.0 || ^8.0.0 || ^9.0.0", "@angular/core@^9.0.0 || ^10.0.0 || ^11.0.0", "@angular/core@>=12.0.0", "@angular/core@>=2.0.0 <7.0.0", "@angular/core@>=6.0.0", "@angular/core@>=7.0.0 <=12.0.0 || ^12.0.0", "@angular/core@12.1.1":
   "integrity" "sha512-7Q4na8zCXi4ITBG8kgbS+vnnVK0GDU2WXU80/il096+8YPFKfj6MyDWZH79KA3jrIg9/yhLwSQx8x8wnj8dqBA=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-12.1.1.tgz"
   "version" "12.1.1"
@@ -1876,6 +1876,11 @@
   "integrity" "sha512-ej6HaDJVrGlgZG1dzVg9+bfi8FGgEFOjmq08jdDu5hI6GR5NOpWlXFFXh/jbt4e2Z3poSwKZYJTkyCrEIHDegA=="
   "resolved" "https://registry.npmjs.org/angular-crumbs/-/angular-crumbs-3.0.1.tgz"
   "version" "3.0.1"
+
+"angular-ng-autocomplete@^2.0.5":
+  "integrity" "sha512-mYALrzwc5eoFR5xz/diup5GDsxqXp3L707P4CkiBl5l01fKej0nyIDTQ+xXtZUK3spXIyfuOX0ypa9wTrgCP5A=="
+  "resolved" "https://registry.npmjs.org/angular-ng-autocomplete/-/angular-ng-autocomplete-2.0.5.tgz"
+  "version" "2.0.5"
 
 "angularx-social-login@^3.5.7":
   "integrity" "sha512-KhkRzQph1mQt1BNsVhWhI2FDSo0y31sbhlFOVtJrLaaub/vhiNVB4NPeOXU7oQmiTkqKMWibp8pSOEJ92EQTbw=="
@@ -8424,20 +8429,15 @@
   "resolved" "https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz"
   "version" "1.2.2"
 
-"tslib@^1.10.0":
-  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
-  "version" "1.14.1"
+"tslib@^1.10.0", "tslib@^2.0.0", "tslib@^2.1.0", "tslib@^2.2.0", "tslib@^2.3.0", "tslib@2.3.0":
+  "integrity" "sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
+  "version" "2.3.0"
 
 "tslib@^1.9.0":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
-
-"tslib@^2.0.0", "tslib@^2.1.0", "tslib@^2.2.0", "tslib@^2.3.0", "tslib@2.3.0":
-  "integrity" "sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
-  "version" "2.3.0"
 
 "tunnel-agent@^0.6.0":
   "integrity" "sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0="
