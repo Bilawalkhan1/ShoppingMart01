@@ -1,4 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SocialAuthService } from 'angularx-social-login';
+import { LoginComponent } from 'src/app/accounts/login/login.component';
+import { Users } from 'src/app/accounts/signup-form/users';
+import { AuthService } from 'src/app/Services/auth.service';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { AuthguardService } from 'src/app/Services/authguard.service';
+import { ProductService } from 'src/app/shared/models/product.service';
 declare var $: any;
 
 @Component({
@@ -7,6 +17,85 @@ declare var $: any;
   styleUrls: ['./nav-bar-after.component.css']
 })
 export class NavBarAfterComponent implements OnInit, AfterViewInit {
+  changeText
+  userLoggedIn = Users
+  user: any;
+  cartitem: number = 0;
+  userdata: string;
+  constructor(private auth: AuthService,
+    private router: Router,
+    private config: NgbDropdownConfig,
+    private http: HttpClient,
+    private authenticatinservice: AuthenticationService,
+    private modalService: NgbModal,
+    private socialAuthService: SocialAuthService,
+    private productService: ProductService,
+    private authguard: AuthguardService) {
+    this.auth.cartSubject.subscribe((data) => {
+      this.cartitem = data
+      config.placement = 'left';
+    })
+  }
+  ngOnInit(): void {
+    this.cartItem()
+  }
+
+  
+  cartItem() {
+    if (localStorage.getItem('localcart') !== null) {
+      var cartcount = JSON.parse(localStorage.getItem('localcart') || '{}')
+      this.cartitem = cartcount.length;
+    }
+  }
+
+  openModel() {
+    this.modalService.open(LoginComponent)
+  }
+
+  cartComponent() {
+    let result;
+    if (localStorage.getItem('localcart') == null)
+      result = alert('Please add products ist')
+    else {
+      if (localStorage.getItem('token') !== null)
+        result = this.router.navigateByUrl('/cart');
+      else
+        result = this.modalService.open(LoginComponent)
+      result = this.authguard.returnUrl = 'cart'
+    }
+
+  }
+
+   
+  addProduct() {
+    if (localStorage.getItem('token') !== null) {
+      this.router.navigateByUrl('admin/sellproducts')
+
+    }
+    else {
+      this.modalService.open(LoginComponent)
+      this.authguard.returnUrl = 'admin/sellproducts'
+    }
+  }
+
+  getUserData() {
+    if (localStorage.getItem('token') !== null) {
+      let user = localStorage.getItem('user')
+      if (user !== null) {
+        user = JSON.parse(user)
+        this.userdata = user
+      }
+    }
+    else {
+      this.modalService.open(LoginComponent)
+    }
+  }
+
+  logout() {
+    this.authenticatinservice.userLogout();
+    this.socialAuthService.signOut();
+    return this.router.navigateByUrl('')
+  }
 
   allItems: Array<any> = [
     {
@@ -358,8 +447,7 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ]
     }
   ]
-  constructor () { }
-
+  
   ngAfterViewInit() {
     $('nav .dropdown').hover(function () {
       var $this = $(this);
@@ -383,7 +471,7 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       }
     );
 
-    $('.navbar-menu').on('click', function(){
+    $('nav .dropdown').on('click', function(){
       $('.dropdown-menu').removeClass('show');
       $('.back-drop').css('display', 'none');
     })
@@ -391,9 +479,6 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
     $('.dropdown-item').on('click', function(){
       $('.dropdown-menu').removeClass('show');
     })
-  }
-
-  ngOnInit(): void {
   }
 
 }

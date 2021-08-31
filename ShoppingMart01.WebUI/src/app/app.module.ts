@@ -24,6 +24,7 @@ import { NavBarAfterComponent } from './Index/nav-bar-after/nav-bar-after.compon
 import { JewelryComponent } from './Index/jewelry/jewelry.component';
 import { CategorySliderComponent } from './Categories/category-slider/category-slider.component';
 import { CategoryBannerComponent } from './Index/category-banner/category-banner.component';
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CategoryBannerComponent } from './Index/category-banner/category-banner
   ],
   imports: [
     AppRoutingModule,
+    AutocompleteLibModule,
     CommonModule,
     HttpClientModule,
     BrowserModule,

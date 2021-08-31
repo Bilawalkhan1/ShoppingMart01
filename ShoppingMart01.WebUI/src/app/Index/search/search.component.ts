@@ -40,8 +40,7 @@ export class SearchComponent implements OnInit {
 
   getHttpSearchResult() {
     this.http.get<any>(`http://localhost:3000/Product`)
-      .subscribe(data => { 
-        console.log("test",data)         
+      .subscribe(data => {        
         data.forEach(element => {
           this.searchArray.push(element.Product_Name);
         });
@@ -58,7 +57,7 @@ export class SearchComponent implements OnInit {
   }
 
   getSearchResult() {
-    console.log('search ', this.searchField.value);
+    
   }
 
   ngOnDestroy(): void {

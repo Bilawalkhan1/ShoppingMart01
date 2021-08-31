@@ -1,8 +1,35 @@
 <mdb-navbar SideClass="navbar navbargrey navbar-expand-lg navbar-dark " [containerInside]="false">
     <h4 class=" heading1 mainheading mt-1" [routerLink]="['']">SHOPPING MART</h4>
 
-    <links class="link">
-        <ul class="navbar-nav icons try">           
+    <links>
+
+        <ul class="navbar-nav search_box navbar-expand-lg">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown position-static" *ngFor="let menu of navItem">
+                    <a class="nav-link dropdown-toggle" [routerLink]="[menu.route,menu.id]" id="dropdown04"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{
+                        menu.displayName}}</a>
+                    <div class="dropdown-menu p-4" aria-labelledby="dropdown04" *ngIf="menu.children">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <span *ngFor="let child of menu.children">
+                                    <a class="dropdown-item" [routerLink]="[menu.route,menu.id,child.route,child.id]">>
+                                        {{
+                                        child.displayName}} </a>
+                                </span>
+                            </div>
+                            <div class="col-md-3 d-none d-md-block" *ngFor="let image of menu.images">
+                                <span>
+                                    <a [routerLink]="[]"> <img src="{{ image.img }}" class="img"> </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+
+        <ul class="navbar-nav icons">
             <li class="nav-item">
                 <a class="nav-link ">
                     <!-- <div class="Shopping">

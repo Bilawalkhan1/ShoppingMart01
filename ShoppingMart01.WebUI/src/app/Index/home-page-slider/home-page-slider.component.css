@@ -9,7 +9,8 @@
 }
 
 .carousel-caption {
-  top      : 50%;
+  top      : 44%;
+  margin-left: 50px;
   transform: translateY(-50%);
   bottom   : initial;
 }
@@ -17,4 +18,30 @@
 .container-fluid {
   margin : 0px;
   padding: 0px;
+}
+.ng-autocomplete{
+  margin-left: 100px !important;
+}
+.item{
+ float: left;
+ font-size: 16px;
+}
+.dropdown-menu {
+  position: absolute;
+  width: 600px;
+}
+.search-result{
+  cursor: pointer;
+}
+.dropdownresult{
+  height: 30vh;
+  overflow-x:hidden;
+  overflow-y: scroll;
+}
+.btn{
+  margin-top: -61px;
+  padding: 6px 11px;
+  margin-left: 609px;
+  background-color: aquamarine;
+  border-radius: 5px;
 }
