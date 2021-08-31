@@ -37,7 +37,6 @@ export class HomePageSliderComponent implements OnInit {
       .subscribe(data => {
         data.forEach(element => {
           this.searchArray.push(element.name)
-          console.log('array of data', this.searchArray)
         });
       });
   }
