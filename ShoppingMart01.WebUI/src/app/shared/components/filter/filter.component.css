@@ -53,4 +53,13 @@
     margin-top: 29px !important;
 
   }
+  @media screen and (max-width: 600px) {
+    .form-select{
+      width: 100px;
+    }
+    .btn-search{
+      padding: 2px 10px;  
+    }
+    
+  }
   

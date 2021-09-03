@@ -9,12 +9,12 @@ import { product } from '../../Classes/product';
 })
 export class ProductService {
   private subject = new BehaviorSubject<any>(0);
-
+  public categorydata
   private productsUrl = 'http://localhost:3000/Product';
   constructor(private http: HttpClient) { }
 
-  getFilterData(_categoryId){
-    
+  getFilterData(_categoryId) {
+
     let params = new HttpParams()
     params = params.set("categoryid", _categoryId)
 
@@ -41,7 +41,6 @@ export class ProductService {
     return this.subject.asObservable();
   }
 
-
   getModelData(name) {
     return this.http.get<any[]>(`http://localhost:3000/brands?name=${name}`)
   }
@@ -65,6 +64,9 @@ export class ProductService {
   }
   getSubCategory(name) {
     return this.http.get(`http://localhost:3000/categoryValue?name=${name}`)
+  }
+  getNavItems(category) {
+    return this.http.get(` http://localhost:3000/navItem?category=${category}`)
   }
 
 }

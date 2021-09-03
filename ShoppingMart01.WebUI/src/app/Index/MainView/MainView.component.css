@@ -4,7 +4,7 @@
   margin-left: 0px!important;
 }
 .vehiclecard{
-  width: 98%;
+  width: 96%;
 }
 .imgstyle{
   max-height: 23vw;
@@ -191,7 +191,13 @@ div [class^="col-"]{
   display: none;
   }
   .vehiclecard{
-    width: 82%;
+    width: 80%;
+  }
+  .search{
+    display: block;
+  }
+  .title{
+    margin-top: -71px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -205,19 +211,25 @@ div [class^="col-"]{
     display: none;
   }
   .vehiclecard{
-    width: 98%;
+    width: 95%;
   } 
+  .search{
+    display: block;
+  }
 }
 @media screen and (max-width: 1024px) {
   .card {
-  width: 50%;
+  width: 50%;  
   }
   .card .content {
     bottom: 0;
   }
   .vehiclecard{
-    width: 98%;
+    width: 96%;
   } 
+  .search{
+    display: none;
+  }
 }
 @media screen and (max-width: 1200px) {
   .card {
@@ -227,6 +239,19 @@ div [class^="col-"]{
     bottom: 0;
   }
   .vehiclecard{
-    width: 98%;
+    width: 90%;
   } 
+  .search{
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .search{
+    display: block;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width:1980px) {
+  .search{
+    display: none;
+  }
 }

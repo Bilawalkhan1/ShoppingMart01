@@ -10,10 +10,8 @@ import { FilterPipe } from './Classes/filter.pipe';
 import { RouterModule } from '@angular/router';
 import { IndexComponent } from './Index/index/index.component';
 import { SharedModule } from './shared/shared.module';
-import { HeaderComponent } from './Index/header/header.component';
 import { FooterComponent } from './Index/footer/footer.component';
 import { MainViewComponent } from './Index/MainView/MainView.component';
-import { TopNavBarComponent } from './Index/top-nav-bar/top-nav-bar.component';
 import { SearchComponent } from './Index/search/search.component';
 import { HomePageSliderComponent } from './Index/home-page-slider/home-page-slider.component';
 import { ProductSliderComponent } from './Index/product-slider/product-slider.component';
@@ -25,16 +23,16 @@ import { JewelryComponent } from './Index/jewelry/jewelry.component';
 import { CategorySliderComponent } from './Categories/category-slider/category-slider.component';
 import { CategoryBannerComponent } from './Index/category-banner/category-banner.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { MobileComponent } from './Index/mobile/mobile.component';
+import { ModelViewMobileComponent } from './Index/model-view-mobile/model-view-mobile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
     IndexComponent,
-    HeaderComponent,
-    FooterComponent,
+    FooterComponent, 
     MainViewComponent,
-    TopNavBarComponent,
     SearchComponent,
     HomePageSliderComponent,
     VehiclesComponent,
@@ -43,7 +41,9 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     NavBarAfterComponent,
     JewelryComponent,
     CategorySliderComponent,
-    CategoryBannerComponent
+    CategoryBannerComponent,
+    MobileComponent,
+    ModelViewMobileComponent
   ],
   imports: [
     AppRoutingModule,

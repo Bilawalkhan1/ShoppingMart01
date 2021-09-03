@@ -1,0 +1,11 @@
+.section{
+    box-sizing: border-box;
+    border: 2px solid beige;
+    cursor: pointer;
+    padding: 12px;
+}
+h3{
+    font-family: sans-serif;
+    padding-top: 5px;
+    font-size: 18px;
+}

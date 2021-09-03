@@ -50,16 +50,15 @@ export class HomePageSliderComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
+    dots: false,
     autoplaySpeed: 2000,
     autoplay: true,
     infinite: true,
-    arrows: false
+    arrows: false 
   }
 
   onSearchChange(searchValue) {
     this.showSearchContainer = true
-
   }
 
   selectValue(item) {
@@ -71,6 +70,7 @@ export class HomePageSliderComponent implements OnInit {
       this.router.navigateByUrl('/ProductBrowsing/getcategory')
     })
   }
+  
   sendData() {
     this.productService.sendProduct(this.modelData)
   }

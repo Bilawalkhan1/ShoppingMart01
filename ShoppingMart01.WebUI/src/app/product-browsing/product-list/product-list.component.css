@@ -221,3 +221,33 @@ footer {
     height: 80px;
     color: #fff
 }
+@media screen and (max-width:600px) {
+    .size-img {
+        max-height: 26vw !important;
+        min-height: 30vw;
+        max-width: 52vw !important;
+        min-width: 52vw;
+    }
+    .row-cols-1 > * {
+        flex: 0 0 auto;
+        width: 63%; 
+        height: 106vw;
+    } 
+    
+}
+@media screen and (max-width:1024px) {
+    .size-img {
+        max-height: 20vw;
+        min-height: 20vw;
+        max-width: 30vw;
+        min-width: 20vw;
+    }
+    .row-cols-sm-2 > * {
+        flex: 0 0 auto;
+        width: 34%;
+    }
+    .container{
+        width: 100%;
+    }
+    
+}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopNavBarComponent } from './top-nav-bar.component';
+import { ModelViewMobileComponent } from './model-view-mobile.component';
 
-describe('TopNavBarComponent', () => {
-  let component: TopNavBarComponent;
-  let fixture: ComponentFixture<TopNavBarComponent>;
+describe('ModelViewMobileComponent', () => {
+  let component: ModelViewMobileComponent;
+  let fixture: ComponentFixture<ModelViewMobileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopNavBarComponent ]
+      declarations: [ ModelViewMobileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopNavBarComponent);
+    fixture = TestBed.createComponent(ModelViewMobileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
