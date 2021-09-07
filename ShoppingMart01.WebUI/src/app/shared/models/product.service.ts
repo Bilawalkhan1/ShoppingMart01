@@ -10,6 +10,7 @@ import { product } from '../../Classes/product';
 export class ProductService {
   private subject = new BehaviorSubject<any>(0);
   public categorydata
+  public category
   private productsUrl = 'http://localhost:3000/Product';
   constructor(private http: HttpClient) { }
 

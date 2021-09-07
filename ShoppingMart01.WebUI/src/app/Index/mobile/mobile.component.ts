@@ -26,21 +26,22 @@ export class MobileComponent implements OnInit {
       resp => {
         this.data = resp
         this.filterProducts = this.data.map(x => {
-          if (x.displayName=this.category) {
+          if (x.displayName==this.category) {
             console.log('category',this.category)
             const filterArray = x.children
-            this.productService.categorydata = filterArray
+            this.productService.categorydata = filterArray  
+            this.productService.category = this.category        
           }
         })
         this.modelService.open(ModelViewMobileComponent)
       }
-    )
+    ) 
   }
 
   listItems: Array<any> = [
     {
       id: 1,
-      name: "Vehicle",
+      name: "Automotive",
       img: 'assets/ca.jpg'
     },
     {

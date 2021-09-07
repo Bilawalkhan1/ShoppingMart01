@@ -4142,7 +4142,7 @@
     },
     {
       "id": "20",
-      "displayName": "Home & Decor",
+      "displayName": "Furniture",
       "route": "/furniture",
       "children": [
         {
@@ -4216,6 +4216,48 @@
           "id": "3070",
           "displayName": "Headphones",
           "route": "headphones"
+        }
+      ]
+    },
+    {
+      "id": "90",
+      "displayName": "Mobiles",
+      "route": "/mobile",
+      "children": [
+        {
+          "id": "9010",
+          "displayName": "Samsung",
+          "route": "samsung"
+        },
+        {
+          "id": "9020",
+          "displayName": "Apple",
+          "route": "apple"
+        },
+        {
+          "id": "9030",
+          "displayName": "Huawei",
+          "route": "huawei"
+        },
+        {
+          "id": "9040",
+          "displayName": "Realme",
+          "route": "realme"
+        },
+        {
+          "id": "9050",
+          "displayName": "Techno",
+          "route": "Techno"
+        },
+        {
+          "id": "9060",
+          "displayName": "Redme",
+          "route": "redme"
+        },
+        {
+          "id": "9070",
+          "displayName": "Oppo",
+          "route": "oppo"
         }
       ]
     },
@@ -4307,6 +4349,33 @@
           "id": "6060",
           "displayName": "Pet Essentials",
           "route": "pet-essentials"
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "displayName": "HomeDecor",
+      "route": "/homedecor",
+      "children": [
+        {
+          "id": "8010",
+          "displayName": "Lamps",
+          "route": "Lamps"
+        },
+        {
+          "id": "8020",
+          "displayName": "Wallpaper",
+          "route": "wallpaper"
+        },
+        {
+          "id": "8030",
+          "displayName": "Frames",
+          "route": "frames"
+        },
+        {
+          "id": "8040",
+          "displayName": "WallClocks",
+          "route": "wallClocks"
         }
       ]
     },
