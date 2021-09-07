@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { product } from 'src/app/Classes/product';
 import { ProductService } from 'src/app/shared/models/product.service';
 
@@ -10,7 +11,7 @@ import { ProductService } from 'src/app/shared/models/product.service';
 export class ProductListComponent implements OnInit {
 
   @Input() getProductList: product[] = []
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +27,10 @@ export class ProductListComponent implements OnInit {
     infinite: true,
     arrows: false
   };
-  public sendProductDetails(product: object) {
+  
+  public sendProductDetails(product: any) {   
     this.productService.sendProduct(product);
+    this.router.navigate([this.router.url+'-'+'ProductBrowsing/product',product.Product_Name])
   }
 
 }

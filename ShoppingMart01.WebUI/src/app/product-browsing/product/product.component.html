@@ -1,4 +1,4 @@
-<div class="container-fluid pt-4">
+<!-- <div class="container-fluid pt-4">
   <div class="row" *ngFor="let blog of product">
     <div class="col-md-4 col-sm-12 col-lg-5 ">
       <div class="container-fluid">
@@ -41,7 +41,6 @@
           </div>
         </div>
       </div>
-      <!--  -->
 
     </div>
     <div class="col-md-3 col-sm-12 col-lg-3 ">
@@ -89,6 +88,54 @@
     </div>
 
   </div>
+</div> -->
+
+<div class="container" *ngFor="let blog of product">
+  <!-- Left Column -->
+  <div class="left-column">
+      <!-- <img src="assets/navbar-images/vehicle-1.jpg" alt=""> -->
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+
+          <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+            <img class="prod_img" src="{{covertPhotoUrl(i['img'])}}" alt="">
+          </div>
+
+        </ngx-slick-carousel>
+      </div>
+
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>{{blog.brand}}</span>
+      <h1>{{ blog.Product_Name}}</h1>
+      <p>{{ blog.Product_Description}}</p>
+    </div>
+
+    <!-- Product Configuration -->
+    <div class="product-configuration">
+      <div class="product-info">
+        <p>Model Number : <span> {{blog.Model_number}} </span> </p>
+        <p>Location : <span>{{ blog.province | uppercase }}-{{blog.city | uppercase }}</span> </p>        
+      </div>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="product-price">
+      <span>Rs.<span style="color:#df6d02;">{{blog.Product_Price}} </span> </span>
+    <hr>
+      <select class="s-quantity form-select my-2" name="" id="">
+        <option value=""> Select Quantity</option>
+        <option value=""> 1 </option>
+        <option value=""> 2 </option>
+        <option value=""> 3 </option>
+        <option value=""> 4 </option>
+        <option value=""> 5 </option>
+      </select>
+      <a href="#" class="cart-btn"> <span class="fa fa-shopping-cart cart-icon"></span> Add to cart</a>
+    </div>
+  </div>
 </div>
-<!-- Carousel -->
+
 <app-product-related-carousel [productX]="products"></app-product-related-carousel>

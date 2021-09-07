@@ -19,7 +19,14 @@ export class CategoryComponent implements OnInit {
   category: any;
   subcategory: any
   data: []
-  constructor(private productService: ProductService) {
+  slideConfig2 = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    arrows: false
+  };
+  constructor(private productService: ProductService, private router:Router) {
   }
   ngOnInit(): void {
     this.productService.getProduct().subscribe(response => {
@@ -27,5 +34,11 @@ export class CategoryComponent implements OnInit {
       console.log('response', this.data)
     })
   }
-  
+  public covertPhotoUrl(photoUrl) {
+    return `data:image/jpeg;base64,${photoUrl}`
+  }
+  public sendProductDetails(product: any) {   
+    this.productService.sendProduct(product);
+    this.router.navigate(['ProductBrowsing/product',product.Product_Name])
+  }
 }

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { product } from 'src/app/Classes/product';
+import { ProductService } from 'src/app/shared/models/product.service';
 declare var $: any;
 
 @Component({
@@ -8,11 +10,44 @@ declare var $: any;
   styleUrls: ['./product-related-carousel.component.css']
 })
 export class ProductRelatedCarouselComponent implements OnInit {
-  @Input()  productX:  product[] = []
-  slidePosition
-  slides
-  totalSlides
-  constructor () { }
+  @Input() productX: product[] = []
+  fetchedUrl = ''
+  str = this.router.url;
+  slideConfig = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    infinite: false,
+    'responsive': [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  }
+  slideConfig1 = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true
+  }
+  constructor (private productService: ProductService, private router: Router) {
+    this.fetchedUrl = this.str.split('-')[0];
+  }
 
   ngOnInit(): void {
   }
@@ -20,43 +55,14 @@ export class ProductRelatedCarouselComponent implements OnInit {
     return `data:image/jpeg;base64,${photoUrl}`
   }
 
-
-
-  ngAfterViewInit(): void {   
-    this.slidePosition = 0;
-    this.slides = document.getElementsByClassName("carousel__item");
-    this.totalSlides = this.slides.length;
-    setTimeout(() => {
-     console.log(this.productX) 
-    }, 1000);
-  }
-
-
-  moveToNextSlide() {
-    if (this.slidePosition === this.totalSlides - 1) {
-      this.slidePosition = 0;
-    } else {
-      this.slidePosition++;
+  public sendProductDetails(product: any) {
+    this.productService.sendProduct(product);
+    let test = this.str.includes('-')
+    if (test) {
+      this.router.navigate([this.fetchedUrl + '-' + 'ProductBrowsing/product', product.Product_Name])
     }
-    this.updateSlidesPosition();
-  }
-
-  moveToPrevSlide() {
-    if (this.slidePosition === 0) {
-      // totalSlides -1, if you wan't infinite carousel effect to both ways
-      this.slidePosition = 0;
-    } else {
-      this.slidePosition--;
+    else {
+      this.router.navigate(['ProductBrowsing/product', product.Product_Name], { replaceUrl: true });
     }
-    this.updateSlidesPosition();
   }
-
-  updateSlidesPosition() {
-    for (let slide of this.slides) {
-      slide.classList.remove("carousel__item--visible");
-      slide.classList.add("carousel__item--hidden");
-    }
-    this.slides[this.slidePosition].classList.add("carousel__item--visible");
-  }
-  
 }

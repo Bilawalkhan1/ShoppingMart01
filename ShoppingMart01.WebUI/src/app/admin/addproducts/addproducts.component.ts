@@ -76,6 +76,7 @@ export class AddproductsComponent implements OnInit {
       category: [this.capitalizeFirstLetter(this.CategoryName)],
       type: [this.capitalizeFirstLetter(this.SubCategoryName)],
       Product_Price: ['', Validators.required],
+      Model_number: ['', Validators.required],
       province: ['', Validators.required],
       city: ['', Validators.required],     
     });

@@ -478,6 +478,7 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
 
     $('.dropdown-item').on('click', function(){
       $('.dropdown-menu').removeClass('show');
+      $('.back-drop').css('display', 'none');
     })
   }
 

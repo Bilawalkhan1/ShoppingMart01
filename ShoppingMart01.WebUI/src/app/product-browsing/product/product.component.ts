@@ -42,11 +42,12 @@ export class ProductComponent implements OnInit {
     private auth: AuthService,
     private productService: ProductService,
     private router: Router) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.subscription = this.productService.getProduct().subscribe(prod => {
-      if (prod) {
+      if (prod) {     
         this.product.push(prod);
-        this.Productcategory = prod.category  // category get
-        this.productId = prod.Product_id
+        this.Productcategory = prod.subcategoryid  
+        this.productId = prod.id
       } else {
         this.product = [];
       }
@@ -61,17 +62,17 @@ export class ProductComponent implements OnInit {
     this.getRelatedProd(this.Productcategory, this.productId);
   }
 
-  getRelatedProd(prodCategory, prodId) {
-    this.subscription = this.productService.getProdByCategory(prodCategory)
-      .subscribe(prod => {
+  getRelatedProd(Categoryid, prodId) {
+    this.subscription = this.productService.getProdByCategory(Categoryid)
+      .subscribe(prod => {       
         this.products = prod
         this.RemoveElementFromArray(prodId);
       })
   }
 
   RemoveElementFromArray(key: number) {
-    return this.products.forEach((value, index) => {
-      if (value.Product_id == key)
+    return this.products.forEach((value:any, index) => {
+      if (value.id == key)
         this.products.splice(index, 1);
     });
   }

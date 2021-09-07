@@ -29,8 +29,8 @@ export class ProductService {
     return this.http.get<product[]>(this.productsUrl)
   }
 
-  getProdByCategory(category) {
-    return this.http.get<product[]>(`http://localhost:3000/Product?category=${category}`)
+  getProdByCategory(subcategoryid) {
+    return this.http.get<product[]>(`http://localhost:3000/Product?subcategoryid=${subcategoryid}`)
   }
 
   // get product details
