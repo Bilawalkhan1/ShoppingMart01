@@ -16,14 +16,13 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 25px;
     margin-top: 10px !important;
     margin-bottom: 10px;
-    margin-right: 20px !important;
+    margin-right: 30px;
     margin-left: 0px;
     cursor: pointer;
 }
-  
 .sellbtn{
   border: none;
   border-radius: 20px;
@@ -34,31 +33,22 @@
 .plus{
   margin: 5px
 }
-.account{
-margin-top: 7px;
-
-}
 .shopping_icon{
   margin-top: -9px;
-}
-.Shopping{
-  color: white;
 }
 .account{
 margin-top: 12px;
 }
-.shopping_icon{
-  margin-top: -9px;
-}
 .Shopping{
   color: white;
+  margin-top: -5px;
 }
 .container{
   height: 40px;
 }
 
 .btn1{
-  margin-top: -11px;
+  margin-top: -6px;
   color: blue;
   border: none;
   width: 39px;
@@ -104,6 +94,12 @@ button:hover {
   transform: rotateZ(90deg);
   transition: all 0.4s ease;
 }
+.ftco-navbar-light{
+  background: dimgray !important;
+}
+.nav-link{
+  font-size: 17px !important;
+}
 
 @media screen and (max-width:576px){
   .head4{
@@ -113,6 +109,66 @@ button:hover {
     display: none;
   }
 }
+ 
+@media only screen and (max-width: 1200px) {
+  .slick-prev:before { 
+    margin-left: 30px;
+  } 
+  .slick-next:before {
+    margin-left: -95px;
+  } 
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1380px) {
+  .nav-link{
+     padding-left: 10px !important;
+     padding-right: 20px;
+   }
+ }
+ @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+  .nav-link{
+     padding-left: 10px !important;
+     padding-right: 10px !important;
+   }
+   .heading1{
+     font-size: 26px;
+   }
+  
+ }
+ @media only screen and (min-width: 1050px) and (max-width: 1200px) {
+  .nav-link{
+     padding-left: 6px !important;
+     padding-right: 6px !important;
+     font-size: 16px !important;
+   }
+   .navbar{
+     width: 100% !important;
+   }
+   .heading1{
+    font-size: 22px;
+    margin-right: 10px !important;
+   }
+ }
+ @media only screen and (min-width: 991px) and (max-width: 1050px) {
+  .nav-link{
+     padding-left: 5px !important;
+     padding-right: 5px !important;
+     font-size: 14px !important;
+   }
+   .navbar{
+     width: 100% !important;
+   }
+   .heading1{
+    font-size: 20px !important;
+    margin-right: 8px !important;
+   } 
+}
+@media only screen and (max-width: 992px) {
+  .nav-link{
+     padding-left: 10px !important;
+     padding-right: 20px;
+   }
+ }
 
 .container {
   width: 100%;
@@ -126,7 +182,7 @@ button:hover {
       max-width: 720px; } }
   @media (min-width: 992px) {
     .container {
-      max-width: 960px; } }
+      max-width: 100%; } }
   @media (min-width: 1200px) {
     .container {
       max-width: 100%;
@@ -2054,10 +2110,10 @@ input[type="button"].btn-block {
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1200px) {
 
-  .navbar-expand-lg>.container,
-  .navbar-expand-lg>.container-fluid {
+  .navbar-expand-lg>,
+  .navbar-expand-lg>{
     padding-right: 0;
     padding-left : 0;
   }
@@ -8818,7 +8874,7 @@ h5,
 }
 
 .ftco-navbar-light {
-  background        : #1c2938 !important;
+  background        : dimgray !important;
   z-index           : 3;
   padding           : 10px 10px;
   border-radius     : 0px;

@@ -19,6 +19,7 @@ export class JewelryComponent implements OnInit {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
+    dots: true,
     'responsive': [
       {
         breakpoint: 1024,

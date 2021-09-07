@@ -1,62 +1,64 @@
-.search-sec {
-    padding      : 2rem;
-    border-radius: 10px;
-}
-
-.search-slt {
-    display         : block;
-    width           : 100%;
-    font-size       : 0.875rem;
-    line-height     : 1.5;
-    color           : #55595c;
-    background-color: #fff;
-    background-image: none;
-    border          : 1px solid #ccc;
-    height          : calc(3rem + 2px) !important;
-    border-radius   : 0;
-}
-
-.wrn-btn {
-    width         : 100%;
-    font-size     : 16px;
-    font-weight   : 400;
-    text-transform: capitalize;
-    height        : calc(3rem + 2px) !important;
-    border-radius : 0;
-}
-
-.search-container {
-    position        : absolute;
-    z-index         : 1;
-    width           : 90%;
-    background-color: white;
-    max-height      : 200px;
-    overflow-y      : auto;
-}
-
-.search-result {
-    padding    : 5px;
-    margin-left: 10px;
-    color      : black;
-    text-align : left;
-}
-
-.search-result:hover {
-    background-color: darkgray;
-}
-
-@media (min-width: 992px) {
-    .search-sec {
-        position  : relative;
-        top       : -50px;
-        background: rgba(26, 70, 104, 0.51);
-    }
-}
-
-@media (max-width:500px) {
-    .search-sec {
-        position  : relative;
-        top       : -30px;
-        background: #1A4668;
-    }
+.carousel-item {
+    height                 : 40vh;
+    min-height             : 160px;
+    background             : no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size   : cover;
+    -o-background-size     : cover;
+    background-size        : cover;
+  }
+  
+  .carousel-caption {
+    top      : 44%;
+    margin-left: 50px;
+    transform: translateY(-50%);
+    bottom   : initial;
+  }
+  
+  .container-fluid {
+    margin : 0px;
+    padding: 0px;
+  }
+  .ng-autocomplete{
+    margin-left: 0px;
+    width: 96%;
+  }
+  .dropdown-menu {
+    position: absolute;
+    width: 88%;  
+  }
+  .search-result{
+    cursor: pointer;
+  }
+  .dropdownresult{
+    height: 40vh;
+    overflow-x:hidden;
+    overflow-y: scroll;
+  }
+  a:hover{
+    color: black !important;
+  }
+  a{
+    text-align: left !important;
+  }
+  .btn{
+    margin-top: -68px;
+    padding: 8px 11px;
+    opacity: 0.7;
+    margin-left: 89%;
+    margin-right: auto;
+    background-color: aquamarine;
+    border-left: 0px;
+    font-size: 15px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    font-weight: 500;
+  }
+  .notfound{
+    color: red;
+    font-size: 20px;
+  }
+.autocomplete-container .input-container input {
+    border: 1px solid grey !important;
+    border-radius: 14px !important;
 }

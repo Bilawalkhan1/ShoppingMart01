@@ -25,19 +25,22 @@ export class VehiclesComponent implements OnInit {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3
+          slidesToShow: 3,
+          arrows:true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          arrows:true
         }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1
+          slidesToShow: 1,
+          arrows:false
         }
       }
     ]

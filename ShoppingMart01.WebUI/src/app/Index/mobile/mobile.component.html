@@ -1,0 +1,11 @@
+<div class="container-fluid d-sm-block d-md-none d-lg-none">
+    <div class="row">
+        <div class="col-4 mt-3" *ngFor="let item of listItems">
+            <div (click)="openModelVehicle(item.name)" class="text-center section">
+                <img class="pt-2" src="{{ item.img }}" width="50px" height="50px">
+                <h3>{{item.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+ 

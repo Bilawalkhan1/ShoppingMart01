@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, toArray } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
   selector: 'app-search',
@@ -11,57 +12,81 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchComponent implements OnInit {
 
-  url: string = 'https://fakerapi.it/api/v1/persons?_quantity=50';
+  keyword = 'name';
+  item
+  showSearchContainer = false;
   searchArray: Array<any> = [];
-  searchText: any;
+  searchText = '';
   searchField: FormControl;
+  modelData: any;
   searchValue: string[] = [];
   subscription = new Subscription();
-  showSearchContainer = false;
-
-  constructor (private http: HttpClient) { }
-
+  constructor(private http: HttpClient,
+    private router: Router,
+    private productService: ProductService) { }
 
   ngOnInit(): void {
     this.searchField = new FormControl();
     this.subscription.add(
       this.searchField.valueChanges
-        .pipe(
-          debounceTime(1000),
-          distinctUntilChanged()
-        )
         .subscribe(term => {
+          this.searchArray = []
           this.searchValue.push(term);
-          this.getHttpSearchResult();
-        }
-        )
+        })
     )
-  }
-
-  getHttpSearchResult() {
-    this.http.get<any>(`http://localhost:3000/Product`)
-      .subscribe(data => {        
+    this.http.get<any>(`http://localhost:3000/brands`)
+      .subscribe(data => {
         data.forEach(element => {
-          this.searchArray.push(element.Product_Name);
+          this.searchArray.push(element.name)
         });
       });
   }
-
-  toggleSearchContainer() {
-    this.showSearchContainer = !this.showSearchContainer;
+  images = [
+    { img: 'assets/slider-home/car_slider_01.png' },
+    { img: 'assets/slider-home/mobile_slider-01.png' },
+    { img: 'assets/slider-home/furniture-01.png' },
+    { img: 'assets/slider-home/kitchen_01.gif' },
+    { img: 'assets/slider-home/kitchen_02.png' }
+  ];
+  slideConfig = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    autoplaySpeed: 2000,
+    autoplay: true,
+    infinite: true,
+    arrows: true
   }
 
-  selectValue(data) {
-    this.searchField.patchValue(data);  
-    this.showSearchContainer = false;
+  onSearchChange(searchValue) {
+    this.showSearchContainer = true
   }
 
-  getSearchResult() {
-    
+  selectValue(item) {
+    console.log('field', this.searchField)
+    this.productService.getList(item).subscribe((filterData: any) => {
+      console.log('data', filterData)
+      this.modelData = filterData;
+      this.sendData();
+      this.router.navigateByUrl('/ProductBrowsing/getcategory')
+    })
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  sendData() {
+    this.productService.sendProduct(this.modelData)
+  }
+
+  selectEvent(item) {
+    this.searchField = item
+  }
+
+  onChangeSearch(val: string) {
+    // fetch remote data from here
+    // And reassign the 'data' which is binded to 'data' property.
+  }
+
+  onFocused(e) {
+    // do something when input is focused
   }
 }
 

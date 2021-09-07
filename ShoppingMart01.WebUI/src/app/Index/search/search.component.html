@@ -1,28 +1,21 @@
-<section class="search-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-12 p-0">
-                        <input type="search" class="form-control search-slt" (click)="toggleSearchContainer()"
-                            [formControl]="searchField" [(ngModel)]="searchText" placeholder="Type to search"
-                           >
-                        <div>
-                            <div *ngIf="showSearchContainer" (ClickOutside)="toggleSearchContainer()"
-                                class="search-container">
-                                <div class="search-result" (click)="selectValue(data)"
-                                    *ngFor="let data of searchArray | filter: searchText">
-                                    {{ data }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                        <button type="button" class="btn btn-danger wrn-btn" (click)="getSearchResult()">Search</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="ng-autocomplete">
+            <ng-autocomplete [data]="searchArray" [searchKeyword]="keyword"
+                (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)'
+                placeholder="What are you looking for?" (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+                [notFoundTemplate]="notFoundTemplate" [ngModel]="searchField">
 
+            </ng-autocomplete>
+
+            <ng-template #itemTemplate let-item>
+                <a [innerHTML]="item"></a>
+            </ng-template>
+
+            <ng-template #notFoundTemplate let-notFound>
+                <div class="notfound" [innerHTML]="notFound"></div>
+            </ng-template>
+            <button (click)="selectValue(searchField)" class="btn">Search</button>
+        </div>
     </div>
-</section>
+</div>

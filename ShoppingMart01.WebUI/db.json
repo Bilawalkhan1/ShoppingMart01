@@ -416,7 +416,7 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Curtain,Blind,Accessory"
+          "value": "Curtain,Blind,Accessory"
         },
         {
           "id": "color",
@@ -429,7 +429,7 @@
           "label": "Features",
           "type": "select",
           "value": "Noise Reducing,Hooks included,Thermal Insulation,Semi-Opaque,Outdoor,Sheer"
-        }        
+        }
       ]
     },
     {
@@ -446,7 +446,7 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Carpets,Prayer Mats,Chair Mats,Machine Made Rugs,Hand Knotted Rugs"
+          "value": "Carpets,Prayer Mats,Chair Mats,Machine Made Rugs,Hand Knotted Rugs"
         },
         {
           "id": "color",
@@ -459,7 +459,7 @@
           "label": "Material",
           "type": "select",
           "value": "Synthetic Fibre,Polyester,Wool,Cotton,Acrylic,Polypropylene"
-        }        
+        }
       ]
     },
     {
@@ -476,7 +476,7 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Floor Standing Mirror,Vanity Mirror,Mirrored wall,Mounted Mirror,Full-lenght Mirror,Tabletops Mirror,Framed Mirror "
+          "value": "Floor Standing Mirror,Vanity Mirror,Mirrored wall,Mounted Mirror,Full-lenght Mirror,Tabletops Mirror,Framed Mirror "
         },
         {
           "id": "color",
@@ -489,7 +489,7 @@
           "label": "Shape",
           "type": "select",
           "value": "Round,Square,Rectangle,Oval"
-        }        
+        }
       ]
     },
     {
@@ -506,7 +506,7 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Beds,Bed Frames,Mattresses,Dressers,Wardrobes,Armoires,"
+          "value": "Beds,Bed Frames,Mattresses,Dressers,Wardrobes,Armoires,"
         },
         {
           "id": "color",
@@ -519,7 +519,7 @@
           "label": "Material",
           "type": "select",
           "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
-        }        
+        }
       ]
     },
     {
@@ -536,9 +536,9 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Chairs,Tables,Cabinets,Carts,Sideboards"
+          "value": "Chairs,Tables,Cabinets,Carts,Sideboards"
         },
-         {
+        {
           "id": "style",
           "label": "style",
           "type": "select",
@@ -555,7 +555,7 @@
           "label": "Material",
           "type": "select",
           "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
-        }        
+        }
       ]
     },
     {
@@ -572,9 +572,9 @@
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Gaming Chairs,Gaming Tables,Sofas"
+          "value": "Gaming Chairs,Gaming Tables,Sofas"
         },
-         {
+        {
           "id": "style",
           "label": "style",
           "type": "select",
@@ -591,43 +591,43 @@
           "label": "Material",
           "type": "select",
           "value": "Wood,Fabric,Foam,Particle Board,Steel,MDF,Glass,Melamine,Iron,Leather,Velvet"
-        }        
+        }
       ]
     },
     {
       "label": "Earrings",
       "categoryid": "5010",
-      "controls": [       
+      "controls": [
         {
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Drop & Dangle,Stud,Hoop,Clip-Ons,Cuffs & Wraps"
-        }     
+          "value": "Drop & Dangle,Stud,Hoop,Clip-Ons,Cuffs & Wraps"
+        }
       ]
     },
     {
       "label": "Necklaces",
       "categoryid": "5020",
-      "controls": [       
+      "controls": [
         {
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Pendants,Chokers"
-        }     
+          "value": "Pendants,Chokers"
+        }
       ]
     },
     {
       "label": "Bracelets",
       "categoryid": "5040",
-      "controls": [       
+      "controls": [
         {
           "id": "type",
           "label": "Type",
           "type": "select",
-          "value":"Bangles,Bracelets"
-        }     
+          "value": "Bangles,Bracelets"
+        }
       ]
     }
   ],
@@ -2754,7 +2754,6 @@
       ]
     }
   ],
-
   "brands": [
     {
       "label": "All Models",
@@ -4123,7 +4122,304 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "navItem": [
+    {
+      "id": "10",
+      "displayName": "Automotive",
+      "route": "/automotive",
+      "children": [
+        {
+          "id": "1010",
+          "displayName": "Bike",
+          "route": "bike"
+        },
+        {
+          "id": "1020",
+          "displayName": "Car",
+          "route": "car"
+        },
+        {
+          "id": "1030",
+          "displayName": "Bike Accessories",
+          "route": "bike-accessories"
+        },
+        {
+          "id": "1040",
+          "displayName": "Car Accessories",
+          "route": "car-accessories"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "displayName": "Furniture",
+      "route": "/furniture",
+      "children": [
+        {
+          "id": "2010",
+          "displayName": "Curtains & Blinds",
+          "route": "curtains-blinds"
+        },
+        {
+          "id": "2020",
+          "displayName": "Rugs & Carpets",
+          "route": "rugs-carpets"
+        },
+        {
+          "id": "2030",
+          "displayName": "Mirrors",
+          "route": "mirror"
+        },
+        {
+          "id": "2040",
+          "displayName": "Bedroom Furniture",
+          "route": "bedroom-furniture"
+        },
+        {
+          "id": "2050",
+          "displayName": "Gaming Furniture",
+          "route": "gaming-furniture"
+        },
+        {
+          "id": "2060",
+          "displayName": "Kitchen Furniture",
+          "route": "kitchen-furniture"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "displayName": "Electronics",
+      "route": "/electronic",
+      "children": [
+        {
+          "id": "3010",
+          "displayName": "Mobile",
+          "route": "mobile"
+        },
+        {
+          "id": "3020",
+          "displayName": "Laptop",
+          "route": "laptop"
+        },
+        {
+          "id": "3030",
+          "displayName": "Mobile Accessories",
+          "route": "mobile-accessories"
+        },
+        {
+          "id": "3040",
+          "displayName": "Laptop Accessories",
+          "route": "laptop-accessories"
+        },
+        {
+          "id": "3050",
+          "displayName": "Televsions",
+          "route": "television"
+        },
+        {
+          "id": "3060",
+          "displayName": "Speakers",
+          "route": "speakers"
+        },
+        {
+          "id": "3070",
+          "displayName": "Headphones",
+          "route": "headphones"
+        }
+      ]
+    },
+    {
+      "id": "90",
+      "displayName": "Mobiles",
+      "route": "/mobile",
+      "children": [
+        {
+          "id": "9010",
+          "displayName": "Samsung",
+          "route": "samsung"
+        },
+        {
+          "id": "9020",
+          "displayName": "Apple",
+          "route": "apple"
+        },
+        {
+          "id": "9030",
+          "displayName": "Huawei",
+          "route": "huawei"
+        },
+        {
+          "id": "9040",
+          "displayName": "Realme",
+          "route": "realme"
+        },
+        {
+          "id": "9050",
+          "displayName": "Techno",
+          "route": "Techno"
+        },
+        {
+          "id": "9060",
+          "displayName": "Redme",
+          "route": "redme"
+        },
+        {
+          "id": "9070",
+          "displayName": "Oppo",
+          "route": "oppo"
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "displayName": "Watches",
+      "route": "/watches",
+      "children": [
+        {
+          "id": "4010",
+          "displayName": "Men's Watches",
+          "route": "men's-watches"
+        },
+        {
+          "id": "4020",
+          "displayName": "Women's Watches",
+          "route": "women's-Watches"
+        },
+        {
+          "id": "4030",
+          "displayName": "Smart Watches",
+          "route": "smart-watches"
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "displayName": "Jewelry",
+      "route": "/jewelry",
+      "children": [
+        {
+          "id": "5010",
+          "displayName": "Earrings",
+          "route": "earrings"
+        },
+        {
+          "id": "5020",
+          "displayName": "Necklaces",
+          "route": "necklaces"
+        },
+        {
+          "id": "5030",
+          "displayName": "Rings",
+          "route": "rings"
+        },
+        {
+          "id": "5040",
+          "displayName": "Bracelets",
+          "route": "bracelets"
+        },
+        {
+          "id": "5050",
+          "displayName": "Pearls",
+          "route": "pearls"
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "displayName": "Grossery",
+      "route": "/grossery",
+      "children": [
+        {
+          "id": "6010",
+          "displayName": "Beverages",
+          "route": "beverages"
+        },
+        {
+          "id": "6020",
+          "displayName": "Packed Food",
+          "route": "packed-food"
+        },
+        {
+          "id": "6030",
+          "displayName": "Snack Food",
+          "route": "snack-food"
+        },
+        {
+          "id": "6040",
+          "displayName": "Choclates",
+          "route": "Choclates"
+        },
+        {
+          "id": "6050",
+          "displayName": "Cooking Essentials",
+          "route": "cookin-essentials"
+        },
+        {
+          "id": "6060",
+          "displayName": "Pet Essentials",
+          "route": "pet-essentials"
+        }
+      ]
+    },
+    {
+      "id": "80",
+      "displayName": "HomeDecor",
+      "route": "/homedecor",
+      "children": [
+        {
+          "id": "8010",
+          "displayName": "Lamps",
+          "route": "Lamps"
+        },
+        {
+          "id": "8020",
+          "displayName": "Wallpaper",
+          "route": "wallpaper"
+        },
+        {
+          "id": "8030",
+          "displayName": "Frames",
+          "route": "frames"
+        },
+        {
+          "id": "8040",
+          "displayName": "WallClocks",
+          "route": "wallClocks"
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "displayName": "Sports",
+      "route": "/sports",
+      "children": [
+        {
+          "id": "7010",
+          "displayName": "Camping & Hiking",
+          "route": "camping-hiking"
+        },
+        {
+          "id": "7020",
+          "displayName": "Team Sports",
+          "route": "team-sports"
+        },
+        {
+          "id": "7030",
+          "displayName": "Racquet Sports",
+          "route": "racquet-sports"
+        },
+        {
+          "id": "7040",
+          "displayName": "Cardio Training",
+          "route": "cardio-training"
+        },
+        {
+          "id": "7050",
+          "displayName": "Sport Nutritions",
+          "route": "sport-nutritions"
+        }
+      ]
+    }
+  ]
 }
