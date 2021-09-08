@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ModalDismissReasons, NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { product } from 'src/app/Classes/product';
 import { ProductService } from '../../models/product.service';
 
@@ -21,6 +22,7 @@ export class FilterComponent implements OnInit {
   cities: any[] = []
   GetCategoryId: number;
   public myForm: FormGroup
+  closeResult = '';
 
   provinceList: Array<any> = [
     {},
@@ -32,6 +34,7 @@ export class FilterComponent implements OnInit {
   ];
 
   constructor (
+    private modalService: NgbModal,
     private fb: FormBuilder,
     private productService: ProductService,
     private route: ActivatedRoute,
@@ -92,6 +95,7 @@ export class FilterComponent implements OnInit {
       })
     });
     this.router.navigate([], { queryParams: routePath })
+    this.modalService.dismissAll()
   }
   // 
 
@@ -115,6 +119,11 @@ export class FilterComponent implements OnInit {
       id = subcategoryId;
     }
     return id;
+  }
+
+  //
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', windowClass: 'custom-modal-css'})    
   }
 }
 

@@ -17,7 +17,6 @@ export class ModelViewMobileComponent implements OnInit {
   ngOnInit(): void {
     this.data = this.productService.categorydata
     this.category = this.productService.category
-    console.log(this.category)
   }
 
 }
