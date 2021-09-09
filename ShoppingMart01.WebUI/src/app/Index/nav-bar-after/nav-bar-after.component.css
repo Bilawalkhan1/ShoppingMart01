@@ -42,6 +42,7 @@ margin-top: 12px;
 .Shopping{
   color: white;
   margin-top: -5px;
+  cursor: pointer;
 }
 .container{
   height: 40px;
@@ -168,7 +169,11 @@ button:hover {
      padding-left: 10px !important;
      padding-right: 20px;
    }
+   .heading1{
+     margin-top: 0px !important;
+   }
  }
+
 
 .container {
   width: 100%;

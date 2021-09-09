@@ -7,7 +7,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -24,7 +24,8 @@ export class SignupFormComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private modelservice: NgbModal,
-    private router: Router
+    private router: Router,
+    public activeModal: NgbActiveModal
   ) {
     this.signUp = fb.group({
       title: fb.control('initial value', Validators.required)
@@ -46,7 +47,9 @@ export class SignupFormComponent implements OnInit {
       ],
     });
   }
-
+signUpclose(){
+  this.activeModal.close()
+}
 
 
   get f() {

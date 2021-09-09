@@ -1,5 +1,13 @@
+<div class="row">
+    <div class="col-6">
+        <h1 class="text">All in Vehicles</h1>
+    </div>
+    <div class="col-6">
+        <h2 (click)="seeAllData()" class="seeall">See all</h2>
+    </div>
+</div>
 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" responsive="breakpoints">
-    <div ngxSlickItem class="slide" *ngFor="let blog of products">
+    <div ngxSlickItem class="slide" *ngFor="let blog of (products | slice: -7)">
         <div class="cardx card-blockx ">
             <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig1">
                 <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">

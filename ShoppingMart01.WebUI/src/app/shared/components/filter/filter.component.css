@@ -58,12 +58,8 @@
 
   }
   @media screen and (max-width: 600px) {
-    .form-select{
-      width: -webkit-fill-available;
-
-    }
-    .btn-search{
-      padding: 2px 10px;  
+    .border-end{
+      display: none;
     }
   }
   @media screen and (max-width: 600px) {

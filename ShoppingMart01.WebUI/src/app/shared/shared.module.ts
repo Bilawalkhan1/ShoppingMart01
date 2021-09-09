@@ -11,6 +11,7 @@ import { ProductsViewComponent } from './components/products-view/products-view.
 import { ClickOutsideDirectiveDirective } from './Directive/click-outside-directive.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterComponent } from './components/filter/filter.component';
+import { FiltermobileComponent } from './components/filtermobile/filtermobile.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FilterComponent } from './components/filter/filter.component';
     ProductsViewComponent,
     ClickOutsideDirectiveDirective,
     FilterComponent,
+    FiltermobileComponent,
   ],
   imports: [
     CommonModule,

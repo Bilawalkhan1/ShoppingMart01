@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { product } from 'src/app/Classes/product';
 import { AuthService } from 'src/app/Services/auth.service';
 import { CartService } from 'src/app/Services/cart.service';
@@ -54,7 +54,8 @@ export class FurnituresComponent implements OnInit {
     private auth: AuthService,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartservice: CartService
+    private cartservice: CartService,
+    private router:Router
   ) {
     cartservice.event.subscribe(res => {
       this.cartNumberfun();
@@ -98,6 +99,9 @@ export class FurnituresComponent implements OnInit {
     var cartvalue = JSON.parse(localStorage.getItem('localcart')!);
     this.cartNumber = cartvalue.length;
     this.auth.cartSubject.next(this.cartNumber);
+  }
+  public seeAllData(){
+    this.router.navigateByUrl('furniture/20')
   }
 }
 

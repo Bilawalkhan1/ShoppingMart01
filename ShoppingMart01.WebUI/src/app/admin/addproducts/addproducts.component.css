@@ -63,5 +63,10 @@ border-radius: 5px;
     .section1{
         display: none;
     }
+    .image{
+        margin-left: 2px;
+        height: 46px;
+        width: 40px;
+    }
 }
 

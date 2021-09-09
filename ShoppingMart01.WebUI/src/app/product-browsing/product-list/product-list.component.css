@@ -223,28 +223,26 @@ footer {
 }
 @media screen and (max-width:600px) {
     .size-img {
-        max-height: 26vw !important;
-        min-height: 30vw;
-        max-width: 52vw !important;
-        min-width: 52vw;
+        max-height: 47vw !important;
+        min-height: 20vw;
+        min-width: 348px;
     }
     .row-cols-1 > * {
         flex: 0 0 auto;
-        width: 63%; 
+        width: 80%; 
         height: 106vw;
     } 
     
 }
 @media screen and (max-width:1024px) {
     .size-img {
-        max-height: 20vw;
+        max-height: 47vw !important;
         min-height: 20vw;
-        max-width: 30vw;
-        min-width: 20vw;
+        min-width: 348px;
     }
     .row-cols-sm-2 > * {
         flex: 0 0 auto;
-        width: 34%;
+        width: 80%;
     }
     .container{
         width: 100%;
