@@ -224,21 +224,24 @@ footer {
 @media screen and (max-width:600px) {
     .size-img {
         max-height: 47vw !important;
-        min-height: 20vw;
-        min-width: 348px;
+        min-height: 47vw;
+        min-width: 266px;
+        margin-top: 10px;
+        margin-left: 6px;
     }
     .row-cols-1 > * {
-        flex: 0 0 auto;
-        width: 80%; 
-        height: 106vw;
+        height: 109vw;
+        margin-top: 36px;
     } 
     
 }
 @media screen and (max-width:1024px) {
     .size-img {
         max-height: 47vw !important;
-        min-height: 20vw;
-        min-width: 348px;
+        min-height: 47vw;
+        min-width: 266px;
+        margin-top: 10px;
+        margin-left: 6px;
     }
     .row-cols-sm-2 > * {
         flex: 0 0 auto;
