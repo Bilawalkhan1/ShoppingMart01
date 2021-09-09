@@ -1,7 +1,14 @@
 .custom-modal-css {
   background-color: #8bc34a;
 }
-
+.btn{
+    background: none #1F487E;;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
+}
 .items{
     color: black;
     text-decoration: none;
