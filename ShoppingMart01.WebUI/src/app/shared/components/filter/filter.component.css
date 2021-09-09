@@ -1,5 +1,5 @@
 .custom-modal-css {
-  background-color: #8bc34a;
+  background-color: white;
 }
 .btn{
     background: none #1F487E;;
@@ -65,12 +65,11 @@
 
   }
   @media screen and (max-width: 600px) {
+    .border-end{
+      display: none;
+    }
     .form-select{
       width: -webkit-fill-available;
-
-    }
-    .btn-search{
-      padding: 2px 10px;  
     }
   }
   @media screen and (max-width: 600px) {

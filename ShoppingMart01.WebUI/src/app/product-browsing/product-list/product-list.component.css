@@ -1,41 +1,45 @@
-
-.size-img{
+.size-img {
     max-height: 15vw;
     min-height: 15vw;
-    max-width: 15vw;
-    min-width: 18vw;
-    
+    max-width : 15vw;
+    min-width : 18vw;
+
 }
-.container-xl, .container-lg, .container-md, .container-sm, .container {
+
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
+.container {
     max-width: 980px;
 }
 
 .card {
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-    border: 0;
+    background   : #fff;
+    box-shadow   : 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition   : .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border       : 0;
     border-radius: 1rem
 }
 
 .card-img,
 .card-img-top {
-    border-top-left-radius: calc(1rem - 1px);
+    border-top-left-radius : calc(1rem - 1px);
     border-top-right-radius: calc(1rem - 1px)
 }
 
 .card h5 {
-    overflow: hidden;
-    height: 56px;
+    overflow   : hidden;
+    height     : 56px;
     font-weight: 900;
-    font-size: 1rem
+    font-size  : 1rem
 }
 
 .card-img-top {
-    width: 100%;
+    width     : 100%;
     max-height: 180px;
     object-fit: contain;
-    padding: 30px
+    padding   : 30px
 }
 
 .card h2 {
@@ -43,40 +47,40 @@
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform : scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06)
 }
 
 .label-top {
-    position: absolute;
+    position        : absolute;
     background-color: #8bc34a;
-    color: #fff;
-    top: 8px;
-    right: 8px;
-    padding: 5px 10px 5px 10px;
-    font-size: .7rem;
-    font-weight: 600;
-    border-radius: 3px;
-    text-transform: uppercase
+    color           : #fff;
+    top             : 8px;
+    right           : 8px;
+    padding         : 5px 10px 5px 10px;
+    font-size       : .7rem;
+    font-weight     : 600;
+    border-radius   : 3px;
+    text-transform  : uppercase
 }
 
 .top-right {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    width: 90px;
-    height: 90px;
+    position     : absolute;
+    top          : 24px;
+    left         : 24px;
+    width        : 90px;
+    height       : 90px;
     border-radius: 50%;
-    font-size: 1rem;
-    font-weight: 900;
-    background: #ff5722;
-    line-height: 90px;
-    text-align: center;
-    color: white
+    font-size    : 1rem;
+    font-weight  : 900;
+    background   : #ff5722;
+    line-height  : 90px;
+    text-align   : center;
+    color        : white
 }
 
 .top-right span {
-    display: inline-block;
+    display       : inline-block;
     vertical-align: middle
 }
 
@@ -87,18 +91,18 @@
 }
 
 .over-bg {
-    background: rgba(53, 53, 53, 0.85);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0.0px);
+    background             : rgba(53, 53, 53, 0.85);
+    box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter        : blur(0.0px);
     -webkit-backdrop-filter: blur(0.0px);
-    border-radius: 10px
+    border-radius          : 10px
 }
 
 .btn {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size     : 1rem;
+    font-weight   : 400;
     text-transform: uppercase;
-    padding: 5px 35px 5px 50px
+    padding       : 5px 35px 5px 50px
 }
 
 .box .btn {
@@ -118,24 +122,25 @@
 }
 
 .btn-warning {
-    background: none #1F487E;;
-    color: #ffffff;
-    fill: #ffffff;
-    border: none;
-    text-decoration: none;
-    outline: 0;
-    box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
+    background: none #1F487E;
+    ;
+    color           : #ffffff;
+    fill            : #ffffff;
+    border          : none;
+    text-decoration : none;
+    outline         : 0;
+    box-shadow      : -1px 6px 19px rgba(247, 129, 10, 0.25);
     /* border-radius: 0px */
 }
 
 .btn-warning:hover {
     background: none #8bc34a;
-    color: #ffffff;
+    color     : #ffffff;
     box-shadow: -1px 6px 13px rgba(163, 98, 33, 0.35)
 }
 
 .bg-success {
-    font-size: 1rem;
+    font-size       : 1rem;
     background-color: #ac5600 !important
 }
 
@@ -144,15 +149,15 @@
 }
 
 .price-hp {
-    font-size: 1rem;
+    font-size  : 1rem;
     font-weight: 600;
-    color: darkgray
+    color      : darkgray
 }
 
 .amz-hp {
-    font-size: .7rem;
+    font-size  : .7rem;
     font-weight: 600;
-    color: darkgray
+    color      : darkgray
 }
 
 .fa-question-circle:before {
@@ -165,9 +170,9 @@
 
 .box {
     border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 6px 10px rgb(0 0 0 / 8%), 0 0 6px rgb(0 0 0 / 5%);
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12)
+    background   : #fff;
+    box-shadow   : 0 6px 10px rgb(0 0 0 / 8%), 0 0 6px rgb(0 0 0 / 5%);
+    transition   : .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12)
 }
 
 .box-img {
@@ -189,27 +194,27 @@
 }
 
 .inner-gallery {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #ddd;
+    width        : 60px;
+    height       : 60px;
+    border       : 1px solid #ddd;
     border-radius: 3px;
-    margin: 1px;
-    display: inline-block;
-    overflow: hidden;
+    margin       : 1px;
+    display      : inline-block;
+    overflow     : hidden;
     -o-object-fit: cover;
-    object-fit: cover
+    object-fit   : cover
 }
 
 @media (max-width: 370px) {
     .box .btn {
-        padding: 5px 40px 5px 40px;
+        padding  : 5px 40px 5px 40px;
         font-size: 1rem
     }
 }
 
 .disclaimer {
     font-size: .9rem;
-    color: darkgray
+    color    : darkgray
 }
 
 .related h3 {
@@ -218,36 +223,54 @@
 
 footer {
     background: #212529;
-    height: 80px;
-    color: #fff
+    height    : 80px;
+    color     : #fff
 }
+
 @media screen and (max-width:600px) {
     .size-img {
-        max-height: 26vw !important;
-        min-height: 30vw;
-        max-width: 52vw !important;
-        min-width: 52vw;
+        max-height : 47vw !important;
+        min-height : 47vw;
+        min-width  : 266px;
+        margin-top : 10px;
+        margin-left: 6px;
     }
-    .row-cols-1 > * {
-        flex: 0 0 auto;
-        width: 63%; 
-        height: 106vw;
-    } 
-    
+
+    .row-cols-1>* {
+        height    : 109vw;
+        margin-top: 36px;
+    }
+
 }
+
 @media screen and (max-width:1024px) {
     .size-img {
-        max-height: 20vw;
-        min-height: 20vw;
-        max-width: 30vw;
-        min-width: 20vw;
+        max-height : 47vw !important;
+        min-height : 47vw;
+        min-width  : 266px;
+        margin-top : 10px;
+        margin-left: 6px;
     }
-    .row-cols-sm-2 > * {
-        flex: 0 0 auto;
-        width: 34%;
+
+    .row-cols-sm-2>* {
+        flex : 0 0 auto;
+        width: 80%;
+        height: auto;
     }
-    .container{
+
+    .container {
         width: 100%;
     }
-    
+}
+@media screen and (max-width: 600px) {
+    .col {
+        margin: auto;
+    }
+    .size-img{
+        min-width: 240px;
+    }
+    .card-body{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 }

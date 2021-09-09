@@ -11,11 +11,10 @@
   <div class="d-flex justify-content-center">
     <div class="card " style="width: 100%; height: auto; ">
       <div class="modal-header">
-        <h4 class="modal-title">SIGN  UP</h4>
-        <button type="button" (click)="close()" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">SIGN UP</h4>
+        <button (click)="signUpclose()" class="close">×</button>
       </div>
       <div class="card-body mx-auto" style="width: 80%;">
-        <h4 class="card-title mb-4">SignUp Form</h4>
         <form [formGroup]="signUp">
           <div class="row">
             <label for="">
@@ -35,7 +34,7 @@
             </label>
           </div>
           <div class="row">
-            <div class="col">
+            <div class="col-md-6 col-lg-6 col-sm-12">
               <label for="">
                 Password: <input class="form-control" type="password" placeholder="*******" formControlName="password"
                   [ngClass]="{ 'is-invalid': submitted && f.email.errors.required }">
@@ -44,7 +43,7 @@
                 Your password must be at least 6 characters long.
               </p>
             </div>
-            <div class="col">
+            <div class="col-md-6 col-lg-6 col-sm-12">
               <label for="">
                 Confirm Password: <input class="form-control" type="password" placeholder="*******"
                   formControlName="confirmPassword" [ngClass]="{ 'is-invalid': submitted && f.email.errors.required }">

@@ -1,4 +1,3 @@
-
 .col{
     padding: 20px;
 }
@@ -59,4 +58,11 @@ modal:nth-of-type(even) {
 }
 .modal-backdrop.show:nth-of-type(even) {
     z-index: 1061 !important;
+}
+@media screen and (max-width:600px) {
+    .modal-content {
+        height: auto;
+        width: 100%;
+        background-color: #BBD6EC;
+    }
 }

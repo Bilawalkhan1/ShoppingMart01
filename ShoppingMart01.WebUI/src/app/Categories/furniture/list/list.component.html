@@ -1,4 +1,4 @@
-<div class="d-flex" id="wrapper" style="background-color: #eee">
+<div class="d-flex mob-view" id="wrapper" style="background-color: #eee">
     <div class="filterList">
         <span *ngIf="!SubCategoryId">
             <app-filter [CategoryId]=GetCategoryId  (FilteredDataReturn)="FilteredDataReturnList($event)"></app-filter>

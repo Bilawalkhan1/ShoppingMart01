@@ -1,0 +1,41 @@
+.addbutton{
+    color: white;
+}
+
+#footer1
+{
+    background-color: rgb(184, 210, 240);
+}
+
+.scan
+{
+    padding:9px; 
+    height: 65px; 
+    width: 65px; 
+    top: -30px; 
+    left: calc(50% - 32.5px); 
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
+    background-color: dimgray;
+} 
+
+.ml-6
+{
+    margin-left: 2.2rem;
+}
+.w-45{
+    width: 45%;
+}
+
+.scan
+{
+    padding:9px; 
+    height: 65px; 
+    width: 65px; 
+    top: -20px; 
+    left: calc(50% - 32.5px); 
+}
+.mt-25
+{
+    margin-top: 25px;
+}
+

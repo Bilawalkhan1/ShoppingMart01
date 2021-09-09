@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
+    arrows:false,
     infinite: true,
   }
   cartitem: number = 0;

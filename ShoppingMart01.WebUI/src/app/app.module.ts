@@ -25,6 +25,7 @@ import { CategoryBannerComponent } from './Index/category-banner/category-banner
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { MobileComponent } from './Index/mobile/mobile.component';
 import { ModelViewMobileComponent } from './Index/model-view-mobile/model-view-mobile.component';
+import { BottomnavigationComponent } from './Index/bottomnavigation/bottomnavigation.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ModelViewMobileComponent } from './Index/model-view-mobile/model-view-m
     CategorySliderComponent,
     CategoryBannerComponent,
     MobileComponent,
-    ModelViewMobileComponent
+    ModelViewMobileComponent,
+    BottomnavigationComponent
   ],
   imports: [
     AppRoutingModule,
