@@ -38,4 +38,19 @@
 {
     margin-top: 25px;
 }
+.cart{
+    font-size: 23px;
+    color: dimgrey;
+}
+.cartvalue{
+    color: dimgray;
+}
+h3{
+    font-size: 18px;
+}
+.dropdown-menu.show{
+    background-color: aliceblue;
+    opacity: 1.7;
+    margin-left: 25px;
+}
 

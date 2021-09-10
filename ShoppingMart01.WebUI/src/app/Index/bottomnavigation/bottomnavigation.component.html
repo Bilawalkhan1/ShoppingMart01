@@ -7,9 +7,8 @@
         </div>
 
         <div class="text-center">
-            <img src="/assets/Group 4092.svg" alt="">
-            <br>
-            <span class="f-11 text-secondary">Feeds</span>
+            <img src="/assets/mail_black_24dp.svg" alt="">
+            <br><span class="f-11 text-secondary">Chat</span>
         </div>
 
     </div>
@@ -18,13 +17,18 @@
     </button>
     <div class="d-flex w-45 justify-content-between">
         <div class="text-center ml-6">
-            <img src="/assets/support_agent.svg" alt="">
+            <i (click)="cartComponent()" class="fa fa-shopping-cart cart"></i>
             <br>
-            <span class="f-11 text-secondary">Alerts</span>
+            <span class="f-11 text-secondary">Cart</span>
         </div>
-        <div class="text-center">
-            <img src="/assets/mail_black_24dp.svg" alt="">
-            <br><span class="f-11 text-secondary">Chat</span>
+        <div ngbDropdown placement="top-right" class="text-center">
+            <img ngbDropdownToggle  src="assets/profile.png" width="27px">
+            <br>
+            <span class="f-11 text-secondary">Profile</span>
+            <div class="" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <h3 (click)="myProfile()" ngbDropdownItem>My Profile</h3>
+                <h3 (click)="getUserData()" ngbDropdownItem>Update Profile</h3>
+            </div>
         </div>
     </div>
 </div>

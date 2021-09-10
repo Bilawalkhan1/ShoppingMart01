@@ -10,6 +10,7 @@ import { product } from '../../Classes/product';
 export class ProductService {
   private subject = new BehaviorSubject<any>(0);
   public categorydata
+  public userData
   public category
   private productsUrl = 'http://localhost:3000/Product';
   constructor(private http: HttpClient) { }
@@ -68,6 +69,9 @@ export class ProductService {
   }
   getNavItems(category) {
     return this.http.get(` http://localhost:3000/navItem?displayName=${category}`)
+  }
+  getUserData(user){
+    return this.http.get(`http://localhost:3000/users`)
   }
 
 }

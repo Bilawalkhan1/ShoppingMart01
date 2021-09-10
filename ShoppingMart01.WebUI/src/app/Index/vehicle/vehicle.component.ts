@@ -75,7 +75,6 @@ export class VehiclesComponent implements OnInit {
   private getProducts() {
     this.productService.getProdByCategoryData(this.category).subscribe(products =>{
       this.products = products
-      console.log('produxcts', products)
     })
   }
 

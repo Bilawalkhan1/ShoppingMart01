@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     AccountsComponent,
     LoginComponent,
     SignupFormComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    ProfileComponent,
+    MyprofileComponent
   ],
   imports: [
   CommonModule,

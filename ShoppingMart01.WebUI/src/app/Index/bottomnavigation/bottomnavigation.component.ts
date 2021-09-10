@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'src/app/accounts/login/login.component';
+import { MyprofileComponent } from 'src/app/accounts/myprofile/myprofile.component';
+import { ProfileComponent } from 'src/app/accounts/profile/profile.component';
 import { AuthguardService } from 'src/app/Services/authguard.service';
+import { ProductService } from 'src/app/shared/models/product.service';
 
 @Component({
   selector: 'app-bottomnavigation',
@@ -10,11 +13,13 @@ import { AuthguardService } from 'src/app/Services/authguard.service';
   styleUrls: ['./bottomnavigation.component.css']
 })
 export class BottomnavigationComponent implements OnInit {
+  userdata: string
 
-  constructor(private router:Router,
-    private modalService:NgbModal,
-    private authguard: AuthguardService
-    ) { }
+  constructor(private router: Router,
+    private modalService: NgbModal,
+    private authguard: AuthguardService,
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -30,24 +35,67 @@ export class BottomnavigationComponent implements OnInit {
       this.authguard.returnUrl = 'admin/sellproducts'
     }
   }
-  socialLinks =
-  [
-    {
-      icon:'fa-facebook-f',
-      link:'#'
-    },
-    {
-      icon:'fa-twitter',
-      link:'#'
-    },
-    {
-      icon:'fa-instagram',
-      link:'#'
-    },
-    {
-      icon:'fa-youtube',
-      link:'#'
+  cartComponent() {
+    let result;
+    if (localStorage.getItem('localcart') == null)
+      result = alert('Please add products ist')
+    else {
+      if (localStorage.getItem('token') !== null)
+        result = this.router.navigateByUrl('/cart');
+      else
+        result = this.modalService.open(LoginComponent)
+      result = this.authguard.returnUrl = 'cart'
     }
-  ]
+
+  }
+  myProfile() {
+    if (localStorage.getItem('token') !== null) {
+      let user = localStorage.getItem('user')
+      if (user !== null) {
+        user = JSON.parse(user)
+        this.userdata = user
+        this.productService.userData = this.userdata
+        console.log('user', this.userdata)
+        this.modalService.open(MyprofileComponent)
+      }
+    }
+    else {
+      this.modalService.open(LoginComponent)
+    }
+  }
+  getUserData() {
+    if (localStorage.getItem('token') !== null) {
+      let user = localStorage.getItem('user')
+      if (user !== null) {
+        user = JSON.parse(user)
+        this.userdata = user
+        this.productService.userData = this.userdata
+        console.log('user', this.userdata)
+        this.modalService.open(ProfileComponent)
+      }
+    }
+    else {
+      this.modalService.open(LoginComponent)
+    }
+  }
+  socialLinks =
+    [
+      {
+        icon: 'fa-facebook-f',
+        link: '#'
+      },
+      {
+        icon: 'fa-twitter',
+        link: '#'
+      },
+      {
+        icon: 'fa-instagram',
+        link: '#'
+      },
+      {
+        icon: 'fa-youtube',
+        link: '#'
+      }
+    ]
 
 }
