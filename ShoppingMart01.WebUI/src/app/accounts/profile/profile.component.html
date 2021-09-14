@@ -9,7 +9,7 @@
         <div class="card-body">
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         Add Profile Image
                         <div class="form-row camera">
                             <div style="display: flex" class="mr-3">
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6" *ngFor="let userdata of user">
+                    <div class="col-8" *ngFor="let userdata of user">
                         <h2 class="name">Name</h2>
                         <input type="text" (change)='userdata.firstName=$event.target.value'
                             [value]="userdata.firstName" class="form-control">
@@ -36,7 +36,7 @@
                     <div class="form-group col mt-3">
                         <label>Gender</label>
                         <select formControlName="gender" class="form-control">
-                            <option value=""></option>
+                            <option value="">Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
