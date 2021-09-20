@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { SocialAuthService } from 'angularx-social-login';
 import { LoginComponent } from 'src/app/accounts/login/login.component';
 import { MyprofileComponent } from 'src/app/accounts/myprofile/myprofile.component';
 import { ProfileComponent } from 'src/app/accounts/profile/profile.component';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { AuthguardService } from 'src/app/Services/authguard.service';
 import { ProductService } from 'src/app/shared/models/product.service';
+import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-bottomnavigation',
@@ -18,7 +21,10 @@ export class BottomnavigationComponent implements OnInit {
   constructor(private router: Router,
     private modalService: NgbModal,
     private authguard: AuthguardService,
-    private productService: ProductService
+    private productService: ProductService,
+    private authenticatinservice: AuthenticationService,
+    private socialAuthService: SocialAuthService
+
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +41,7 @@ export class BottomnavigationComponent implements OnInit {
       this.authguard.returnUrl = 'admin/sellproducts'
     }
   }
+
   cartComponent() {
     let result;
     if (localStorage.getItem('localcart') == null)
@@ -46,8 +53,8 @@ export class BottomnavigationComponent implements OnInit {
         result = this.modalService.open(LoginComponent)
       result = this.authguard.returnUrl = 'cart'
     }
-
   }
+
   myProfile() {
     if (localStorage.getItem('token') !== null) {
       let user = localStorage.getItem('user')
@@ -63,6 +70,7 @@ export class BottomnavigationComponent implements OnInit {
       this.modalService.open(LoginComponent)
     }
   }
+
   getUserData() {
     if (localStorage.getItem('token') !== null) {
       let user = localStorage.getItem('user')
@@ -78,6 +86,22 @@ export class BottomnavigationComponent implements OnInit {
       this.modalService.open(LoginComponent)
     }
   }
+
+  messageComponent() {
+    this.modalService.open(ChatComponent)
+  }
+
+  logout() {
+    if (this.authenticatinservice) {
+      this.authenticatinservice.userLogout();
+    }
+    if (this.socialAuthService) {
+      this.socialAuthService.signOut();
+    }
+
+    return this.router.navigateByUrl('')
+  }
+
   socialLinks =
     [
       {

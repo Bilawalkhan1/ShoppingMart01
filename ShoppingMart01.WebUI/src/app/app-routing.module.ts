@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './Index/chat/chat.component';
 import { MainViewComponent } from './Index/MainView/MainView.component';
 
 const routes: Routes = [
@@ -37,7 +38,7 @@ const routes: Routes = [
   { path: 'electronic/:id/:subc/:sid', loadChildren: () => import('./Categories/electronic/electronic.module').then(m => m.ElectronicModule) },
 
   { path: 'property/:id', loadChildren: () => import('./Categories/property/property.module').then(m => m.PropertyModule) },
- 
+
   { path: 'property/:id/:subc/:sid', loadChildren: () => import('./Categories/property/property.module').then(m => m.PropertyModule) },
 
   { path: 'watches/:id', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
@@ -52,6 +53,8 @@ const routes: Routes = [
   { path: 'sports/:id', loadChildren: () => import('./Categories/sports/sports.module').then(m => m.SportsModule) },
   { path: 'sports/:id/:subc/:sid', loadChildren: () => import('./Categories/watches/watches.module').then(m => m.WatchesModule) },
 
+  { path: 'chat', component: ChatComponent },
+  
   {
     path: '**', redirectTo: '/', pathMatch: 'full'
   }

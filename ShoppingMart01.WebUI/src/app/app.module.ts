@@ -26,6 +26,8 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 import { MobileComponent } from './Index/mobile/mobile.component';
 import { ModelViewMobileComponent } from './Index/model-view-mobile/model-view-mobile.component';
 import { BottomnavigationComponent } from './Index/bottomnavigation/bottomnavigation.component';
+import { ChatComponent } from './Index/chat/chat.component';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { BottomnavigationComponent } from './Index/bottomnavigation/bottomnaviga
     CategoryBannerComponent,
     MobileComponent,
     ModelViewMobileComponent,
-    BottomnavigationComponent
+    BottomnavigationComponent,
+    ChatComponent
   ],
   imports: [
     AppRoutingModule,
@@ -55,7 +58,8 @@ import { BottomnavigationComponent } from './Index/bottomnavigation/bottomnaviga
     BrowserModule,
     SocialLoginModule,
     SharedModule,  
-    ProductBrowsingModule  
+    ProductBrowsingModule,
+    SocketIoModule
   ],
   exports: [
     RouterModule,
