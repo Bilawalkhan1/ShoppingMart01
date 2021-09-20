@@ -2,12 +2,12 @@
   background-color: white;
 }
 .btn{
-    background: none #1F487E;;
-    color: #ffffff;
-    border: none;
-    text-decoration: none;
-    outline: 0;
-    box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
+  background: transparent;
+  color: #967e7e;
+  border: none;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: -1px 6px 19px rgb(247 129 10 / 25%);
 }
 .items{
     color: black;

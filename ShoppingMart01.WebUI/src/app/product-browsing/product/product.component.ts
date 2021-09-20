@@ -60,6 +60,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRelatedProd(this.Productcategory, this.productId);
+    this.invokeStripe();
   }
 
   getRelatedProd(Categoryid, prodId) {
@@ -100,6 +101,34 @@ export class ProductComponent implements OnInit {
     this.router.navigateByUrl('/login')
   }
 
+  invokeStripe() {
+    if (!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement('script');
+      script.id = 'stripe-script';
+      script.type = 'text/javascript';
+      script.src = 'https://checkout.stripe.com/checkout.js';
+      window.document.body.appendChild(script);
+    }
+  }
+
+  Buy(amount: any){
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key:
+      'pk_test_51JZrAqFx7GlCC4OZUdzwDs4J8LVhtU1oUCaDGgILpkE0W5jIMJplSxwiKX5gjNXy92Mh9ZxAfWFb64xbjPa7hV1l00HC1ZhPEG',
+
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log(stripeToken.card);
+        alert('Stripe token generated!');
+      },
+    });
+
+    paymentHandler.open({
+      name: 'Shopping Mart',
+      description: 'Product Added',
+      amount: amount * 100,
+    });
+  }
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

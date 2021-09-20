@@ -6,7 +6,7 @@
             <span class="f-11 text-secondary">Home</span>
         </div>
 
-        <div class="text-center">
+        <div class="text-center" (click)="messageComponent()">
             <img src="/assets/mail_black_24dp.svg" alt="">
             <br><span class="f-11 text-secondary">Chat</span>
         </div>
@@ -28,6 +28,7 @@
             <div class="" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <h3 (click)="myProfile()" ngbDropdownItem>My Profile</h3>
                 <h3 (click)="getUserData()" ngbDropdownItem>Update Profile</h3>
+                <h3 (click)="logout()" ngbDropdownItem>Logout</h3>
             </div>
         </div>
     </div>

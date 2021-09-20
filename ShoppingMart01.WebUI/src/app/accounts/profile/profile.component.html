@@ -9,7 +9,7 @@
         <div class="card-body">
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         Add Profile Image
                         <div class="form-row camera">
                             <div style="display: flex" class="mr-3">
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6" *ngFor="let userdata of user">
+                    <div class="col-8" *ngFor="let userdata of user">
                         <h2 class="name">Name</h2>
                         <input type="text" (change)='userdata.firstName=$event.target.value'
                             [value]="userdata.firstName" class="form-control">
@@ -33,29 +33,29 @@
                 <hr>
                 <h5 class="card-header">Update Profile</h5>
                 <div class="form-row">
-                    <div class="form-group col mt-3">
+                    <div class="form-group col-12 mt-3">
                         <label>Gender</label>
                         <select formControlName="gender" class="form-control">
-                            <option value=""></option>
+                            <option value="">Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col mt-3">
+                        <div class="form-group col-12 mt-3">
                             <label>Nationality</label>
                             <input type="text" placeholder="Nationality" class="form-control"
                                 formControlName="nationality">
                         </div>
-                        <div class="form-group col mt-3">
+                        <div class="form-group col-12 mt-3">
                             <label>Current City</label>
                             <input type="text" placeholder="Current City" class="form-control" formControlName="city">
                         </div>
-                        <div class="form-group col mt-3">
+                        <div class="form-group col-12 mt-3">
                             <label>Current Location</label>
                             <input type="text" placeholder="location" class="form-control" formControlName="location">
                         </div>
-                        <div class="form-group col mt-3">
+                        <div class="form-group col-12 mt-3">
                             <label> Number</label>
                             <input type="number" placeholder="Number" class="form-control" formControlName="number">
                         </div>
