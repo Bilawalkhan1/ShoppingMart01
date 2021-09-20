@@ -33,8 +33,7 @@ export class BottomnavigationComponent implements OnInit {
   year = (new Date()).getFullYear();
   addProduct() {
     if (localStorage.getItem('token') !== null) {
-      this.router.navigateByUrl('admin/sellproducts')
-
+      this.router.navigateByUrl('admin/sellproducts') 
     }
     else {
       this.modalService.open(LoginComponent)
@@ -88,38 +87,42 @@ export class BottomnavigationComponent implements OnInit {
   }
 
   messageComponent() {
-    this.modalService.open(ChatComponent)
+    if (localStorage.getItem('token') == null) {
+      this.modalService.open(LoginComponent)
+    }
+    else
+      this.modalService.open(ChatComponent)
   }
 
-  logout() {
-    if (this.authenticatinservice) {
-      this.authenticatinservice.userLogout();
-    }
-    if (this.socialAuthService) {
-      this.socialAuthService.signOut();
-    }
-
-    return this.router.navigateByUrl('')
+logout() {
+  if (this.authenticatinservice) {
+    this.authenticatinservice.userLogout();
+  }
+  if (this.socialAuthService) {
+    this.socialAuthService.signOut();
   }
 
-  socialLinks =
-    [
-      {
-        icon: 'fa-facebook-f',
-        link: '#'
-      },
-      {
-        icon: 'fa-twitter',
-        link: '#'
-      },
-      {
-        icon: 'fa-instagram',
-        link: '#'
-      },
-      {
-        icon: 'fa-youtube',
-        link: '#'
-      }
-    ]
+  return this.router.navigateByUrl('')
+}
+
+socialLinks =
+  [
+    {
+      icon: 'fa-facebook-f',
+      link: '#'
+    },
+    {
+      icon: 'fa-twitter',
+      link: '#'
+    },
+    {
+      icon: 'fa-instagram',
+      link: '#'
+    },
+    {
+      icon: 'fa-youtube',
+      link: '#'
+    }
+  ]
 
 }
