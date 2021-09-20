@@ -1,6 +1,8 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from 'src/app/accounts/login/login.component';
 import { TalkService } from 'src/app/Services/talk.service';
 import Talk from 'talkjs';
 @Component({
@@ -8,12 +10,12 @@ import Talk from 'talkjs';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent{
+export class ChatComponent {
 
-  @ViewChild('popup', {static: false}) popup: any;
+  @ViewChild('popup', { static: false }) popup: any;
   @ViewChild('myModal') myModal;
   newMessage: string;
-  private modalRef; 
+  private modalRef;
   public showScreen1: boolean;
   public roomId: string;
   public messageText: string;
@@ -24,7 +26,7 @@ export class ChatComponent{
   public phone: string;
   public currentUser;
   public selectedUser;
-
+  public userdata: any;
   public userList = [
     {
       id: 1,
@@ -71,6 +73,8 @@ export class ChatComponent{
       }
     }
   ];
+  user: ({ id: number; name: string; phone: string; image: string; roomId: { 2: string; 3: string; 4: string; 1?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 3: string; 4: string; 2?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 2: string; 4: string; 3?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 2: string; 3: string; 4?: undefined; }; })[];
+  loginScreen: boolean;
 
   constructor(
     private modalService: NgbModal,
@@ -83,7 +87,14 @@ export class ChatComponent{
       .getMessage()
       .subscribe((message: { user: string, room: string, message: string }) => {
         this.messageArray.push(message);
-      });
+      })
+      this.currentUser = localStorage.getItem('user')
+      if (this.currentUser !== null) {
+        this.currentUser = JSON.parse(this.currentUser)
+        this.userdata = this.currentUser
+        console.log('user', this.userdata)
+      }
+  
   }
 
   ngAfterViewInit(): void {
@@ -91,12 +102,14 @@ export class ChatComponent{
   }
 
   openPopup(content: any): void {
-    this.modalService.open(content, {backdrop: 'static', centered: true});
+    this.modalService.open(content, { backdrop: 'static', centered: true });
   }
 
   login(dismiss: any): void {
-    this.currentUser = this.userList.find(user => user.phone === this.phone.toString());
-    this.userList = this.userList.filter((user) => user.phone !== this.phone.toString());
+
+    this.currentUser = this.userdata[0].number.toString()
+    // this.currentUser = this.userList.find(user => user.phone === this.phone.toString());
+    this.user = this.userList
 
     if (this.currentUser) {
       this.showScreen = true;
@@ -104,7 +117,7 @@ export class ChatComponent{
     }
   }
 
-  backClick(){
+  backClick() {
     this.modalService.dismissAll()
   }
 
@@ -128,7 +141,7 @@ export class ChatComponent{
   }
 
   join(username: string, roomId: string): void {
-    this.chatService.joinRoom({user: username, room: roomId});
+    this.chatService.joinRoom({ user: username, room: roomId });
   }
 
   sendMessage(): void {
