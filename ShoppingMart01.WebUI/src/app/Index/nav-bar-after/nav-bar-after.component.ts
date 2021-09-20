@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SocialAuthService } from 'angularx-social-login';
 import { LoginComponent } from 'src/app/accounts/login/login.component';
+import { MyprofileComponent } from 'src/app/accounts/myprofile/myprofile.component';
 import { Users } from 'src/app/accounts/signup-form/users';
 import { AuthService } from 'src/app/Services/auth.service';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
@@ -77,6 +78,25 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       this.authguard.returnUrl = 'admin/sellproducts'
     }
   }
+  
+  public covertPhotoUrl(photoUrl) {
+    return `data:image/jpeg;base64,${photoUrl}`
+  }
+   myProfile() {
+    if (localStorage.getItem('token') !== null) {
+      let user = localStorage.getItem('user')
+      if (user !== null) {
+        user = JSON.parse(user)
+        this.userdata = user
+        this.productService.userData = this.userdata
+        console.log('user', this.userdata)
+        this.modalService.open(MyprofileComponent)
+      }
+    }
+    else {
+      this.modalService.open(LoginComponent)
+    }
+  }
 
   getUserData() {
     if (localStorage.getItem('token') !== null) {
@@ -84,6 +104,7 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       if (user !== null) {
         user = JSON.parse(user)
         this.userdata = user
+        console.log('user',user)
       }
     }
     else {

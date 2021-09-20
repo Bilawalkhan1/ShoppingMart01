@@ -9063,3 +9063,23 @@ h5,
   outline: none !important;
 }
 }
+.user-img{
+    width: 100px;
+    height: 104px;
+    border-radius: 100px;
+    position: absolute;
+    top:18px;
+    left: 40px;
+
+    /* margin-top: 15px; */
+}
+.user{
+  padding-right: 4px;
+}
+.user:hover{
+  background-color: #e0a800 ;
+  color: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 10px 20px;
+}

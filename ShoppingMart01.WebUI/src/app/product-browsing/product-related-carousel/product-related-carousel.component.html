@@ -7,8 +7,7 @@
 
             <div class="col-12">
 
-                <div class="row">
-
+                <div class="row row-card">                  
                     <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
                         responsive="breakpoints">
                         <div ngxSlickItem class="slide" *ngFor="let blog of productX">
@@ -17,8 +16,8 @@
                                     [config]="slideConfig1">
                                     <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">                                       
                                             <img class=" prod_img" src="{{covertPhotoUrl(i.img)}}">
-                                            <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid"
-                                                src="{{covertPhotoUrl(i.img)}}">                                    
+                                            <!-- <img class="d-lg-none d-md-none d-sm-block card-img-top img-fluid"
+                                                src="{{covertPhotoUrl(i.img)}}">                                     -->
                                     </div>
                                 </ngx-slick-carousel>
                                 <div class="card-body">
