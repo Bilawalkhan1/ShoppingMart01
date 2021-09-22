@@ -5,7 +5,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'src/app/accounts/login/login.component';
 import { TalkService } from 'src/app/Services/talk.service';
 import { initializeApp } from "firebase/app";
-import { map } from 'rxjs/operators';
+import { child, get, getDatabase, ref, set } from "firebase/database";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBZK5GUmw1hSorv8w45T2AAYJVbmlzR6zs",
+  authDomain: "chat-99i.firebaseapp.com",
+  databaseURL: "https://chat-99i-default-rtdb.firebaseio.com",
+  projectId: "chat-99i",
+  storageBucket: "chat-99i.appspot.com",
+  messagingSenderId: "51836681646",
+  appId: "1:51836681646:web:ae6e7655322c3d0e3e9c3f"
+};
 
 @Component({
   selector: 'app-chat',
@@ -21,7 +31,7 @@ export class ChatComponent {
   public showScreen1: boolean;
   public roomId: string;
   public messageText: string;
-  public historyArray=[];
+  public historyArray = [{ message: 'hiii' }];
   public messageArray: { user: string, message: string }[] = [];
   private storageArray = [];
 
@@ -83,20 +93,39 @@ export class ChatComponent {
     private modalService: NgbModal,
     private chatService: TalkService
   ) {
-    this.chatService.getChatHistory()
-    .subscribe((res) => {
-      const x = res.map(xx=>xx.text)
-      const ls = x.map(d => d.message)      
-       this.historyArray.push(x);
-    })
+    const app = initializeApp(firebaseConfig);
+
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `users/`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        this.historyArray.push(snapshot.val())
+        console.log(this.historyArray);
+      } else {
+        console.log("No data available");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+
+    // this.chatService.getChatHistory()
+    //   .subscribe((res) => {
+    //     const x = res.map(xx => xx.text)
+    //     const ls = x.map(d => d.message)
+    //     this.historyArray.push(x);
+    //   })
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this.chatService
       .getMessage()
       .subscribe((message: { user: string, room: string, message: string }) => {
+        console.log(message, 'mess')
         this.messageArray.push(message);
-        console.log('chatinit')
+
+        const db = getDatabase();
+        set(ref(db, 'users/'), {
+          message: message.message,
+        });
       })
     this.currentUser = localStorage.getItem('user')
     if (this.currentUser !== null) {
