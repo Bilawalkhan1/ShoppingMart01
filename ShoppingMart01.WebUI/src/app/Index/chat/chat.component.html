@@ -28,6 +28,13 @@
                             </div>
 
                             <div class="chat-body">
+                                <span *ngFor="let item of historyArray"
+                                   >
+                                    <div *ngFor="let ix of item"  [ngClass]="'same-user'">
+                                        <p class="message-container">{{ix.message}}</p>
+                                    </div>
+                                </span>
+                                
                                 <div *ngFor="let item of messageArray"
                                     [ngClass]="item?.user === currentUser?.name && 'same-user'">
                                     <p class="message-container">{{item?.message}}</p>

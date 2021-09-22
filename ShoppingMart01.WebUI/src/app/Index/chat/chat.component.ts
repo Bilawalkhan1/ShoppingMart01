@@ -4,7 +4,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'src/app/accounts/login/login.component';
 import { TalkService } from 'src/app/Services/talk.service';
-import Talk from 'talkjs';
+import { initializeApp } from "firebase/app";
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -19,6 +21,7 @@ export class ChatComponent {
   public showScreen1: boolean;
   public roomId: string;
   public messageText: string;
+  public historyArray=[];
   public messageArray: { user: string, message: string }[] = [];
   private storageArray = [];
 
@@ -76,25 +79,32 @@ export class ChatComponent {
   user: ({ id: number; name: string; phone: string; image: string; roomId: { 2: string; 3: string; 4: string; 1?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 3: string; 4: string; 2?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 2: string; 4: string; 3?: undefined; }; } | { id: number; name: string; phone: string; image: string; roomId: { 1: string; 2: string; 3: string; 4?: undefined; }; })[];
   loginScreen: boolean;
 
-  constructor(
+  constructor (
     private modalService: NgbModal,
     private chatService: TalkService
   ) {
+    this.chatService.getChatHistory()
+    .subscribe((res) => {
+      const x = res.map(xx=>xx.text)
+      const ls = x.map(d => d.message)      
+       this.historyArray.push(x);
+    })
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
     this.chatService
       .getMessage()
       .subscribe((message: { user: string, room: string, message: string }) => {
         this.messageArray.push(message);
+        console.log('chatinit')
       })
-      this.currentUser = localStorage.getItem('user')
-      if (this.currentUser !== null) {
-        this.currentUser = JSON.parse(this.currentUser)
-        this.userdata = this.currentUser
-        console.log('user', this.userdata)
-      }
-  
+    this.currentUser = localStorage.getItem('user')
+    if (this.currentUser !== null) {
+      this.currentUser = JSON.parse(this.currentUser)
+      this.userdata = this.currentUser
+      console.log('user', this.userdata)
+    }
+
   }
 
   ngAfterViewInit(): void {

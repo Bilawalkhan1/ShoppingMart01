@@ -187,10 +187,19 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/vehicle-1.jpg'
+          id: "1020",
+          img: 'assets/navbar-images/vehicle-1.jpg',
+          route: "car"
         },
         {
-          img: 'assets/navbar-images/vehicle-2.jpg'
+          id: "1010",
+          img: 'assets/navbar-images/vehicle-2.jpg',
+          route: "bike"
+        },
+        {
+          id: "1040",
+          img:'assets/navbar-images/vehicle3.jfif',
+          route: "car-accessories"
         }
       ]
     },

@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-3 d-none d-md-block" *ngFor="let image of menu.images">
                                 <span>
-                                    <a [routerLink]="[]"> <img src="{{ image.img }}" class="img"> </a>
+                                    <a  [routerLink]="[menu.route,menu.id,image.route,image.id]"> <img src="{{ image.img }}" class="img"> </a>
                                 </span>
                             </div>
                         </div>

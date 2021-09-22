@@ -6,12 +6,12 @@ import { io, Socket } from 'socket.io-client';
   providedIn: 'root'
 })
 export class TalkService {
- 
-  private socket: Socket; 
-  private url = 'http://localhost:5000'; 
 
-  constructor() {
-    this.socket = io(this.url, {transports: ['websocket', 'polling', 'flashsocket']});
+  private socket: Socket;
+  private url = 'http://localhost:5000';
+
+  constructor () {
+    this.socket = io(this.url, { transports: ['websocket', 'polling', 'flashsocket'] });
   }
 
   joinRoom(data): void {
@@ -20,10 +20,17 @@ export class TalkService {
 
   public sendMessage(message) {
     this.socket.emit('message', message);
-}
+  }
+  getChatHistory():Observable<any> {
+    return new Observable<{ user: string, message: string }>(observer => {
+      this.socket.on('chatHistory', (data) => {
+        observer.next(data);
+      })
+      })
+  }
 
-  getMessage(): Observable<any> {
-    return new Observable<{user: string, message: string}>(observer => {
+    getMessage(): Observable<any> {
+    return new Observable<{ user: string, message: string }>(observer => {      
       this.socket.on('new message', (data) => {
         observer.next(data);
       });
