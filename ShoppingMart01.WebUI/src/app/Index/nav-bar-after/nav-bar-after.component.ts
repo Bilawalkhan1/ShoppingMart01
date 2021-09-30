@@ -241,14 +241,20 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/home-1.jpg'
+          id:"2040",
+          img: 'assets/navbar-images/h1.jfif',
+          route: "bedroom-furniture"
         },
         {
-          img: 'assets/navbar-images/home-2.jpg'
+          id:"2020",
+          img: 'assets/navbar-images/h2.jfif',
+          route: "rugs-carpets"
         },
-        // {
-        //   img:'assets/navbar-images/home-3.png'
-        // }
+        {
+          id:"2030",
+          img:'assets/navbar-images/h3.jfif',
+          route: "mirror"
+        }
       ]
     },
     {
@@ -291,21 +297,22 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
           displayName: "Headphones",
           route: "headphones"
         }
-        // {
-        //   id: "3080",
-        //   displayName: "Cameras",
-        //   route: "cameras"
-        // }
       ],
       images: [
         {
-          img: 'assets/navbar-images/electronics-1.jpg'
+          id: "3020",
+          img: 'assets/navbar-images/electronics-1.jpg',
+          route: "laptop"
         },
         {
-          img: 'assets/navbar-images/electronics-2.jpg'
+          id: "3040",
+          img: 'assets/navbar-images/electronics-2.jpg',
+          route: "laptop-accessories"
         },
         {
-          img: 'assets/navbar-images/electronics-3.jpg'
+          id: "3070",
+          img: 'assets/navbar-images/electronics-3.jpg',
+          route: "headphones"
         }
       ]
     },
@@ -332,13 +339,19 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/watch-1.jpg'
+          id: "4020",
+          img: 'assets/navbar-images/watch-1.jpg',
+          route: "women's-Watches"
         },
         {
-          img: 'assets/navbar-images/watch-2.jpg'
+          id: "4010",
+          img: 'assets/navbar-images/watch-2.jpg',
+          route: "men's-watches"
         },
         {
-          img: 'assets/navbar-images/watch-3.jpg'
+          id: "4030",
+          img: 'assets/navbar-images/watch-3.jpg',
+          route: "smart-watches"
         }
       ]
     },
@@ -375,13 +388,20 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/jew-1.jpg'
+          id: "5010",
+          img: 'assets/navbar-images/jew-1.jpg',
+          route: "earrings"
         },
         {
-          img: 'assets/navbar-images/jewe-2.jpg'
+          id: "5030",
+          img: 'assets/navbar-images/jewe-2.jpg',
+          route: "rings"
         },
         {
-          img: 'assets/navbar-images/jewe-3.jpg'
+          
+          id: "5020",
+          img: 'assets/navbar-images/jewe-3.jpg',
+          route: "necklaces"
         }
       ]
     },
@@ -423,13 +443,19 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/grocery-1.jfif'
+          id: "6030",
+          img: 'assets/navbar-images/grocery-1.jfif',
+          route: "snack-food"
         },
         {
-          img: 'assets/navbar-images/grocery-3.jfif'
+          id: "6010",
+          img: 'assets/navbar-images/grocery-3.jfif',
+          route: "beverages"
         },
         {
-          img: 'assets/navbar-images/grocery-2.jfif'
+          id: "6040",
+          img: 'assets/navbar-images/grocery-2.jfif',
+          route: "Choclates"
         }
       ]
     },
@@ -466,13 +492,19 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       ],
       images: [
         {
-          img: 'assets/navbar-images/sports-1.png'
+          id: "7010",
+          img: 'assets/navbar-images/sports-1.png',
+          route: "camping-hiking"
         },
         {
-          img: 'assets/navbar-images/sports-2.png'
+          id: "7040",
+          img: 'assets/navbar-images/sports-2.png',
+          route: "cardio-training"
         },
         {
-          img: 'assets/navbar-images/sports-3.png'
+          id: "7030",
+          img: 'assets/navbar-images/sports-4.jfif',
+          route: "racquet-sports"
         }
       ]
     }

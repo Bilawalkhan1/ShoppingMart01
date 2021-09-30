@@ -1,8 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { LoginComponent } from 'src/app/accounts/login/login.component';
 import { TalkService } from 'src/app/Services/talk.service';
 import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref, set } from "firebase/database";

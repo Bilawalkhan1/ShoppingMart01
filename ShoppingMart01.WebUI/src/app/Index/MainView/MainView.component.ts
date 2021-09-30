@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CartService } from 'src/app/Services/cart.service';
 import { AuthService } from 'src/app/Services/auth.service';
 import { ProductService } from 'src/app/shared/models/product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-MainView',
   templateUrl: './MainView.component.html',
   styleUrls: ['./MainView.component.css'],
 })
-export class MainViewComponent implements OnInit {
+export class MainViewComponent implements OnInit, OnDestroy {
   searchText: any;
   displayMode: number;
   products: any[] = [];
@@ -39,8 +40,9 @@ export class MainViewComponent implements OnInit {
     infinite: true,
     arrows: false
   };
-
-  constructor(
+  cart: any;
+  subscription: Subscription
+  constructor (
     private auth: AuthService,
     private productService: ProductService,
     private cartservice: CartService
@@ -50,9 +52,19 @@ export class MainViewComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+
+  async ngOnInit() {
     this.getProducts()
-    this.onDisplayModeChange(1)
+    this.onDisplayModeChange(1);
+
+    this.cartservice.getCart().then( cart=>{ 
+      this.cart = cart
+      console.log(cart)
+    })
+    // this.subscription = (await this.cartservice.getCart())
+    // .subscribe(x =>{
+    //   this.cart = x
+    //   console.log(x)})
   }
 
   public covertPhotoUrl(photoUrl) {
@@ -92,4 +104,8 @@ export class MainViewComponent implements OnInit {
   }
 
   onLoadActive() { }
+
+  ngOnDestroy() {
+    // this.subscription.unsubscribe();
+  }
 }

@@ -17,7 +17,6 @@ MongoClientVar.connect(url, function(err, client){
         socket.on('join', (data) => {
 
             messageCollection?.find().toArray().then(function (docs){
-             console.log(docs)
              socket.emit('chatHistory',docs)
             })
 
