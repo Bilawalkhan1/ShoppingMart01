@@ -44,17 +44,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.productService.userData
-
-    console.log('userdata', this.user)
-
     this.registerForm = this.formBuilder.group({
       location: [''],
       gender: [''],
       city: [''],
       nationality: [''],
       number: [''],
-      // name: [''],
-      // email: [''],
     })
   }
   get f() { return this.registerForm.controls; }

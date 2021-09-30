@@ -42,11 +42,11 @@ export class ProductComponent implements OnInit {
     private auth: AuthService,
     private productService: ProductService,
     private router: Router) {
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.subscription = this.productService.getProduct().subscribe(prod => {
-      if (prod) {     
+      if (prod) {
         this.product.push(prod);
-        this.Productcategory = prod.subcategoryid  
+        this.Productcategory = prod.subcategoryid
         this.productId = prod.id
       } else {
         this.product = [];
@@ -65,14 +65,14 @@ export class ProductComponent implements OnInit {
 
   getRelatedProd(Categoryid, prodId) {
     this.subscription = this.productService.getProdByCategory(Categoryid)
-      .subscribe(prod => {       
+      .subscribe(prod => {
         this.products = prod
         this.RemoveElementFromArray(prodId);
       })
   }
 
   RemoveElementFromArray(key: number) {
-    return this.products.forEach((value:any, index) => {
+    return this.products.forEach((value: any, index) => {
       if (value.id == key)
         this.products.splice(index, 1);
     });
@@ -111,10 +111,10 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  Buy(amount: any){
+  Buy(amount: any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key:
-      'pk_test_51JZrAqFx7GlCC4OZUdzwDs4J8LVhtU1oUCaDGgILpkE0W5jIMJplSxwiKX5gjNXy92Mh9ZxAfWFb64xbjPa7hV1l00HC1ZhPEG',
+        'pk_test_51JZrAqFx7GlCC4OZUdzwDs4J8LVhtU1oUCaDGgILpkE0W5jIMJplSxwiKX5gjNXy92Mh9ZxAfWFb64xbjPa7hV1l00HC1ZhPEG',
 
       locale: 'auto',
       token: function (stripeToken: any) {
@@ -128,6 +128,11 @@ export class ProductComponent implements OnInit {
       description: 'Product Added',
       amount: amount * 100,
     });
+  }
+
+  contactSeller(phone: any) {
+    console.log('phone', phone)
+    this.productService.phone = phone
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

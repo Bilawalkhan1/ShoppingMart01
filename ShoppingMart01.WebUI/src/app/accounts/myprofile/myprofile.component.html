@@ -9,7 +9,6 @@
         <div class="card-body">
             <div class="row" *ngFor="let data of user">
                 <div class="col-6" *ngFor="let i of data.ProfileImage">
-                    Profile Image
                     <img class="img" src="{{covertPhotoUrl(i.img)}}">
                     <h2 class="firstname">{{data.firstName}}</h2>
                     

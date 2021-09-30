@@ -91,10 +91,10 @@ export class FilterComponent implements OnInit {
               routePath[key] = this.dynamicFormGroup.get(x.id).value
             }
           })
-
       })
     });
     this.router.navigate([], { queryParams: routePath })
+    
     this.modalService.dismissAll()
   }
   // 

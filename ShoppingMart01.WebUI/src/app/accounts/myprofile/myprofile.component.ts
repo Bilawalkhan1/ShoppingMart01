@@ -15,7 +15,6 @@ export class MyprofileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.productService.userData
-    console.log('user', this.user)
   }
   public covertPhotoUrl(photoUrl) {
     return `data:image/jpeg;base64,${photoUrl}`

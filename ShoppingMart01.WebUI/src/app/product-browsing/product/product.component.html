@@ -1,111 +1,18 @@
-<!-- <div class="container-fluid pt-4">
-  <div class="row" *ngFor="let blog of product">
-    <div class="col-md-4 col-sm-12 col-lg-5 ">
-      <div class="container-fluid">
-        <div class="card">
-
-          <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
-
-            <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
-              <img class="img-fluid size-img" src="{{covertPhotoUrl(i['img'])}}">
-            </div>
-
-          </ngx-slick-carousel>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 col-sm-12 col-lg-4 ">
-      <div class=" mid-div ">
-        <div class="card">
-          <div class="card-header">
-            <h1 class="product-title"><span> {{ blog.Product_Description}}
-              </span></h1>
-          </div>
-          <div class="card-body mt-3">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="td-span">
-                    <h1>{{blog.Product_Name}}</h1>
-                  </td>
-                </tr>
-                <tr>
-                  <h1 class="td-span">Location</h1>
-                  <td class="td-span">
-                    <h2>{{blog.city}}</h2>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-md-3 col-sm-12 col-lg-3 ">
-      <div class="container">
-        <div class="card">
-          <div class="card-header">
-            <h2> Price
-              <span style="color: rgb(163, 7, 7);">
-                {{blog.Product_Price}}
-              </span>
-            </h2>
-          </div>
-          <div class="card-header">
-            <p class="a-size-base"> Availabilty &nbsp; <span style="color: green;"> In Stock</span> </p>
-          </div>
-          <div class="card-body">
-            <select class="s-quantity form-select my-2" name="" id="">
-              <option value=""> Select Quantity</option>
-              <option value=""> 1 </option>
-              <option value=""> 2 </option>
-              <option value=""> 3 </option>
-              <option value=""> 4 </option>
-              <option value=""> 5 </option>
-            </select>
-          </div>
-          <div class="card-footer">
-            <div class="input-group form-group">
-              <span class="fa fa-shopping-cart form-control-icon"></span>
-              <div class="row justify-content-center">
-                <button type="button" class="blockBtn"> <span style="padding-left: 10px;"
-                    (click)="addtocart(category) ">Add to cart</span></button>
-              </div>
-            </div>
-            <div class="input-group  form-group" style="margin-top: -10px;">
-              <span class="fa fa-cart-plus form-control-icon"></span>
-              <div class="row justify-content-center">
-                <button type="button" class="blockBtn" style="padding:10px 80px;"> <span
-                    style=" padding-left: 10px;">Buy</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div> -->
-
-<div class="container" *ngFor="let blog of product">
+<div class="row" *ngFor="let blog of product">
   <!-- Left Column -->
-  <div class="left-column">
-      <!-- <img src="assets/navbar-images/vehicle-1.jpg" alt=""> -->
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 left">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig2">
 
-          <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
-            <img class="prod_img" src="{{covertPhotoUrl(i['img'])}}" alt="">
-          </div>
-
-        </ngx-slick-carousel>
+      <div ngxSlickItem *ngFor="let i of blog.Product_Image" class="slide">
+        <img class="prod_img" src="{{covertPhotoUrl(i['img'])}}" alt="">
       </div>
+
+    </ngx-slick-carousel>
+  </div>
 
 
   <!-- Right Column -->
-  <div class="right-column">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 right">
     <!-- Product Description -->
     <div class="product-description">
       <span>{{blog.brand}}</span>
@@ -117,14 +24,14 @@
     <div class="product-configuration">
       <div class="product-info">
         <p>Model Number : <span> {{blog.Model_number}} </span> </p>
-        <p>Location : <span>{{ blog.province | uppercase }}-{{blog.city | uppercase }}</span> </p>        
+        <p>Location : <span>{{ blog.province | uppercase }}-{{blog.city | uppercase }}</span> </p>
       </div>
     </div>
 
     <!-- Product Pricing -->
     <div class="product-price">
       <span>Rs.<span style="color:#df6d02;">{{blog.Product_Price}} </span> </span>
-    <hr>
+      <hr>
       <select class="s-quantity form-select my-2" name="" id="">
         <option value=""> Select Quantity</option>
         <option value=""> 1 </option>
@@ -133,9 +40,15 @@
         <option value=""> 4 </option>
         <option value=""> 5 </option>
       </select>
-      <a href="#" class="cart-btn"> <span class="fa fa-shopping-cart cart-icon"></span> Add to cart</a>
-      <a (click)="Buy(50)" class="cart-btn mt-3"> <span class="fa fa-shopping-cart cart-icon"></span> Buy</a>
-
+      <div class="section">
+        <div class="contact">
+          <a href="tel:{{blog.phone}}" class="cart-btn mt-3">Contact Seller</a>
+        </div>
+        <div class="buy">
+          <a (click)="Buy(blog.Product_Price)" class="cart-btn mt-3"> Buy Product</a>
+        </div>
+      </div>
+        
     </div>
   </div>
 </div>

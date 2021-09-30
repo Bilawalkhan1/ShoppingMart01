@@ -4,6 +4,7 @@ import { AccountsComponent } from './accounts.component';
 import { LoginComponent } from './login/login.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
       },
       {
         path: "forgetPassword", component: ForgetPasswordComponent
+      },
+      {
+        path: "profile", component: MyprofileComponent
       }
     ]
   },

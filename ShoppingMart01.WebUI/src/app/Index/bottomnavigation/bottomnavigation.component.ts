@@ -61,7 +61,6 @@ export class BottomnavigationComponent implements OnInit {
         user = JSON.parse(user)
         this.userdata = user
         this.productService.userData = this.userdata
-        console.log('user', this.userdata)
         this.modalService.open(MyprofileComponent)
       }
     }
@@ -77,7 +76,6 @@ export class BottomnavigationComponent implements OnInit {
         user = JSON.parse(user)
         this.userdata = user
         this.productService.userData = this.userdata
-        console.log('user', this.userdata)
         this.modalService.open(ProfileComponent)
       }
     }
