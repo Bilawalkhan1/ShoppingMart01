@@ -167,39 +167,39 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "1010",
-          displayName: "Bike",
+          displayName: "Biryani",
           route: "bike"
         },
         {
           id: "1020",
-          displayName: "Car",
+          displayName: "Biryani",
           route: "car"
         },
         {
           id: "1030",
-          displayName: "Bike Accessories",
+          displayName: "Biryani",
           route: "bike-accessories"
         },
         {
           id: "1040",
-          displayName: "Car Accessories",
+          displayName: "Biryani",
           route: "car-accessories"
         }
       ],
       images: [
         {
           id: "1020",
-          img: 'assets/navbar-images/vehicle-1.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "car"
         },
         {
           id: "1010",
-          img: 'assets/navbar-images/vehicle-2.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "bike"
         },
         {
           id: "1040",
-          img:'assets/navbar-images/vehicle3.jfif',
+          img:'assets/navbar-images/grocery-1.jfif',
           route: "car-accessories"
         }
       ]
@@ -211,49 +211,49 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "2010",
-          displayName: "Curtains & Blinds",
+          displayName: "Chicken",
           route: "curtains-blinds"
         },
         {
           id: "2020",
-          displayName: "Rugs & Carpets",
+          displayName: "Chicken",
           route: "rugs-carpets"
         },
         {
           id: "2030",
-          displayName: "Mirrors",
+          displayName: "Chicken",
           route: "mirror"
         },
         {
           id: "2040",
-          displayName: "Bedroom Furniture",
+          displayName: "Chicken",
           route: "bedroom-furniture"
         },
         {
           id: "2050",
-          displayName: "Gaming Furniture",
+          displayName: "Chicken",
           route: "gaming-furniture"
         },
         {
           id: "2060",
-          displayName: "Kitchen Furniture",
+          displayName: "Chicken",
           route: "kitchen-furniture"
         }
       ],
       images: [
         {
           id:"2040",
-          img: 'assets/navbar-images/h1.jfif',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "bedroom-furniture"
         },
         {
           id:"2020",
-          img: 'assets/navbar-images/h2.jfif',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "rugs-carpets"
         },
         {
           id:"2030",
-          img:'assets/navbar-images/h3.jfif',
+          img:'assets/navbar-images/grocery-1.jfif',
           route: "mirror"
         }
       ]
@@ -265,54 +265,54 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "3010",
-          displayName: "Mobile",
+          displayName: "Beef",
           route: "mobile"
         },
         {
           id: "3020",
-          displayName: "Laptop",
+          displayName: "Beef",
           route: "laptop"
         },
         {
           id: "3030",
-          displayName: "Mobile Accessories",
+          displayName: "Beef",
           route: "mobile-accessories"
         },
         {
           id: "3040",
-          displayName: "Laptop Accessories",
+          displayName: "Beef",
           route: "laptop-accessories"
         },
         {
           id: "3050",
-          displayName: "Televsions",
+          displayName: "Beef",
           route: "television"
         },
         {
           id: "3060",
-          displayName: "Speakers",
+          displayName: "Beef",
           route: "speakers"
         },
         {
           id: "3070",
-          displayName: "Headphones",
+          displayName: "Beef",
           route: "headphones"
         }
       ],
       images: [
         {
           id: "3020",
-          img: 'assets/navbar-images/electronics-1.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "laptop"
         },
         {
           id: "3040",
-          img: 'assets/navbar-images/electronics-2.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "laptop-accessories"
         },
         {
           id: "3070",
-          img: 'assets/navbar-images/electronics-3.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "headphones"
         }
       ]
@@ -324,34 +324,34 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "4010",
-          displayName: "Men's Watches",
+          displayName: "Mutton",
           route: "men's-watches"
         },
         {
           id: "4020",
-          displayName: "Women's Watches",
+          displayName: "Mutton",
           route: "women's-Watches"
         },
         {
           id: "4030",
-          displayName: "Smart Watches",
+          displayName: "Mutton",
           route: "smart-watches"
         }
       ],
       images: [
         {
           id: "4020",
-          img: 'assets/navbar-images/watch-1.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "women's-Watches"
         },
         {
           id: "4010",
-          img: 'assets/navbar-images/watch-2.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "men's-watches"
         },
         {
           id: "4030",
-          img: 'assets/navbar-images/watch-3.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "smart-watches"
         }
       ]
@@ -363,45 +363,45 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "5010",
-          displayName: "Earrings",
+          displayName: "Mix Fruits",
           route: "earrings"
         },
         {
           id: "5020",
-          displayName: "Necklaces",
+          displayName: "Mix Fruits",
           route: "necklaces"
         },
         {
           id: "5030",
-          displayName: "Rings",
+          displayName: "Mix Fruits",
           route: "rings"
         },
         {
           id: "5040",
-          displayName: "Bracelets",
+          displayName: "Mix Fruits",
           route: "bracelets"
         },
         {
           id: "5050",
-          displayName: "Pearls",
+          displayName: "Mix Fruits",
           route: "pearls"
         }
       ],
       images: [
         {
           id: "5010",
-          img: 'assets/navbar-images/jew-1.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "earrings"
         },
         {
           id: "5030",
-          img: 'assets/navbar-images/jewe-2.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "rings"
         },
         {
           
           id: "5020",
-          img: 'assets/navbar-images/jewe-3.jpg',
+          img: 'assets/navbar-images/grocery-1.jfif',
           route: "necklaces"
         }
       ]
@@ -413,32 +413,32 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "6010",
-          displayName: "Beverages",
+          displayName: "Pizza",
           route: "beverages"
         },
         {
           id: "6020",
-          displayName: "Packed Food",
+          displayName: "Pizza",
           route: "packed-food"
         },
         {
           id: "6030",
-          displayName: "Snack Food",
+          displayName: "Pizza",
           route: "snack-food"
         },
         {
           id: "6040",
-          displayName: "Choclates",
+          displayName: "Pizza",
           route: "Choclates"
         },
         {
           id: "6050",
-          displayName: "Cooking Essentials",
+          displayName: "Pizza",
           route: "cookin-essentials"
         },
         {
           id: "6060",
-          displayName: "Pet Essentials",
+          displayName: "Pizza",
           route: "pet-essentials"
         }
       ],
@@ -467,44 +467,44 @@ export class NavBarAfterComponent implements OnInit, AfterViewInit {
       children: [
         {
           id: "7010",
-          displayName: "Camping & Hiking",
+          displayName: "Fast Foods",
           route: "camping-hiking"
         },
         {
           id: "7020",
-          displayName: "Team Sports",
+          displayName: "Fast Foods",
           route: "team-sports"
         },
         {
           id: "7030",
-          displayName: "Racquet Sports",
+          displayName: "Fast Foods",
           route: "racquet-sports"
         },
         {
           id: "7040",
-          displayName: "Cardio Training",
+          displayName: "Fast Foods",
           route: "cardio-training"
         },
         {
           id: "7050",
-          displayName: "Sport Nutritions",
+          displayName: "Fast Foods",
           route: "sport-nutritions"
         }
       ],
       images: [
         {
           id: "7010",
-          img: 'assets/navbar-images/sports-1.png',
+          img: 'assets/navbar-images/food1.jpg',
           route: "camping-hiking"
         },
         {
           id: "7040",
-          img: 'assets/navbar-images/sports-2.png',
+          img: 'assets/navbar-images/food1.jpg',
           route: "cardio-training"
         },
         {
           id: "7030",
-          img: 'assets/navbar-images/sports-4.jfif',
+          img: 'assets/navbar-images/food1.jpg',
           route: "racquet-sports"
         }
       ]
